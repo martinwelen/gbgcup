@@ -37,11 +37,48 @@ def clean_hall(name):
 
 
 def _maps_url(hall):
-    """Google Maps-sök på hallnamn (inget adress-beroende)."""
+    """Fallback: Google Maps-sök på hallnamn (om exakta koordinater saknas)."""
     if not hall:
         return None
     q = urllib.parse.quote(f"{hall} Göteborg")
     return f"https://www.google.com/maps/search/?api=1&query={q}"
+
+
+_LOC_CACHE = {}
+
+
+def _arena_coords(arena):
+    """Arena → Location → MapLocation ger exakt lat/lng. Cachas per Location-id.
+
+    Returnerar (lat, lng, street) eller None."""
+    loc = arena.get("location") if isinstance(arena, dict) else None
+    lid = api.ref_id(loc) if loc else None
+    if not lid:
+        return None
+    if lid in _LOC_CACHE:
+        return _LOC_CACHE[lid]
+    coords = None
+    try:
+        resp = api.call(f"Location({{id:{lid},tid:{config.TOURNAMENT_ID}}})$location")
+        for v in resp.get("responses", {}).values():
+            e = v.get("entity", {}) if isinstance(v, dict) else {}
+            if isinstance(e, dict) and e.get("__typename") == "MapLocation":
+                lat, lng = e.get("latitude"), e.get("longitude")
+                if lat and lng:
+                    coords = (lat, lng, e.get("street") or "")
+                break
+    except Exception:
+        coords = None
+    _LOC_CACHE[lid] = coords
+    return coords
+
+
+def _maps_for(arena, venue, hall):
+    """Exakt koordinat-länk om möjligt, annars namnsökning på komplexet."""
+    c = _arena_coords(arena)
+    if c:
+        return f"https://www.google.com/maps/search/?api=1&query={c[0]},{c[1]}"
+    return _maps_url(venue or hall)
 
 
 def build_team_registry(store):
@@ -191,7 +228,7 @@ def normalize_match(e, store, reg_by_id):
         "datum": f"{dt.year:04d}-{dt.month:02d}-{dt.day:02d}",
         "dag": _SV_DAYS[dt.weekday()],
         "tid": f"{dt.hour:02d}:{dt.minute:02d}",
-        "bana": hall, "maps": _maps_url(venue or hall),
+        "bana": hall, "maps": _maps_for(arena, venue, hall),
         "video": video,
         "runda": runda,
         "hemma": hemma, "borta": borta,
