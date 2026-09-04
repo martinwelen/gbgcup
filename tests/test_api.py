@@ -34,7 +34,7 @@ def test_store_get_resolves_href():
 def test_match_query_includes_tournament_and_paging():
     q = api.match_query(limit=300, offset=600)
     assert "limit:300" in q and "offset:600" in q
-    assert "tournamentId:70944382" in q
+    assert "tournamentId:72459189" in q
     assert "MatchWindow" in q and "result:{}" in q
 
 

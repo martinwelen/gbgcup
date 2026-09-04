@@ -19,30 +19,35 @@ def test_slugify_empty_is_empty():
     assert derive.slugify("") == ""
 
 
-def test_parse_category_classic_with_color():
-    p = derive.parse_category("P15 Classic (f. 2011) Blå")
-    assert p == {"gender": "P", "age": 15, "rule": "Classic", "suffix": "Blå"}
+def test_parse_category_boys_with_team_number():
+    p = derive.parse_category("P16 2")
+    assert p == {"gender": "P", "age": 16, "klass": "P16"}
 
 
-def test_parse_category_mini_numeric_suffix():
-    p = derive.parse_category("F11 Mini (f. 2015) 1")
-    assert p == {"gender": "F", "age": 11, "rule": "Mini", "suffix": "1"}
+def test_parse_category_girls_with_color():
+    p = derive.parse_category("F13 Vit")
+    assert p == {"gender": "F", "age": 13, "klass": "F13"}
 
 
 def test_parse_category_no_suffix():
-    p = derive.parse_category("P10 Mini (f. 2016)")
-    assert p == {"gender": "P", "age": 10, "rule": "Mini", "suffix": ""}
+    p = derive.parse_category("P15")
+    assert p == {"gender": "P", "age": 15, "klass": "P15"}
 
 
-def test_parse_category_multiword_suffix():
-    p = derive.parse_category("P8 Mini (f. 2018) Lag Blå")
-    assert p == {"gender": "P", "age": 8, "rule": "Mini", "suffix": "Lag Blå"}
+def test_parse_category_boys_junior():
+    p = derive.parse_category("HJ 1")
+    assert p == {"gender": "M", "age": 99, "klass": "HJ"}
 
 
-def test_parse_category_unknown_rule_falls_back():
-    p = derive.parse_category("P14 Beachhandboll (f. 2012) 2")
-    assert p["gender"] == "P" and p["age"] == 14 and p["suffix"] == "2"
-    assert p["rule"] == "Beachhandboll"
+def test_parse_category_girls_junior():
+    p = derive.parse_category("DJ")
+    assert p == {"gender": "F", "age": 99, "klass": "DJ"}
+
+
+def test_parse_category_unknown_raises():
+    import pytest
+    with pytest.raises(ValueError):
+        derive.parse_category("Herrar A")
 
 
 import config

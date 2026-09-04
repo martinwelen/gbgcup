@@ -1,220 +1,144 @@
 # -*- coding: utf-8 -*-
-import build_apps
-
-
-def _group(age_slug="u14", label="U14"):
-    return {"age": 14, "label": label, "rule": "Classic",
-            "profile": {"duration_min": 11, "has_results": True,
-                        "has_tables": True, "has_playoffs": True},
-            "teams": [{"id": 74328265, "slug": f"{age_slug}-p-bla",
-                       "team_name": "Alingsås HK Blå", "color": "#1f5fbf", "gender": "P"}],
-            "matches": []}
-
-
-def test_app_manifest_has_unique_identity():
-    m = build_apps.app_manifest(_group())
-    assert m["name"] == "AHK U14"
-    assert m["short_name"] == "AHK U14"
-    assert m["start_url"] == "." and m["scope"] == "./"
-    assert any(i["src"] == "icon-192.png" for i in m["icons"])
-
-
-def test_service_worker_has_unique_cache_name():
-    sw = build_apps.service_worker_js("u14")
-    assert 'const C = "ahk-u14-v1";' in sw
-    assert "__CACHE__" not in sw
-
-
 import json
+import build_apps
+import config
 
 
-def test_render_app_replaces_placeholders_and_labels():
-    html = build_apps.render_app(_group(), standings=None,
-                                 base="https://x/ahk-beach/u14", updated="nyss")
-    for ph in ("__DATA__", "__STANDINGS__", "__APPLABEL__", "__CLASSES__"):
+def _team(tid, klass, gender=None, color="#1f5fbf"):
+    g = gender or (klass[0] if klass[0] in "PF" else "M")
+    age = int(klass[1:]) if klass[1:].isdigit() else 99
+    return {"id": tid, "slug": f"t-{tid}", "team_name": f"{klass} {tid}",
+            "color": color, "gender": g, "age": age, "klass": klass}
+
+
+def _m(slug, klass, rule="Classic", result=None, mid=99, dur=40):
+    return {"start_ms": 1, "tid": "10:00", "bana": "Kviberg A", "maps": "https://maps/x",
+            "slug": slug, "klass": klass, "grupp": "G1", "hemma": "A", "borta": "B",
+            "hb": "Hemma", "day_label": "Fredag 4 september", "datum": "2026-09-04",
+            "color": "#1f5fbf", "rule": rule, "dur": dur, "result": result,
+            "id": mid, "video": None, "runda": None}
+
+
+def _group(klass="P16", teams=None, matches=None):
+    return {"age": 16, "label": klass, "rule": "Classic",
+            "profile": {"duration_min": 40, "has_results": True,
+                        "has_tables": True, "has_playoffs": True},
+            "teams": teams if teams is not None else [_team(1, klass)],
+            "matches": matches or []}
+
+
+def test_club_group_merges_all_classes():
+    data = {"groups": {
+        "P16": _group("P16", [_team(1, "P16")], [_m("t-1", "P16")]),
+        "F13": _group("F13", [_team(2, "F13")], [_m("t-2", "F13")]),
+    }}
+    g = build_apps.club_group(data)
+    assert {t["klass"] for t in g["teams"]} == {"P16", "F13"}
+    assert len(g["matches"]) == 2
+    assert g["profile"]["has_tables"] is True     # tillåtande → tabell-fliken gatas ej bort
+
+
+def test_classes_distinct_sorted_juniors_last():
+    g = _group()
+    g["teams"] = [_team(1, "P16"), _team(2, "F13"), _team(3, "HJ"), _team(4, "P15")]
+    classes = [c["cls"] for c in build_apps._classes(g)]
+    assert classes == ["F13", "P15", "P16", "HJ"]   # ålder asc, P<F, junior sist
+
+
+def test_js_matches_per_item_klass_and_maps():
+    g = _group("F13", [_team(2, "F13")], [_m("t-2", "F13")])
+    m = build_apps._js_matches(g)[0]
+    assert m["klass"] == "F13"
+    assert m["maps"] == "https://maps/x" and m["bana"] == "Kviberg A"
+    assert m["lag"] == "F13 2"                       # team_name, inte slug
+
+
+def test_js_matches_mini_hides_result_and_id():
+    # Landmina B: Mini-klass (F11) → ingen live-poll (id None), inget resultat.
+    g = _group("F11", [_team(9, "F11")],
+               [_m("t-9", "F11", rule="Mini", result={"hg": 5, "ag": 3}, mid=555)])
+    m = build_apps._js_matches(g)[0]
+    assert m["id"] is None and m["res"] is None
+
+
+def test_js_matches_classic_keeps_result_and_id():
+    g = _group("P16", [_team(1, "P16")],
+               [_m("t-1", "P16", result={"hg": 20, "ag": 18}, mid=777)])
+    m = build_apps._js_matches(g)[0]
+    assert m["id"] == 777 and m["res"] == {"hg": 20, "ag": 18}
+
+
+def test_js_matches_dur_in_ms():
+    g = _group("HJ", [_team(1, "HJ")], [_m("t-1", "HJ", dur=50)])
+    assert build_apps._js_matches(g)[0]["dur"] == 50 * 60000
+
+
+def test_js_matches_strips_hash_from_color():
+    g = _group("P16", [_team(1, "P16")], [_m("t-1", "P16")])
+    assert build_apps._js_matches(g)[0]["color"] == "1f5fbf"
+
+
+def test_teams_js_klass_and_numeric_id():
+    g = _group("P16", [_team(999001, "P16")])
+    t = build_apps._teams_js(g)[0]
+    assert t["id"] == 999001 and t["slug"] == "t-999001" and t["klass"] == "P16"
+
+
+def test_merge_standings_concats_and_sorts():
+    by_age = {
+        "P16": {"groups": [{"klass": "P16", "name": "Grupp I"}], "playoffs": [{"klass": "P16"}]},
+        "F13": {"groups": [{"klass": "F13", "name": "Grupp K"}], "playoffs": []},
+    }
+    st = build_apps.merge_standings(by_age)
+    assert [g["klass"] for g in st["groups"]] == ["F13", "P16"]   # sorterat (klass,name)
+    assert [p["klass"] for p in st["playoffs"]] == ["P16"]
+
+
+def test_service_worker_gbgcup_cache_empty_legacy():
+    sw = build_apps.service_worker_js()
+    assert 'const C = "gbgcup-v1";' in sw
+    assert "const LEGACY = [];" in sw     # får ALDRIG radera syskon-appars cache
+    assert "__CACHE__" not in sw and "ahus" not in sw
+
+
+def test_app_manifest_identity():
+    m = build_apps.app_manifest()
+    assert m["name"] == "Alingsås HK · Göteborg Cup"
+    assert m["start_url"] == "." and m["scope"] == "./"
+
+
+def test_render_app_no_placeholders_and_embeds_config():
+    data = {"groups": {"P16": _group("P16", [_team(1, "P16")], [_m("t-1", "P16")])}}
+    g = build_apps.club_group(data)
+    html = build_apps.render_app(g, standings={"groups": [], "playoffs": []},
+                                 base="https://x/gbgcup", updated="nyss")
+    for ph in ("__DATA__", "__STANDINGS__", "__APPLABEL__", "__CLASSES__",
+               "__BANA_XY__", "__KLUBBTALT__", "__ROSTERS__", "__API_HOST__",
+               "__TOURNAMENT_ID__", "__RESULT_URL__", "__DATES__", "__TEAMCOUNT__"):
         assert ph not in html
-    assert "U14" in html
+    assert config.API_HOST in html and config.TOURNAMENT_ID in html
+    assert config.RESULT_URL in html
+    assert "const BANA_XY = {};" in html          # ingen ritad karta
+    assert "Göteborg Cup" in html
+    assert html.startswith("<!doctype html>")
 
 
-def test_render_app_builds_gender_classes_from_teams():
-    g = _group()
-    g["teams"] = [{"id": 1, "slug": "u14-p-bla", "team_name": "A", "color": "#1f5fbf", "gender": "P"},
-                  {"id": 2, "slug": "u14-f-vit", "team_name": "B", "color": "#c9c2b4", "gender": "F"}]
-    html = build_apps.render_app(g, standings=None, base="b", updated="u")
-    classes = json.loads(html.split("const CLASSES = ", 1)[1].split(";\n", 1)[0])
-    assert {"cls": "P14", "label": "Pojkar 14"} in classes
-    assert {"cls": "F14", "label": "Flickor 14"} in classes
-
-
-def test_render_app_strips_hash_from_colors():
-    g = _group()
-    g["matches"] = [{"start_ms": 1, "tid": "10:00", "bana": 1, "slug": "u14-p-bla",
-                     "grupp": "G1", "hemma": "A", "borta": "B", "hb": "Hemma",
-                     "day_label": "x", "color": "#1f5fbf", "gender": "P", "result": None}]
-    html = build_apps.render_app(g, standings=None, base="b", updated="u")
-    matches = html.split("let MATCHES = ", 1)[1].split(";\n", 1)[0]
-    assert '"color": "1f5fbf"' in matches or '"color":"1f5fbf"' in matches
-    assert "##" not in html
-
-
-def test_render_app_strips_results_when_has_results_false():
-    g = _group()
-    g["rule"] = "Mini"
-    g["profile"]["has_results"] = False
-    g["matches"] = [{"start_ms": 1, "tid": "10:00", "bana": 1, "slug": "u14-p-bla",
-                     "grupp": "G1", "hemma": "A", "borta": "B", "hb": "Hemma",
-                     "day_label": "x", "color": "#1f5fbf", "gender": "P",
-                     "result": {"hg": 5, "ag": 3}}]
-    html = build_apps.render_app(g, standings=None, base="b", updated="u")
-    matches = html.split("let MATCHES = ", 1)[1].split(";\n", 1)[0]
-    assert '"res": null' in matches or '"res":null' in matches
-
-
-def test_build_apps_writes_each_group_dir(tmp_path, monkeypatch):
-    data = {"meta": {"generated": "2026-06-26T00:00:00Z"},
-            "groups": {"u14": _group("u14", "U14"), "u15": _group("u15", "U15")}}
+def test_main_writes_single_app_at_root(tmp_path, monkeypatch):
+    data = {"meta": {"generated": "2026-09-04T00:00:00Z"},
+            "groups": {"P16": _group("P16", [_team(1, "P16")], [_m("t-1", "P16")]),
+                       "F13": _group("F13", [_team(2, "F13")], [_m("t-2", "F13")])}}
     (tmp_path / "data.json").write_text(json.dumps(data), encoding="utf-8")
     for ic in ("icon-192.png", "icon-512.png", "icon-512-maskable.png",
-               "icon-180.png", "favicon-32.png"):
+               "icon-180.png", "favicon-32.png", "Alingsas_HK_logo.svg"):
         (tmp_path / ic).write_bytes(b"x")
     monkeypatch.setattr(build_apps, "ROOT", str(tmp_path))
     monkeypatch.setattr(build_apps, "DATA_JSON", str(tmp_path / "data.json"))
     monkeypatch.setattr(build_apps, "STANDINGS_JSON", str(tmp_path / "nope.json"))
     n = build_apps.main()
-    assert (tmp_path / "u14" / "index.html").exists()
-    assert (tmp_path / "u14" / "manifest.json").exists()
-    assert (tmp_path / "u14" / "sw.js").exists()
-    assert not (tmp_path / "u15").exists()                    # ingen lokal u15/
-    assert (tmp_path / "dist-u15" / "index.html").exists()    # U15 → staging
-    assert (tmp_path / "dist-u15" / "sw.js").exists()
-    assert n == 2
-
-
-def test_teams_js_uses_numeric_id_for_standings_join():
-    # C1-regression: TEAMS.id måste vara cupmanagers numeriska lag-id (standings
-    # joinar r.team_id===team.id), INTE slug.
-    g = _group()
-    g["teams"] = [{"id": 999001, "slug": "u14-p-bla", "team_name": "Alingsås HK Blå",
-                   "color": "#1f5fbf", "gender": "P"}]
-    teams = build_apps._teams_js(g)
-    assert teams[0]["id"] == 999001
-    assert teams[0]["slug"] == "u14-p-bla"
-
-
-def test_js_matches_uses_team_name_not_slug_for_lag():
-    # I1-regression: schemat ska visa lagnamn, inte slug.
-    g = _group()
-    g["matches"] = [{"start_ms": 1, "tid": "10:00", "bana": 1, "slug": "u14-p-bla",
-                     "grupp": "G1", "hemma": "A", "borta": "B", "hb": "Hemma",
-                     "day_label": "Måndag 13 juli", "color": "#1f5fbf",
-                     "gender": "P", "result": None}]
-    m = build_apps._js_matches(g)[0]
-    assert m["lag"] == "Alingsås HK Blå"
-
-
-def test_render_app_fills_dates_and_teamcount():
-    # I2-regression: header får inte hårdkoda "6 lag" / U15-datum.
-    g = _group()
-    g["matches"] = [{"start_ms": 1, "tid": "10:00", "bana": 1, "slug": "u14-p-bla",
-                     "grupp": "G1", "hemma": "A", "borta": "B", "hb": "Hemma",
-                     "day_label": "Måndag 13 juli", "color": "#1f5fbf",
-                     "gender": "P", "result": None}]
-    html = build_apps.render_app(g, standings=None, base="b", updated="u")
-    assert "__DATES__" not in html and "__TEAMCOUNT__" not in html
-    assert "Måndag 13 juli" in html
-    assert "6 lag" not in html and "17 juli" not in html
-
-
-def test_render_app_starts_with_doctype_no_leading_backslash():
-    # Regression: mallen fick en literal '\' först → syntes uppe till vänster.
-    html = build_apps.render_app(_group(), standings=None, base="b", updated="u")
-    assert html.startswith("<!doctype html>")
-
-
-def test_service_worker_purges_u15_legacy_cache():
-    sw = build_apps.service_worker_js("u15")
-    assert 'const C = "ahk-u15-v1";' in sw
-    assert '"ahus-schema-v1"' in sw          # legacy U15-cache raderas
-    assert "caches.delete" in sw
-
-
-def test_service_worker_leaves_foreign_caches_for_live_apps():
-    # Origin-delad CacheStorage: en live-app får ALDRIG radera syskonens cachar.
-    sw = build_apps.service_worker_js("u14")
-    assert 'const C = "ahk-u14-v1";' in sw
-    assert "const LEGACY = [];" in sw        # tom lista → raderar ingenting
-    assert "ahus-schema-v1" not in sw
-    assert "ahk-u13" not in sw
-
-
-def test_js_matches_includes_id_and_video():
-    g = _group()
-    g["teams"] = [{"id": 1, "slug": "u14-p-bla", "team_name": "A", "color": "#1f5fbf", "gender": "P"}]
-    g["matches"] = [{"start_ms": 1, "tid": "10:00", "bana": 2, "slug": "u14-p-bla",
-                     "grupp": "G1", "hemma": "A", "borta": "B", "hb": "Hemma",
-                     "day_label": "x", "color": "#1f5fbf", "gender": "P", "result": None,
-                     "id": 999, "video": "https://solidsport.com/x"}]
-    out = build_apps._js_matches(g)[0]
-    assert out["id"] == 999
-    assert out["video"] == "https://solidsport.com/x"
-
-
-def test_render_app_embeds_api_host_and_tournament():
-    html = build_apps.render_app(_group(), standings=None, base="b", updated="u")
-    import config
-    assert config.API_HOST in html
-    assert config.TOURNAMENT_ID in html
-    assert "__API_HOST__" not in html and "__TOURNAMENT_ID__" not in html
-
-
-def test_build_apps_copies_map_to_every_app(tmp_path, monkeypatch):
-    data = {"meta": {"generated": "x"},
-            "groups": {"u14": _group("u14", "U14"), "u15": _group("u15", "U15")}}
-    (tmp_path / "data.json").write_text(json.dumps(data), encoding="utf-8")
-    for ic in ("icon-192.png", "icon-512.png", "icon-512-maskable.png",
-               "icon-180.png", "favicon-32.png", "karta.png"):
-        (tmp_path / ic).write_bytes(b"x")
-    monkeypatch.setattr(build_apps, "ROOT", str(tmp_path))
-    monkeypatch.setattr(build_apps, "DATA_JSON", str(tmp_path / "data.json"))
-    monkeypatch.setattr(build_apps, "STANDINGS_JSON", str(tmp_path / "nope.json"))
-    build_apps.main()
-    assert (tmp_path / "u14" / "karta.png").exists()
-    assert (tmp_path / "dist-u15" / "karta.png").exists()
-
-
-def test_js_matches_includes_runda():
-    g = _group()
-    g["teams"] = [{"id": 1, "slug": "u14-p-bla", "team_name": "A", "color": "#1f5fbf", "gender": "P"}]
-    g["matches"] = [{"start_ms": 1, "tid": "10:00", "bana": 2, "slug": "u14-p-bla",
-                     "grupp": "A-Slutspel", "hemma": "A", "borta": "B", "hb": "Hemma",
-                     "day_label": "x", "color": "#1f5fbf", "gender": "P", "result": None,
-                     "id": 999, "video": None, "runda": "Semifinal"}]
-    assert build_apps._js_matches(g)[0]["runda"] == "Semifinal"
-
-
-def test_render_app_embeds_bana_xy():
-    html = build_apps.render_app(_group(), standings=None, base="b", updated="u")
-    assert "__BANA_XY__" not in html
-    assert "0.9371" in html   # bana 9 x-andel (789/842)
-    assert "const BANA_XY" in html
-
-
-def test_build_apps_writes_sched_json(tmp_path, monkeypatch):
-    data = {"meta": {"generated": "x"}, "groups": {"u14": _group("u14", "U14")}}
-    (tmp_path / "data.json").write_text(json.dumps(data), encoding="utf-8")
-    monkeypatch.setattr(build_apps, "ROOT", str(tmp_path))
-    monkeypatch.setattr(build_apps, "DATA_JSON", str(tmp_path / "data.json"))
-    monkeypatch.setattr(build_apps, "STANDINGS_JSON", str(tmp_path / "nope.json"))
-    build_apps.main()
-    p = tmp_path / "u14" / "sched.json"
-    assert p.exists()
-    sj = json.loads(p.read_text(encoding="utf-8"))
-    assert "matches" in sj and isinstance(sj["matches"], list)
+    assert n == 1
+    assert (tmp_path / "index.html").exists()
+    assert (tmp_path / "manifest.json").exists()
+    assert (tmp_path / "sw.js").exists()
+    sj = json.loads((tmp_path / "sched.json").read_text(encoding="utf-8"))
+    assert isinstance(sj["matches"], list) and len(sj["matches"]) == 2
     assert "standings" in sj
-
-
-def test_render_app_embeds_klubbtalt_and_copies_logo():
-    html = build_apps.render_app(_group(), standings=None, base="b", updated="u")
-    assert "__KLUBBTALT__" not in html
-    assert "const KLUBBTALT" in html
-    assert "Alingsas_HK_logo.svg" in build_apps._ASSETS

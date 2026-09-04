@@ -66,7 +66,7 @@ def test_live_poll_window_bridges_robot_persistence_lag():
     grace_min = int(m.group(1))
     assert grace_min >= 30, f"grace {grace_min} min för kort för robotlatensen (~30 min)"
     # pollWindow måste använda konstanten (inte en hårdkodad kort grace).
-    assert "m.ms + DUR + POLL_GRACE_MS" in t
+    assert "m.ms + (m.dur||DUR) + POLL_GRACE_MS" in t
 
 
 def test_livescore_shows_final_score_before_robot():
