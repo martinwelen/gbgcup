@@ -1,0 +1,82 @@
+name: Uppdatera schema
+
+# Kör i GitHubs moln – ingen lokal dator behövs.
+# OBS: GitHubs schemalagda cron är opålitlig; den externa CF-workern (ops/gh-dispatch-worker)
+# triggar workflow_dispatch var ~10:e min under aktiva fönster. Cron nedan = backup.
+on:
+  schedule:
+    - cron: "*/30 * * * *"               # normalt: var 30:e minut (no-op om inget ändrats)
+    - cron: "*/10 7-22 4-6,11-13 9 *"    # GbgCup: 4–6 & 11–13 sep, var 10:e min
+  workflow_dispatch:                      # + manuell "Run workflow"-knapp
+    inputs:
+      force:
+        description: "Bygg om även om match-datan är oförändrad (för kod-ändringar)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: update-schema
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Hämta matcher (klubbkod) från cupmanager
+        run: python fetch_data.py
+
+      - name: Hämta tabeller & slutspel från cupmanager
+        run: python fetch_standings.py
+
+      - name: Avgör om ombyggnad behövs
+        id: changed
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            echo "build=true" >> "$GITHUB_OUTPUT"
+            echo "force=true → bygger om oavsett datan (plockar upp kod-ändringar)."
+          elif git diff --quiet -- data.json standings.json; then
+            echo "build=false" >> "$GITHUB_OUTPUT"
+            echo "data.json + standings.json oförändrade – hoppar över bygge/commit."
+          else
+            echo "build=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Bygg om den samlade appen
+        if: steps.changed.outputs.build == 'true'
+        run: python build_apps.py
+
+      - name: Committa och publicera (race-härdad push)
+        if: steps.changed.outputs.build == 'true'
+        run: |
+          git config user.name "gbgcup-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Inget att committa (identisk output)."
+            exit 0
+          fi
+          git commit -m "Auto-uppdatering ($(date -u '+%Y-%m-%d %H:%M UTC'))"
+          n=0
+          until git push; do
+            n=$((n+1))
+            if [ "$n" -ge 5 ]; then
+              echo "Push misslyckades efter $n försök."; exit 1
+            fi
+            echo "Push avvisad (race) – integrerar remote, försök $n."
+            if ! git pull --rebase --autostash origin main; then
+              git rebase --abort 2>/dev/null || true
+              echo "Rebase-konflikt – hoppar över denna publicering (nästa körning fixar)."
+              exit 0
+            fi
+            sleep $(( (RANDOM % 4) + 2 ))
+          done
+          echo "Ändringar publicerade."

@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Alingsås HK · Göteborg Cup</title>
+<meta name="theme-color" content="#13293d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="AHK GbgCup">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Live-matchschema för Alingsås HK på Göteborg Cup. Alltid uppdaterat.">
+<meta property="og:title" content="Alingsås HK · Göteborg Cup">
+<meta property="og:description" content="Live-matchschema för Alingsås HK på Göteborg Cup. Alltid uppdaterat.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://martinwelen.github.io/gbgcup/">
+<meta property="og:image" content="https://martinwelen.github.io/gbgcup/icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="Alingsas_HK_logo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#f4ecdb; --paper:#fffaf0; --ink:#13293d; --ink-soft:#6a7c8b;
+  --sun:#ef5a2b; --sun-2:#f7a23a; --sea:#1583ad; --line:#e7dabf;
+  --shadow:0 6px 22px rgba(20,40,60,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  font-family:"Hanken Grotesk",system-ui,sans-serif; color:var(--ink);
+  background:
+    radial-gradient(900px 460px at 108% -8%, rgba(247,162,58,.55), rgba(247,162,58,0) 60%),
+    radial-gradient(700px 380px at -10% 0%, rgba(21,131,173,.20), rgba(21,131,173,0) 55%),
+    var(--sand);
+  background-attachment:fixed;
+  -webkit-text-size-adjust:100%; line-height:1.45;
+}
+body::before{ /* korn/grynighet */
+  content:""; position:fixed; inset:0; pointer-events:none; opacity:.5; z-index:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/></svg>");
+}
+.wrap{position:relative; z-index:1; max-width:720px; margin:0 auto; padding:0 16px 72px}
+header{padding:26px 0 8px}
+.kicker{font-size:.74rem; letter-spacing:.22em; text-transform:uppercase; color:var(--sea); font-weight:700}
+h1{font-family:"Anton",sans-serif; font-weight:400; line-height:.94; letter-spacing:.01em;
+   font-size:clamp(2.3rem,9vw,3.4rem); margin:.18em 0 .1em; text-transform:uppercase}
+h1 .em{color:var(--sun)}
+.dates{color:var(--ink-soft); font-weight:600; font-size:.96rem}
+.sea-rule{height:5px; border-radius:5px; margin:14px 0 0;
+  background:linear-gradient(90deg,var(--sea),var(--sun-2),var(--sun))}
+
+/* vy-flikar */
+.tabs{display:flex; gap:8px; margin:14px 0 2px; overflow-x:auto; scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto; border:1.5px solid var(--ink); background:transparent; color:var(--ink);
+  padding:8px 16px; border-radius:999px; font-weight:800; font-size:.9rem; cursor:pointer;
+  font-family:inherit; transition:all .15s}
+.tab[aria-pressed=true]{background:var(--ink); color:#fff}
+.tab[hidden]{display:none}
+
+/* tabeller */
+.gtable{background:var(--paper); border:1px solid var(--line); border-radius:14px;
+  padding:10px 12px 6px; margin:14px 0; box-shadow:var(--shadow)}
+.gtitle{display:flex; align-items:baseline; gap:8px; margin:2px 2px 8px}
+.gtitle .gcls{font-size:.64rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft)}
+.gtitle .gname{font-family:"Anton"; text-transform:uppercase; font-size:1rem; letter-spacing:.02em}
+table.gt{width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums}
+.gt th,.gt td{padding:7px 4px; font-size:.82rem; text-align:center}
+.gt th{font-size:.6rem; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-soft); font-weight:800; border-bottom:2px solid var(--line)}
+.gt th.lt,.gt td.lt{text-align:left}
+.gt td{border-bottom:1px solid var(--line)}
+.gt .pos{color:var(--ink-soft); font-weight:800; width:26px}
+.gt .nm{font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:150px}
+.gt .pts{font-family:"Anton"; font-size:1rem}
+.gt tr.me td{background:var(--mecol,rgba(20,40,60,.10))}
+.gt tr.me .pos{color:var(--meink,var(--ink))}
+.tier-row td{padding:4px; border:none}
+.tier-row .bar{display:flex; align-items:center; gap:8px; font-size:.6rem; font-weight:800;
+  letter-spacing:.08em; text-transform:uppercase}
+.tier-row .bar::before,.tier-row .bar::after{content:""; flex:1; height:2px; border-radius:2px; background:currentColor; opacity:.5}
+.tierA{color:#c79114} .tierB{color:var(--sea)} .tierC{color:#9a8f86}
+.empty-tab{padding:24px 4px; color:var(--ink-soft); text-align:center; font-weight:600}
+
+/* trupp */
+.rlist{list-style:none; margin:0; padding:0}
+.rlist li{display:flex; align-items:center; gap:10px; padding:8px 4px; border-bottom:1px solid var(--line)}
+.rlist li:last-child{border-bottom:none}
+.rnr{font-family:"Anton"; font-size:1rem; min-width:26px; text-align:center; color:var(--ink-soft)}
+.rnr.none{font-size:.7rem; opacity:.4}
+.rname{font-weight:700; flex:1}
+.rname .smek{font-weight:600; color:var(--ink-soft)}
+.rpos{font-size:.58rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+  padding:3px 8px; border-radius:999px; border:1.5px solid var(--line); color:var(--ink-soft)}
+.rpos.mv{background:var(--ink); border-color:var(--ink); color:#fff}
+
+/* slutspelsträd */
+.btabs{display:flex; gap:6px; margin:14px 2px 8px}
+.btab{font-size:.72rem; font-weight:800; padding:6px 13px; border-radius:999px; border:1.5px solid var(--line); color:var(--ink-soft); background:transparent; cursor:pointer; font-family:inherit}
+.btab[aria-pressed=true]{background:var(--ink); border-color:var(--ink); color:#fff}
+.bracket-scroll{overflow:hidden; cursor:grab; touch-action:pan-y; border:1px solid var(--line); border-radius:14px; background:var(--paper); box-shadow:var(--shadow); padding:12px}
+.bracket-scroll.drag{cursor:grabbing}
+.btree{display:flex; gap:16px; min-width:max-content; user-select:none}
+.bcol{display:flex; flex-direction:column; justify-content:space-around; gap:10px; min-width:130px}
+.bcol .clabel{font-size:.56rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:2px}
+.bm{background:var(--sand); border:1px solid var(--line); border-radius:9px; padding:6px 8px; font-size:.7rem; line-height:1.5}
+.bm .row{display:flex; justify-content:space-between; gap:8px}
+.bm .row span:first-child{white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.bm.ali{border-color:var(--ink); box-shadow:0 0 0 1.5px var(--c,#999)}
+.bm-win{font-weight:800; color:var(--ink)}
+.bm-lose{text-decoration:line-through; color:var(--ink-soft); opacity:.75}
+.bm .g{font-variant-numeric:tabular-nums; font-weight:800; margin-left:6px}
+
+/* filter */
+.filters{position:sticky; top:0; z-index:5; margin:0 -16px; padding:12px 16px;
+  display:flex; gap:8px; overflow-x:auto; scrollbar-width:none;
+  background:linear-gradient(var(--sand),rgba(244,236,219,.86)); backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line)}
+.filters::-webkit-scrollbar{display:none}
+.pill{flex:0 0 auto; border:1.5px solid var(--ink); background:transparent; color:var(--ink);
+  padding:7px 13px; border-radius:999px; font-weight:700; font-size:.85rem; cursor:pointer;
+  display:flex; align-items:center; gap:7px; white-space:nowrap; font-family:inherit;
+  transition:all .15s}
+.pill .d{width:9px; height:9px; border-radius:50%}
+.pill[aria-pressed=true]{background:var(--ink); color:#fff}
+.pill.sun[aria-pressed=true]{background:var(--sun); border-color:var(--sun)}
+
+/* hero – härnäst */
+.hero{margin-top:18px; border-radius:18px; padding:18px 20px; color:#fff; box-shadow:var(--shadow);
+  background:linear-gradient(135deg,#16324a,#1b4a64); position:relative; overflow:hidden}
+.hero.live{background:linear-gradient(135deg,var(--sun),var(--sun-2))}
+.hero .lbl{font-size:.74rem; letter-spacing:.2em; text-transform:uppercase; font-weight:800; opacity:.92}
+.hero .mt{font-family:"Anton",sans-serif; font-size:clamp(1.4rem,5.4vw,2rem); line-height:1.04; margin:.28em 0 .15em; text-transform:uppercase}
+.hero .sub{font-weight:600; opacity:.92; font-size:.92rem}
+.hero .cd{margin-top:12px; font-family:"Anton",sans-serif; font-size:1.5rem; letter-spacing:.02em}
+.hero .tag{position:absolute; top:14px; right:16px; font-weight:800; font-size:.8rem;
+  background:rgba(255,255,255,.18); padding:5px 10px; border-radius:999px}
+.hero.live .pulse{display:inline-block; width:9px; height:9px; border-radius:50%; background:#fff; margin-right:6px; animation:pulse 1.1s infinite}
+@keyframes pulse{0%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}100%{opacity:1;transform:scale(1)}}
+
+/* dagar + matcher */
+.day{position:sticky; top:53px; z-index:3; margin:26px 0 10px; padding:6px 2px;
+  font-family:"Anton",sans-serif; font-size:1.15rem; text-transform:uppercase; letter-spacing:.04em;
+  background:linear-gradient(var(--sand),var(--sand)); }
+.day::after{content:""; display:block; height:3px; width:46px; background:var(--sun); margin-top:5px; border-radius:3px}
+.match{display:grid; grid-template-columns:56px 1fr auto; gap:13px; align-items:center;
+  background:var(--paper); border:1px solid var(--line); border-left:6px solid var(--c,#999);
+  border-radius:14px; padding:12px 13px; margin-bottom:9px; box-shadow:var(--shadow);
+  animation:rise .4s both}
+@keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.match.past{opacity:.46}
+.match.live{border-color:var(--sun); box-shadow:0 0 0 2px var(--sun), var(--shadow)}
+.match .t{font-family:"Anton",sans-serif; font-size:1.42rem; line-height:1; text-align:center}
+.match .t small{display:block; font-family:"Hanken Grotesk"; font-size:.62rem; font-weight:700;
+  color:var(--ink-soft); letter-spacing:.08em; margin-top:3px}
+.chips{display:flex; gap:6px; align-items:center; margin-bottom:4px; flex-wrap:wrap}
+.lagchip{font-size:.66rem; font-weight:800; color:#fff; padding:2px 8px; border-radius:999px; letter-spacing:.02em}
+.grp{font-size:.7rem; color:var(--ink-soft); font-weight:600}
+.klasschip{font-size:.6rem; font-weight:800; color:var(--ink-soft); border:1px solid var(--line);
+  padding:1px 6px; border-radius:999px; letter-spacing:.04em}
+.vs{font-weight:600; font-size:.98rem}
+.vs .ali{font-weight:800}
+.vs .ali::after{content:""}
+.score{display:inline-flex; gap:5px; align-items:baseline; font-family:"Anton"; font-size:1.05rem; margin-top:2px}
+.score .x{color:var(--ink-soft); font-size:.8rem}
+.score b{font-weight:400}
+.score .w{color:var(--sun)}
+.score .l{color:var(--ink-soft)}
+.bana{text-align:right; max-width:120px; font-size:.72rem; font-weight:700; line-height:1.2}
+.bana a{color:#5a6b75; text-decoration:none}
+.bana a:active{opacity:.6}
+.nowtag{font-size:.6rem; font-weight:800; color:var(--sun); letter-spacing:.08em}
+.empty{padding:30px 4px; color:var(--ink-soft); text-align:center; font-weight:600}
+
+/* kalender-sektion */
+details.cal{margin-top:30px; background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:4px 16px; box-shadow:var(--shadow)}
+details.cal summary{cursor:pointer; font-weight:800; padding:13px 0; list-style:none}
+details.cal summary::-webkit-details-marker{display:none}
+details.cal summary::before{content:"📅  "}
+.cal ul{list-style:none; padding:0; margin:6px 0 12px}
+.cal li{display:flex; align-items:center; gap:10px; padding:7px 0; border-top:1px solid var(--line)}
+.cdot{width:12px;height:12px;border-radius:50%;flex:0 0 auto}
+.cname{flex:1; font-size:.9rem; font-weight:600}
+.copy{border:1.5px solid var(--ink); background:transparent; color:var(--ink); border-radius:8px;
+  padding:6px 11px; font-weight:700; font-size:.8rem; cursor:pointer; font-family:inherit}
+.copy.mini{padding:5px 9px; font-size:.74rem}
+.copy.ok{background:#1f8a4c; color:#fff; border-color:transparent}
+.note{font-size:.82rem; color:var(--ink-soft); margin:6px 0 12px}
+
+/* lägg till på hemskärmen */
+.install{margin-top:14px; display:inline-flex; gap:8px; align-items:center; background:var(--sun); color:#fff;
+  border:none; border-radius:999px; padding:10px 17px; font-weight:800; font-size:.9rem; cursor:pointer;
+  font-family:inherit; box-shadow:var(--shadow)}
+.install:active{transform:scale(.97)}
+.sheet{position:fixed; inset:0; z-index:20; background:rgba(10,20,30,.5);
+  display:flex; align-items:flex-end; justify-content:center}
+.sheet[hidden]{display:none}
+.sheet-card{position:relative; background:var(--paper); color:var(--ink); width:100%; max-width:480px;
+  border-radius:20px 20px 0 0; padding:22px 20px calc(22px + env(safe-area-inset-bottom));
+  box-shadow:0 -12px 44px rgba(0,0,0,.32); animation:up .26s}
+@keyframes up{from{transform:translateY(101%)}to{transform:none}}
+.sheet-card h3{margin:0 0 12px; font-family:"Anton",sans-serif; text-transform:uppercase; letter-spacing:.03em; font-weight:400}
+.sheet-x{position:absolute; top:14px; right:14px; border:none; background:var(--sand); color:var(--ink);
+  width:34px; height:34px; border-radius:50%; font-size:1rem; cursor:pointer}
+.step{display:flex; gap:11px; align-items:flex-start; margin:11px 0; font-size:.96rem; line-height:1.45}
+.step .n{flex:0 0 auto; width:24px; height:24px; border-radius:50%; background:var(--ink); color:#fff;
+  font-weight:800; font-size:.8rem; display:flex; align-items:center; justify-content:center}
+.step b{color:var(--sun)}
+.shareicon{display:inline-block; transform:translateY(2px)}
+footer{margin-top:26px; font-size:.78rem; color:var(--ink-soft); text-align:center; line-height:1.7}
+footer a{color:var(--sea)}
+#map{padding:12px}
+.mapbtn{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;
+  border-radius:12px;overflow:hidden;position:relative}
+.mapbtn img{display:block;width:100%;height:auto;border-radius:12px}
+.maphint{position:absolute;right:10px;bottom:10px;background:#13293dcc;color:#fff;
+  font-size:.8rem;padding:4px 8px;border-radius:999px}
+.mapsrc{color:#5a6b75;font-size:.75rem;margin:8px 2px 0}
+#mapzoom:not([hidden]){position:fixed;inset:0;z-index:1000;background:#0b1620;touch-action:none;
+  overflow:hidden;display:flex;align-items:center;justify-content:center}
+#mapzoom-img{max-width:100vw;max-height:100vh;user-select:none;-webkit-user-select:none;
+  touch-action:none}
+#mapzoom-close{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:12px;
+  z-index:1001;width:44px;height:44px;border:0;border-radius:50%;background:#13293dcc;
+  color:#fff;font-size:1.2rem;line-height:1;cursor:pointer}
+.lscore{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-weight:800;
+  color:#d22f27;font-size:.95rem}
+.lscore .pulse{width:8px;height:8px;border-radius:50%;background:#d22f27;animation:pulse 1.1s infinite}
+.lscore.done{color:#13293d}
+.vidlink{display:inline-block;margin-top:6px;font-weight:800;font-size:.82rem;color:#fff;
+  background:#d22f27;padding:3px 9px;border-radius:999px;text-decoration:none}
+.herolist{display:flex;flex-direction:column;gap:10px}
+.herolist.many .hero{padding:12px 14px}
+.herolist.many .hero .mt{font-size:clamp(1.05rem,4vw,1.4rem)}
+.herolist.many .hero .cd{font-size:1.1rem;margin-top:8px}
+.hero{position:relative}
+.rundachip{margin-left:6px;font-weight:800;font-size:.72rem;padding:2px 8px;border-radius:999px;
+  background:#e8730c;color:#fff;text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
+#mapzoom-stage{position:relative;will-change:transform}
+.mapmarkers{position:absolute;inset:0;pointer-events:none}
+.mk{position:absolute;transform:translate(-50%,-50%);width:20px;height:20px;border-radius:50%;
+  border:2px solid #fff;box-shadow:0 1px 4px #0006}
+.mk.live{background:#d22f27;animation:pulse 1.1s infinite}
+.mk.next{background:#e8730c}
+.mk.tent{width:30px;height:30px;background:#fff;padding:3px;overflow:hidden}
+.mk.tent img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none}
+#mk-zoom{pointer-events:none}
+#mk-zoom .mk{pointer-events:auto;cursor:pointer}
+#mapinfo{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);left:50%;
+  transform:translateX(-50%);max-width:92vw;background:#13293dee;color:#fff;padding:9px 15px;
+  border-radius:999px;font-size:.92rem;font-weight:600;z-index:1002;box-shadow:0 4px 16px #0007}
+#mapinfo .k{font-weight:800;color:#e8730c;margin-right:6px}
+#mapinfo .ls{color:#ff6a5f;font-weight:800;margin-left:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">Göteborg Cup 2026</div>
+    <h1>Alingsås&nbsp;HK<br><span class="em">matchschema</span></h1>
+    <div class="dates">4 sep – 13 sep · 12 lag · <span id="count"></span> matcher</div>
+    <button id="install" class="install" hidden>📲 Lägg till på hemskärmen</button>
+    <div class="sea-rule"></div>
+  </header>
+
+  <nav class="tabs" id="tabs" aria-label="Vyer">
+    <button class="tab" id="tab-schema" data-view="schema" aria-pressed="true">Schema</button>
+    <button class="tab" id="tab-tabeller" data-view="tabeller" aria-pressed="false" hidden>Tabeller</button>
+    <button class="tab" id="tab-slutspel" data-view="slutspel" aria-pressed="false" hidden>Slutspel</button>
+    <button class="tab" id="tab-trupp" data-view="trupp" aria-pressed="false" hidden>Trupp</button>
+    <button class="tab" id="tab-karta" data-view="karta" hidden>Karta</button>
+  </nav>
+
+  <nav class="filters" id="filters" aria-label="Filtrera lag"></nav>
+
+  <section id="hero"></section>
+  <main id="list"></main>
+
+  <section id="tables" hidden></section>
+  <section id="bracket" hidden></section>
+  <section id="roster" hidden></section>
+  <section id="map" hidden>
+    <button class="mapbtn" id="mapopen" aria-label="Öppna kartan i helskärm">
+      <img src="karta.png" alt="Områdeskarta – Åhus Beach Handboll" loading="lazy">
+      <span class="mapmarkers" id="mk-inline" aria-hidden="true"></span>
+      <span class="maphint">Tryck för helskärm</span>
+    </button>
+    <p class="mapsrc">Källa: ahusbeach.com</p>
+  </section>
+  <div id="mapzoom" hidden>
+    <button id="mapzoom-close" aria-label="Stäng karta">✕</button>
+    <div id="mapzoom-stage">
+      <img id="mapzoom-img" src="karta.png" alt="Områdeskarta – Åhus Beach Handboll" draggable="false">
+      <div class="mapmarkers" id="mk-zoom" aria-hidden="true"></div>
+    </div>
+    <div id="mapinfo" hidden></div>
+  </div>
+
+  <details class="cal">
+    <summary>Lägg till i din kalender (valfritt)</summary>
+    <p class="note">För dig som hellre vill ha matcherna i din kalenderapp. <strong>Prenumerera på länken</strong>
+      – importera inte filen (då uppdateras den inte). På Android/Outlook görs det via outlook.com i webbläsare;
+      på iPhone via Inställningar → Kalender → Lägg till prenumererad kalender.</p>
+    <ul>
+
+    </ul>
+  </details>
+
+  <div id="sheet" class="sheet" hidden>
+    <div class="sheet-card">
+      <button class="sheet-x" id="sheetx" aria-label="Stäng">✕</button>
+      <h3>Lägg till på hemskärmen</h3>
+      <div id="sheetbody"></div>
+    </div>
+  </div>
+
+  <footer>
+    Live-schema · uppdateras automatiskt · senast: 2026-09-04T10:17:00+00:00<br>
+    Källa: <a href="https://goteborgcup.com/2026,sv/result/" target="_blank" rel="noopener">goteborgcup.com</a>
+    · Speltid 2×15 min (HJ 2×20) · Tider kan ändras av arrangören<br>
+    <span style="opacity:.8">Tips: lägg till sidan på hemskärmen för snabb åtkomst på plats.</span>
+  </footer>
+</div>
+
+<script>
+let MATCHES = [{"ms": 1788534000000, "t": "17:00", "bana": "Prioritet Serneke Arena Serneke Arena B", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20B%20G%C3%B6teborg", "lag": "P16 2", "slug": "t-77339121", "klass": "P16", "grp": "Grupp E", "home": "Alingsås HK 2", "away": "Kärra HF Gul", "hb": "Hemma", "day": "Fredag 4 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": 85520259, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-2-kaerra-hf-gul", "runda": null}, {"ms": 1788536400000, "t": "17:40", "bana": "Prioritet Serneke Arena Serneke Arena B", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20B%20G%C3%B6teborg", "lag": "F16 1", "slug": "t-77339136", "klass": "F16", "grp": "Grupp C", "home": "Alingsås HK 1", "away": "Önnereds HK 1", "hb": "Hemma", "day": "Fredag 4 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": 85516319, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-1-onnereds-hk-1", "runda": null}, {"ms": 1788536400000, "t": "17:40", "bana": "Prioritet Serneke Arena Serneke Arena A", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20A%20G%C3%B6teborg", "lag": "P16 1", "slug": "t-77339117", "klass": "P16", "grp": "Grupp I", "home": "Alingsås HK 1", "away": "Kärra HF Svart", "hb": "Hemma", "day": "Fredag 4 september", "color": "e8730c", "dur": 2400000, "res": null, "id": 85520378, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-1-kaerra-hf-svart-5fd12aec-52ef-455a-88d6-8e60b925691f", "runda": null}, {"ms": 1788538800000, "t": "18:20", "bana": "Prioritet Serneke Arena Serneke Arena A", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20A%20G%C3%B6teborg", "lag": "F16 2", "slug": "t-77339140", "klass": "F16", "grp": "Grupp H", "home": "Alingsås HK 2", "away": "IK Sävehof 1", "hb": "Hemma", "day": "Fredag 4 september", "color": "e8730c", "dur": 2400000, "res": null, "id": 85516390, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-2-ik-saevehof-1-54eef864-99b5-4c29-b439-88b443287e2c", "runda": null}, {"ms": 1788541200000, "t": "19:00", "bana": "Kviberg Park Sporthall A", "maps": "https://www.google.com/maps/search/?api=1&query=Kviberg%20Park%20Sporthall%20A%20G%C3%B6teborg", "lag": "F13 Blå", "slug": "t-86024959", "klass": "F13", "grp": "Grupp K", "home": "Alingsås HK Blå", "away": "Staffanstorps HK", "hb": "Hemma", "day": "Fredag 4 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": 85896002, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-bla-staffanstorps-hk-eb50a9a6-e78e-4c07-89e4-f8471944169f", "runda": null}, {"ms": 1788594000000, "t": "09:40", "bana": "Prioritet Serneke Arena Serneke Arena A", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20A%20G%C3%B6teborg", "lag": "F16 2", "slug": "t-77339140", "klass": "F16", "grp": "Grupp H", "home": "HK Ankaret 2", "away": "Alingsås HK 2", "hb": "Borta", "day": "Lördag 5 september", "color": "e8730c", "dur": 2400000, "res": null, "id": 85516393, "video": "https://solidsport.com/gbgcup/watch/hk-ankaret-2-alingsas-hk-2", "runda": null}, {"ms": 1788596400000, "t": "10:20", "bana": "Kviberg Park Sporthall A", "maps": "https://www.google.com/maps/search/?api=1&query=Kviberg%20Park%20Sporthall%20A%20G%C3%B6teborg", "lag": "F13 Vit", "slug": "t-86024965", "klass": "F13", "grp": "Grupp L", "home": "Alingsås HK Vit", "away": "Greve Håndbold 1", "hb": "Hemma", "day": "Lördag 5 september", "color": "c9c2b4", "dur": 2400000, "res": null, "id": 85896070, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-vit-greve-handbold-1", "runda": null}, {"ms": 1788598800000, "t": "11:00", "bana": "Prioritet Serneke Arena Serneke Arena A", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20A%20G%C3%B6teborg", "lag": "P15", "slug": "t-86611595", "klass": "P15", "grp": "Grupp E", "home": "Alingsås HK", "away": "Redbergslids IK", "hb": "Hemma", "day": "Lördag 5 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": 85747167, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-redbergslids-ik", "runda": null}, {"ms": 1788598800000, "t": "11:00", "bana": "Prioritet Serneke Arena Serneke Arena B", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20B%20G%C3%B6teborg", "lag": "P16 2", "slug": "t-77339121", "klass": "P16", "grp": "Grupp E", "home": "Täby HBK 2", "away": "Alingsås HK 2", "hb": "Borta", "day": "Lördag 5 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": 85520255, "video": "https://solidsport.com/gbgcup/watch/taeby-hbk-2-alingsas-hk-2", "runda": null}, {"ms": 1788601200000, "t": "11:40", "bana": "Prioritet Serneke Arena Serneke Arena A", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20A%20G%C3%B6teborg", "lag": "P16 1", "slug": "t-77339117", "klass": "P16", "grp": "Grupp I", "home": "Alingsås HK 1", "away": "IK Sund 1", "hb": "Hemma", "day": "Lördag 5 september", "color": "e8730c", "dur": 2400000, "res": null, "id": 85520380, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-1-ik-sund-1", "runda": null}, {"ms": 1788603600000, "t": "12:20", "bana": "Prioritet Serneke Arena Serneke Arena B", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20B%20G%C3%B6teborg", "lag": "F16 2", "slug": "t-77339140", "klass": "F16", "grp": "Grupp H", "home": "Alingsås HK 2", "away": "Önnereds HK 2", "hb": "Hemma", "day": "Lördag 5 september", "color": "e8730c", "dur": 2400000, "res": null, "id": 85516396, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-2-onnereds-hk-2", "runda": null}, {"ms": 1788606000000, "t": "13:00", "bana": "Kviberg Park Sporthall A", "maps": "https://www.google.com/maps/search/?api=1&query=Kviberg%20Park%20Sporthall%20A%20G%C3%B6teborg", "lag": "F13 Vit", "slug": "t-86024965", "klass": "F13", "grp": "Grupp L", "home": "Lugi HF 2", "away": "Alingsås HK Vit", "hb": "Borta", "day": "Lördag 5 september", "color": "c9c2b4", "dur": 2400000, "res": null, "id": 85896073, "video": "https://solidsport.com/gbgcup/watch/lugi-hf-2-alingsas-hk-vit", "runda": null}, {"ms": 1788606000000, "t": "13:00", "bana": "Prioritet Serneke Arena Serneke Arena B", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20B%20G%C3%B6teborg", "lag": "P15", "slug": "t-86611595", "klass": "P15", "grp": "Grupp E", "home": "Hammarby IF HF", "away": "Alingsås HK", "hb": "Borta", "day": "Lördag 5 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": 85747163, "video": "https://solidsport.com/gbgcup/watch/hammarby-if-hf-alingsas-hk-99bde60d-7c3a-4c3e-98cd-e358d1aceaf9", "runda": null}, {"ms": 1788608400000, "t": "13:40", "bana": "Kviberg Park Sporthall A", "maps": "https://www.google.com/maps/search/?api=1&query=Kviberg%20Park%20Sporthall%20A%20G%C3%B6teborg", "lag": "F13 Blå", "slug": "t-86024959", "klass": "F13", "grp": "Grupp K", "home": "Alingsås HK Blå", "away": "Önnereds HK Vit", "hb": "Hemma", "day": "Lördag 5 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": 85895996, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-bla-onnereds-hk-vit-ccf4226b-4b1c-4eae-bb15-6633a62f8ab9", "runda": null}, {"ms": 1788608400000, "t": "13:40", "bana": "Prioritet Serneke Arena Serneke Arena A", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20A%20G%C3%B6teborg", "lag": "P16 2", "slug": "t-77339121", "klass": "P16", "grp": "Grupp E", "home": "Alingsås HK 2", "away": "IK Sund 2", "hb": "Hemma", "day": "Lördag 5 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": 85520261, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-2-ik-sund-2", "runda": null}, {"ms": 1788610800000, "t": "14:20", "bana": "Prioritet Serneke Arena Serneke Arena A", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20A%20G%C3%B6teborg", "lag": "P16 1", "slug": "t-77339117", "klass": "P16", "grp": "Grupp I", "home": "Hammarby IF HF", "away": "Alingsås HK 1", "hb": "Borta", "day": "Lördag 5 september", "color": "e8730c", "dur": 2400000, "res": null, "id": 85520374, "video": "https://solidsport.com/gbgcup/watch/hammarby-if-hf-alingsas-hk-1", "runda": null}, {"ms": 1788618000000, "t": "16:20", "bana": "Kviberg Park Sporthall B", "maps": "https://www.google.com/maps/search/?api=1&query=Kviberg%20Park%20Sporthall%20B%20G%C3%B6teborg", "lag": "F13 Vit", "slug": "t-86024965", "klass": "F13", "grp": "Grupp L", "home": "Alingsås HK Vit", "away": "HP Warta Svart", "hb": "Hemma", "day": "Lördag 5 september", "color": "c9c2b4", "dur": 2400000, "res": null, "id": 85896076, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-vit-hp-warta-svart", "runda": null}, {"ms": 1788622800000, "t": "17:40", "bana": "Kviberg Park Sporthall A", "maps": "https://www.google.com/maps/search/?api=1&query=Kviberg%20Park%20Sporthall%20A%20G%C3%B6teborg", "lag": "F13 Blå", "slug": "t-86024959", "klass": "F13", "grp": "Grupp K", "home": "Greve Håndbold 2", "away": "Alingsås HK Blå", "hb": "Borta", "day": "Lördag 5 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": 85895999, "video": "https://solidsport.com/gbgcup/watch/greve-handbold-2-alingsas-hk-bla", "runda": null}, {"ms": 1788622800000, "t": "17:40", "bana": "Prioritet Serneke Arena Serneke Arena A", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20A%20G%C3%B6teborg", "lag": "F16 1", "slug": "t-77339136", "klass": "F16", "grp": "Grupp C", "home": "Stenungsunds HK utom tävlan", "away": "Alingsås HK 1", "hb": "Borta", "day": "Lördag 5 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": 85516322, "video": "https://solidsport.com/gbgcup/watch/stenungsunds-hk-utom-taevlan-alingsas-hk-1", "runda": null}, {"ms": 1788625200000, "t": "18:20", "bana": "Prioritet Serneke Arena Serneke Arena B", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20B%20G%C3%B6teborg", "lag": "P15", "slug": "t-86611595", "klass": "P15", "grp": "Grupp E", "home": "Alingsås HK", "away": "IFK Malmö HF", "hb": "Hemma", "day": "Lördag 5 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": 85747169, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-ifk-malmoe-hf", "runda": null}, {"ms": 1788632400000, "t": "20:20", "bana": "Prioritet Serneke Arena Serneke Arena B", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20B%20G%C3%B6teborg", "lag": "F16 1", "slug": "t-77339136", "klass": "F16", "grp": "Grupp C", "home": "Alingsås HK 1", "away": "Årsta AIK HF 2", "hb": "Hemma", "day": "Lördag 5 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": 85516325, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-1-arsta-aik-hf-2", "runda": null}, {"ms": 1789138800000, "t": "17:00", "bana": "ÖHK-Hallen A", "maps": "https://www.google.com/maps/search/?api=1&query=%C3%96HK-Hallen%20A%20G%C3%B6teborg", "lag": "HJ 2", "slug": "t-77339131", "klass": "HJ", "grp": "Grupp C", "home": "Alingsås HK 2", "away": "Kungälvs HK 2", "hb": "Hemma", "day": "Fredag 11 september", "color": "1f5fbf", "dur": 3000000, "res": null, "id": 86060398, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-2-kungaelvs-hk-2", "runda": null}, {"ms": 1789138800000, "t": "17:00", "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "maps": "https://www.google.com/maps/search/?api=1&query=%C3%96HK-Hallen%20%C3%96HK%20Gbg%20Brandservicehallen%20G%C3%B6teborg", "lag": "HJ 1", "slug": "t-77339125", "klass": "HJ", "grp": "Grupp A", "home": "Alingsås HK 1", "away": "Önnereds HK 2", "hb": "Hemma", "day": "Fredag 11 september", "color": "e8730c", "dur": 3000000, "res": null, "id": 86060367, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-1-onnereds-hk-2", "runda": null}, {"ms": 1789150800000, "t": "20:20", "bana": "Valhalla Sport C", "maps": "https://www.google.com/maps/search/?api=1&query=Valhalla%20Sport%20C%20G%C3%B6teborg", "lag": "DJ", "slug": "t-77339144", "klass": "DJ", "grp": "Grupp D", "home": "Alingsås HK", "away": "Lindeskolans IF", "hb": "Hemma", "day": "Fredag 11 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": 86060703, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-lindeskolans-if", "runda": null}, {"ms": 1789153800000, "t": "21:10", "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "maps": "https://www.google.com/maps/search/?api=1&query=%C3%96HK-Hallen%20%C3%96HK%20Gbg%20Brandservicehallen%20G%C3%B6teborg", "lag": "HJ 2", "slug": "t-77339131", "klass": "HJ", "grp": "Grupp C", "home": "Alingsås HK 2", "away": "Torslanda HK", "hb": "Hemma", "day": "Fredag 11 september", "color": "1f5fbf", "dur": 3000000, "res": null, "id": 86295135, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-2-torslanda-hk", "runda": null}, {"ms": 1789196400000, "t": "09:00", "bana": "Kviberg Park Sporthall A", "maps": "https://www.google.com/maps/search/?api=1&query=Kviberg%20Park%20Sporthall%20A%20G%C3%B6teborg", "lag": "F11 Blå", "slug": "t-82366991", "klass": "F11", "grp": "Grupp C", "home": "Torslanda HK 3", "away": "Alingsås HK Blå", "hb": "Borta", "day": "Lördag 12 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": null, "video": null, "runda": null}, {"ms": 1789196400000, "t": "09:00", "bana": "Valhalla Sport C", "maps": "https://www.google.com/maps/search/?api=1&query=Valhalla%20Sport%20C%20G%C3%B6teborg", "lag": "DJ", "slug": "t-77339144", "klass": "DJ", "grp": "Grupp D", "home": "Skövde HF 1", "away": "Alingsås HK", "hb": "Borta", "day": "Lördag 12 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": 86060696, "video": "https://solidsport.com/gbgcup/watch/skoevde-hf-1-alingsas-hk", "runda": null}, {"ms": 1789196400000, "t": "09:00", "bana": "ÖHK-Hallen A", "maps": "https://www.google.com/maps/search/?api=1&query=%C3%96HK-Hallen%20A%20G%C3%B6teborg", "lag": "HJ 1", "slug": "t-77339125", "klass": "HJ", "grp": "Grupp A", "home": "IFK Skövde HK av 1991 2", "away": "Alingsås HK 1", "hb": "Borta", "day": "Lördag 12 september", "color": "e8730c", "dur": 3000000, "res": null, "id": 86060370, "video": "https://solidsport.com/gbgcup/watch/ifk-skoevde-hk-av-1991-2-alingsas-hk-1", "runda": null}, {"ms": 1789198800000, "t": "09:40", "bana": "Prioritet Serneke Arena Serneke Arena A", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20A%20G%C3%B6teborg", "lag": "F11 Vit", "slug": "t-82366999", "klass": "F11", "grp": "Grupp E", "home": "Alingsås HK Vit", "away": "IK Sävehof PF Gul", "hb": "Hemma", "day": "Lördag 12 september", "color": "c9c2b4", "dur": 2400000, "res": null, "id": null, "video": null, "runda": null}, {"ms": 1789199400000, "t": "09:50", "bana": "ÖHK-Hallen A", "maps": "https://www.google.com/maps/search/?api=1&query=%C3%96HK-Hallen%20A%20G%C3%B6teborg", "lag": "HJ 2", "slug": "t-77339131", "klass": "HJ", "grp": "Grupp C", "home": "IFK Skövde HK av 1991 1", "away": "Alingsås HK 2", "hb": "Borta", "day": "Lördag 12 september", "color": "1f5fbf", "dur": 3000000, "res": null, "id": 86060394, "video": "https://solidsport.com/gbgcup/watch/ifk-skoevde-hk-av-1991-1-alingsas-hk-2", "runda": null}, {"ms": 1789208400000, "t": "12:20", "bana": "Prioritet Serneke Arena Serneke Gräs 2", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Gr%C3%A4s%202%20G%C3%B6teborg", "lag": "F11 Blå", "slug": "t-82366991", "klass": "F11", "grp": "Grupp C", "home": "IK Sävehof Ö2", "away": "Alingsås HK Blå", "hb": "Borta", "day": "Lördag 12 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": null, "video": null, "runda": null}, {"ms": 1789208400000, "t": "12:20", "bana": "Valhalla Sport B", "maps": "https://www.google.com/maps/search/?api=1&query=Valhalla%20Sport%20B%20G%C3%B6teborg", "lag": "DJ", "slug": "t-77339144", "klass": "DJ", "grp": "Grupp D", "home": "Alingsås HK", "away": "Redbergslids IK 2", "hb": "Hemma", "day": "Lördag 12 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": 86060700, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-redbergslids-ik-2", "runda": null}, {"ms": 1789210800000, "t": "13:00", "bana": "Prioritet Serneke Arena Serneke Gräs 3", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Gr%C3%A4s%203%20G%C3%B6teborg", "lag": "F11 Vit", "slug": "t-82366999", "klass": "F11", "grp": "Grupp E", "home": "IK Sävehof VU Gul", "away": "Alingsås HK Vit", "hb": "Borta", "day": "Lördag 12 september", "color": "c9c2b4", "dur": 2400000, "res": null, "id": null, "video": null, "runda": null}, {"ms": 1789211400000, "t": "13:10", "bana": "ÖHK-Hallen A", "maps": "https://www.google.com/maps/search/?api=1&query=%C3%96HK-Hallen%20A%20G%C3%B6teborg", "lag": "HJ 1", "slug": "t-77339125", "klass": "HJ", "grp": "Grupp A", "home": "Alingsås HK 1", "away": "GT Söder Handbollsklubb", "hb": "Hemma", "day": "Lördag 12 september", "color": "e8730c", "dur": 3000000, "res": null, "id": 86060373, "video": "https://solidsport.com/gbgcup/watch/alingsas-hk-1-gt-soeder-handbollsklubb", "runda": null}, {"ms": 1789218000000, "t": "15:00", "bana": "Prioritet Serneke Arena Serneke Gräs 6", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Gr%C3%A4s%206%20G%C3%B6teborg", "lag": "F11 Blå", "slug": "t-82366991", "klass": "F11", "grp": "Grupp C", "home": "Alingsås HK Blå", "away": "HP Warta 2", "hb": "Hemma", "day": "Lördag 12 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": null, "video": null, "runda": null}, {"ms": 1789220400000, "t": "15:40", "bana": "Prioritet Serneke Arena Serneke Arena A", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Arena%20A%20G%C3%B6teborg", "lag": "F11 Vit", "slug": "t-82366999", "klass": "F11", "grp": "Grupp E", "home": "Kungälvs HK Svart", "away": "Alingsås HK Vit", "hb": "Borta", "day": "Lördag 12 september", "color": "c9c2b4", "dur": 2400000, "res": null, "id": null, "video": null, "runda": null}, {"ms": 1789220400000, "t": "15:40", "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "maps": "https://www.google.com/maps/search/?api=1&query=%C3%96HK-Hallen%20%C3%96HK%20Gbg%20Brandservicehallen%20G%C3%B6teborg", "lag": "HJ 1", "slug": "t-77339125", "klass": "HJ", "grp": "Grupp A", "home": "Kungälvs HK 1", "away": "Alingsås HK 1", "hb": "Borta", "day": "Lördag 12 september", "color": "e8730c", "dur": 3000000, "res": null, "id": 86295122, "video": "https://solidsport.com/gbgcup/watch/kungaelvs-hk-1-alingsas-hk-1", "runda": null}, {"ms": 1789223400000, "t": "16:30", "bana": "ÖHK-Hallen A", "maps": "https://www.google.com/maps/search/?api=1&query=%C3%96HK-Hallen%20A%20G%C3%B6teborg", "lag": "HJ 2", "slug": "t-77339131", "klass": "HJ", "grp": "Grupp C", "home": "Huddinge HK", "away": "Alingsås HK 2", "hb": "Borta", "day": "Lördag 12 september", "color": "1f5fbf", "dur": 3000000, "res": null, "id": 86060400, "video": "https://solidsport.com/gbgcup/watch/huddinge-hk-alingsas-hk-2", "runda": null}, {"ms": 1789285200000, "t": "09:40", "bana": "Prioritet Serneke Arena Serneke Gräs 3", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Gr%C3%A4s%203%20G%C3%B6teborg", "lag": "F11 Vit", "slug": "t-82366999", "klass": "F11", "grp": "Grupp E", "home": "Torslanda HK 2", "away": "Alingsås HK Vit", "hb": "Borta", "day": "Söndag 13 september", "color": "c9c2b4", "dur": 2400000, "res": null, "id": null, "video": null, "runda": null}, {"ms": 1789294800000, "t": "12:20", "bana": "Kviberg Park Sporthall B", "maps": "https://www.google.com/maps/search/?api=1&query=Kviberg%20Park%20Sporthall%20B%20G%C3%B6teborg", "lag": "F11 Blå", "slug": "t-82366991", "klass": "F11", "grp": "Grupp C", "home": "Alingsås HK Blå", "away": "HK Aranäs Röd", "hb": "Hemma", "day": "Söndag 13 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": null, "video": null, "runda": null}, {"ms": 1789299600000, "t": "13:40", "bana": "Prioritet Serneke Arena Serneke Gräs 5", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Gr%C3%A4s%205%20G%C3%B6teborg", "lag": "F11 Vit", "slug": "t-82366999", "klass": "F11", "grp": "Grupp E", "home": "Alingsås HK Vit", "away": "Önnereds HK 3", "hb": "Hemma", "day": "Söndag 13 september", "color": "c9c2b4", "dur": 2400000, "res": null, "id": null, "video": null, "runda": null}, {"ms": 1789306800000, "t": "15:40", "bana": "Prioritet Serneke Arena Serneke Gräs 3", "maps": "https://www.google.com/maps/search/?api=1&query=Prioritet%20Serneke%20Arena%20Serneke%20Gr%C3%A4s%203%20G%C3%B6teborg", "lag": "F11 Blå", "slug": "t-82366991", "klass": "F11", "grp": "Grupp C", "home": "Alingsås HK Blå", "away": "IK Sävehof VU Svart", "hb": "Hemma", "day": "Söndag 13 september", "color": "1f5fbf", "dur": 2400000, "res": null, "id": null, "video": null, "runda": null}];
+const TEAMS = [{"lag": "F11 Blå", "slug": "t-82366991", "klass": "F11", "id": 82366991, "color": "1f5fbf"}, {"lag": "F11 Vit", "slug": "t-82366999", "klass": "F11", "id": 82366999, "color": "c9c2b4"}, {"lag": "F13 Blå", "slug": "t-86024959", "klass": "F13", "id": 86024959, "color": "1f5fbf"}, {"lag": "F13 Vit", "slug": "t-86024965", "klass": "F13", "id": 86024965, "color": "c9c2b4"}, {"lag": "P15", "slug": "t-86611595", "klass": "P15", "id": 86611595, "color": "1f5fbf"}, {"lag": "F16 1", "slug": "t-77339136", "klass": "F16", "id": 77339136, "color": "1f5fbf"}, {"lag": "F16 2", "slug": "t-77339140", "klass": "F16", "id": 77339140, "color": "e8730c"}, {"lag": "P16 1", "slug": "t-77339117", "klass": "P16", "id": 77339117, "color": "e8730c"}, {"lag": "P16 2", "slug": "t-77339121", "klass": "P16", "id": 77339121, "color": "1f5fbf"}, {"lag": "DJ", "slug": "t-77339144", "klass": "DJ", "id": 77339144, "color": "1f5fbf"}, {"lag": "HJ 1", "slug": "t-77339125", "klass": "HJ", "id": 77339125, "color": "e8730c"}, {"lag": "HJ 2", "slug": "t-77339131", "klass": "HJ", "id": 77339131, "color": "1f5fbf"}];
+const CLASSES = [{"cls": "F11", "label": "F11"}, {"cls": "F13", "label": "F13"}, {"cls": "P15", "label": "P15"}, {"cls": "P16", "label": "P16"}, {"cls": "F16", "label": "F16"}, {"cls": "DJ", "label": "DJ"}, {"cls": "HJ", "label": "HJ"}];
+const DUR = 40 * 60000;
+// Hur länge efter matchslut vi fortsätter polla MatchResult. Måste överstiga
+// robotens värsta persistens-latens (~25-30 min: matchslut + missad cykel + CI-tid),
+// annars kan liveState-"Slut" inte överbrygga glappet innan sparat resultat finns.
+const POLL_GRACE_MS = 40*60000;
+const API_HOST = "goteborgcup.cupmanager.net";
+const TOURNAMENT_ID = "72459189";
+const BANA_XY = {};
+const KLUBBTALT = [0,0];
+const liveState = {};   // livescore per match-id; deklareras före första render() (TDZ-säkert)
+let STANDINGS = {"groups": [{"name": "Grupp D", "klass": "DJ", "division_id": 86060690, "rows": [{"name": "Redbergslids IK 2", "team_id": 77308076, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 1}, {"name": "Alingsås HK", "team_id": 77339144, "is_alingsas": true, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 2}, {"name": "Skövde HF 1", "team_id": 78780210, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 3}, {"name": "Lindeskolans IF", "team_id": 81075668, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 4}]}, {"name": "Grupp K", "klass": "F13", "division_id": 85895989, "rows": [{"name": "Önnereds HK Vit", "team_id": 76509222, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 1}, {"name": "Greve Håndbold 2", "team_id": 76618228, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 2}, {"name": "Staffanstorps HK", "team_id": 76661195, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 3}, {"name": "Alingsås HK Blå", "team_id": 86024959, "is_alingsas": true, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 4}]}, {"name": "Grupp L", "klass": "F13", "division_id": 85896063, "rows": [{"name": "Lugi HF 2", "team_id": 76596047, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 1}, {"name": "Greve Håndbold 1", "team_id": 76618226, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 2}, {"name": "Alingsås HK Vit", "team_id": 86024965, "is_alingsas": true, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 3}, {"name": "HP Warta Svart", "team_id": 86381849, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 4}]}, {"name": "Grupp C", "klass": "F16", "division_id": 85516312, "rows": [{"name": "Årsta AIK HF 2", "team_id": 76632014, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 1}, {"name": "Alingsås HK 1", "team_id": 77339136, "is_alingsas": true, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 2}, {"name": "Stenungsunds HK utom tävlan", "team_id": 77900018, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 3}, {"name": "Önnereds HK 1", "team_id": 81958781, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 4}]}, {"name": "Grupp H", "klass": "F16", "division_id": 85516383, "rows": [{"name": "Alingsås HK 2", "team_id": 77339140, "is_alingsas": true, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 1}, {"name": "HK Ankaret 2", "team_id": 78780190, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 2}, {"name": "Önnereds HK 2", "team_id": 81958785, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 3}, {"name": "IK Sävehof 1", "team_id": 85892331, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 4}]}, {"name": "Grupp A", "klass": "HJ", "division_id": 86060360, "rows": [{"name": "Önnereds HK 2", "team_id": 76509236, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 1}, {"name": "GT Söder Handbollsklubb", "team_id": 76661153, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 2}, {"name": "Alingsås HK 1", "team_id": 77339125, "is_alingsas": true, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 3}, {"name": "Kungälvs HK 1", "team_id": 80662395, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 4}, {"name": "IFK Skövde HK av 1991 2", "team_id": 81913734, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 5}]}, {"name": "Grupp C", "klass": "HJ", "division_id": 86060388, "rows": [{"name": "Alingsås HK 2", "team_id": 77339131, "is_alingsas": true, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 1}, {"name": "Kungälvs HK 2", "team_id": 80662399, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 2}, {"name": "Torslanda HK", "team_id": 80926901, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 3}, {"name": "IFK Skövde HK av 1991 1", "team_id": 81913729, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 4}, {"name": "Huddinge HK", "team_id": 85931858, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 5}]}, {"name": "Grupp E", "klass": "P15", "division_id": 85747157, "rows": [{"name": "Hammarby IF HF", "team_id": 78914468, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 1}, {"name": "IFK Malmö HF", "team_id": 81975115, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 2}, {"name": "Redbergslids IK", "team_id": 82263509, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 3}, {"name": "Alingsås HK", "team_id": 86611595, "is_alingsas": true, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 4}]}, {"name": "Grupp E", "klass": "P16", "division_id": 85520249, "rows": [{"name": "Alingsås HK 2", "team_id": 77339121, "is_alingsas": true, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 1}, {"name": "Kärra HF Gul", "team_id": 80027808, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 2}, {"name": "Täby HBK 2", "team_id": 85853609, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 3}, {"name": "IK Sund 2", "team_id": 86183994, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 4}]}, {"name": "Grupp I", "klass": "P16", "division_id": 85520368, "rows": [{"name": "Alingsås HK 1", "team_id": 77339117, "is_alingsas": true, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 1}, {"name": "Hammarby IF HF", "team_id": 78296686, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel A", "pos": 2}, {"name": "Kärra HF Svart", "team_id": 80027803, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 3}, {"name": "IK Sund 1", "team_id": 86183986, "is_alingsas": false, "played": 0, "won": 0, "tied": 0, "lost": 0, "goals_for": 0, "goals_against": 0, "diff": 0, "points": 0, "tier": "Slutspel B", "pos": 4}]}], "playoffs": [{"klass": "F16", "tiers": [{"tier": "Slutspel A", "division_id": 85516411, "rounds": [{"name": "1/16 Final", "matches": [{"id": 85516421, "start": 1788675600000, "bana": "Prioritet Serneke Arena Serneke Arena A", "round": "1/16 Final", "home": {"label": "2:an i Grupp G", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516429, "start": 1788675600000, "bana": "Prioritet Serneke Arena Serneke Arena B", "round": "1/16 Final", "home": {"label": "2:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp H", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516518, "start": 1788678000000, "bana": "Prioritet Serneke Arena Serneke Arena A", "round": "1/16 Final", "home": {"label": "2:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp J", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516519, "start": 1788678000000, "bana": "Prioritet Serneke Arena Serneke Arena B", "round": "1/16 Final", "home": {"label": "2:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516572, "start": 1788680400000, "bana": "Prioritet Serneke Arena Serneke Arena A", "round": "1/16 Final", "home": {"label": "2:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp K", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516573, "start": 1788680400000, "bana": "Prioritet Serneke Arena Serneke Arena B", "round": "1/16 Final", "home": {"label": "1:an i Grupp K", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp I", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/8 Final", "matches": [{"id": 85516420, "start": 1788682800000, "bana": "Prioritet Serneke Arena Serneke Arena B", "round": "1/8 Final", "home": {"label": "1:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090100", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516428, "start": 1788682800000, "bana": "Prioritet Serneke Arena Serneke Arena A", "round": "1/8 Final", "home": {"label": "1:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090900", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516422, "start": 1788685200000, "bana": "Prioritet Serneke Arena Serneke Arena B", "round": "1/8 Final", "home": {"label": "1:an i Grupp H", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "1:an i Grupp I", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516430, "start": 1788685200000, "bana": "Prioritet Serneke Arena Serneke Arena A", "round": "1/8 Final", "home": {"label": "1:an i Grupp G", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "1:an i Grupp J", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516424, "start": 1788687600000, "bana": "Prioritet Serneke Arena Serneke Arena B", "round": "1/8 Final", "home": {"label": "1:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090101", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516432, "start": 1788687600000, "bana": "Prioritet Serneke Arena Serneke Arena A", "round": "1/8 Final", "home": {"label": "1:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090901", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516425, "start": 1788690000000, "bana": "Prioritet Serneke Arena Serneke Arena B", "round": "1/8 Final", "home": {"label": "1:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090102", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516433, "start": 1788690000000, "bana": "Prioritet Serneke Arena Serneke Arena A", "round": "1/8 Final", "home": {"label": "1:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090902", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/4 Final", "matches": [{"id": 85516419, "start": 1788694800000, "bana": "Prioritet Serneke Arena Serneke Arena A", "round": "1/4 Final", "home": {"label": "Vinn. 06090903", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090904", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516423, "start": 1788694800000, "bana": "Prioritet Serneke Arena Serneke Arena B", "round": "1/4 Final", "home": {"label": "Vinn. 06090905", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090906", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516427, "start": 1788697200000, "bana": "Prioritet Serneke Arena Serneke Arena A", "round": "1/4 Final", "home": {"label": "Vinn. 06090103", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090104", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516431, "start": 1788697200000, "bana": "Prioritet Serneke Arena Serneke Arena B", "round": "1/4 Final", "home": {"label": "Vinn. 06090105", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090106", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Semifinal", "matches": [{"id": 85516418, "start": 1788699600000, "bana": "Prioritet Serneke Arena Serneke Arena A", "round": "Semifinal", "home": {"label": "Vinn. 06090107", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090907", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516426, "start": 1788702000000, "bana": "Prioritet Serneke Arena Serneke Arena A", "round": "Semifinal", "home": {"label": "Vinn. 06090108", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090908", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Final", "matches": [{"id": 85516417, "start": 1788706800000, "bana": "Prioritet Serneke Arena Serneke Arena A", "round": "Final", "home": {"label": "Vinn. 06090109", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090110", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}]}, {"tier": "Slutspel B", "division_id": 85516434, "rounds": [{"name": "1/16 Final", "matches": [{"id": 85516444, "start": 1788675600000, "bana": "Lundbystrand 1", "round": "1/16 Final", "home": {"label": "4:an i Grupp G", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516521, "start": 1788675600000, "bana": "Lundbystrand 5", "round": "1/16 Final", "home": {"label": "4:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp J", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516574, "start": 1788675600000, "bana": "Lundenhallen", "round": "1/16 Final", "home": {"label": "4:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp K", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516452, "start": 1788678000000, "bana": "Lundbystrand 1", "round": "1/16 Final", "home": {"label": "4:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp H", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516522, "start": 1788678000000, "bana": "Lundbystrand 5", "round": "1/16 Final", "home": {"label": "4:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516575, "start": 1788678000000, "bana": "Lundenhallen", "round": "1/16 Final", "home": {"label": "3:an i Grupp K", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp I", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/8 Final", "matches": [{"id": 85516443, "start": 1788680400000, "bana": "Lundbystrand 5", "round": "1/8 Final", "home": {"label": "3:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092100", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516445, "start": 1788680400000, "bana": "Lundenhallen", "round": "1/8 Final", "home": {"label": "3:an i Grupp H", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "3:an i Grupp I", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516447, "start": 1788682800000, "bana": "Lundbystrand 5", "round": "1/8 Final", "home": {"label": "3:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06091300", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516453, "start": 1788682800000, "bana": "Lundenhallen", "round": "1/8 Final", "home": {"label": "3:an i Grupp G", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "3:an i Grupp J", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516455, "start": 1788685200000, "bana": "Lundenhallen", "round": "1/8 Final", "home": {"label": "3:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06091301", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516448, "start": 1788687600000, "bana": "Lundenhallen", "round": "1/8 Final", "home": {"label": "3:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06093300", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516451, "start": 1788690000000, "bana": "Lundenhallen", "round": "1/8 Final", "home": {"label": "3:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092101", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516456, "start": 1788692400000, "bana": "Lundenhallen", "round": "1/8 Final", "home": {"label": "3:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06093301", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/4 Final", "matches": [{"id": 85516442, "start": 1788694800000, "bana": "Lundenhallen", "round": "1/4 Final", "home": {"label": "Vinn. 06091302", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06093302", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516446, "start": 1788697200000, "bana": "Lundenhallen", "round": "1/4 Final", "home": {"label": "Vinn. 06091303", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06093305", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516450, "start": 1788699600000, "bana": "Lundenhallen", "round": "1/4 Final", "home": {"label": "Vinn. 06093306", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06093303", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516454, "start": 1788702000000, "bana": "Lundenhallen", "round": "1/4 Final", "home": {"label": "Vinn. 06093304", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06093307", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Semifinal", "matches": [{"id": 85516441, "start": 1788704400000, "bana": "Lundenhallen", "round": "Semifinal", "home": {"label": "Vinn. 06093308", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06093309", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85516449, "start": 1788706800000, "bana": "Lundenhallen", "round": "Semifinal", "home": {"label": "Vinn. 06093310", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06093311", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Final", "matches": [{"id": 85516440, "start": 1788710400000, "bana": "Lundenhallen", "round": "Final", "home": {"label": "Vinn. 06093312", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06093313", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}]}]}, {"klass": "P16", "tiers": [{"tier": "Slutspel A", "division_id": 85520291, "rounds": [{"name": "1/8 Final", "matches": [{"id": 85520299, "start": 1788675600000, "bana": "ÖHK-Hallen A", "round": "1/8 Final", "home": {"label": "1:an i Grupp H", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "1:an i Grupp I", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520301, "start": 1788678000000, "bana": "ÖHK-Hallen ÖHK WH hallen", "round": "1/8 Final", "home": {"label": "1:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520302, "start": 1788682800000, "bana": "ÖHK-Hallen A", "round": "1/8 Final", "home": {"label": "1:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520305, "start": 1788682800000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "1/8 Final", "home": {"label": "1:an i Grupp G", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520307, "start": 1788685200000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "1/8 Final", "home": {"label": "1:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520360, "start": 1788685200000, "bana": "ÖHK-Hallen A", "round": "1/8 Final", "home": {"label": "1:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090801", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520308, "start": 1788687600000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "1/8 Final", "home": {"label": "1:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520361, "start": 1788687600000, "bana": "ÖHK-Hallen A", "round": "1/8 Final", "home": {"label": "1:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090800", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/16 Final", "matches": [{"id": 85520384, "start": 1788675600000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "1/16 Final", "home": {"label": "2:an i Grupp H", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp I", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520383, "start": 1788678000000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "1/16 Final", "home": {"label": "2:an i Grupp G", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/4 Final", "matches": [{"id": 85520298, "start": 1788692400000, "bana": "ÖHK-Hallen A", "round": "1/4 Final", "home": {"label": "Vinn. 06090704", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090700", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520300, "start": 1788692400000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "1/4 Final", "home": {"label": "Vinn. 06092001", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090703", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520304, "start": 1788694800000, "bana": "ÖHK-Hallen A", "round": "1/4 Final", "home": {"label": "Vinn. 06090705", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090803", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520306, "start": 1788694800000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "1/4 Final", "home": {"label": "Vinn. 06090804", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090805", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Semifinal", "matches": [{"id": 85520297, "start": 1788702000000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "Semifinal", "home": {"label": "Vinn. 06090707", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090807", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520303, "start": 1788702000000, "bana": "ÖHK-Hallen A", "round": "Semifinal", "home": {"label": "Vinn. 06090708", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090808", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Final", "matches": [{"id": 85520296, "start": 1788711600000, "bana": "ÖHK-Hallen A", "round": "Final", "home": {"label": "Vinn. 06090811", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090711", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}]}, {"tier": "Slutspel B", "division_id": 85520309, "rounds": [{"name": "1/16 Final", "matches": [{"id": 85520386, "start": 1788675600000, "bana": "Heidhallen", "round": "1/16 Final", "home": {"label": "4:an i Grupp G", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520408, "start": 1788675600000, "bana": "Frölunda Kulturhus", "round": "1/16 Final", "home": {"label": "4:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "5:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520387, "start": 1788678000000, "bana": "Heidhallen", "round": "1/16 Final", "home": {"label": "4:an i Grupp H", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp I", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/8 Final", "matches": [{"id": 85520318, "start": 1788678000000, "bana": "Frölunda Kulturhus", "round": "1/8 Final", "home": {"label": "3:an i Grupp H", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "3:an i Grupp I", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520322, "start": 1788680400000, "bana": "Frölunda Kulturhus", "round": "1/8 Final", "home": {"label": "3:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520324, "start": 1788682800000, "bana": "Frölunda Kulturhus", "round": "1/8 Final", "home": {"label": "3:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520329, "start": 1788685200000, "bana": "Frölunda Kulturhus", "round": "1/8 Final", "home": {"label": "3:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06091500", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520364, "start": 1788687600000, "bana": "Frölunda Kulturhus", "round": "1/8 Final", "home": {"label": "3:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06091401", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520363, "start": 1788690000000, "bana": "Frölunda Kulturhus", "round": "1/8 Final", "home": {"label": "3:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06091400", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520327, "start": 1788692400000, "bana": "Frölunda Kulturhus", "round": "1/8 Final", "home": {"label": "3:an i Grupp G", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520330, "start": 1788694800000, "bana": "Frölunda Kulturhus", "round": "1/8 Final", "home": {"label": "3:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/4 Final", "matches": [{"id": 85520316, "start": 1788697200000, "bana": "Frölunda Kulturhus", "round": "1/4 Final", "home": {"label": "Vinn. 06091506", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06091501", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520321, "start": 1788699600000, "bana": "Frölunda Kulturhus", "round": "1/4 Final", "home": {"label": "Vinn. 06091502", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06091503", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520326, "start": 1788702000000, "bana": "Frölunda Kulturhus", "round": "1/4 Final", "home": {"label": "Vinn. 06091505", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06091507", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520328, "start": 1788704400000, "bana": "Frölunda Kulturhus", "round": "1/4 Final", "home": {"label": "Vinn. 06091504", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06091508", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Semifinal", "matches": [{"id": 85520315, "start": 1788706800000, "bana": "Frölunda Kulturhus", "round": "Semifinal", "home": {"label": "Vinn. 06091509", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06091510", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85520325, "start": 1788709200000, "bana": "Frölunda Kulturhus", "round": "Semifinal", "home": {"label": "Vinn. 06091511", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06091512", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Final", "matches": [{"id": 85520314, "start": 1788713400000, "bana": "Frölunda Kulturhus", "round": "Final", "home": {"label": "Vinn. 06091513", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06091514", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}]}]}, {"klass": "P15", "tiers": [{"tier": "Slutspel A", "division_id": 85747171, "rounds": [{"name": "1/8 Final", "matches": [{"id": 85747179, "start": 1788678000000, "bana": "ÖHK-Hallen A", "round": "1/8 Final", "home": {"label": "2:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85747183, "start": 1788680400000, "bana": "ÖHK-Hallen A", "round": "1/8 Final", "home": {"label": "2:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/4 Final", "matches": [{"id": 85747180, "start": 1788680400000, "bana": "ÖHK-Hallen ÖHK WH hallen", "round": "1/4 Final", "home": {"label": "1:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "1:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85747184, "start": 1788682800000, "bana": "ÖHK-Hallen ÖHK WH hallen", "round": "1/4 Final", "home": {"label": "1:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85747178, "start": 1788685200000, "bana": "ÖHK-Hallen ÖHK WH hallen", "round": "1/4 Final", "home": {"label": "1:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090701", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85747182, "start": 1788687600000, "bana": "ÖHK-Hallen ÖHK WH hallen", "round": "1/4 Final", "home": {"label": "1:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090702", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Semifinal", "matches": [{"id": 85747177, "start": 1788697200000, "bana": "ÖHK-Hallen A", "round": "Semifinal", "home": {"label": "Vinn. 06092004", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092002", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85747181, "start": 1788697200000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "Semifinal", "home": {"label": "Vinn. 06092005", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092003", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Final", "matches": [{"id": 85747176, "start": 1788705600000, "bana": "ÖHK-Hallen A", "round": "Final", "home": {"label": "Vinn. 06090709", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090809", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}]}, {"tier": "Slutspel B", "division_id": 85747185, "rounds": [{"name": "1/8 Final", "matches": [{"id": 85747193, "start": 1788675600000, "bana": "ÖHK-Hallen ÖHK WH hallen", "round": "1/8 Final", "home": {"label": "4:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85747197, "start": 1788680400000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "1/8 Final", "home": {"label": "4:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/4 Final", "matches": [{"id": 85747192, "start": 1788690000000, "bana": "ÖHK-Hallen A", "round": "1/4 Final", "home": {"label": "3:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092000", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85747194, "start": 1788690000000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "1/4 Final", "home": {"label": "3:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "3:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85747196, "start": 1788690000000, "bana": "ÖHK-Hallen ÖHK WH hallen", "round": "1/4 Final", "home": {"label": "3:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090802", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85747198, "start": 1788692400000, "bana": "ÖHK-Hallen ÖHK WH hallen", "round": "1/4 Final", "home": {"label": "3:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Semifinal", "matches": [{"id": 85747191, "start": 1788699600000, "bana": "ÖHK-Hallen A", "round": "Semifinal", "home": {"label": "Vinn. 06090706", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090806", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85747195, "start": 1788699600000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "Semifinal", "home": {"label": "Vinn. 06092006", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092007", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Final", "matches": [{"id": 85747190, "start": 1788708600000, "bana": "ÖHK-Hallen A", "round": "Final", "home": {"label": "Vinn. 06090710", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06090810", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}]}]}, {"klass": "F13", "tiers": [{"tier": "Slutspel A", "division_id": 85896003, "rounds": [{"name": "1/16 Final", "matches": [{"id": 85896013, "start": 1788675600000, "bana": "Sandklevsskolan", "round": "1/16 Final", "home": {"label": "2:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896023, "start": 1788675600000, "bana": "Kviberg Park Sporthall A", "round": "1/16 Final", "home": {"label": "2:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896078, "start": 1788675600000, "bana": "Kviberg Park Sporthall B", "round": "1/16 Final", "home": {"label": "1:an i Grupp J", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp L", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896027, "start": 1788678000000, "bana": "Kviberg Park Sporthall A", "round": "1/16 Final", "home": {"label": "2:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp H", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896029, "start": 1788678000000, "bana": "Kviberg Park Sporthall B", "round": "1/16 Final", "home": {"label": "1:an i Grupp K", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp I", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896077, "start": 1788678000000, "bana": "Sandklevsskolan", "round": "1/16 Final", "home": {"label": "1:an i Grupp I", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp K", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896017, "start": 1788680400000, "bana": "Sandklevsskolan", "round": "1/16 Final", "home": {"label": "2:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp G", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896019, "start": 1788682800000, "bana": "Sandklevsskolan", "round": "1/16 Final", "home": {"label": "1:an i Grupp L", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp J", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/8 Final", "matches": [{"id": 85896022, "start": 1788682800000, "bana": "Kviberg Park Sporthall A", "round": "1/8 Final", "home": {"label": "1:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06094700", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896024, "start": 1788682800000, "bana": "Kviberg Park Sporthall B", "round": "1/8 Final", "home": {"label": "1:an i Grupp G", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06094800", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896012, "start": 1788685200000, "bana": "Sandklevsskolan", "round": "1/8 Final", "home": {"label": "1:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06095500", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896026, "start": 1788685200000, "bana": "Kviberg Park Sporthall A", "round": "1/8 Final", "home": {"label": "1:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06094701", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896028, "start": 1788685200000, "bana": "Kviberg Park Sporthall B", "round": "1/8 Final", "home": {"label": "1:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06094801", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896014, "start": 1788687600000, "bana": "Sandklevsskolan", "round": "1/8 Final", "home": {"label": "1:an i Grupp H", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06095501", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896016, "start": 1788687600000, "bana": "Kviberg Park Sporthall A", "round": "1/8 Final", "home": {"label": "1:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06095502", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896018, "start": 1788687600000, "bana": "Kviberg Park Sporthall B", "round": "1/8 Final", "home": {"label": "1:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06095503", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/4 Final", "matches": [{"id": 85896011, "start": 1788694800000, "bana": "Kviberg Park Sporthall A", "round": "1/4 Final", "home": {"label": "Vinn. 06095504", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06095505", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896015, "start": 1788694800000, "bana": "Kviberg Park Sporthall B", "round": "1/4 Final", "home": {"label": "Vinn. 06094705", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06094805", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896021, "start": 1788697200000, "bana": "Kviberg Park Sporthall A", "round": "1/4 Final", "home": {"label": "Vinn. 06094703", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06094803", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896025, "start": 1788697200000, "bana": "Kviberg Park Sporthall B", "round": "1/4 Final", "home": {"label": "Vinn. 06094704", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06094804", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Semifinal", "matches": [{"id": 85896010, "start": 1788702000000, "bana": "Kviberg Park Sporthall A", "round": "Semifinal", "home": {"label": "Vinn. 06094708", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06094808", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896020, "start": 1788702000000, "bana": "Kviberg Park Sporthall B", "round": "Semifinal", "home": {"label": "Vinn. 06094709", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06094809", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Final", "matches": [{"id": 85896009, "start": 1788708000000, "bana": "Kviberg Park Sporthall A", "round": "Final", "home": {"label": "Vinn. 06094711", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06094811", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}]}, {"tier": "Slutspel B", "division_id": 85896030, "rounds": [{"name": "1/16 Final", "matches": [{"id": 85896040, "start": 1788675600000, "bana": "Härlandatjärnskolan", "round": "1/16 Final", "home": {"label": "4:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896050, "start": 1788675600000, "bana": "Torpahallen", "round": "1/16 Final", "home": {"label": "4:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896079, "start": 1788678000000, "bana": "Härlandatjärnskolan", "round": "1/16 Final", "home": {"label": "3:an i Grupp I", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp K", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896080, "start": 1788678000000, "bana": "Torpahallen", "round": "1/16 Final", "home": {"label": "3:an i Grupp J", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp L", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896044, "start": 1788680400000, "bana": "Härlandatjärnskolan", "round": "1/16 Final", "home": {"label": "4:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp G", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896054, "start": 1788680400000, "bana": "Torpahallen", "round": "1/16 Final", "home": {"label": "4:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp H", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896046, "start": 1788682800000, "bana": "Härlandatjärnskolan", "round": "1/16 Final", "home": {"label": "3:an i Grupp L", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp J", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896056, "start": 1788682800000, "bana": "Torpahallen", "round": "1/16 Final", "home": {"label": "3:an i Grupp K", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp I", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/8 Final", "matches": [{"id": 85896039, "start": 1788685200000, "bana": "Härlandatjärnskolan", "round": "1/8 Final", "home": {"label": "3:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06095400", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896049, "start": 1788685200000, "bana": "Torpahallen", "round": "1/8 Final", "home": {"label": "3:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092300", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896041, "start": 1788687600000, "bana": "Härlandatjärnskolan", "round": "1/8 Final", "home": {"label": "3:an i Grupp H", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06095401", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896051, "start": 1788687600000, "bana": "Torpahallen", "round": "1/8 Final", "home": {"label": "3:an i Grupp G", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092301", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896043, "start": 1788690000000, "bana": "Härlandatjärnskolan", "round": "1/8 Final", "home": {"label": "3:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06095402", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896053, "start": 1788690000000, "bana": "Torpahallen", "round": "1/8 Final", "home": {"label": "3:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092302", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896055, "start": 1788692400000, "bana": "Torpahallen", "round": "1/8 Final", "home": {"label": "3:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092303", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896045, "start": 1788694800000, "bana": "Torpahallen", "round": "1/8 Final", "home": {"label": "3:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06095403", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/4 Final", "matches": [{"id": 85896038, "start": 1788697200000, "bana": "Torpahallen", "round": "1/4 Final", "home": {"label": "Vinn. 06095404", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06095405", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896042, "start": 1788699600000, "bana": "Torpahallen", "round": "1/4 Final", "home": {"label": "Vinn. 06095406", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092308", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896048, "start": 1788702000000, "bana": "Torpahallen", "round": "1/4 Final", "home": {"label": "Vinn. 06092304", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092305", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896052, "start": 1788704400000, "bana": "Torpahallen", "round": "1/4 Final", "home": {"label": "Vinn. 06092306", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092307", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Semifinal", "matches": [{"id": 85896037, "start": 1788706800000, "bana": "Torpahallen", "round": "Semifinal", "home": {"label": "Vinn. 06092309", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092310", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 85896047, "start": 1788709200000, "bana": "Torpahallen", "round": "Semifinal", "home": {"label": "Vinn. 06092311", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092312", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Final", "matches": [{"id": 85896036, "start": 1788713400000, "bana": "Torpahallen", "round": "Final", "home": {"label": "Vinn. 06092313", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 06092314", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}]}]}, {"klass": "HJ", "tiers": [{"tier": "Slutspel A", "division_id": 86060463, "rounds": [{"name": "1/8 Final", "matches": [{"id": 86060471, "start": 1789286400000, "bana": "ÖHK-Hallen A", "round": "1/8 Final", "home": {"label": "2:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060474, "start": 1789286400000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "1/8 Final", "home": {"label": "1:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86295114, "start": 1789286400000, "bana": "ÖHK-Hallen ÖHK WH hallen", "round": "1/8 Final", "home": {"label": "2:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060480, "start": 1789289400000, "bana": "ÖHK-Hallen ÖHK WH hallen", "round": "1/8 Final", "home": {"label": "1:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/4 Final", "matches": [{"id": 86060470, "start": 1789295400000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "1/4 Final", "home": {"label": "1:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090702", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060472, "start": 1789295400000, "bana": "ÖHK-Hallen A", "round": "1/4 Final", "home": {"label": "1:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090801", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060476, "start": 1789298400000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "1/4 Final", "home": {"label": "1:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13092001", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060478, "start": 1789298400000, "bana": "ÖHK-Hallen A", "round": "1/4 Final", "home": {"label": "1:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13092002", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Semifinal", "matches": [{"id": 86060469, "start": 1789307400000, "bana": "ÖHK-Hallen A", "round": "Semifinal", "home": {"label": "Vinn. 13090804", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090705", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060475, "start": 1789307400000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "Semifinal", "home": {"label": "Vinn. 13090805", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090706", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Final", "matches": [{"id": 86060468, "start": 1789314600000, "bana": "ÖHK-Hallen A", "round": "Final", "home": {"label": "Vinn. 13090708", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090807", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}]}, {"tier": "Slutspel B", "division_id": 86060481, "rounds": [{"name": "1/8 Final", "matches": [{"id": 86060498, "start": 1789280400000, "bana": "Valhalla Sport C", "round": "1/8 Final", "home": {"label": "3:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060489, "start": 1789283400000, "bana": "Valhalla Sport C", "round": "1/8 Final", "home": {"label": "4:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060492, "start": 1789286400000, "bana": "Valhalla Sport B", "round": "1/8 Final", "home": {"label": "3:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86295123, "start": 1789286400000, "bana": "Valhalla Sport A", "round": "1/8 Final", "home": {"label": "3:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "5:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86295139, "start": 1789286400000, "bana": "Valhalla Sport C", "round": "1/8 Final", "home": {"label": "3:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "5:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86295115, "start": 1789289400000, "bana": "Valhalla Sport A", "round": "1/8 Final", "home": {"label": "4:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86295131, "start": 1789289400000, "bana": "Valhalla Sport B", "round": "1/8 Final", "home": {"label": "3:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "5:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/4 Final", "matches": [{"id": 86060488, "start": 1789295400000, "bana": "Valhalla Sport A", "round": "1/4 Final", "home": {"label": "3:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090601", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060490, "start": 1789295400000, "bana": "Valhalla Sport B", "round": "1/4 Final", "home": {"label": "Vinn. 13091102", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090502", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060494, "start": 1789298400000, "bana": "Valhalla Sport A", "round": "1/4 Final", "home": {"label": "Vinn. 13090602", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13091103", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060496, "start": 1789298400000, "bana": "Valhalla Sport B", "round": "1/4 Final", "home": {"label": "Vinn. 13090503", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090600", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Semifinal", "matches": [{"id": 86060487, "start": 1789307400000, "bana": "Valhalla Sport B", "round": "Semifinal", "home": {"label": "Vinn. 13091105", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090505", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060493, "start": 1789307400000, "bana": "Valhalla Sport A", "round": "Semifinal", "home": {"label": "Vinn. 13091106", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090506", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Final", "matches": [{"id": 86060486, "start": 1789314600000, "bana": "Valhalla Sport A", "round": "Final", "home": {"label": "Vinn. 13090508", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13091108", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}]}]}, {"klass": "DJ", "tiers": [{"tier": "Slutspel A", "division_id": 86060741, "rounds": [{"name": "1/8 Final", "matches": [{"id": 86060754, "start": 1789280400000, "bana": "ÖHK-Hallen A", "round": "1/8 Final", "home": {"label": "2:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060749, "start": 1789283400000, "bana": "ÖHK-Hallen A", "round": "1/8 Final", "home": {"label": "2:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060751, "start": 1789283400000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "1/8 Final", "home": {"label": "1:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060756, "start": 1789283400000, "bana": "ÖHK-Hallen ÖHK WH hallen", "round": "1/8 Final", "home": {"label": "1:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "2:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/4 Final", "matches": [{"id": 86060748, "start": 1789289400000, "bana": "ÖHK-Hallen A", "round": "1/4 Final", "home": {"label": "1:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090701", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060750, "start": 1789289400000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "1/4 Final", "home": {"label": "1:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090800", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060753, "start": 1789292400000, "bana": "ÖHK-Hallen A", "round": "1/4 Final", "home": {"label": "1:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090700", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060755, "start": 1789292400000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "1/4 Final", "home": {"label": "1:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13092000", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Semifinal", "matches": [{"id": 86060747, "start": 1789304400000, "bana": "ÖHK-Hallen A", "round": "Semifinal", "home": {"label": "Vinn. 13090703", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090802", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060752, "start": 1789304400000, "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen", "round": "Semifinal", "home": {"label": "Vinn. 13090704", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090803", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Final", "matches": [{"id": 86060746, "start": 1789311000000, "bana": "ÖHK-Hallen A", "round": "Final", "home": {"label": "Vinn. 13090707", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090806", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}]}, {"tier": "Slutspel B", "division_id": 86060757, "rounds": [{"name": "1/8 Final", "matches": [{"id": 86060765, "start": 1789280400000, "bana": "Valhalla Sport A", "round": "1/8 Final", "home": {"label": "4:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060772, "start": 1789280400000, "bana": "Valhalla Sport B", "round": "1/8 Final", "home": {"label": "3:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060767, "start": 1789283400000, "bana": "Valhalla Sport A", "round": "1/8 Final", "home": {"label": "3:an i Grupp E", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp F", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060770, "start": 1789283400000, "bana": "Valhalla Sport B", "round": "1/8 Final", "home": {"label": "4:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "4:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "1/4 Final", "matches": [{"id": 86060769, "start": 1789289400000, "bana": "Valhalla Sport C", "round": "1/4 Final", "home": {"label": "3:an i Grupp B", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090501", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060764, "start": 1789292400000, "bana": "Valhalla Sport C", "round": "1/4 Final", "home": {"label": "3:an i Grupp A", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13091100", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060766, "start": 1789292400000, "bana": "Valhalla Sport B", "round": "1/4 Final", "home": {"label": "3:an i Grupp D", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13091101", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060771, "start": 1789292400000, "bana": "Valhalla Sport A", "round": "1/4 Final", "home": {"label": "3:an i Grupp C", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090500", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Semifinal", "matches": [{"id": 86060763, "start": 1789304400000, "bana": "Valhalla Sport A", "round": "Semifinal", "home": {"label": "Vinn. 13090604", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090504", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}, {"id": 86060768, "start": 1789304400000, "bana": "Valhalla Sport B", "round": "Semifinal", "home": {"label": "Vinn. 13090603", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13091104", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}, {"name": "Final", "matches": [{"id": 86060762, "start": 1789311000000, "bana": "Valhalla Sport A", "round": "Final", "home": {"label": "Vinn. 13091107", "team_id": null, "is_alingsas": false, "goals": null}, "away": {"label": "Vinn. 13090507", "team_id": null, "is_alingsas": false, "goals": null}, "winner": null}]}]}]}]};
+const ROSTERS = {};
+let view = "schema";
+let filter = "all";
+
+// kom ihåg valt filter (localStorage) + spegla i URL:en (delbar länk)
+const VALID = new Set(["all", ...CLASSES.map(c=>c.cls), ...TEAMS.map(t=>t.slug)]);
+function saveFilter(id){
+  try{ localStorage.setItem("gbgcup-filter", id); }catch(_){}
+  try{ history.replaceState(null,"", id==="all" ? location.pathname+location.search : "#"+id); }catch(_){}
+}
+(function restoreFilter(){
+  const h = (location.hash||"").replace(/^#/,"");
+  if(VALID.has(h)){ filter = h; return; }
+  try{ const s = localStorage.getItem("gbgcup-filter"); if(VALID.has(s)) filter = s; }catch(_){}
+})();
+
+const $ = s => document.querySelector(s);
+document.getElementById("count").textContent = MATCHES.length;
+
+// bygg filterpiller
+const fwrap = document.getElementById("filters");
+function pill(id, label, color, sun){
+  const b = document.createElement("button");
+  b.className = "pill" + (sun ? " sun" : "");
+  b.setAttribute("aria-pressed", id === filter);
+  b.dataset.id = id;
+  b.innerHTML = (color ? `<span class="d" style="background:${color}"></span>` : "") + label;
+  b.onclick = () => { filter = id; saveFilter(id); render(); if(view==="tabeller") renderTables(); if(view==="slutspel") renderBracket(); if(view==="trupp") renderRoster(); for(const p of fwrap.children) p.setAttribute("aria-pressed", p.dataset.id===id); };
+  return b;
+}
+fwrap.appendChild(pill("all","Alla",null,true));
+CLASSES.forEach(c=>fwrap.appendChild(pill(c.cls,c.label,null,false)));
+TEAMS.forEach(t => fwrap.appendChild(pill(t.slug, t.lag, "#"+t.color, false)));
+
+function matchPass(m){
+  if(filter==="all") return true;
+  if(CLASSES.some(c=>c.cls===filter)) return m.klass===filter;
+  return m.slug===filter;
+}
+function state(m, now){
+  if(now >= m.ms && now < m.ms+(m.dur||DUR)) return "live";
+  if(m.ms > now) return "up";
+  return "past";
+}
+function esc(s){ return (s+"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
+function fmtCountdown(ms){
+  if(ms<=0) return "";
+  const min=Math.floor(ms/60000), d=Math.floor(min/1440), h=Math.floor((min%1440)/60), mi=min%60;
+  if(d>0) return `om ${d} d ${h} tim`;
+  if(h>0) return `om ${h} tim ${mi} min`;
+  return `om ${mi} min`;
+}
+function videoLink(u){ return (u && /^https:\/\//.test(u)) ? `<a class="vidlink" href="${encodeURI(u)}" target="_blank" rel="noopener" aria-label="Se video på solidsport">▶ Video</a>` : ""; }
+
+function render(){
+  const now = Date.now();
+  const rows = MATCHES.filter(matchPass).sort((a,b)=>a.ms-b.ms);
+  // hero: alla pågående; annars alla kommande som delar tidigaste starttid
+  const liveOnes = rows.filter(m=>state(m,now)==="live");
+  let featured;
+  if(liveOnes.length){ featured = liveOnes; }
+  else { const fn = rows.find(m=>state(m,now)==="up");
+         featured = fn ? rows.filter(m=>state(m,now)==="up" && m.ms===fn.ms) : []; }
+  const hero = $("#hero");
+  if(featured.length){
+    hero.innerHTML = `<div class="herolist${featured.length>1?' many':''}">` + featured.map(hm=>{
+      const isLive = state(hm,now)==="live";
+      return `<div class="hero ${isLive?'live':''}" data-mid="${hm.id||''}">
+        <div class="tag">${hm.maps?`<a href="${encodeURI(hm.maps)}" target="_blank" rel="noopener">📍 ${esc(hm.bana)}</a>`:`📍 ${esc(hm.bana)}`}</div>
+        <div class="lbl">${isLive?'<span class="pulse"></span>Pågår nu':'Härnäst'}</div>
+        <div class="mt">${esc(hm.home)} <span style="opacity:.7">vs</span> ${esc(hm.away)}</div>
+        <div class="sub">${esc(hm.lag)}${hm.klass?' · '+esc(hm.klass):''} · ${esc(hm.grp)}${hm.runda?' · '+esc(hm.runda):''} · ${hm.t} · ${esc(hm.day)}</div>
+        <div class="lscore" hidden></div>
+        <div class="cd" data-ms="${hm.ms}">${isLive?'Spelas nu':fmtCountdown(hm.ms-now)}</div>
+        ${videoLink(hm.video)}
+      </div>`;
+    }).join('') + `</div>`;
+  } else {
+    hero.innerHTML = rows.length
+      ? `<div class="hero"><div class="lbl">Klart</div><div class="mt">Alla matcher spelade</div></div>` : "";
+  }
+  // lista grupperad per dag
+  const list = $("#list");
+  if(!rows.length){ list.innerHTML = '<div class="empty">Inga matcher för det här filtret.</div>'; return; }
+  let html = "", curDay = null;
+  for(const m of rows){
+    if(m.day !== curDay){ curDay = m.day; html += `<div class="day">${esc(m.day)}</div>`; }
+    const st = state(m, now);
+    const homeAli = m.hb==="Hemma";
+    html +=
+      `<article class="match ${st}" data-mid="${m.id||''}" style="--c:#${m.color}">
+        <div class="t">${m.t}${st==="live"?'<small class="nowtag">NU</small>':""}</div>
+        <div>
+          <div class="chips"><span class="lagchip" style="background:#${m.color}">${esc(m.lag)}</span>
+            ${m.klass?`<span class="klasschip">${esc(m.klass)}</span>`:""}<span class="grp">${esc(m.grp)}</span>${m.runda?`<span class="rundachip">${esc(m.runda)}</span>`:""}</div>
+          <div class="vs"><span class="${homeAli?"ali":""}">${esc(m.home)}</span> – <span class="${homeAli?"":"ali"}">${esc(m.away)}</span></div>
+          <div class="lscore" hidden></div>
+          ${m.res ? `<div class="score"><b class="${m.res.hg>m.res.ag?'w':m.res.hg<m.res.ag?'l':''}">${m.res.hg}</b><span class="x">–</span><b class="${m.res.ag>m.res.hg?'w':m.res.ag<m.res.hg?'l':''}">${m.res.ag}</b></div>` : ""}
+          ${videoLink(m.video)}
+        </div>
+        <div class="bana">${m.maps?`<a href="${encodeURI(m.maps)}" target="_blank" rel="noopener">📍 ${esc(m.bana)}</a>`:`📍 ${esc(m.bana)}`}</div>
+      </article>`;
+  }
+  list.innerHTML = html;
+  if(typeof reapplyLive==="function") reapplyLive();
+  if(typeof mapMarkers==="function") mapMarkers();
+  // scrolla till nu/härnäst om turneringen pågår (det finns spelade matcher)
+  if(!render._scrolled && rows.some(m=>state(m,now)==="past") && featured.length){
+    render._scrolled = true;
+    setTimeout(()=>{ const el=document.querySelector(".match.live")||document.querySelector(".match.up"); }, 50);
+  }
+}
+
+// nedräkning varje sekund, full omritning ibland
+setInterval(()=>{ for(const cd of document.querySelectorAll(".hero .cd")){ if(cd.dataset.ms){
+  const left=+cd.dataset.ms-Date.now(); cd.textContent = left>0?fmtCountdown(left):"Spelas nu"; }}}, 1000);
+setInterval(render, 30000);
+
+// Bakgrundsuppdatering: hämta om schemat (resultat/nya matcher) utan omladdning.
+function refreshData(){
+  if(document.visibilityState!=="visible") return;
+  fetch("sched.json", {cache:"no-store"}).then(r=>r.json()).then(j=>{
+    if(j && Array.isArray(j.matches)){
+      MATCHES = j.matches;
+      if("standings" in j) STANDINGS = j.standings;
+      render();
+      if(view==="tabeller") renderTables();
+      if(view==="slutspel") renderBracket();
+    }
+  }).catch(()=>{});
+}
+// Kartmarkörer: var Alingsås spelar nu (live) / härnäst (up), på rätt bana.
+function mapMarkers(){
+  const now = Date.now();
+  const rows = MATCHES.filter(matchPass);
+  const liveOnes = rows.filter(m=>state(m,now)==="live");
+  const fn = rows.find(m=>state(m,now)==="up");
+  const next = fn ? rows.filter(m=>state(m,now)==="up" && m.ms===fn.ms) : [];
+  const byBana = {};
+  for(const m of next) if(BANA_XY[m.bana] && !byBana[m.bana]) byBana[m.bana]={m,kind:"next"};
+  for(const m of liveOnes) if(BANA_XY[m.bana]) byBana[m.bana]={m,kind:"live"};
+  const inline = document.getElementById("mk-inline");
+  const zoom = document.getElementById("mk-zoom");
+  if(inline) inline.innerHTML="";
+  if(zoom) zoom.innerHTML="";
+  for(const bana in byBana){
+    const it = byBana[bana], xy = BANA_XY[bana];
+    if(inline){
+      const d=document.createElement("span");
+      d.className="mk "+it.kind; d.style.left=(xy[0]*100)+"%"; d.style.top=(xy[1]*100)+"%";
+      inline.appendChild(d);
+    }
+    if(zoom){
+      const b=document.createElement("button");
+      b.className="mk "+it.kind; b.style.left=(xy[0]*100)+"%"; b.style.top=(xy[1]*100)+"%";
+      b.setAttribute("aria-label", `Bana ${bana}: ${it.m.home} mot ${it.m.away}`);
+      b.addEventListener("click", ev=>{ ev.stopPropagation(); showMapInfo(it.m, bana); });
+      zoom.appendChild(b);
+    }
+  }
+  if(!Object.keys(byBana).length){ const info=document.getElementById("mapinfo"); if(info) info.hidden=true; }
+  // Klubbtält – alltid synlig logga-markör.
+  if(inline){
+    const t=document.createElement("span"); t.className="mk tent";
+    t.style.left=(KLUBBTALT[0]*100)+"%"; t.style.top=(KLUBBTALT[1]*100)+"%";
+    t.innerHTML='<img src="Alingsas_HK_logo.svg" alt="">'; inline.appendChild(t);
+  }
+  if(zoom){
+    const t=document.createElement("button"); t.className="mk tent";
+    t.style.left=(KLUBBTALT[0]*100)+"%"; t.style.top=(KLUBBTALT[1]*100)+"%";
+    t.setAttribute("aria-label","Klubbtält");
+    t.innerHTML='<img src="Alingsas_HK_logo.svg" alt="">';
+    t.addEventListener("click", ev=>{ ev.stopPropagation(); showTentInfo(); }); zoom.appendChild(t);
+  }
+}
+function showTentInfo(){
+  const info=document.getElementById("mapinfo"); if(!info) return;
+  info.innerHTML='<span class="k">Klubbtält</span>Alingsås HK';
+  info.hidden=false;
+}
+function showMapInfo(m, bana){
+  const info=document.getElementById("mapinfo"); if(!info) return;
+  const s=liveState[m.id];
+  const sc=(s && s.live && !s.finished) ? `<span class="ls">🔴 ${s.hg}–${s.ag}</span>` : "";
+  info.innerHTML = `<span class="k">${esc(m.klass||"")}</span>${esc(m.home)} – ${esc(m.away)} · bana ${esc(bana)} · ${esc(m.t)}${sc}`;
+  info.hidden=false;
+}
+setInterval(refreshData, 60000);
+document.addEventListener("visibilitychange", ()=>{ if(document.visibilityState==="visible") refreshData(); });
+
+// vy-flikar: visa Tabeller/Slutspel bara om data finns
+const tabsWrap = document.getElementById("tabs");
+const elTables = document.getElementById("tables");
+const elBracket = document.getElementById("bracket");
+const elRoster = document.getElementById("roster");
+const elList = document.getElementById("list");
+const elHero = document.getElementById("hero");
+const elMap = document.getElementById("map");
+if(STANDINGS && STANDINGS.groups && STANDINGS.groups.length){
+  document.getElementById("tab-tabeller").hidden = false;
+  if(STANDINGS.playoffs && STANDINGS.playoffs.length) document.getElementById("tab-slutspel").hidden = false;
+}
+// Trupp-fliken visas bara om minst ett lag har spelare publicerade.
+const HAS_ROSTERS = ROSTERS && Object.values(ROSTERS).some(p => p && p.length);
+if(HAS_ROSTERS) document.getElementById("tab-trupp").hidden = false;
+function setView(v){
+  view = v;
+  for(const t of tabsWrap.children) t.setAttribute("aria-pressed", t.dataset.view===v);
+  const schema = v==="schema";
+  elHero.hidden = !schema; elList.hidden = !schema;
+  elTables.hidden = v!=="tabeller";
+  elBracket.hidden = v!=="slutspel";
+  elRoster.hidden = v!=="trupp";
+  elMap.hidden = v!=="karta";
+  if(v==="karta" && typeof mapMarkers==="function") mapMarkers();
+  if(v==="tabeller") renderTables();
+  if(v==="slutspel") renderBracket();
+  if(v==="trupp") renderRoster();
+}
+tabsWrap.addEventListener("click", e=>{ const b=e.target.closest(".tab"); if(b) setView(b.dataset.view); });
+function tierClass(name){ return name && name[0]==="A" ? "tierA" : name && name[0]==="B" ? "tierB" : "tierC"; }
+function teamColorForGroup(g){
+  const me = g.rows.find(r=>r.is_alingsas);
+  if(me){ const t = TEAMS.find(t=>t.id===me.team_id); if(t) return t.color; }
+  return "13293d";
+}
+function hexA(hex,a){ const n=parseInt(hex,16); const r=(n>>16)&255,g=(n>>8)&255,b=n&255; return `rgba(${r},${g},${b},${a})`; }
+function groupsForFilter(){
+  const gs = STANDINGS.groups;
+  if(filter==="all") return gs;
+  if(CLASSES.some(c=>c.cls===filter)) return gs.filter(g=>g.klass===filter);
+  const team = TEAMS.find(t=>t.slug===filter);
+  if(!team) return gs;
+  return gs.filter(g=>g.rows.some(r=>r.is_alingsas && r.team_id===team.id));
+}
+function renderTables(){
+  if(!STANDINGS || !STANDINGS.groups){ elTables.innerHTML=""; return; }
+  const groups = groupsForFilter();
+  if(!groups.length){ elTables.innerHTML='<div class="empty-tab">Inga tabeller för det här filtret.</div>'; return; }
+  let html="";
+  for(const g of groups){
+    const meColor = teamColorForGroup(g);
+    html += `<div class="gtable"><div class="gtitle"><span class="gcls">${esc((CLASSES.find(c=>c.cls===g.klass)||{}).label||g.klass)}</span><span class="gname">${esc(g.name)}</span></div>`;
+    html += `<table class="gt"><thead><tr><th>#</th><th class="lt">Lag</th><th>S</th><th>±M</th><th>P</th></tr></thead><tbody>`;
+    let lastTier=null;
+    for(const r of g.rows){
+      if(r.tier && r.tier!==lastTier && r.pos!==1){
+        html += `<tr class="tier-row"><td colspan="5"><div class="bar ${tierClass(r.tier)}">${esc(r.tier)} ↓</div></td></tr>`;
+      }
+      if(r.tier) lastTier=r.tier;
+      const me = r.is_alingsas ? ` class="me" style="--mecol:${hexA(meColor,.16)};--meink:#${meColor}"` : "";
+      const diff = (r.diff>0?"+":"") + r.diff;
+      html += `<tr${me}><td class="pos">${r.pos}</td><td class="lt nm">${esc(r.name)}</td><td>${r.played}</td><td>${esc(diff)}</td><td class="pts">${r.points}</td></tr>`;
+    }
+    html += `</tbody></table></div>`;
+  }
+  elTables.innerHTML = html;
+}
+let btier = 0;
+function playoffForFilter(){
+  const ps = STANDINGS.playoffs || [];
+  if(!ps.length) return null;
+  if(CLASSES.some(c=>c.cls===filter)) return ps.find(p=>p.klass===filter) || ps[0];
+  const team = TEAMS.find(t=>t.slug===filter);
+  if(team) return ps.find(p=>p.klass===team.klass) || ps[0];
+  return ps[0];
+}
+function bmRow(side, isWin, isLose){
+  const cls = isWin ? "bm-win" : (isLose ? "bm-lose" : "");
+  const g = side.goals==null ? "" : `<span class="g">${side.goals}</span>`;
+  return `<div class="row ${cls}"><span>${esc(side.label||"–")}</span>${g}</div>`;
+}
+function aliColor(m){
+  const s = m.home.is_alingsas ? m.home : (m.away.is_alingsas ? m.away : null);
+  if(s){ const t=TEAMS.find(t=>t.id===s.team_id); if(t) return t.color; }
+  return "999999";
+}
+function wirePan(el){
+  if(!el) return;
+  let down=false, sx=0, sl=0;
+  el.addEventListener("pointerdown", e=>{ down=true; sx=e.clientX; sl=el.scrollLeft; el.classList.add("drag"); el.setPointerCapture(e.pointerId); });
+  el.addEventListener("pointermove", e=>{ if(down) el.scrollLeft = sl - (e.clientX - sx); });
+  el.addEventListener("pointerup", ()=>{ down=false; el.classList.remove("drag"); });
+  el.addEventListener("pointercancel", ()=>{ down=false; el.classList.remove("drag"); });
+}
+function renderBracket(){
+  if(!STANDINGS || !STANDINGS.playoffs){ elBracket.innerHTML=""; return; }
+  const po = playoffForFilter();
+  if(!po || !po.tiers.length){ elBracket.innerHTML='<div class="empty-tab">Inget slutspel att visa.</div>'; return; }
+  if(btier>=po.tiers.length) btier=0;
+  // om ett enskilt lag är filtrerat: öppna den nivå laget projiceras till
+  const team = TEAMS.find(t=>t.slug===filter);
+  if(team && !renderBracket._userPicked){
+    const g = (STANDINGS.groups||[]).find(g=>g.rows.some(r=>r.is_alingsas && r.team_id===team.id));
+    const me = g && g.rows.find(r=>r.is_alingsas && r.team_id===team.id);
+    if(me && me.tier){ const idx = po.tiers.findIndex(t=>t.tier===me.tier); if(idx>=0) btier=idx; }
+  }
+  let html = `<div class="btabs">`;
+  po.tiers.forEach((t,i)=>{ html += `<button class="btab" data-i="${i}" aria-pressed="${i===btier}">${esc(t.tier.replace("-Slutspel",""))}</button>`; });
+  html += `</div><div class="bracket-scroll" id="bscroll"><div class="btree">`;
+  for(const rnd of po.tiers[btier].rounds){
+    html += `<div class="bcol"><div class="clabel">${esc(rnd.name)}</div>`;
+    for(const m of rnd.matches){
+      const hw = m.winner==="home", aw = m.winner==="away";
+      const ali = (m.home.is_alingsas||m.away.is_alingsas) ? " ali" : "";
+      const c = aliColor(m);
+      html += `<div class="bm${ali}" style="--c:#${c}">`+
+        bmRow(m.home, hw, aw) + bmRow(m.away, aw, hw) + `</div>`;
+    }
+    html += `</div>`;
+  }
+  html += `</div></div>`;
+  elBracket.innerHTML = html;
+  wirePan(document.getElementById("bscroll"));
+  elBracket.querySelector(".btabs").addEventListener("click", e=>{
+    const b=e.target.closest(".btab"); if(b){ renderBracket._userPicked=true; btier=+b.dataset.i; renderBracket(); }});
+}
+
+function teamsForRoster(){
+  if(filter==="all") return TEAMS;
+  if(CLASSES.some(c=>c.cls===filter)) return TEAMS.filter(t=>t.klass===filter);
+  const team = TEAMS.find(t=>t.slug===filter);
+  return team ? [team] : [];
+}
+function sortRoster(players){
+  // Målvakter först, sen efter tröjnummer stigande; nummerlösa sist (A→Ö).
+  return players.slice().sort((a,b)=>{
+    const amv=a.pos==="MV"?0:1, bmv=b.pos==="MV"?0:1;
+    if(amv!==bmv) return amv-bmv;
+    const an=a.nr==null, bn=b.nr==null;
+    if(an!==bn) return an?1:-1;
+    if(!an && a.nr!==b.nr) return a.nr-b.nr;
+    return a.namn.localeCompare(b.namn, "sv");
+  });
+}
+function posLabel(pos){ return pos==="MV" ? "Målvakt" : pos==="UT" ? "Utespelare" : ""; }
+function renderRoster(){
+  const teams = teamsForRoster();
+  if(!teams.length){ elRoster.innerHTML='<div class="empty-tab">Ingen trupp för det här filtret.</div>'; return; }
+  let html="";
+  for(const t of teams){
+    const players = sortRoster((ROSTERS && ROSTERS[t.slug]) || []);
+    html += `<div class="gtable"><div class="gtitle"><span class="gcls">${esc((CLASSES.find(c=>c.cls===t.klass)||{}).label||t.klass)}</span><span class="gname">${esc(t.lag)}</span></div>`;
+    if(!players.length){
+      html += `<div class="empty-tab">Trupp ej publicerad ännu.</div></div>`;
+      continue;
+    }
+    html += `<ul class="rlist">`;
+    for(const p of players){
+      const nr = p.nr==null ? `<span class="rnr none">–</span>` : `<span class="rnr">${p.nr}</span>`;
+      const smek = p.smek ? ` <span class="smek">”${esc(p.smek)}”</span>` : "";
+      const pos = p.pos ? `<span class="rpos${p.pos==="MV"?" mv":""}">${esc(posLabel(p.pos))}</span>` : "";
+      html += `<li>${nr}<span class="rname">${esc(p.namn)}${smek}</span>${pos}</li>`;
+    }
+    html += `</ul></div>`;
+  }
+  elRoster.innerHTML = html;
+}
+
+render();
+
+// kopiera-knappar
+document.addEventListener("click", async e=>{
+  const b = e.target.closest(".copy"); if(!b) return;
+  try{ await navigator.clipboard.writeText(b.dataset.url); }catch(_){}
+  const o=b.textContent; b.textContent="✓ Kopierad!"; b.classList.add("ok");
+  setTimeout(()=>{ b.textContent=o; b.classList.remove("ok"); }, 1600);
+});
+
+// ---- Lägg till på hemskärmen (Android-prompt + iOS/övrigt-instruktioner) ----
+// Kartzoom: helskärmsöverlägg med nyp-zoom + panorering (Pointer Events, inga libs).
+(function(){
+  const openBtn=document.getElementById("mapopen");
+  const ov=document.getElementById("mapzoom");
+  const img=document.getElementById("mapzoom-img");
+  const stage=document.getElementById("mapzoom-stage");
+  const closeBtn=document.getElementById("mapzoom-close");
+  if(!openBtn||!ov||!img||!stage||!closeBtn) return;
+  stage.style.willChange="transform";
+  let scale=1, tx=0, ty=0, lastDist=0, lastMid=null, lastTap=0, justLifted=false;
+  const pts=new Map(), MIN=1, MAX=6;
+  const clamp=()=>{
+    const w=img.clientWidth*scale, h=img.clientHeight*scale;
+    const ox=Math.max(0,(w-window.innerWidth)/2), oy=Math.max(0,(h-window.innerHeight)/2);
+    tx=Math.max(-ox, Math.min(ox, tx)); ty=Math.max(-oy, Math.min(oy, ty));
+  };
+  const apply=()=>{ clamp(); stage.style.transform=`translate(${tx}px,${ty}px) scale(${scale})`; };
+  const reset=()=>{ scale=1; tx=0; ty=0; apply(); };
+  const open=()=>{ ov.hidden=false; document.body.style.overflow="hidden"; reset(); if(typeof mapMarkers==="function") mapMarkers(); };
+  const close=()=>{ ov.hidden=true; document.body.style.overflow=""; pts.clear(); lastDist=0; const info=document.getElementById("mapinfo"); if(info) info.hidden=true; };
+  const arr=()=>[...pts.values()];
+  const dist=()=>{ const a=arr(); return Math.hypot(a[0].x-a[1].x, a[0].y-a[1].y); };
+  const mid=()=>{ const a=arr(); return {x:(a[0].x+a[1].x)/2, y:(a[0].y+a[1].y)/2}; };
+  openBtn.addEventListener("click", open);
+  closeBtn.addEventListener("click", close);
+  ov.addEventListener("click", e=>{ if(e.target===ov) close(); });
+  document.addEventListener("keydown", e=>{ if(e.key==="Escape" && !ov.hidden) close(); });
+  img.addEventListener("pointerdown", e=>{
+    try{ img.setPointerCapture(e.pointerId); }catch(_){}
+    pts.set(e.pointerId, {x:e.clientX, y:e.clientY});
+    if(pts.size===2){ lastDist=dist(); lastMid=mid(); }
+    else if(pts.size===1){
+      const n=Date.now();
+      if(n-lastTap<300){ scale>1 ? reset() : (scale=2.5, apply()); }
+      lastTap=n;
+    }
+  });
+  img.addEventListener("pointermove", e=>{
+    if(!pts.has(e.pointerId)) return;
+    const prev=pts.get(e.pointerId), cur={x:e.clientX, y:e.clientY};
+    pts.set(e.pointerId, cur);
+    if(pts.size===1){
+      if(!justLifted){ tx+=cur.x-prev.x; ty+=cur.y-prev.y; apply(); }
+      justLifted=false;
+    }
+    else if(pts.size===2){
+      const d=dist(), m=mid();
+      scale=Math.min(MAX, Math.max(MIN, scale*(d/lastDist)));
+      tx+=m.x-lastMid.x; ty+=m.y-lastMid.y;
+      lastDist=d; lastMid=m; apply();
+    }
+  });
+  const up=e=>{
+    pts.delete(e.pointerId);
+    if(pts.size<2) lastDist=0;
+    if(pts.size===1) justLifted=true;
+    if(scale<=1){ tx=0; ty=0; apply(); }
+  };
+  img.addEventListener("pointerup", up);
+  img.addEventListener("pointercancel", up);
+})();
+// Livescore: polla MatchResult för matcher i tidsfönster; uppdatera kort/hero in-place.
+function applyLive(id){
+  const s = liveState[id];
+  for(const el of document.querySelectorAll(`[data-mid="${id}"] .lscore`)){
+    // robotens slutresultat (.score) syns redan? låt då den styra – dubbla inte.
+    const hasRes = el.parentElement && el.parentElement.querySelector(".score");
+    if(s && s.live && !s.finished){
+      el.className = "lscore"; el.innerHTML = `<span class="pulse"></span>LIVE ${s.hg}–${s.ag}`; el.hidden = false;
+    } else if(s && s.finished && !isNaN(s.hg) && !hasRes){
+      // slutsiffra från MatchResult innan roboten hunnit skriva om data.json (~10 min)
+      el.className = "lscore done"; el.innerHTML = `Slut ${s.hg}–${s.ag}`; el.hidden = false;
+    } else { el.hidden = true; el.innerHTML = ""; }
+  }
+}
+function reapplyLive(){ for(const id in liveState) applyLive(id); }
+function pollOne(id){
+  const call = encodeURIComponent(`MatchResult({id:${id}})`);
+  const url = `https://${API_HOST}/rest/results_api/call?call=${call}&lang=sv&tournamentId=${TOURNAMENT_ID}`;
+  fetch(url).then(r=>r.json()).then(j=>{
+    for(const v of Object.values(j.responses||{})){
+      const e = (v&&v.entity)||{};
+      if(e.__typename==="MatchResult"){
+        liveState[id] = {hg:+e.homeGoals, ag:+e.awayGoals, live:e.live, finished:e.finished};
+        applyLive(id);
+      }
+    }
+  }).catch(()=>{});
+}
+function pollWindow(){
+  if(document.visibilityState!=="visible") return;
+  const now = Date.now();
+  for(const m of MATCHES){
+    if(!m.id) continue;
+    const inWindow = now >= m.ms && now < m.ms + (m.dur||DUR) + POLL_GRACE_MS;
+    if(inWindow && !(liveState[m.id]||{}).finished) pollOne(m.id);
+  }
+}
+setInterval(pollWindow, 10000);
+document.addEventListener("visibilitychange", ()=>{ if(document.visibilityState==="visible") pollWindow(); });
+pollWindow();
+if("serviceWorker" in navigator){ navigator.serviceWorker.register("sw.js").catch(()=>{}); }
+const installBtn = document.getElementById("install");
+const sheet = document.getElementById("sheet");
+const sheetBody = document.getElementById("sheetbody");
+let deferredPrompt = null;
+const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+const ua = navigator.userAgent || "";
+const isIOS = /iphone|ipad|ipod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+const isAndroid = /android/i.test(ua);
+
+window.addEventListener("beforeinstallprompt", e=>{ e.preventDefault(); deferredPrompt = e; });
+if(!standalone){ installBtn.hidden = false; }
+
+function step(n, html){ return `<div class="step"><span class="n">${n}</span><div>${html}</div></div>`; }
+function showSheet(){
+  let body;
+  if(isIOS){
+    body = step(1, 'Öppna sidan i <b>Safari</b> (inte Chrome/Edge).')
+         + step(2, 'Tryck på <b>Dela</b>-ikonen <span class="shareicon">⎙</span> längst ned (rutan med en pil uppåt).')
+         + step(3, 'Välj <b>Lägg till på hemskärmen</b> och tryck <b>Lägg till</b>.');
+  } else if(isAndroid){
+    body = step(1, 'Tryck på <b>⋮</b>-menyn uppe till höger i webbläsaren.')
+         + step(2, 'Välj <b>Lägg till på startskärmen</b> (eller <b>Installera app</b>).')
+         + step(3, 'Bekräfta – ikonen hamnar bland dina appar.');
+  } else {
+    body = step(1, 'Klicka på <b>installationsikonen</b> i adressfältet,')
+         + step(2, 'eller meny → <b>Installera</b> / <b>Skapa genväg</b>.');
+  }
+  sheetBody.innerHTML = body;
+  sheet.hidden = false;
+}
+installBtn.addEventListener("click", async ()=>{
+  if(deferredPrompt){
+    deferredPrompt.prompt();
+    const r = await deferredPrompt.userChoice; deferredPrompt = null;
+    if(r && r.outcome === "accepted") installBtn.hidden = true;
+    return;
+  }
+  showSheet();
+});
+document.getElementById("sheetx").addEventListener("click", ()=> sheet.hidden = true);
+sheet.addEventListener("click", e=>{ if(e.target === sheet) sheet.hidden = true; });
+window.addEventListener("appinstalled", ()=>{ installBtn.hidden = true; sheet.hidden = true; });
+</script>
+</body>
+</html>
