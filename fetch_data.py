@@ -268,7 +268,7 @@ def _hash_groups(groups):
     for a in sorted(groups):
         g = groups[a]
         key.append((a, g["rule"], [t["id"] for t in g["teams"]],
-                    [(m["slug"], m["start_ms"], str(m["bana"]),
+                    [(m["slug"], m["start_ms"], str(m["bana"]), m.get("maps"),
                       m["hemma"], m["borta"], m["grupp"], m.get("result"),
                       m.get("id"), m.get("video"), m.get("runda"))
                      for m in g["matches"]]))
