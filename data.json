@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-04T17:01:52+00:00",
-  "seq": 1788541312,
-  "data_hash": "002a0fd96c0fb00eb79fa86ac7965580bbd9969282bb3a8787c29ae92dc5d9f0"
+  "generated": "2026-09-04T17:41:42+00:00",
+  "seq": 1788543702,
+  "data_hash": "4a07451461fee8f46d2cdcd9a376b05d520058641eaa631655aad4843e6d9eed"
  },
  "groups": {
   "F11": {
@@ -412,7 +412,10 @@
      "grupp": "Grupp K",
      "mots": "Staffanstorps HK",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 22,
+      "ag": 15
+     },
      "start_ms": 1788541200000,
      "start_iso": "2026-09-04T19:00+02:00",
      "day_label": "Fredag 4 september"

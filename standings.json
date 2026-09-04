@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-04T17:32:43+00:00",
-  "seq": 1788543163,
-  "data_hash": "0d072e2be6ddb76a83530c743d0ea7d94e751124af1d68e47a0d53f5da22e70c"
+  "generated": "2026-09-04T17:42:15+00:00",
+  "seq": 1788543735,
+  "data_hash": "987450910a4a976905d06f21f60ba03540857c1a2fe9591de64c2c2832ead7d6"
  },
  "by_age": {
   "F16": {
@@ -13,6 +13,21 @@
      "klass": "F16",
      "division_id": 85516312,
      "rows": [
+      {
+       "name": "Årsta AIK HF 2",
+       "team_id": 76632014,
+       "is_alingsas": false,
+       "played": 1,
+       "won": 1,
+       "tied": 0,
+       "lost": 0,
+       "goals_for": 12,
+       "goals_against": 11,
+       "diff": 1,
+       "points": 2,
+       "tier": "Slutspel A",
+       "pos": 1
+      },
       {
        "name": "Alingsås HK 1",
        "team_id": 77339136,
@@ -26,34 +41,19 @@
        "diff": 1,
        "points": 2,
        "tier": "Slutspel A",
-       "pos": 1
-      },
-      {
-       "name": "Årsta AIK HF 2",
-       "team_id": 76632014,
-       "is_alingsas": false,
-       "played": 0,
-       "won": 0,
-       "tied": 0,
-       "lost": 0,
-       "goals_for": 0,
-       "goals_against": 0,
-       "diff": 0,
-       "points": 0,
-       "tier": "Slutspel A",
        "pos": 2
       },
       {
        "name": "Stenungsunds HK utom tävlan",
        "team_id": 77900018,
        "is_alingsas": false,
-       "played": 0,
+       "played": 1,
        "won": 0,
        "tied": 0,
-       "lost": 0,
-       "goals_for": 0,
-       "goals_against": 0,
-       "diff": 0,
+       "lost": 1,
+       "goals_for": 11,
+       "goals_against": 12,
+       "diff": -1,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 3
