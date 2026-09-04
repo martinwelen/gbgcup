@@ -98,6 +98,17 @@ def _teams_js(group):
              "id": t["id"], "color": t["color"].lstrip("#")} for t in group["teams"]]
 
 
+def _venues(group):
+    """Distinkta hallar i gruppen → [{hall,lat,lng,street,n}] sorterat på matchantal."""
+    by = {}
+    for m in group["matches"]:
+        k = m["bana"]
+        v = by.setdefault(k, {"hall": k, "lat": m.get("lat"), "lng": m.get("lng"),
+                              "street": m.get("street", ""), "n": 0})
+        v["n"] += 1
+    return sorted(by.values(), key=lambda v: (-v["n"], v["hall"]))
+
+
 def _dates(group):
     """Kompakt spann över speldagar, t.ex. '4 sep – 13 sep'."""
     ds = sorted({m["datum"] for m in group["matches"]})
@@ -117,6 +128,7 @@ def render_app(group, standings, base, updated):
             .replace("__DATA__", json.dumps(_js_matches(group), ensure_ascii=False))
             .replace("__TEAMS__", json.dumps(_teams_js(group), ensure_ascii=False))
             .replace("__CLASSES__", json.dumps(_classes(group), ensure_ascii=False))
+            .replace("__VENUES__", json.dumps(_venues(group), ensure_ascii=False))
             .replace("__DUR_MIN__", str(group["profile"]["duration_min"]))
             .replace("__API_HOST__", config.API_HOST)
             .replace("__TOURNAMENT_ID__", config.TOURNAMENT_ID)

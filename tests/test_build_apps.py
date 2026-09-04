@@ -16,7 +16,8 @@ def _m(slug, klass, rule="Classic", result=None, mid=99, dur=40):
             "slug": slug, "klass": klass, "grupp": "G1", "hemma": "A", "borta": "B",
             "hb": "Hemma", "day_label": "Fredag 4 september", "datum": "2026-09-04",
             "color": "#1f5fbf", "rule": rule, "dur": dur, "result": result,
-            "id": mid, "video": None, "runda": None}
+            "id": mid, "video": None, "runda": None,
+            "lat": 57.7384, "lng": 12.0352, "street": "Krutvägen 2-4"}
 
 
 def _group(klass="P16", teams=None, matches=None):
@@ -82,6 +83,14 @@ def test_teams_js_klass_and_numeric_id():
     g = _group("P16", [_team(999001, "P16")])
     t = build_apps._teams_js(g)[0]
     assert t["id"] == 999001 and t["slug"] == "t-999001" and t["klass"] == "P16"
+
+
+def test_venues_aggregates_distinct_halls_by_count():
+    g = _group("P16", [_team(1, "P16")], [_m("t-1", "P16"), _m("t-1", "P16")])
+    v = build_apps._venues(g)
+    assert len(v) == 1                          # båda matcherna i samma hall
+    assert v[0]["hall"] == "Kviberg A" and v[0]["n"] == 2
+    assert v[0]["lat"] == 57.7384 and v[0]["street"] == "Krutvägen 2-4"
 
 
 def test_merge_standings_concats_and_sorts():

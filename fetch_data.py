@@ -215,6 +215,11 @@ def normalize_match(e, store, reg_by_id):
     # Visning: av-dubblerad kompakt form. Maps: peka på komplexet (dit man kör).
     hall = clean_hall(complete)
     venue = complete[:-len(field)].strip() if field and complete.endswith(field) else hall
+    coords = _arena_coords(arena)          # (lat, lng, street) eller None
+    if coords:
+        maps = f"https://www.google.com/maps/search/?api=1&query={coords[0]},{coords[1]}"
+    else:
+        maps = _maps_url(venue or hall)
     video = _video_url(e.get("id"))        # GbgCup streamar brett – gata inte på bana
     runda = _round_name(e.get("id")) if "slutspel" in grupp.lower() else None
     dt = datetime.fromtimestamp(start_ms / 1000, _CEST)
@@ -228,7 +233,10 @@ def normalize_match(e, store, reg_by_id):
         "datum": f"{dt.year:04d}-{dt.month:02d}-{dt.day:02d}",
         "dag": _SV_DAYS[dt.weekday()],
         "tid": f"{dt.hour:02d}:{dt.minute:02d}",
-        "bana": hall, "maps": _maps_for(arena, venue, hall),
+        "bana": hall, "maps": maps,
+        "lat": coords[0] if coords else None,
+        "lng": coords[1] if coords else None,
+        "venue": venue, "street": coords[2] if coords else "",
         "video": video,
         "runda": runda,
         "hemma": hemma, "borta": borta,

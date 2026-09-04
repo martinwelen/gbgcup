@@ -183,6 +183,20 @@ table.gt{width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums
 .bana{text-align:right; max-width:120px; font-size:.72rem; font-weight:700; line-height:1.2}
 .bana a{color:#5a6b75; text-decoration:none}
 .bana a:active{opacity:.6}
+/* hallar-flik */
+#hmap{height:300px;border-radius:16px;box-shadow:var(--shadow);margin-bottom:12px;z-index:0}
+.hlegend{font-size:.75rem;color:var(--ink-soft);margin:0 2px 14px;display:flex;gap:14px;flex-wrap:wrap}
+.hlegend span{display:inline-flex;align-items:center;gap:5px}
+.hlegend i{width:10px;height:10px;border-radius:50%}
+#halls .htitle{font-family:"Anton",sans-serif;font-size:1.05rem;color:var(--ink);letter-spacing:.03em;margin:4px 2px 10px}
+.hrow{display:flex;align-items:center;gap:12px;background:var(--card);border-radius:14px;padding:12px 14px;margin-bottom:9px;text-decoration:none;color:inherit;box-shadow:0 2px 8px rgba(20,40,60,.06)}
+.hrow:active{transform:scale(.99)}
+.hdot{width:12px;height:12px;border-radius:50%;flex:none}
+.hinfo{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.hinfo b{font-size:.98rem}
+.haddr{font-size:.78rem;color:var(--ink-soft)}
+.hcnt{text-align:center;font-family:"Anton",sans-serif;font-size:1.4rem;color:var(--sun);line-height:1}
+.hcnt small{display:block;font-size:.62rem;color:var(--ink-soft);font-weight:700;margin-top:-2px}
 .nowtag{font-size:.6rem; font-weight:800; color:var(--sun); letter-spacing:.08em}
 .empty{padding:30px 4px; color:var(--ink-soft); text-align:center; font-weight:600}
 
@@ -281,6 +295,7 @@ footer a{color:var(--sea)}
     <button class="tab" id="tab-schema" data-view="schema" aria-pressed="true">Schema</button>
     <button class="tab" id="tab-tabeller" data-view="tabeller" aria-pressed="false" hidden>Tabeller</button>
     <button class="tab" id="tab-slutspel" data-view="slutspel" aria-pressed="false" hidden>Slutspel</button>
+    <button class="tab" id="tab-hallar" data-view="hallar" aria-pressed="false" hidden>Hallar</button>
     <button class="tab" id="tab-trupp" data-view="trupp" aria-pressed="false" hidden>Trupp</button>
     <button class="tab" id="tab-karta" data-view="karta" hidden>Karta</button>
   </nav>
@@ -292,6 +307,7 @@ footer a{color:var(--sea)}
 
   <section id="tables" hidden></section>
   <section id="bracket" hidden></section>
+  <section id="halls" hidden></section>
   <section id="roster" hidden></section>
   <section id="map" hidden>
     <button class="mapbtn" id="mapopen" aria-label="Öppna kartan i helskärm">
@@ -352,6 +368,7 @@ const KLUBBTALT = __KLUBBTALT__;
 const liveState = {};   // livescore per match-id; deklareras före första render() (TDZ-säkert)
 let STANDINGS = __STANDINGS__;
 const ROSTERS = __ROSTERS__;
+const VENUES = __VENUES__;
 let view = "schema";
 let filter = "all";
 
@@ -549,10 +566,13 @@ const elRoster = document.getElementById("roster");
 const elList = document.getElementById("list");
 const elHero = document.getElementById("hero");
 const elMap = document.getElementById("map");
+const elHalls = document.getElementById("halls");
 if(STANDINGS && STANDINGS.groups && STANDINGS.groups.length){
   document.getElementById("tab-tabeller").hidden = false;
   if(STANDINGS.playoffs && STANDINGS.playoffs.length) document.getElementById("tab-slutspel").hidden = false;
 }
+// Hallar-fliken visas om det finns hallar.
+if(VENUES && VENUES.length) document.getElementById("tab-hallar").hidden = false;
 // Trupp-fliken visas bara om minst ett lag har spelare publicerade.
 const HAS_ROSTERS = ROSTERS && Object.values(ROSTERS).some(p => p && p.length);
 if(HAS_ROSTERS) document.getElementById("tab-trupp").hidden = false;
@@ -565,10 +585,67 @@ function setView(v){
   elBracket.hidden = v!=="slutspel";
   elRoster.hidden = v!=="trupp";
   elMap.hidden = v!=="karta";
+  elHalls.hidden = v!=="hallar";
   if(v==="karta" && typeof mapMarkers==="function") mapMarkers();
   if(v==="tabeller") renderTables();
   if(v==="slutspel") renderBracket();
   if(v==="trupp") renderRoster();
+  if(v==="hallar") renderHalls();
+}
+// Hallar: lista alltid; karta (Leaflet) lazy-laddas online.
+function _ensureLeaflet(cb){
+  if(window.L) return cb();
+  if(_ensureLeaflet._loading){ _ensureLeaflet._q.push(cb); return; }
+  _ensureLeaflet._loading = true; _ensureLeaflet._q = [cb];
+  const css = document.createElement("link");
+  css.rel = "stylesheet"; css.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+  document.head.appendChild(css);
+  const s = document.createElement("script");
+  s.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+  s.onload = () => { for(const f of _ensureLeaflet._q) f(); };
+  s.onerror = () => { for(const f of _ensureLeaflet._q) f(); };   // offline → listan räcker
+  document.head.appendChild(s);
+}
+function _venueColor(n){ return n>=6 ? "#e8730c" : (n>=3 ? "#2f6fb0" : "#7a8a95"); }
+let _hmap;
+function renderHalls(){
+  if(!elHalls.dataset.built){
+    let items = "";
+    for(const v of VENUES){
+      const href = (v.lat && v.lng) ? `https://www.google.com/maps/search/?api=1&query=${v.lat},${v.lng}` : "";
+      items += `<a class="hrow"${href?` href="${encodeURI(href)}" target="_blank" rel="noopener"`:""}>
+        <span class="hdot" style="background:${_venueColor(v.n)}"></span>
+        <span class="hinfo"><b>${esc(v.hall)}</b>${v.street?`<span class="haddr">📍 ${esc(v.street)}, Göteborg</span>`:""}</span>
+        <span class="hcnt">${v.n}<small>matcher</small></span></a>`;
+    }
+    elHalls.innerHTML = `<div id="hmap"></div>`
+      + `<div class="hlegend"><span><i style="background:#e8730c"></i>6+ matcher</span>`
+      + `<span><i style="background:#2f6fb0"></i>3–5</span><span><i style="background:#7a8a95"></i>1–2</span></div>`
+      + `<div class="htitle">Där Alingsås spelar</div>` + items;
+    elHalls.dataset.built = "1";
+  }
+  _ensureLeaflet(() => {
+    if(!window.L) return;                    // offline: bara listan
+    if(!_hmap){
+      _hmap = L.map("hmap", {zoomControl:false, attributionControl:false});
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom:19}).addTo(_hmap);
+      const seen = {}, pins = [];
+      for(const v of VENUES){
+        if(!v.lat || !v.lng) continue;
+        const k = v.lat.toFixed(5)+","+v.lng.toFixed(5);
+        if(k in seen){ seen[k].n += v.n; continue; }    // banor på samma anläggning → en pin
+        const agg = {n: v.n}; seen[k] = agg;
+        pins.push(L.circleMarker([v.lat, v.lng], {radius:10, color:"#fff", weight:2,
+          fillColor:_venueColor(v.n), fillOpacity:.92}).addTo(_hmap)
+          .bindPopup(`<b>${esc(v.hall)}</b>${v.street?"<br>"+esc(v.street)+", Göteborg":""}`));
+      }
+      if(pins.length) _hmap._grp = L.featureGroup(pins);
+    }
+    if(_hmap) setTimeout(() => {
+      _hmap.invalidateSize();
+      if(_hmap._grp) _hmap.fitBounds(_hmap._grp.getBounds().pad(0.35));
+    }, 60);
+  });
 }
 tabsWrap.addEventListener("click", e=>{ const b=e.target.closest(".tab"); if(b) setView(b.dataset.view); });
 function tierClass(name){ return name && name[0]==="A" ? "tierA" : name && name[0]==="B" ? "tierB" : "tierC"; }
