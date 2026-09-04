@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-04T17:42:15+00:00",
-  "seq": 1788543735,
-  "data_hash": "987450910a4a976905d06f21f60ba03540857c1a2fe9591de64c2c2832ead7d6"
+  "generated": "2026-09-04T18:22:18+00:00",
+  "seq": 1788546138,
+  "data_hash": "58e6703db3ea083e5ac83cec950879120cd23795951612728b770e9d5fd3d258"
  },
  "by_age": {
   "F16": {
@@ -1101,31 +1101,31 @@
        "pos": 1
       },
       {
-       "name": "Hammarby IF HF",
-       "team_id": 78296686,
+       "name": "IK Sund 1",
+       "team_id": 86183986,
        "is_alingsas": false,
-       "played": 0,
-       "won": 0,
+       "played": 1,
+       "won": 1,
        "tied": 0,
        "lost": 0,
-       "goals_for": 0,
-       "goals_against": 0,
-       "diff": 0,
-       "points": 0,
+       "goals_for": 16,
+       "goals_against": 11,
+       "diff": 5,
+       "points": 2,
        "tier": "Slutspel A",
        "pos": 2
       },
       {
-       "name": "IK Sund 1",
-       "team_id": 86183986,
+       "name": "Hammarby IF HF",
+       "team_id": 78296686,
        "is_alingsas": false,
-       "played": 0,
+       "played": 1,
        "won": 0,
        "tied": 0,
-       "lost": 0,
-       "goals_for": 0,
-       "goals_against": 0,
-       "diff": 0,
+       "lost": 1,
+       "goals_for": 11,
+       "goals_against": 16,
+       "diff": -5,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 3
