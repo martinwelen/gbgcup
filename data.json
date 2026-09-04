@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-04T16:21:50+00:00",
-  "seq": 1788538910,
-  "data_hash": "8762276445f4c0c38324fb3429edb6b9c1548bde8ce2ca29322f7edbd08d0caf"
+  "generated": "2026-09-04T17:01:52+00:00",
+  "seq": 1788541312,
+  "data_hash": "002a0fd96c0fb00eb79fa86ac7965580bbd9969282bb3a8787c29ae92dc5d9f0"
  },
  "groups": {
   "F11": {
@@ -784,7 +784,10 @@
      "grupp": "Grupp H",
      "mots": "IK Sävehof 1",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 13,
+      "ag": 11
+     },
      "start_ms": 1788538800000,
      "start_iso": "2026-09-04T18:20+02:00",
      "day_label": "Fredag 4 september"
