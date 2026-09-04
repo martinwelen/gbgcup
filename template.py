@@ -946,6 +946,9 @@ window.addEventListener("appinstalled", ()=>{ installBtn.hidden = true; sheet.hi
 <!-- Cloudflare Web Analytics (cookielöst, ingen samtyckesruta) -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
   data-cf-beacon='{"token": "57fb7084887545a1873459ca4f21ce95"}'></script>
+<!-- Umami (self-hostad, cookieless) -->
+<script defer src="https://stats.whatabout.cloud/script.js"
+  data-website-id="24b3a459-a6d0-459d-8f4e-137170b7e1ee"></script>
 </body>
 </html>
 """
