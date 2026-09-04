@@ -146,8 +146,9 @@ table.gt{width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums
 .hero .mt{font-family:"Anton",sans-serif; font-size:clamp(1.4rem,5.4vw,2rem); line-height:1.04; margin:.28em 0 .15em; text-transform:uppercase}
 .hero .sub{font-weight:600; opacity:.92; font-size:.92rem}
 .hero .cd{margin-top:12px; font-family:"Anton",sans-serif; font-size:1.5rem; letter-spacing:.02em}
-.hero .tag{position:absolute; top:14px; right:16px; font-weight:800; font-size:.8rem;
-  background:rgba(255,255,255,.18); padding:5px 10px; border-radius:999px}
+.hero .venue{margin-top:10px; font-weight:700; font-size:.82rem; display:flex;
+  align-items:flex-start; gap:5px; line-height:1.25}
+.hero .venue a{color:#fff; text-decoration:underline; text-underline-offset:2px; opacity:.95}
 .hero.live .pulse{display:inline-block; width:9px; height:9px; border-radius:50%; background:#fff; margin-right:6px; animation:pulse 1.1s infinite}
 @keyframes pulse{0%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}100%{opacity:1;transform:scale(1)}}
 
@@ -418,10 +419,10 @@ function render(){
     hero.innerHTML = `<div class="herolist${featured.length>1?' many':''}">` + featured.map(hm=>{
       const isLive = state(hm,now)==="live";
       return `<div class="hero ${isLive?'live':''}" data-mid="${hm.id||''}">
-        <div class="tag">${hm.maps?`<a href="${encodeURI(hm.maps)}" target="_blank" rel="noopener">📍 ${esc(hm.bana)}</a>`:`📍 ${esc(hm.bana)}`}</div>
         <div class="lbl">${isLive?'<span class="pulse"></span>Pågår nu':'Härnäst'}</div>
         <div class="mt">${esc(hm.home)} <span style="opacity:.7">vs</span> ${esc(hm.away)}</div>
         <div class="sub">${esc(hm.lag)}${hm.klass?' · '+esc(hm.klass):''} · ${esc(hm.grp)}${hm.runda?' · '+esc(hm.runda):''} · ${hm.t} · ${esc(hm.day)}</div>
+        <div class="venue">${hm.maps?`<a href="${encodeURI(hm.maps)}" target="_blank" rel="noopener">📍 ${esc(hm.bana)}</a>`:`📍 ${esc(hm.bana)}`}</div>
         <div class="lscore" hidden></div>
         <div class="cd" data-ms="${hm.ms}">${isLive?'Spelas nu':fmtCountdown(hm.ms-now)}</div>
         ${videoLink(hm.video)}

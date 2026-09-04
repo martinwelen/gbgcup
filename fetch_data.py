@@ -16,6 +16,26 @@ import derive
 import rules
 
 
+def clean_hall(name):
+    """CupManagers completeName = venue + fieldName, ofta med upprepning
+    ('Prioritet Serneke Arena Serneke Arena B'). Kollapsa direkt upprepade
+    ord-körningar → 'Prioritet Serneke Arena B'."""
+    w = (name or "").split()
+    out, i = [], 0
+    while i < len(w):
+        collapsed = False
+        for L in range((len(w) - i) // 2, 0, -1):
+            if w[i:i + L] == w[i + L:i + 2 * L]:
+                out.extend(w[i:i + L])
+                i += 2 * L
+                collapsed = True
+                break
+        if not collapsed:
+            out.append(w[i])
+            i += 1
+    return " ".join(out)
+
+
 def _maps_url(hall):
     """Google Maps-sök på hallnamn (inget adress-beroende)."""
     if not hall:
@@ -151,7 +171,13 @@ def normalize_match(e, store, reg_by_id):
     borta = api.name_of(away_a)
     div = api.store_get(store, e.get("division", {}))
     grupp = api.name_of(div)
-    hall = api.store_get(store, e.get("arena", {})).get("completeName", "") or ""
+    arena = api.store_get(store, e.get("arena", {})) or {}
+    complete = arena.get("completeName", "") or ""
+    field = arena.get("fieldName", "") or ""
+    # completeName = komplex + bananamn (bananamnet upprepar ofta komplexet).
+    # Visning: av-dubblerad kompakt form. Maps: peka på komplexet (dit man kör).
+    hall = clean_hall(complete)
+    venue = complete[:-len(field)].strip() if field and complete.endswith(field) else hall
     video = _video_url(e.get("id"))        # GbgCup streamar brett – gata inte på bana
     runda = _round_name(e.get("id")) if "slutspel" in grupp.lower() else None
     dt = datetime.fromtimestamp(start_ms / 1000, _CEST)
@@ -165,7 +191,7 @@ def normalize_match(e, store, reg_by_id):
         "datum": f"{dt.year:04d}-{dt.month:02d}-{dt.day:02d}",
         "dag": _SV_DAYS[dt.weekday()],
         "tid": f"{dt.hour:02d}:{dt.minute:02d}",
-        "bana": hall, "maps": _maps_url(hall),
+        "bana": hall, "maps": _maps_url(venue or hall),
         "video": video,
         "runda": runda,
         "hemma": hemma, "borta": borta,
