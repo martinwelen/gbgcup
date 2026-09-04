@@ -1,0 +1,10 @@
+name = "gbgcup-stats"
+main = "stats-worker.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+CF_ACCOUNT_ID = "2209799039042922b6f907f9507281c3"
+# CF_SITE_TAG sätts efter deploy via /diag (INTE beacon-token — se README).
+# Secrets (sätts EJ här):
+#   CF_API_TOKEN  (du: wrangler secret put CF_API_TOKEN — Account Analytics: Read)
+#   DASH_SECRET   (jag genererar + sätter)
