@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-04T11:02:29+00:00",
-  "seq": 1788519749,
-  "data_hash": "3ee0c250a4faa91a366bbdb59a594238b3a8cf8b9acda59af7b5af52417aa899"
+  "generated": "2026-09-04T15:41:47+00:00",
+  "seq": 1788536507,
+  "data_hash": "b9cff4b1c138ac12594d07bdfcfc61af0ebf344541430ef20c0405b8f4c93934"
  },
  "groups": {
   "F11": {
@@ -972,7 +972,10 @@
      "grupp": "Grupp E",
      "mots": "Kärra HF Gul",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 17,
+      "ag": 11
+     },
      "start_ms": 1788534000000,
      "start_iso": "2026-09-04T17:00+02:00",
      "day_label": "Fredag 4 september"
