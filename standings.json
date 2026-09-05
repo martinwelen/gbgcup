@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T18:11:58+00:00",
-  "seq": 1788631918,
-  "data_hash": "2d0d5cc0f0f0c21a999e4b2e7d732cea07d205ed1fec7a13ecdfd85f306e1002"
+  "generated": "2026-09-05T18:22:14+00:00",
+  "seq": 1788632534,
+  "data_hash": "fdc0559a6a6678a5c658fc2f2761faf25faa79b36fc806ee604dea4b5cd5c0e5"
  },
  "by_age": {
   "F16": {
@@ -32,14 +32,14 @@
        "name": "Önnereds HK 1",
        "team_id": 81958781,
        "is_alingsas": false,
-       "played": 2,
-       "won": 1,
+       "played": 3,
+       "won": 2,
        "tied": 0,
        "lost": 1,
-       "goals_for": 31,
-       "goals_against": 19,
-       "diff": 12,
-       "points": 2,
+       "goals_for": 44,
+       "goals_against": 30,
+       "diff": 14,
+       "points": 4,
        "tier": "Slutspel A",
        "pos": 2
       },
@@ -62,13 +62,13 @@
        "name": "Stenungsunds HK utom tävlan",
        "team_id": 77900018,
        "is_alingsas": false,
-       "played": 2,
+       "played": 3,
        "won": 0,
        "tied": 0,
-       "lost": 2,
-       "goals_for": 0,
-       "goals_against": 20,
-       "diff": -20,
+       "lost": 3,
+       "goals_for": 11,
+       "goals_against": 33,
+       "diff": -22,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 4
