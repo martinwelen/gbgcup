@@ -17,6 +17,16 @@ def test_render_reapplies_livescore_after_rerender():
     assert "reapplyLive()" in template.TEMPLATE
 
 
+def test_past_days_fold_into_summary():
+    t = template.TEMPLATE
+    assert "function matchCard(" in t          # kort extraherat, återanvänds
+    assert "function daySummary(" in t          # filter-medveten sammanfattning
+    assert 'class="foldhdr"' in t
+    assert "g.datum < todayStr" in t            # dagar före idag fälls ihop
+    assert "render._open" in t                  # öppet-läge minns över omritningar
+    assert "spelad" in t and "vinst" in t       # sammanfattnings-text
+
+
 def test_match_card_has_mid_and_live_slot_and_video():
     t = template.TEMPLATE
     assert 'data-mid="${m.id||' in t            # kortet bär match-id

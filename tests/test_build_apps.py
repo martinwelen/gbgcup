@@ -69,6 +69,11 @@ def test_js_matches_classic_keeps_result_and_id():
     assert m["id"] == 777 and m["res"] == {"hg": 20, "ag": 18}
 
 
+def test_js_matches_includes_datum():
+    g = _group("P16", [_team(1, "P16")], [_m("t-1", "P16")])
+    assert build_apps._js_matches(g)[0]["datum"] == "2026-09-04"
+
+
 def test_js_matches_dur_in_ms():
     g = _group("HJ", [_team(1, "HJ")], [_m("t-1", "HJ", dur=50)])
     assert build_apps._js_matches(g)[0]["dur"] == 50 * 60000

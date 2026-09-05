@@ -82,7 +82,8 @@ def _js_matches(group):
             "lag": name_by_slug.get(m["slug"], m["slug"]), "slug": m["slug"],
             "klass": m["klass"],
             "grp": m["grupp"], "home": m["hemma"], "away": m["borta"],
-            "hb": m["hb"], "day": m["day_label"], "color": m["color"].lstrip("#"),
+            "hb": m["hb"], "day": m["day_label"], "datum": m["datum"],
+            "color": m["color"].lstrip("#"),
             "dur": (m.get("dur") or 40) * 60000,   # per-match väggklocka i ms
             "res": None if mini else m.get("result"),
             "id": None if mini else m.get("id"),

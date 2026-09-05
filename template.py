@@ -197,6 +197,14 @@ table.gt{width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums
 .haddr{font-size:.78rem;color:var(--ink-soft)}
 .hcnt{text-align:center;font-family:"Anton",sans-serif;font-size:1.4rem;color:var(--sun);line-height:1}
 .hcnt small{display:block;font-size:.62rem;color:var(--ink-soft);font-weight:700;margin-top:-2px}
+/* hopfälld avslutad dag */
+.foldday{margin:6px 0 12px}
+.foldhdr{width:100%;display:flex;align-items:center;gap:10px;background:linear-gradient(180deg,#eef6ef,var(--card));border:1px solid #d3e6d6;border-left:5px solid #2f9e44;border-radius:14px;padding:12px 14px;text-align:left;cursor:pointer;box-shadow:0 2px 8px rgba(20,40,60,.06);font:inherit;color:inherit}
+.foldhdr:active{transform:scale(.997)}
+.foldday-t{font-family:"Anton",sans-serif;font-size:.95rem;letter-spacing:.03em;color:var(--ink)}
+.foldsum{flex:1;font-size:.8rem;font-weight:700;color:var(--ink-soft)}
+.foldchev{color:var(--ink-soft);font-weight:800;font-size:1rem}
+.foldbody{margin-top:9px}
 .nowtag{font-size:.6rem; font-weight:800; color:var(--sun); letter-spacing:.08em}
 .empty{padding:30px 4px; color:var(--ink-soft); text-align:center; font-weight:600}
 
@@ -422,6 +430,36 @@ function fmtCountdown(ms){
 }
 function videoLink(u){ return (u && /^https:\/\//.test(u)) ? `<a class="vidlink" href="${encodeURI(u)}" target="_blank" rel="noopener" aria-label="Se video på solidsport">▶ Video</a>` : ""; }
 
+function matchCard(m, now){
+  const st = state(m, now);
+  const homeAli = m.hb==="Hemma";
+  return `<article class="match ${st}" data-mid="${m.id||''}" style="--c:#${m.color}">
+        <div class="t">${m.t}${st==="live"?'<small class="nowtag">NU</small>':""}</div>
+        <div>
+          <div class="chips"><span class="lagchip" style="background:#${m.color}">${esc(m.lag)}</span>
+            ${m.klass?`<span class="klasschip">${esc(m.klass)}</span>`:""}<span class="grp">${esc(m.grp)}</span>${m.runda?`<span class="rundachip">${esc(m.runda)}</span>`:""}</div>
+          <div class="vs"><span class="${homeAli?"ali":""}">${esc(m.home)}</span> – <span class="${homeAli?"":"ali"}">${esc(m.away)}</span></div>
+          <div class="lscore" hidden></div>
+          ${m.res ? `<div class="score"><b class="${m.res.hg>m.res.ag?'w':m.res.hg<m.res.ag?'l':''}">${m.res.hg}</b><span class="x">–</span><b class="${m.res.ag>m.res.hg?'w':m.res.ag<m.res.hg?'l':''}">${m.res.ag}</b></div>` : ""}
+          ${videoLink(m.video)}
+        </div>
+        <div class="bana">${m.maps?`<a href="${encodeURI(m.maps)}" target="_blank" rel="noopener">📍 ${esc(m.bana)}</a>`:`📍 ${esc(m.bana)}`}</div>
+      </article>`;
+}
+
+// Sammanfattning (filter-medveten) för en avslutad dag.
+function daySummary(ms){
+  let w=0,t=0,l=0;
+  for(const m of ms){ if(!m.res) continue;
+    const mine=m.hb==="Hemma"?m.res.hg:m.res.ag, opp=m.hb==="Hemma"?m.res.ag:m.res.hg;
+    if(mine>opp)w++; else if(mine<opp)l++; else t++; }
+  let s = `${ms.length} spelad${ms.length===1?"":"e"}`;
+  if(w) s += ` · ${w} vinst${w===1?"":"er"}`;
+  if(t) s += ` · ${t} oavgjord${t===1?"":"a"}`;
+  if(l) s += ` · ${l} förlust${l===1?"":"er"}`;
+  return s;
+}
+
 function render(){
   const now = Date.now();
   const rows = MATCHES.filter(matchPass).sort((a,b)=>a.ms-b.ms);
@@ -449,27 +487,30 @@ function render(){
     hero.innerHTML = rows.length
       ? `<div class="hero"><div class="lbl">Klart</div><div class="mt">Alla matcher spelade</div></div>` : "";
   }
-  // lista grupperad per dag
+  // lista grupperad per dag; avslutade dagar (före idag) fälls ihop
   const list = $("#list");
   if(!rows.length){ list.innerHTML = '<div class="empty">Inga matcher för det här filtret.</div>'; return; }
-  let html = "", curDay = null;
+  const _n = new Date();
+  const todayStr = `${_n.getFullYear()}-${String(_n.getMonth()+1).padStart(2,"0")}-${String(_n.getDate()).padStart(2,"0")}`;
+  const byDay = [];
   for(const m of rows){
-    if(m.day !== curDay){ curDay = m.day; html += `<div class="day">${esc(m.day)}</div>`; }
-    const st = state(m, now);
-    const homeAli = m.hb==="Hemma";
-    html +=
-      `<article class="match ${st}" data-mid="${m.id||''}" style="--c:#${m.color}">
-        <div class="t">${m.t}${st==="live"?'<small class="nowtag">NU</small>':""}</div>
-        <div>
-          <div class="chips"><span class="lagchip" style="background:#${m.color}">${esc(m.lag)}</span>
-            ${m.klass?`<span class="klasschip">${esc(m.klass)}</span>`:""}<span class="grp">${esc(m.grp)}</span>${m.runda?`<span class="rundachip">${esc(m.runda)}</span>`:""}</div>
-          <div class="vs"><span class="${homeAli?"ali":""}">${esc(m.home)}</span> – <span class="${homeAli?"":"ali"}">${esc(m.away)}</span></div>
-          <div class="lscore" hidden></div>
-          ${m.res ? `<div class="score"><b class="${m.res.hg>m.res.ag?'w':m.res.hg<m.res.ag?'l':''}">${m.res.hg}</b><span class="x">–</span><b class="${m.res.ag>m.res.hg?'w':m.res.ag<m.res.hg?'l':''}">${m.res.ag}</b></div>` : ""}
-          ${videoLink(m.video)}
-        </div>
-        <div class="bana">${m.maps?`<a href="${encodeURI(m.maps)}" target="_blank" rel="noopener">📍 ${esc(m.bana)}</a>`:`📍 ${esc(m.bana)}`}</div>
-      </article>`;
+    let g = byDay[byDay.length-1];
+    if(!g || g.day !== m.day){ g = {day:m.day, datum:m.datum, ms:[]}; byDay.push(g); }
+    g.ms.push(m);
+  }
+  let html = "";
+  for(const g of byDay){
+    if(g.datum && g.datum < todayStr){
+      const wasOpen = render._open && render._open.has(g.datum);
+      html += `<div class="foldday">`
+        + `<button class="foldhdr" data-datum="${g.datum}" aria-expanded="${wasOpen?"true":"false"}">`
+        + `<span class="foldday-t">${esc(g.day)}</span><span class="foldsum">${esc(daySummary(g.ms))}</span>`
+        + `<span class="foldchev">${wasOpen?"▾":"▸"}</span></button>`
+        + `<div class="foldbody"${wasOpen?"":" hidden"}>${g.ms.map(m=>matchCard(m,now)).join("")}</div>`
+        + `</div>`;
+    } else {
+      html += `<div class="day">${esc(g.day)}</div>` + g.ms.map(m=>matchCard(m,now)).join("");
+    }
   }
   list.innerHTML = html;
   if(typeof reapplyLive==="function") reapplyLive();
@@ -480,6 +521,18 @@ function render(){
     setTimeout(()=>{ const el=document.querySelector(".match.live")||document.querySelector(".match.up"); }, 50);
   }
 }
+
+// Fäll ut/ihop en avslutad dag (delegerat; render._open minns öppna dagar över omritningar).
+render._open = new Set();
+document.getElementById("list").addEventListener("click", (e)=>{
+  const h = e.target.closest(".foldhdr"); if(!h) return;
+  const body = h.parentElement.querySelector(".foldbody");
+  const open = body.hidden;                 // dold nu → vi öppnar
+  body.hidden = !open;
+  h.setAttribute("aria-expanded", open?"true":"false");
+  h.querySelector(".foldchev").textContent = open ? "▾" : "▸";
+  if(open) render._open.add(h.dataset.datum); else render._open.delete(h.dataset.datum);
+});
 
 // nedräkning varje sekund, full omritning ibland
 setInterval(()=>{ for(const cd of document.querySelectorAll(".hero .cd")){ if(cd.dataset.ms){
