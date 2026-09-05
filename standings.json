@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T13:41:56+00:00",
-  "seq": 1788615716,
-  "data_hash": "f4e634baa1e274f220f4d5fd06239986ccf3ea23ac060b3d93023f762abd9963"
+  "generated": "2026-09-05T14:01:46+00:00",
+  "seq": 1788616906,
+  "data_hash": "8a597cbce3bb9e2c7d042b1804058218a987f613141a2869fea07510a450c55b"
  },
  "by_age": {
   "F16": {
@@ -223,8 +223,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp E",
-            "team_id": null,
+            "label": "Kärra HF Röd",
+            "team_id": 81913847,
             "is_alingsas": false,
             "goals": null
            },
@@ -393,8 +393,8 @@
            "bana": "Prioritet Serneke Arena Serneke Arena B",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp E",
-            "team_id": null,
+            "label": "Skuru IK 1",
+            "team_id": 81350807,
             "is_alingsas": false,
             "goals": null
            },
@@ -672,8 +672,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp E",
-            "team_id": null,
+            "label": "IFK Kristianstad 1",
+            "team_id": 79402377,
             "is_alingsas": false,
             "goals": null
            },
@@ -804,8 +804,8 @@
            "bana": "Lundenhallen",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp E",
-            "team_id": null,
+            "label": "HK Aranäs Vit",
+            "team_id": 77479084,
             "is_alingsas": false,
             "goals": null
            },
