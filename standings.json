@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T15:01:47+00:00",
-  "seq": 1788620507,
-  "data_hash": "da8dde0a4cbf983c15311726a311d7e51cbee102168d4fe3f3994b5244e438a1"
+  "generated": "2026-09-05T15:22:04+00:00",
+  "seq": 1788621724,
+  "data_hash": "23b2cf5e7c62e3f178be2664122177ab41f58271ec1db8af66196a1136c3eea1"
  },
  "by_age": {
   "F16": {
@@ -204,8 +204,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp J",
-            "team_id": null,
+            "label": "BK Heid 2",
+            "team_id": 78427242,
             "is_alingsas": false,
             "goals": null
            },
@@ -342,8 +342,8 @@
             "goals": null
            },
            "away": {
-            "label": "1:an i Grupp J",
-            "team_id": null,
+            "label": "Skuru IK 2",
+            "team_id": 81350812,
             "is_alingsas": false,
             "goals": null
            },
@@ -615,8 +615,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp J",
-            "team_id": null,
+            "label": "IFK Kristianstad 2",
+            "team_id": 79402384,
             "is_alingsas": false,
             "goals": null
            },
@@ -772,8 +772,8 @@
             "goals": null
            },
            "away": {
-            "label": "3:an i Grupp J",
-            "team_id": null,
+            "label": "Kärra HF Gul",
+            "team_id": 81913843,
             "is_alingsas": false,
             "goals": null
            },
