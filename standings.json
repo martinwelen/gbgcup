@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T16:22:42+00:00",
-  "seq": 1788625362,
-  "data_hash": "ba299cd948a41ac2212220c33a3387392871da09eaf7148a0b5dd815942fd9d8"
+  "generated": "2026-09-05T16:41:58+00:00",
+  "seq": 1788626518,
+  "data_hash": "59d667a28ec4bc722eb4cafc76d53cd2f31a962540c1ec9cb055cbdba94b5966"
  },
  "by_age": {
   "F16": {
@@ -261,8 +261,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp I",
-            "team_id": null,
+            "label": "Kärra HF Svart",
+            "team_id": 86157829,
             "is_alingsas": false,
             "goals": null
            },
@@ -323,8 +323,8 @@
             "goals": null
            },
            "away": {
-            "label": "1:an i Grupp I",
-            "team_id": null,
+            "label": "BK Heid 1",
+            "team_id": 78427238,
             "is_alingsas": false,
             "goals": null
            },
@@ -691,8 +691,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp I",
-            "team_id": null,
+            "label": "Skuru IK 3",
+            "team_id": 81350816,
             "is_alingsas": false,
             "goals": null
            },
@@ -734,8 +734,8 @@
             "goals": null
            },
            "away": {
-            "label": "3:an i Grupp I",
-            "team_id": null,
+            "label": "HK Aranäs Svart",
+            "team_id": 77479092,
             "is_alingsas": false,
             "goals": null
            },
