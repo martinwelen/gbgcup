@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-05T17:41:10+00:00",
-  "seq": 1788630070,
-  "data_hash": "c43483797f60889008f17ed1f48335e05ecc6e3fa0bc4645cca4fff6d35a2c22"
+  "generated": "2026-09-05T18:11:17+00:00",
+  "seq": 1788631877,
+  "data_hash": "49a21d3b722a6f6865b118d6e40913f731f859662475c7bec4f06ceef4b4f507"
  },
  "groups": {
   "F11": {
@@ -584,6 +584,36 @@
      "start_ms": 1788622800000,
      "start_iso": "2026-09-05T17:40+02:00",
      "day_label": "Lördag 5 september"
+    },
+    {
+     "age_slug": "F13",
+     "slug": "t-86024959",
+     "id": 85896029,
+     "gender": "F",
+     "klass": "F13",
+     "rule": "Classic",
+     "dur": 40,
+     "color": "#1f5fbf",
+     "datum": "2026-09-06",
+     "dag": "Söndag",
+     "tid": "09:00",
+     "bana": "Kviberg Park Sporthall B",
+     "maps": "https://www.google.com/maps/search/?api=1&query=57.7376493,12.0353604",
+     "lat": 57.7376493,
+     "lng": 12.0353604,
+     "venue": "Kviberg Park Sporthall",
+     "street": "Marketenterivägen",
+     "video": "https://solidsport.com/gbgcup/watch/1-an-i-grupp-k-2-an-i-grupp-i-19781552-8442-4bd9-bd23-540178fea407",
+     "runda": "1/16-final",
+     "hemma": "Alingsås HK Blå",
+     "borta": "Konnerud IL 2",
+     "grupp": "Slutspel A",
+     "mots": "Konnerud IL 2",
+     "hb": "Hemma",
+     "result": null,
+     "start_ms": 1788678000000,
+     "start_iso": "2026-09-06T09:00+02:00",
+     "day_label": "Söndag 6 september"
     },
     {
      "age_slug": "F13",

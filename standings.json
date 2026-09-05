@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T17:41:43+00:00",
-  "seq": 1788630103,
-  "data_hash": "23a316ad5ab9a3cd71d77a26fab35d9cc1199382eede668032aa87e7885e9eaa"
+  "generated": "2026-09-05T18:11:58+00:00",
+  "seq": 1788631918,
+  "data_hash": "2d0d5cc0f0f0c21a999e4b2e7d732cea07d205ed1fec7a13ecdfd85f306e1002"
  },
  "by_age": {
   "F16": {
@@ -2396,14 +2396,14 @@
        "name": "Önnereds HK Vit",
        "team_id": 76509222,
        "is_alingsas": false,
-       "played": 2,
-       "won": 0,
+       "played": 3,
+       "won": 1,
        "tied": 0,
        "lost": 2,
-       "goals_for": 31,
-       "goals_against": 36,
-       "diff": -5,
-       "points": 0,
+       "goals_for": 45,
+       "goals_against": 46,
+       "diff": -1,
+       "points": 2,
        "tier": "Slutspel B",
        "pos": 3
       },
@@ -2411,13 +2411,13 @@
        "name": "Greve Håndbold 2",
        "team_id": 76618228,
        "is_alingsas": false,
-       "played": 2,
+       "played": 3,
        "won": 0,
        "tied": 0,
-       "lost": 2,
-       "goals_for": 19,
-       "goals_against": 29,
-       "diff": -10,
+       "lost": 3,
+       "goals_for": 29,
+       "goals_against": 43,
+       "diff": -14,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 4
@@ -2585,9 +2585,9 @@
            "bana": "Kviberg Park Sporthall B",
            "round": "1/16 Final",
            "home": {
-            "label": "1:an i Grupp K",
-            "team_id": null,
-            "is_alingsas": false,
+            "label": "Alingsås HK Blå",
+            "team_id": 86024959,
+            "is_alingsas": true,
             "goals": null
            },
            "away": {
@@ -2610,8 +2610,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp K",
-            "team_id": null,
+            "label": "Staffanstorps HK",
+            "team_id": 76661195,
             "is_alingsas": false,
             "goals": null
            },
@@ -3021,8 +3021,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp K",
-            "team_id": null,
+            "label": "Greve Håndbold 2",
+            "team_id": 76618228,
             "is_alingsas": false,
             "goals": null
            },
@@ -3110,8 +3110,8 @@
            "bana": "Torpahallen",
            "round": "1/16 Final",
            "home": {
-            "label": "3:an i Grupp K",
-            "team_id": null,
+            "label": "Önnereds HK Vit",
+            "team_id": 76509222,
             "is_alingsas": false,
             "goals": null
            },
