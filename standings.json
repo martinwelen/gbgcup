@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T14:01:46+00:00",
-  "seq": 1788616906,
-  "data_hash": "8a597cbce3bb9e2c7d042b1804058218a987f613141a2869fea07510a450c55b"
+  "generated": "2026-09-05T15:01:47+00:00",
+  "seq": 1788620507,
+  "data_hash": "da8dde0a4cbf983c15311726a311d7e51cbee102168d4fe3f3994b5244e438a1"
  },
  "by_age": {
   "F16": {
@@ -1976,8 +1976,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp C",
-            "team_id": null,
+            "label": "Linderud IL Linje 5",
+            "team_id": 78521796,
             "is_alingsas": false,
             "goals": null
            },
@@ -2032,8 +2032,8 @@
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/4 Final",
            "home": {
-            "label": "1:an i Grupp C",
-            "team_id": null,
+            "label": "Lugi HF 3",
+            "team_id": 81412602,
             "is_alingsas": false,
             "goals": null
            },
@@ -2173,8 +2173,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp C",
-            "team_id": null,
+            "label": "Önnereds HK Utom tävlan",
+            "team_id": 86998297,
             "is_alingsas": false,
             "goals": null
            },
@@ -2267,8 +2267,8 @@
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/4 Final",
            "home": {
-            "label": "3:an i Grupp C",
-            "team_id": null,
+            "label": "Torslanda HK",
+            "team_id": 86382646,
             "is_alingsas": false,
             "goals": null
            },
@@ -2433,14 +2433,14 @@
        "name": "Alingsås HK Vit",
        "team_id": 86024965,
        "is_alingsas": true,
-       "played": 2,
-       "won": 2,
+       "played": 3,
+       "won": 3,
        "tied": 0,
        "lost": 0,
-       "goals_for": 35,
-       "goals_against": 17,
-       "diff": 18,
-       "points": 4,
+       "goals_for": 52,
+       "goals_against": 29,
+       "diff": 23,
+       "points": 6,
        "tier": "Slutspel A",
        "pos": 1
       },
@@ -2463,13 +2463,13 @@
        "name": "HP Warta Svart",
        "team_id": 86381849,
        "is_alingsas": false,
-       "played": 2,
+       "played": 3,
        "won": 1,
        "tied": 0,
-       "lost": 1,
-       "goals_for": 28,
-       "goals_against": 24,
-       "diff": 4,
+       "lost": 2,
+       "goals_for": 40,
+       "goals_against": 41,
+       "diff": -1,
        "points": 2,
        "tier": "Slutspel B",
        "pos": 3
@@ -2509,8 +2509,8 @@
            "bana": "Sandklevsskolan",
            "round": "1/16 Final",
            "home": {
-            "label": "2:an i Grupp C",
-            "team_id": null,
+            "label": "BK Heid svart",
+            "team_id": 77076108,
             "is_alingsas": false,
             "goals": null
            },
@@ -2723,8 +2723,8 @@
            "bana": "Kviberg Park Sporthall A",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp C",
-            "team_id": null,
+            "label": "GF Kroppskultur 1",
+            "team_id": 85939233,
             "is_alingsas": false,
             "goals": null
            },
@@ -2977,8 +2977,8 @@
            "bana": "Härlandatjärnskolan",
            "round": "1/16 Final",
            "home": {
-            "label": "4:an i Grupp C",
-            "team_id": null,
+            "label": "Greve Håndbold Utom tävlan",
+            "team_id": 81022228,
             "is_alingsas": false,
             "goals": null
            },
@@ -3229,8 +3229,8 @@
            "bana": "Torpahallen",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp C",
-            "team_id": null,
+            "label": "Lugi HF 1",
+            "team_id": 76596042,
             "is_alingsas": false,
             "goals": null
            },

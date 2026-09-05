@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-05T13:41:17+00:00",
-  "seq": 1788615677,
-  "data_hash": "41f6974785f9a1f2106722b1d896c80cebe535b200096bb325a73e7fe27d956a"
+  "generated": "2026-09-05T15:01:16+00:00",
+  "seq": 1788620476,
+  "data_hash": "4e92d8e0914d9ca9b0477b6e9be90126101c09c807c6966e80f7f83b38460130"
  },
  "groups": {
   "F11": {
@@ -544,7 +544,10 @@
      "grupp": "Grupp L",
      "mots": "HP Warta Svart",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 17,
+      "ag": 12
+     },
      "start_ms": 1788618000000,
      "start_iso": "2026-09-05T16:20+02:00",
      "day_label": "Lördag 5 september"
