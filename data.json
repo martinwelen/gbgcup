@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-04T17:41:42+00:00",
-  "seq": 1788543702,
-  "data_hash": "4a07451461fee8f46d2cdcd9a376b05d520058641eaa631655aad4843e6d9eed"
+  "generated": "2026-09-05T08:21:06+00:00",
+  "seq": 1788596466,
+  "data_hash": "24830c622ed4035ed1adfc389a8cf1f2696334c224e5d21f345a1ca2c9f71260"
  },
  "groups": {
   "F11": {
@@ -820,7 +820,10 @@
      "grupp": "Grupp H",
      "mots": "HK Ankaret 2",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 10,
+      "ag": 12
+     },
      "start_ms": 1788594000000,
      "start_iso": "2026-09-05T09:40+02:00",
      "day_label": "Lördag 5 september"
