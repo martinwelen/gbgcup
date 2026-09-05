@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T11:31:43+00:00",
-  "seq": 1788607903,
-  "data_hash": "e8a9df6a6836d8ee7de6874c053ac7cafe57ed167b1be25dbc551b11ac8d571f"
+  "generated": "2026-09-05T11:41:59+00:00",
+  "seq": 1788608519,
+  "data_hash": "daa2bbc0cb0cd44224be20b2cc9e0a61df2028bc477fa3a055eacbe244b94bcc"
  },
  "by_age": {
   "F16": {
@@ -104,26 +104,11 @@
        "tied": 0,
        "lost": 1,
        "goals_for": 39,
-       "goals_against": 36,
-       "diff": 3,
+       "goals_against": 35,
+       "diff": 4,
        "points": 4,
        "tier": "Slutspel A",
        "pos": 2
-      },
-      {
-       "name": "HK Ankaret 2",
-       "team_id": 78780190,
-       "is_alingsas": false,
-       "played": 3,
-       "won": 0,
-       "tied": 1,
-       "lost": 2,
-       "goals_for": 41,
-       "goals_against": 45,
-       "diff": -4,
-       "points": 1,
-       "tier": "Slutspel B",
-       "pos": 3
       },
       {
        "name": "IK Sävehof 1",
@@ -136,6 +121,21 @@
        "goals_for": 38,
        "goals_against": 42,
        "diff": -4,
+       "points": 1,
+       "tier": "Slutspel B",
+       "pos": 3
+      },
+      {
+       "name": "HK Ankaret 2",
+       "team_id": 78780190,
+       "is_alingsas": false,
+       "played": 3,
+       "won": 0,
+       "tied": 1,
+       "lost": 2,
+       "goals_for": 40,
+       "goals_against": 45,
+       "diff": -5,
        "points": 1,
        "tier": "Slutspel B",
        "pos": 4
@@ -653,8 +653,8 @@
             "goals": null
            },
            "away": {
-            "label": "IK Sävehof 1",
-            "team_id": 85892331,
+            "label": "HK Ankaret 2",
+            "team_id": 78780190,
             "is_alingsas": false,
             "goals": null
            },
@@ -728,8 +728,8 @@
            "bana": "Lundenhallen",
            "round": "1/8 Final",
            "home": {
-            "label": "HK Ankaret 2",
-            "team_id": 78780190,
+            "label": "IK Sävehof 1",
+            "team_id": 85892331,
             "is_alingsas": false,
             "goals": null
            },
@@ -1052,14 +1052,14 @@
        "name": "Täby HBK 2",
        "team_id": 85853609,
        "is_alingsas": false,
-       "played": 2,
-       "won": 0,
+       "played": 3,
+       "won": 1,
        "tied": 1,
        "lost": 1,
-       "goals_for": 29,
-       "goals_against": 43,
-       "diff": -14,
-       "points": 1,
+       "goals_for": 46,
+       "goals_against": 58,
+       "diff": -12,
+       "points": 3,
        "tier": "Slutspel B",
        "pos": 3
       },
@@ -1067,13 +1067,13 @@
        "name": "Kärra HF Gul",
        "team_id": 80027808,
        "is_alingsas": false,
-       "played": 2,
+       "played": 3,
        "won": 0,
        "tied": 0,
-       "lost": 2,
-       "goals_for": 23,
-       "goals_against": 30,
-       "diff": -7,
+       "lost": 3,
+       "goals_for": 38,
+       "goals_against": 47,
+       "diff": -9,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 4

@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-05T11:01:19+00:00",
-  "seq": 1788606079,
-  "data_hash": "f9aea6e9331cfa537a62cea308c8025c2b124fb47632fbe7014dce2d6b4ea133"
+  "generated": "2026-09-05T11:41:15+00:00",
+  "seq": 1788608475,
+  "data_hash": "9e523a8f6b9e4f8145c3f14964dbbe380da84ba957c5888785c8030bf629461b"
  },
  "groups": {
   "F11": {
@@ -478,7 +478,10 @@
      "grupp": "Grupp L",
      "mots": "Lugi HF 2",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 5,
+      "ag": 19
+     },
      "start_ms": 1788606000000,
      "start_iso": "2026-09-05T13:00+02:00",
      "day_label": "Lördag 5 september"
@@ -659,7 +662,10 @@
      "grupp": "Grupp E",
      "mots": "Hammarby IF HF",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 14,
+      "ag": 11
+     },
      "start_ms": 1788606000000,
      "start_iso": "2026-09-05T13:00+02:00",
      "day_label": "Lördag 5 september"
@@ -827,7 +833,7 @@
      "mots": "HK Ankaret 2",
      "hb": "Borta",
      "result": {
-      "hg": 10,
+      "hg": 9,
       "ag": 12
      },
      "start_ms": 1788594000000,
