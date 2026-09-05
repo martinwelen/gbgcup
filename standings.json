@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T18:22:14+00:00",
-  "seq": 1788632534,
-  "data_hash": "fdc0559a6a6678a5c658fc2f2761faf25faa79b36fc806ee604dea4b5cd5c0e5"
+  "generated": "2026-09-05T18:51:35+00:00",
+  "seq": 1788634295,
+  "data_hash": "f095be70f1a0011aa239b6be3ad56e2fdde98e1ca8f09894fdc854327c961151"
  },
  "by_age": {
   "F16": {
@@ -2572,8 +2572,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp H",
-            "team_id": null,
+            "label": "Kärra HF Svart",
+            "team_id": 77041143,
             "is_alingsas": false,
             "goals": null
            },
@@ -2761,8 +2761,8 @@
            "bana": "Sandklevsskolan",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp H",
-            "team_id": null,
+            "label": "HK Aranäs Vit",
+            "team_id": 82034193,
             "is_alingsas": false,
             "goals": null
            },
@@ -3078,8 +3078,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp H",
-            "team_id": null,
+            "label": "KFUM Trollhättans IA 2",
+            "team_id": 81350728,
             "is_alingsas": false,
             "goals": null
            },
@@ -3172,8 +3172,8 @@
            "bana": "Härlandatjärnskolan",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp H",
-            "team_id": null,
+            "label": "IK Sävehof 1",
+            "team_id": 80700598,
             "is_alingsas": false,
             "goals": null
            },
