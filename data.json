@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-05T09:41:17+00:00",
-  "seq": 1788601277,
-  "data_hash": "dc7f8c19d168cc53446600b2d2e3f6ad924dd63fa59df1133443e488a05445c7"
+  "generated": "2026-09-05T10:21:13+00:00",
+  "seq": 1788603673,
+  "data_hash": "7eeec008af8565c2f9e37e0e7383ed94de04a180605766fec61da86a09a2e67d"
  },
  "groups": {
   "F11": {
@@ -1089,7 +1089,10 @@
      "grupp": "Grupp I",
      "mots": "IK Sund 1",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 14,
+      "ag": 14
+     },
      "start_ms": 1788601200000,
      "start_iso": "2026-09-05T11:40+02:00",
      "day_label": "Lördag 5 september"
