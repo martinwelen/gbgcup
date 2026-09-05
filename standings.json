@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T13:02:10+00:00",
-  "seq": 1788613330,
-  "data_hash": "ad3458a19b63f2e4b5b2c59f930551c192631742543a7b3f20d28ec46fbf42d6"
+  "generated": "2026-09-05T13:41:56+00:00",
+  "seq": 1788615716,
+  "data_hash": "f4e634baa1e274f220f4d5fd06239986ccf3ea23ac060b3d93023f762abd9963"
  },
  "by_age": {
   "F16": {
@@ -1104,14 +1104,14 @@
        "name": "IK Sund 1",
        "team_id": 86183986,
        "is_alingsas": false,
-       "played": 2,
-       "won": 1,
+       "played": 3,
+       "won": 2,
        "tied": 1,
        "lost": 0,
-       "goals_for": 30,
-       "goals_against": 25,
-       "diff": 5,
-       "points": 3,
+       "goals_for": 47,
+       "goals_against": 40,
+       "diff": 7,
+       "points": 5,
        "tier": "Slutspel A",
        "pos": 2
       },
@@ -1134,13 +1134,13 @@
        "name": "Kärra HF Svart",
        "team_id": 80027803,
        "is_alingsas": false,
-       "played": 2,
+       "played": 3,
        "won": 0,
        "tied": 0,
-       "lost": 2,
-       "goals_for": 29,
-       "goals_against": 41,
-       "diff": -12,
+       "lost": 3,
+       "goals_for": 44,
+       "goals_against": 58,
+       "diff": -14,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 4
@@ -1171,9 +1171,9 @@
             "goals": null
            },
            "away": {
-            "label": "1:an i Grupp I",
-            "team_id": null,
-            "is_alingsas": false,
+            "label": "Alingsås HK 1",
+            "team_id": 77339117,
+            "is_alingsas": true,
             "goals": null
            },
            "winner": null
@@ -1328,8 +1328,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp I",
-            "team_id": null,
+            "label": "IK Sund 1",
+            "team_id": 86183986,
             "is_alingsas": false,
             "goals": null
            },
@@ -1563,8 +1563,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp I",
-            "team_id": null,
+            "label": "Kärra HF Svart",
+            "team_id": 80027803,
             "is_alingsas": false,
             "goals": null
            },
@@ -1587,8 +1587,8 @@
             "goals": null
            },
            "away": {
-            "label": "3:an i Grupp I",
-            "team_id": null,
+            "label": "Hammarby IF HF",
+            "team_id": 78296686,
             "is_alingsas": false,
             "goals": null
            },

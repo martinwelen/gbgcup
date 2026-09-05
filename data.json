@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-05T13:01:23+00:00",
-  "seq": 1788613283,
-  "data_hash": "eb8bd9179d4e272e913677df9a93b631930f02221ed5256be748efbfd8ade698"
+  "generated": "2026-09-05T13:41:17+00:00",
+  "seq": 1788615677,
+  "data_hash": "41f6974785f9a1f2106722b1d896c80cebe535b200096bb325a73e7fe27d956a"
  },
  "groups": {
   "F11": {
@@ -1204,6 +1204,36 @@
      "start_ms": 1788610800000,
      "start_iso": "2026-09-05T14:20+02:00",
      "day_label": "Lördag 5 september"
+    },
+    {
+     "age_slug": "P16",
+     "slug": "t-77339117",
+     "id": 85520299,
+     "gender": "P",
+     "klass": "P16",
+     "rule": "Classic",
+     "dur": 40,
+     "color": "#e8730c",
+     "datum": "2026-09-06",
+     "dag": "Söndag",
+     "tid": "08:20",
+     "bana": "ÖHK-Hallen A",
+     "maps": "https://www.google.com/maps/search/?api=1&query=57.66828599999999,11.8827533",
+     "lat": 57.66828599999999,
+     "lng": 11.8827533,
+     "venue": "",
+     "street": "Redegatan 18",
+     "video": "https://solidsport.com/gbgcup/watch/1-an-i-grupp-h-1-an-i-grupp-i-ee4bd703-0f4e-4e96-975c-237cbd3a534f",
+     "runda": "1/8-final",
+     "hemma": "1:an i Grupp H",
+     "borta": "Alingsås HK 1",
+     "grupp": "Slutspel A",
+     "mots": "1:an i Grupp H",
+     "hb": "Borta",
+     "result": null,
+     "start_ms": 1788675600000,
+     "start_iso": "2026-09-06T08:20+02:00",
+     "day_label": "Söndag 6 september"
     },
     {
      "age_slug": "P16",
