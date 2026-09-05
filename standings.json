@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T12:19:42+00:00",
-  "seq": 1788610782,
-  "data_hash": "ab6ca78c1024769f75a7fc54e037dfbeccdf45be7265602162d72affb43dfe9a"
+  "generated": "2026-09-05T13:02:10+00:00",
+  "seq": 1788613330,
+  "data_hash": "ad3458a19b63f2e4b5b2c59f930551c192631742543a7b3f20d28ec46fbf42d6"
  },
  "by_age": {
   "F16": {
@@ -1089,14 +1089,14 @@
        "name": "Alingsås HK 1",
        "team_id": 77339117,
        "is_alingsas": true,
-       "played": 2,
-       "won": 1,
+       "played": 3,
+       "won": 2,
        "tied": 1,
        "lost": 0,
-       "goals_for": 35,
-       "goals_against": 27,
-       "diff": 8,
-       "points": 3,
+       "goals_for": 53,
+       "goals_against": 44,
+       "diff": 9,
+       "points": 5,
        "tier": "Slutspel A",
        "pos": 1
       },
@@ -1119,13 +1119,13 @@
        "name": "Hammarby IF HF",
        "team_id": 78296686,
        "is_alingsas": false,
-       "played": 2,
+       "played": 3,
        "won": 1,
        "tied": 0,
-       "lost": 1,
-       "goals_for": 31,
-       "goals_against": 32,
-       "diff": -1,
+       "lost": 2,
+       "goals_for": 48,
+       "goals_against": 50,
+       "diff": -2,
        "points": 2,
        "tier": "Slutspel B",
        "pos": 3
@@ -1298,8 +1298,8 @@
            "bana": "ÖHK-Hallen A",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp F",
-            "team_id": null,
+            "label": "Torslanda HK",
+            "team_id": 76821977,
             "is_alingsas": false,
             "goals": null
            },
@@ -1347,8 +1347,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp F",
-            "team_id": null,
+            "label": "RP IF Linköping",
+            "team_id": 80528948,
             "is_alingsas": false,
             "goals": null
            },
@@ -1525,8 +1525,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp F",
-            "team_id": null,
+            "label": "GT Söder Handbollsklubb",
+            "team_id": 76703981,
             "is_alingsas": false,
             "goals": null
            },
@@ -1714,8 +1714,8 @@
            "bana": "Frölunda Kulturhus",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp F",
-            "team_id": null,
+            "label": "Redbergslids IK",
+            "team_id": 82263514,
             "is_alingsas": false,
             "goals": null
            },
@@ -2378,17 +2378,17 @@
        "pos": 1
       },
       {
-       "name": "Greve Håndbold 2",
-       "team_id": 76618228,
+       "name": "Staffanstorps HK",
+       "team_id": 76661195,
        "is_alingsas": false,
-       "played": 0,
-       "won": 0,
+       "played": 2,
+       "won": 1,
        "tied": 0,
-       "lost": 0,
-       "goals_for": 0,
-       "goals_against": 0,
-       "diff": 0,
-       "points": 0,
+       "lost": 1,
+       "goals_for": 29,
+       "goals_against": 32,
+       "diff": -3,
+       "points": 2,
        "tier": "Slutspel A",
        "pos": 2
       },
@@ -2408,16 +2408,16 @@
        "pos": 3
       },
       {
-       "name": "Staffanstorps HK",
-       "team_id": 76661195,
+       "name": "Greve Håndbold 2",
+       "team_id": 76618228,
        "is_alingsas": false,
        "played": 1,
        "won": 0,
        "tied": 0,
        "lost": 1,
-       "goals_for": 15,
-       "goals_against": 22,
-       "diff": -7,
+       "goals_for": 10,
+       "goals_against": 14,
+       "diff": -4,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 4

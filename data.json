@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-05T12:19:06+00:00",
-  "seq": 1788610746,
-  "data_hash": "f4c651c10a7d5b2e73ddc285344b3bd38d4ba6176de6b79b28c0e27c0374d89b"
+  "generated": "2026-09-05T13:01:23+00:00",
+  "seq": 1788613283,
+  "data_hash": "eb8bd9179d4e272e913677df9a93b631930f02221ed5256be748efbfd8ade698"
  },
  "groups": {
   "F11": {
@@ -1197,7 +1197,10 @@
      "grupp": "Grupp I",
      "mots": "Hammarby IF HF",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 17,
+      "ag": 18
+     },
      "start_ms": 1788610800000,
      "start_iso": "2026-09-05T14:20+02:00",
      "day_label": "Lördag 5 september"
