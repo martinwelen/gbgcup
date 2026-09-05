@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T12:12:05+00:00",
-  "seq": 1788610325,
-  "data_hash": "4464459578b683ea5ee79b9ec9d4780ef207034bf903b42af26a54d39b2f09af"
+  "generated": "2026-09-05T12:19:42+00:00",
+  "seq": 1788610782,
+  "data_hash": "ab6ca78c1024769f75a7fc54e037dfbeccdf45be7265602162d72affb43dfe9a"
  },
  "by_age": {
   "F16": {
@@ -198,8 +198,8 @@
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "1/16 Final",
            "home": {
-            "label": "2:an i Grupp B",
-            "team_id": null,
+            "label": "Täby HBK 2",
+            "team_id": 76528952,
             "is_alingsas": false,
             "goals": null
            },
@@ -298,8 +298,8 @@
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp B",
-            "team_id": null,
+            "label": "Lödde Vikings HK 1",
+            "team_id": 80258221,
             "is_alingsas": false,
             "goals": null
            },
@@ -609,8 +609,8 @@
            "bana": "Lundbystrand 5",
            "round": "1/16 Final",
            "home": {
-            "label": "4:an i Grupp B",
-            "team_id": null,
+            "label": "Torslanda HK VIT",
+            "team_id": 77954882,
             "is_alingsas": false,
             "goals": null
            },
@@ -823,8 +823,8 @@
            "bana": "Lundenhallen",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp B",
-            "team_id": null,
+            "label": "HK Aranäs Gul",
+            "team_id": 77479096,
             "is_alingsas": false,
             "goals": null
            },
@@ -1022,14 +1022,14 @@
        "name": "Alingsås HK 2",
        "team_id": 77339121,
        "is_alingsas": true,
-       "played": 2,
-       "won": 2,
+       "played": 3,
+       "won": 3,
        "tied": 0,
        "lost": 0,
-       "goals_for": 43,
-       "goals_against": 23,
-       "diff": 20,
-       "points": 4,
+       "goals_for": 62,
+       "goals_against": 35,
+       "diff": 27,
+       "points": 6,
        "tier": "Slutspel A",
        "pos": 1
       },
@@ -1037,13 +1037,13 @@
        "name": "IK Sund 2",
        "team_id": 86183994,
        "is_alingsas": false,
-       "played": 2,
+       "played": 3,
        "won": 1,
        "tied": 1,
-       "lost": 0,
-       "goals_for": 30,
-       "goals_against": 29,
-       "diff": 1,
+       "lost": 1,
+       "goals_for": 42,
+       "goals_against": 48,
+       "diff": -6,
        "points": 3,
        "tier": "Slutspel A",
        "pos": 2
@@ -1184,14 +1184,14 @@
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp D",
-            "team_id": null,
+            "label": "IFK Skövde HK av 1991 Vit",
+            "team_id": 82318311,
             "is_alingsas": false,
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp E",
-            "team_id": null,
+            "label": "IK Sund 2",
+            "team_id": 86183994,
             "is_alingsas": false,
             "goals": null
            },
@@ -1247,8 +1247,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp D",
-            "team_id": null,
+            "label": "IK Sävehof 2",
+            "team_id": 85892429,
             "is_alingsas": false,
             "goals": null
            },
@@ -1279,9 +1279,9 @@
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp E",
-            "team_id": null,
-            "is_alingsas": false,
+            "label": "Alingsås HK 2",
+            "team_id": 77339121,
+            "is_alingsas": true,
             "goals": null
            },
            "away": {
@@ -1538,8 +1538,8 @@
            "bana": "Frölunda Kulturhus",
            "round": "1/16 Final",
            "home": {
-            "label": "4:an i Grupp E",
-            "team_id": null,
+            "label": "Kärra HF Gul",
+            "team_id": 80027808,
             "is_alingsas": false,
             "goals": null
            },
@@ -1600,8 +1600,8 @@
            "bana": "Frölunda Kulturhus",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp D",
-            "team_id": null,
+            "label": "IFK Bankeryd Vit",
+            "team_id": 80504983,
             "is_alingsas": false,
             "goals": null
            },
@@ -1619,8 +1619,8 @@
            "bana": "Frölunda Kulturhus",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp E",
-            "team_id": null,
+            "label": "Täby HBK 2",
+            "team_id": 85853609,
             "is_alingsas": false,
             "goals": null
            },
@@ -1720,8 +1720,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp D",
-            "team_id": null,
+            "label": "IFK Kristianstad Orange",
+            "team_id": 80493319,
             "is_alingsas": false,
             "goals": null
            },
@@ -2366,20 +2366,20 @@
        "name": "Alingsås HK Blå",
        "team_id": 86024959,
        "is_alingsas": true,
-       "played": 1,
-       "won": 1,
+       "played": 2,
+       "won": 2,
        "tied": 0,
        "lost": 0,
-       "goals_for": 22,
-       "goals_against": 15,
-       "diff": 7,
-       "points": 2,
+       "goals_for": 38,
+       "goals_against": 30,
+       "diff": 8,
+       "points": 4,
        "tier": "Slutspel A",
        "pos": 1
       },
       {
-       "name": "Önnereds HK Vit",
-       "team_id": 76509222,
+       "name": "Greve Håndbold 2",
+       "team_id": 76618228,
        "is_alingsas": false,
        "played": 0,
        "won": 0,
@@ -2393,16 +2393,16 @@
        "pos": 2
       },
       {
-       "name": "Greve Håndbold 2",
-       "team_id": 76618228,
+       "name": "Önnereds HK Vit",
+       "team_id": 76509222,
        "is_alingsas": false,
-       "played": 0,
+       "played": 1,
        "won": 0,
        "tied": 0,
-       "lost": 0,
-       "goals_for": 0,
-       "goals_against": 0,
-       "diff": 0,
+       "lost": 1,
+       "goals_for": 15,
+       "goals_against": 16,
+       "diff": -1,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 3
@@ -2515,8 +2515,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp F",
-            "team_id": null,
+            "label": "Kungälvs HK Grön",
+            "team_id": 78950407,
             "is_alingsas": false,
             "goals": null
            },
@@ -2591,8 +2591,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp I",
-            "team_id": null,
+            "label": "Konnerud IL 2",
+            "team_id": 78631600,
             "is_alingsas": false,
             "goals": null
            },
@@ -2604,8 +2604,8 @@
            "bana": "Sandklevsskolan",
            "round": "1/16 Final",
            "home": {
-            "label": "1:an i Grupp I",
-            "team_id": null,
+            "label": "Hammarby IF HF 2",
+            "team_id": 79414791,
             "is_alingsas": false,
             "goals": null
            },
@@ -2742,8 +2742,8 @@
            "bana": "Kviberg Park Sporthall B",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp F",
-            "team_id": null,
+            "label": "HK Aranäs Blå",
+            "team_id": 82034201,
             "is_alingsas": false,
             "goals": null
            },
@@ -2983,8 +2983,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp F",
-            "team_id": null,
+            "label": "HK Cliff 2",
+            "team_id": 79747385,
             "is_alingsas": false,
             "goals": null
            },
@@ -3015,8 +3015,8 @@
            "bana": "Härlandatjärnskolan",
            "round": "1/16 Final",
            "home": {
-            "label": "3:an i Grupp I",
-            "team_id": null,
+            "label": "Ljunghusens HK Mörkblå",
+            "team_id": 77076097,
             "is_alingsas": false,
             "goals": null
            },
@@ -3116,8 +3116,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp I",
-            "team_id": null,
+            "label": "IK Sävehof 4",
+            "team_id": 80700613,
             "is_alingsas": false,
             "goals": null
            },
@@ -3248,8 +3248,8 @@
            "bana": "Torpahallen",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp F",
-            "team_id": null,
+            "label": "IFK Kristianstad 1",
+            "team_id": 82712730,
             "is_alingsas": false,
             "goals": null
            },
