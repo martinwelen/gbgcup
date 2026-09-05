@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-04T19:02:20+00:00",
-  "seq": 1788548540,
-  "data_hash": "aacc5d9bc39e4317ef2bc269df4c1f1adeeae6df9106ed593ae85925d1217f9a"
+  "generated": "2026-09-05T07:41:44+00:00",
+  "seq": 1788594104,
+  "data_hash": "3024310bfcfb1b1067de473007e0a3a45441582594203bf20df3272a87eae6bd"
  },
  "by_age": {
   "F16": {
@@ -84,14 +84,14 @@
        "name": "Önnereds HK 2",
        "team_id": 81958785,
        "is_alingsas": false,
-       "played": 1,
-       "won": 1,
+       "played": 2,
+       "won": 2,
        "tied": 0,
        "lost": 0,
-       "goals_for": 18,
-       "goals_against": 16,
-       "diff": 2,
-       "points": 2,
+       "goals_for": 32,
+       "goals_against": 28,
+       "diff": 4,
+       "points": 4,
        "tier": "Slutspel A",
        "pos": 1
       },
@@ -129,13 +129,13 @@
        "name": "IK Sävehof 1",
        "team_id": 85892331,
        "is_alingsas": false,
-       "played": 1,
+       "played": 2,
        "won": 0,
        "tied": 0,
-       "lost": 1,
-       "goals_for": 11,
-       "goals_against": 13,
-       "diff": -2,
+       "lost": 2,
+       "goals_for": 23,
+       "goals_against": 27,
+       "diff": -4,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 4
