@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T09:01:56+00:00",
-  "seq": 1788598916,
-  "data_hash": "21782b0409737b5faa8663dff29a9d3371a98052e080e7438c461c33eecc80aa"
+  "generated": "2026-09-05T09:42:03+00:00",
+  "seq": 1788601323,
+  "data_hash": "a62a4cc5dcace12594ac0a4d9c530be7906112e44d31b66594c30c6ccb5ba459"
  },
  "by_age": {
   "F16": {
@@ -1019,6 +1019,21 @@
      "division_id": 85520249,
      "rows": [
       {
+       "name": "Alingsås HK 2",
+       "team_id": 77339121,
+       "is_alingsas": true,
+       "played": 2,
+       "won": 2,
+       "tied": 0,
+       "lost": 0,
+       "goals_for": 43,
+       "goals_against": 23,
+       "diff": 20,
+       "points": 4,
+       "tier": "Slutspel A",
+       "pos": 1
+      },
+      {
        "name": "IK Sund 2",
        "team_id": 86183994,
        "is_alingsas": false,
@@ -1031,34 +1046,19 @@
        "diff": 1,
        "points": 3,
        "tier": "Slutspel A",
-       "pos": 1
-      },
-      {
-       "name": "Alingsås HK 2",
-       "team_id": 77339121,
-       "is_alingsas": true,
-       "played": 1,
-       "won": 1,
-       "tied": 0,
-       "lost": 0,
-       "goals_for": 17,
-       "goals_against": 11,
-       "diff": 6,
-       "points": 2,
-       "tier": "Slutspel A",
        "pos": 2
       },
       {
        "name": "Täby HBK 2",
        "team_id": 85853609,
        "is_alingsas": false,
-       "played": 1,
+       "played": 2,
        "won": 0,
        "tied": 1,
-       "lost": 0,
-       "goals_for": 17,
-       "goals_against": 17,
-       "diff": 0,
+       "lost": 1,
+       "goals_for": 29,
+       "goals_against": 43,
+       "diff": -14,
        "points": 1,
        "tier": "Slutspel B",
        "pos": 3
@@ -1891,6 +1891,21 @@
      "division_id": 85747157,
      "rows": [
       {
+       "name": "Alingsås HK",
+       "team_id": 86611595,
+       "is_alingsas": true,
+       "played": 1,
+       "won": 1,
+       "tied": 0,
+       "lost": 0,
+       "goals_for": 16,
+       "goals_against": 9,
+       "diff": 7,
+       "points": 2,
+       "tier": "Slutspel A",
+       "pos": 1
+      },
+      {
        "name": "Hammarby IF HF",
        "team_id": 78914468,
        "is_alingsas": false,
@@ -1903,37 +1918,7 @@
        "diff": 1,
        "points": 2,
        "tier": "Slutspel A",
-       "pos": 1
-      },
-      {
-       "name": "Redbergslids IK",
-       "team_id": 82263509,
-       "is_alingsas": false,
-       "played": 0,
-       "won": 0,
-       "tied": 0,
-       "lost": 0,
-       "goals_for": 0,
-       "goals_against": 0,
-       "diff": 0,
-       "points": 0,
-       "tier": "Slutspel A",
        "pos": 2
-      },
-      {
-       "name": "Alingsås HK",
-       "team_id": 86611595,
-       "is_alingsas": true,
-       "played": 0,
-       "won": 0,
-       "tied": 0,
-       "lost": 0,
-       "goals_for": 0,
-       "goals_against": 0,
-       "diff": 0,
-       "points": 0,
-       "tier": "Slutspel B",
-       "pos": 3
       },
       {
        "name": "IFK Malmö HF",
@@ -1946,6 +1931,21 @@
        "goals_for": 14,
        "goals_against": 15,
        "diff": -1,
+       "points": 0,
+       "tier": "Slutspel B",
+       "pos": 3
+      },
+      {
+       "name": "Redbergslids IK",
+       "team_id": 82263509,
+       "is_alingsas": false,
+       "played": 1,
+       "won": 0,
+       "tied": 0,
+       "lost": 1,
+       "goals_for": 9,
+       "goals_against": 16,
+       "diff": -7,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 4

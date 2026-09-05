@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-05T09:01:19+00:00",
-  "seq": 1788598879,
-  "data_hash": "e6af4cb0ce1e2f139fc25167845d9f41c4a65bc9ada6ecf72e291c601a2d63e2"
+  "generated": "2026-09-05T09:41:17+00:00",
+  "seq": 1788601277,
+  "data_hash": "dc7f8c19d168cc53446600b2d2e3f6ad924dd63fa59df1133443e488a05445c7"
  },
  "groups": {
   "F11": {
@@ -626,7 +626,10 @@
      "grupp": "Grupp E",
      "mots": "Redbergslids IK",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 16,
+      "ag": 9
+     },
      "start_ms": 1788598800000,
      "start_iso": "2026-09-05T11:00+02:00",
      "day_label": "Lördag 5 september"
@@ -1053,7 +1056,10 @@
      "grupp": "Grupp E",
      "mots": "Täby HBK 2",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 12,
+      "ag": 26
+     },
      "start_ms": 1788598800000,
      "start_iso": "2026-09-05T11:00+02:00",
      "day_label": "Lördag 5 september"
