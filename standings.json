@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T11:41:59+00:00",
-  "seq": 1788608519,
-  "data_hash": "daa2bbc0cb0cd44224be20b2cc9e0a61df2028bc477fa3a055eacbe244b94bcc"
+  "generated": "2026-09-05T12:12:05+00:00",
+  "seq": 1788610325,
+  "data_hash": "4464459578b683ea5ee79b9ec9d4780ef207034bf903b42af26a54d39b2f09af"
  },
  "by_age": {
   "F16": {
@@ -1921,31 +1921,31 @@
        "pos": 2
       },
       {
-       "name": "IFK Malmö HF",
-       "team_id": 81975115,
+       "name": "Redbergslids IK",
+       "team_id": 82263509,
        "is_alingsas": false,
-       "played": 1,
-       "won": 0,
+       "played": 2,
+       "won": 1,
        "tied": 0,
        "lost": 1,
-       "goals_for": 14,
-       "goals_against": 15,
-       "diff": -1,
-       "points": 0,
+       "goals_for": 28,
+       "goals_against": 28,
+       "diff": 0,
+       "points": 2,
        "tier": "Slutspel B",
        "pos": 3
       },
       {
-       "name": "Redbergslids IK",
-       "team_id": 82263509,
+       "name": "IFK Malmö HF",
+       "team_id": 81975115,
        "is_alingsas": false,
-       "played": 1,
+       "played": 2,
        "won": 0,
        "tied": 0,
-       "lost": 1,
-       "goals_for": 9,
-       "goals_against": 16,
-       "diff": -7,
+       "lost": 2,
+       "goals_for": 26,
+       "goals_against": 34,
+       "diff": -8,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 4
