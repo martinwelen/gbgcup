@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-05T15:41:25+00:00",
-  "seq": 1788622885,
-  "data_hash": "2774bb93dbdc8ee61cfa02594e2496f23a7b51882a6514cea776f876b74c1b5c"
+  "generated": "2026-09-05T16:11:21+00:00",
+  "seq": 1788624681,
+  "data_hash": "31c3550bdeb95d6c8fd24b270514fe322560bf5cbff75fd6497b0a2855eb099d"
  },
  "groups": {
   "F11": {
@@ -1258,10 +1258,10 @@
      "street": "Redegatan 18",
      "video": "https://solidsport.com/gbgcup/watch/1-an-i-grupp-h-1-an-i-grupp-i-ee4bd703-0f4e-4e96-975c-237cbd3a534f",
      "runda": "1/8-final",
-     "hemma": "1:an i Grupp H",
+     "hemma": "Täby HBK 1",
      "borta": "Alingsås HK 1",
      "grupp": "Slutspel A",
-     "mots": "1:an i Grupp H",
+     "mots": "Täby HBK 1",
      "hb": "Borta",
      "result": null,
      "start_ms": 1788675600000,

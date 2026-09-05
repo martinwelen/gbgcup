@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T15:42:10+00:00",
-  "seq": 1788622930,
-  "data_hash": "b92ea31eef6e212993fce558ed8bd2f02cf4babea64dbc6a348bf98cbbdbb840"
+  "generated": "2026-09-05T16:12:07+00:00",
+  "seq": 1788624727,
+  "data_hash": "bef5808f73887a1e42edd0689287cfc7c72b20114c7a892dd13b1fbd43347acc"
  },
  "by_age": {
   "F16": {
@@ -1165,8 +1165,8 @@
            "bana": "ÖHK-Hallen A",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp H",
-            "team_id": null,
+            "label": "Täby HBK 1",
+            "team_id": 85853602,
             "is_alingsas": false,
             "goals": null
            },
@@ -1322,8 +1322,8 @@
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/16 Final",
            "home": {
-            "label": "2:an i Grupp H",
-            "team_id": null,
+            "label": "Ystads IF HF",
+            "team_id": 82318262,
             "is_alingsas": false,
             "goals": null
            },
@@ -1557,8 +1557,8 @@
            "bana": "Heidhallen",
            "round": "1/16 Final",
            "home": {
-            "label": "4:an i Grupp H",
-            "team_id": null,
+            "label": "Haninge HK",
+            "team_id": 85853832,
             "is_alingsas": false,
             "goals": null
            },
@@ -1581,8 +1581,8 @@
            "bana": "Frölunda Kulturhus",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp H",
-            "team_id": null,
+            "label": "Kungälvs HK",
+            "team_id": 80662391,
             "is_alingsas": false,
             "goals": null
            },
