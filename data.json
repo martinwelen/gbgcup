@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-05T08:21:06+00:00",
-  "seq": 1788596466,
-  "data_hash": "24830c622ed4035ed1adfc389a8cf1f2696334c224e5d21f345a1ca2c9f71260"
+  "generated": "2026-09-05T09:01:19+00:00",
+  "seq": 1788598879,
+  "data_hash": "e6af4cb0ce1e2f139fc25167845d9f41c4a65bc9ada6ecf72e291c601a2d63e2"
  },
  "groups": {
   "F11": {
@@ -445,7 +445,10 @@
      "grupp": "Grupp L",
      "mots": "Greve Håndbold 1",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 16,
+      "ag": 12
+     },
      "start_ms": 1788596400000,
      "start_iso": "2026-09-05T10:20+02:00",
      "day_label": "Lördag 5 september"
