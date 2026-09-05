@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T17:01:48+00:00",
-  "seq": 1788627708,
-  "data_hash": "89457b329844c0ea2f13509c02dcfcf05a580ace94d6139b492de37d171468f5"
+  "generated": "2026-09-05T17:31:50+00:00",
+  "seq": 1788629510,
+  "data_hash": "1f6acbba111f53373ded79380f49ee8e3e4bee4af7cf2d3c51cf49e602f5da7c"
  },
  "by_age": {
   "F16": {
@@ -2528,8 +2528,8 @@
            "bana": "Kviberg Park Sporthall A",
            "round": "1/16 Final",
            "home": {
-            "label": "2:an i Grupp D",
-            "team_id": null,
+            "label": "BK Heid röd",
+            "team_id": 77076104,
             "is_alingsas": false,
             "goals": null
            },
@@ -2780,8 +2780,8 @@
            "bana": "Kviberg Park Sporthall A",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp D",
-            "team_id": null,
+            "label": "GF Kroppskultur 2",
+            "team_id": 85939262,
             "is_alingsas": false,
             "goals": null
            },
@@ -2996,8 +2996,8 @@
            "bana": "Torpahallen",
            "round": "1/16 Final",
            "home": {
-            "label": "4:an i Grupp D",
-            "team_id": null,
+            "label": "Önnereds HK Grön",
+            "team_id": 76509214,
             "is_alingsas": false,
             "goals": null
            },
@@ -3210,8 +3210,8 @@
            "bana": "Härlandatjärnskolan",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp D",
-            "team_id": null,
+            "label": "Lugi HF 3",
+            "team_id": 76631983,
             "is_alingsas": false,
             "goals": null
            },
