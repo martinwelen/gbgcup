@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-05T15:01:16+00:00",
-  "seq": 1788620476,
-  "data_hash": "4e92d8e0914d9ca9b0477b6e9be90126101c09c807c6966e80f7f83b38460130"
+  "generated": "2026-09-05T15:41:25+00:00",
+  "seq": 1788622885,
+  "data_hash": "2774bb93dbdc8ee61cfa02594e2496f23a7b51882a6514cea776f876b74c1b5c"
  },
  "groups": {
   "F11": {
@@ -581,6 +581,36 @@
      "start_ms": 1788622800000,
      "start_iso": "2026-09-05T17:40+02:00",
      "day_label": "Lördag 5 september"
+    },
+    {
+     "age_slug": "F13",
+     "slug": "t-86024965",
+     "id": 85896019,
+     "gender": "F",
+     "klass": "F13",
+     "rule": "Classic",
+     "dur": 40,
+     "color": "#c9c2b4",
+     "datum": "2026-09-06",
+     "dag": "Söndag",
+     "tid": "10:20",
+     "bana": "Sandklevsskolan",
+     "maps": "https://www.google.com/maps/search/?api=1&query=57.7587182,12.0611489",
+     "lat": 57.7587182,
+     "lng": 12.0611489,
+     "venue": "Sandklevsskolan",
+     "street": "Kvadrantgatan 88",
+     "video": "https://solidsport.com/gbgcup/watch/1-an-i-grupp-l-2-an-i-grupp-j-9be33523-7a1e-44a3-a041-14980c4e0feb",
+     "runda": "1/16-final",
+     "hemma": "Alingsås HK Vit",
+     "borta": "2:an i Grupp J",
+     "grupp": "Slutspel A",
+     "mots": "2:an i Grupp J",
+     "hb": "Hemma",
+     "result": null,
+     "start_ms": 1788682800000,
+     "start_iso": "2026-09-06T10:20+02:00",
+     "day_label": "Söndag 6 september"
     }
    ]
   },
