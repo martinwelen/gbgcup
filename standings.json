@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T16:12:07+00:00",
-  "seq": 1788624727,
-  "data_hash": "bef5808f73887a1e42edd0689287cfc7c72b20114c7a892dd13b1fbd43347acc"
+  "generated": "2026-09-05T16:22:42+00:00",
+  "seq": 1788625362,
+  "data_hash": "ba299cd948a41ac2212220c33a3387392871da09eaf7148a0b5dd815942fd9d8"
  },
  "by_age": {
   "F16": {
@@ -13,6 +13,21 @@
      "klass": "F16",
      "division_id": 85516312,
      "rows": [
+      {
+       "name": "Alingsås HK 1",
+       "team_id": 77339136,
+       "is_alingsas": true,
+       "played": 2,
+       "won": 2,
+       "tied": 0,
+       "lost": 0,
+       "goals_for": 22,
+       "goals_against": 11,
+       "diff": 11,
+       "points": 4,
+       "tier": "Slutspel A",
+       "pos": 1
+      },
       {
        "name": "Önnereds HK 1",
        "team_id": 81958781,
@@ -24,21 +39,6 @@
        "goals_for": 31,
        "goals_against": 19,
        "diff": 12,
-       "points": 2,
-       "tier": "Slutspel A",
-       "pos": 1
-      },
-      {
-       "name": "Alingsås HK 1",
-       "team_id": 77339136,
-       "is_alingsas": true,
-       "played": 1,
-       "won": 1,
-       "tied": 0,
-       "lost": 0,
-       "goals_for": 12,
-       "goals_against": 11,
-       "diff": 1,
        "points": 2,
        "tier": "Slutspel A",
        "pos": 2
@@ -62,13 +62,13 @@
        "name": "Stenungsunds HK utom tävlan",
        "team_id": 77900018,
        "is_alingsas": false,
-       "played": 1,
+       "played": 2,
        "won": 0,
        "tied": 0,
-       "lost": 1,
+       "lost": 2,
        "goals_for": 0,
-       "goals_against": 10,
-       "diff": -10,
+       "goals_against": 20,
+       "diff": -20,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 4
@@ -1228,8 +1228,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp A",
-            "team_id": null,
+            "label": "HK Aranäs Vit",
+            "team_id": 76821994,
             "is_alingsas": false,
             "goals": null
            },
@@ -1260,8 +1260,8 @@
            "bana": "ÖHK-Hallen A",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp A",
-            "team_id": null,
+            "label": "IFK Tumba HK",
+            "team_id": 80550131,
             "is_alingsas": false,
             "goals": null
            },
@@ -1544,8 +1544,8 @@
             "goals": null
            },
            "away": {
-            "label": "5:an i Grupp A",
-            "team_id": null,
+            "label": "Stenungsunds HK",
+            "team_id": 81794297,
             "is_alingsas": false,
             "goals": null
            },
@@ -1676,8 +1676,8 @@
            "bana": "Frölunda Kulturhus",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp A",
-            "team_id": null,
+            "label": "IK Sävehof 3",
+            "team_id": 85892433,
             "is_alingsas": false,
             "goals": null
            },
@@ -1701,8 +1701,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp A",
-            "team_id": null,
+            "label": "IFK Malmö HF",
+            "team_id": 78997323,
             "is_alingsas": false,
             "goals": null
            },
@@ -2366,14 +2366,14 @@
        "name": "Alingsås HK Blå",
        "team_id": 86024959,
        "is_alingsas": true,
-       "played": 2,
-       "won": 2,
+       "played": 3,
+       "won": 3,
        "tied": 0,
        "lost": 0,
-       "goals_for": 38,
-       "goals_against": 30,
-       "diff": 8,
-       "points": 4,
+       "goals_for": 53,
+       "goals_against": 39,
+       "diff": 14,
+       "points": 6,
        "tier": "Slutspel A",
        "pos": 1
       },
@@ -2393,21 +2393,6 @@
        "pos": 2
       },
       {
-       "name": "Greve Håndbold 2",
-       "team_id": 76618228,
-       "is_alingsas": false,
-       "played": 1,
-       "won": 0,
-       "tied": 0,
-       "lost": 1,
-       "goals_for": 10,
-       "goals_against": 14,
-       "diff": -4,
-       "points": 0,
-       "tier": "Slutspel B",
-       "pos": 3
-      },
-      {
        "name": "Önnereds HK Vit",
        "team_id": 76509222,
        "is_alingsas": false,
@@ -2418,6 +2403,21 @@
        "goals_for": 31,
        "goals_against": 36,
        "diff": -5,
+       "points": 0,
+       "tier": "Slutspel B",
+       "pos": 3
+      },
+      {
+       "name": "Greve Håndbold 2",
+       "team_id": 76618228,
+       "is_alingsas": false,
+       "played": 2,
+       "won": 0,
+       "tied": 0,
+       "lost": 2,
+       "goals_for": 19,
+       "goals_against": 29,
+       "diff": -10,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 4

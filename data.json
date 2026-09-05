@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-05T16:11:21+00:00",
-  "seq": 1788624681,
-  "data_hash": "31c3550bdeb95d6c8fd24b270514fe322560bf5cbff75fd6497b0a2855eb099d"
+  "generated": "2026-09-05T16:21:58+00:00",
+  "seq": 1788625318,
+  "data_hash": "baacea6e7c041d897306e5d17e69c9109e286f18a3e1131e6704c858f50bb6c7"
  },
  "groups": {
   "F11": {
@@ -577,7 +577,10 @@
      "grupp": "Grupp K",
      "mots": "Greve Håndbold 2",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 9,
+      "ag": 15
+     },
      "start_ms": 1788622800000,
      "start_iso": "2026-09-05T17:40+02:00",
      "day_label": "Lördag 5 september"
@@ -934,7 +937,10 @@
      "grupp": "Grupp C",
      "mots": "Stenungsunds HK utom tävlan",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 0,
+      "ag": 10
+     },
      "start_ms": 1788622800000,
      "start_iso": "2026-09-05T17:40+02:00",
      "day_label": "Lördag 5 september"
