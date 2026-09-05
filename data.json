@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-05T17:01:14+00:00",
-  "seq": 1788627674,
-  "data_hash": "ad702fa7eff56e0a2e6139684528c9d69de1a88cddb97f5d3f015b7ac28ee468"
+  "generated": "2026-09-05T17:41:10+00:00",
+  "seq": 1788630070,
+  "data_hash": "c43483797f60889008f17ed1f48335e05ecc6e3fa0bc4645cca4fff6d35a2c22"
  },
  "groups": {
   "F11": {
@@ -741,6 +741,36 @@
      "start_ms": 1788625200000,
      "start_iso": "2026-09-05T18:20+02:00",
      "day_label": "Lördag 5 september"
+    },
+    {
+     "age_slug": "P15",
+     "slug": "t-86611595",
+     "id": 85747183,
+     "gender": "P",
+     "klass": "P15",
+     "rule": "Classic",
+     "dur": 40,
+     "color": "#1f5fbf",
+     "datum": "2026-09-06",
+     "dag": "Söndag",
+     "tid": "09:40",
+     "bana": "ÖHK-Hallen A",
+     "maps": "https://www.google.com/maps/search/?api=1&query=57.66828599999999,11.8827533",
+     "lat": 57.66828599999999,
+     "lng": 11.8827533,
+     "venue": "",
+     "street": "Redegatan 18",
+     "video": "https://solidsport.com/gbgcup/watch/2-an-i-grupp-d-2-an-i-grupp-e-5a340637-2c1b-41f0-a15c-c45e324fa668",
+     "runda": "1/8-final",
+     "hemma": "2:an i Grupp D",
+     "borta": "Alingsås HK",
+     "grupp": "Slutspel A",
+     "mots": "2:an i Grupp D",
+     "hb": "Borta",
+     "result": null,
+     "start_ms": 1788680400000,
+     "start_iso": "2026-09-06T09:40+02:00",
+     "day_label": "Söndag 6 september"
     }
    ]
   },
@@ -1298,9 +1328,9 @@
      "video": "https://solidsport.com/gbgcup/watch/1-an-i-grupp-e-2-an-i-grupp-b-b846d90a-9a2b-42da-9396-b4904da9e4ff",
      "runda": "1/8-final",
      "hemma": "Alingsås HK 2",
-     "borta": "2:an i Grupp B",
+     "borta": "HK Aranäs Blå",
      "grupp": "Slutspel A",
-     "mots": "2:an i Grupp B",
+     "mots": "HK Aranäs Blå",
      "hb": "Hemma",
      "result": null,
      "start_ms": 1788687600000,
@@ -1449,7 +1479,7 @@
      "team_name": "HJ 1",
      "age_slug": "HJ",
      "slug": "t-77339125",
-     "color": "#e8730c"
+     "color": "#1f5fbf"
     },
     {
      "id": 77339131,
@@ -1462,7 +1492,7 @@
      "team_name": "HJ 2",
      "age_slug": "HJ",
      "slug": "t-77339131",
-     "color": "#1f5fbf"
+     "color": "#e8730c"
     }
    ],
    "matches": [
@@ -1474,7 +1504,7 @@
      "klass": "HJ",
      "rule": "Classic",
      "dur": 50,
-     "color": "#1f5fbf",
+     "color": "#e8730c",
      "datum": "2026-09-11",
      "dag": "Fredag",
      "tid": "17:00",
@@ -1504,7 +1534,7 @@
      "klass": "HJ",
      "rule": "Classic",
      "dur": 50,
-     "color": "#e8730c",
+     "color": "#1f5fbf",
      "datum": "2026-09-11",
      "dag": "Fredag",
      "tid": "17:00",
@@ -1534,7 +1564,7 @@
      "klass": "HJ",
      "rule": "Classic",
      "dur": 50,
-     "color": "#1f5fbf",
+     "color": "#e8730c",
      "datum": "2026-09-11",
      "dag": "Fredag",
      "tid": "21:10",
@@ -1564,7 +1594,7 @@
      "klass": "HJ",
      "rule": "Classic",
      "dur": 50,
-     "color": "#e8730c",
+     "color": "#1f5fbf",
      "datum": "2026-09-12",
      "dag": "Lördag",
      "tid": "09:00",
@@ -1594,7 +1624,7 @@
      "klass": "HJ",
      "rule": "Classic",
      "dur": 50,
-     "color": "#1f5fbf",
+     "color": "#e8730c",
      "datum": "2026-09-12",
      "dag": "Lördag",
      "tid": "09:50",
@@ -1624,7 +1654,7 @@
      "klass": "HJ",
      "rule": "Classic",
      "dur": 50,
-     "color": "#e8730c",
+     "color": "#1f5fbf",
      "datum": "2026-09-12",
      "dag": "Lördag",
      "tid": "13:10",
@@ -1654,7 +1684,7 @@
      "klass": "HJ",
      "rule": "Classic",
      "dur": 50,
-     "color": "#e8730c",
+     "color": "#1f5fbf",
      "datum": "2026-09-12",
      "dag": "Lördag",
      "tid": "15:40",
@@ -1684,7 +1714,7 @@
      "klass": "HJ",
      "rule": "Classic",
      "dur": 50,
-     "color": "#1f5fbf",
+     "color": "#e8730c",
      "datum": "2026-09-12",
      "dag": "Lördag",
      "tid": "16:30",
