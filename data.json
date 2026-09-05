@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-05T10:21:13+00:00",
-  "seq": 1788603673,
-  "data_hash": "7eeec008af8565c2f9e37e0e7383ed94de04a180605766fec61da86a09a2e67d"
+  "generated": "2026-09-05T11:01:19+00:00",
+  "seq": 1788606079,
+  "data_hash": "f9aea6e9331cfa537a62cea308c8025c2b124fb47632fbe7014dce2d6b4ea133"
  },
  "groups": {
   "F11": {
@@ -859,7 +859,10 @@
      "grupp": "Grupp H",
      "mots": "Önnereds HK 2",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 14,
+      "ag": 15
+     },
      "start_ms": 1788603600000,
      "start_iso": "2026-09-05T12:20+02:00",
      "day_label": "Lördag 5 september"
@@ -923,6 +926,36 @@
      "start_ms": 1788632400000,
      "start_iso": "2026-09-05T20:20+02:00",
      "day_label": "Lördag 5 september"
+    },
+    {
+     "age_slug": "F16",
+     "slug": "t-77339140",
+     "id": 85516429,
+     "gender": "F",
+     "klass": "F16",
+     "rule": "Classic",
+     "dur": 40,
+     "color": "#e8730c",
+     "datum": "2026-09-06",
+     "dag": "Söndag",
+     "tid": "08:20",
+     "bana": "Prioritet Serneke Arena B",
+     "maps": "https://www.google.com/maps/search/?api=1&query=57.7384041,12.0352267",
+     "lat": 57.7384041,
+     "lng": 12.0352267,
+     "venue": "Prioritet Serneke Arena",
+     "street": "Krutvägen 2-4",
+     "video": "https://solidsport.com/gbgcup/watch/2-an-i-grupp-a-2-an-i-grupp-h-05de3f68-32f7-4b1f-94a2-fcc8dde89490",
+     "runda": "1/16-final",
+     "hemma": "2:an i Grupp A",
+     "borta": "Alingsås HK 2",
+     "grupp": "Slutspel A",
+     "mots": "2:an i Grupp A",
+     "hb": "Borta",
+     "result": null,
+     "start_ms": 1788675600000,
+     "start_iso": "2026-09-06T08:20+02:00",
+     "day_label": "Söndag 6 september"
     }
    ]
   },
