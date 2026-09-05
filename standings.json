@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T16:41:58+00:00",
-  "seq": 1788626518,
-  "data_hash": "59d667a28ec4bc722eb4cafc76d53cd2f31a962540c1ec9cb055cbdba94b5966"
+  "generated": "2026-09-05T17:01:48+00:00",
+  "seq": 1788627708,
+  "data_hash": "89457b329844c0ea2f13509c02dcfcf05a580ace94d6139b492de37d171468f5"
  },
  "by_age": {
   "F16": {
@@ -217,8 +217,8 @@
            "bana": "Prioritet Serneke Arena Serneke Arena B",
            "round": "1/16 Final",
            "home": {
-            "label": "2:an i Grupp D",
-            "team_id": null,
+            "label": "Lödde Vikings HK 3",
+            "team_id": 80504903,
             "is_alingsas": false,
             "goals": null
            },
@@ -242,8 +242,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp K",
-            "team_id": null,
+            "label": "Kragerø IF Håndball",
+            "team_id": 80579865,
             "is_alingsas": false,
             "goals": null
            },
@@ -255,8 +255,8 @@
            "bana": "Prioritet Serneke Arena Serneke Arena B",
            "round": "1/16 Final",
            "home": {
-            "label": "1:an i Grupp K",
-            "team_id": null,
+            "label": "IK Sävehof 6",
+            "team_id": 85892402,
             "is_alingsas": false,
             "goals": null
            },
@@ -355,8 +355,8 @@
            "bana": "Prioritet Serneke Arena Serneke Arena B",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp D",
-            "team_id": null,
+            "label": "Täby HBK 1",
+            "team_id": 76528947,
             "is_alingsas": false,
             "goals": null
            },
@@ -634,8 +634,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp K",
-            "team_id": null,
+            "label": "Kungälvs HK Grön",
+            "team_id": 79710046,
             "is_alingsas": false,
             "goals": null
            },
@@ -666,8 +666,8 @@
            "bana": "Lundbystrand 5",
            "round": "1/16 Final",
            "home": {
-            "label": "4:an i Grupp D",
-            "team_id": null,
+            "label": "IK Sävehof 5",
+            "team_id": 85892381,
             "is_alingsas": false,
             "goals": null
            },
@@ -685,8 +685,8 @@
            "bana": "Lundenhallen",
            "round": "1/16 Final",
            "home": {
-            "label": "3:an i Grupp K",
-            "team_id": null,
+            "label": "Redbergslids IK",
+            "team_id": 86004672,
             "is_alingsas": false,
             "goals": null
            },
@@ -747,8 +747,8 @@
            "bana": "Lundbystrand 5",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp D",
-            "team_id": null,
+            "label": "Torslanda HK BLÅ",
+            "team_id": 77954874,
             "is_alingsas": false,
             "goals": null
            },
@@ -1909,14 +1909,14 @@
        "name": "Alingsås HK",
        "team_id": 86611595,
        "is_alingsas": true,
-       "played": 2,
-       "won": 1,
+       "played": 3,
+       "won": 2,
        "tied": 0,
        "lost": 1,
-       "goals_for": 27,
-       "goals_against": 23,
-       "diff": 4,
-       "points": 2,
+       "goals_for": 47,
+       "goals_against": 35,
+       "diff": 12,
+       "points": 4,
        "tier": "Slutspel A",
        "pos": 2
       },
@@ -1939,13 +1939,13 @@
        "name": "IFK Malmö HF",
        "team_id": 81975115,
        "is_alingsas": false,
-       "played": 2,
+       "played": 3,
        "won": 0,
        "tied": 0,
-       "lost": 2,
-       "goals_for": 26,
-       "goals_against": 34,
-       "diff": -8,
+       "lost": 3,
+       "goals_for": 38,
+       "goals_against": 54,
+       "diff": -16,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 4

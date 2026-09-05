@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-05T16:21:58+00:00",
-  "seq": 1788625318,
-  "data_hash": "baacea6e7c041d897306e5d17e69c9109e286f18a3e1131e6704c858f50bb6c7"
+  "generated": "2026-09-05T17:01:14+00:00",
+  "seq": 1788627674,
+  "data_hash": "ad702fa7eff56e0a2e6139684528c9d69de1a88cddb97f5d3f015b7ac28ee468"
  },
  "groups": {
   "F11": {
@@ -734,7 +734,10 @@
      "grupp": "Grupp E",
      "mots": "IFK Malmö HF",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 20,
+      "ag": 12
+     },
      "start_ms": 1788625200000,
      "start_iso": "2026-09-05T18:20+02:00",
      "day_label": "Lördag 5 september"
