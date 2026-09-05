@@ -263,6 +263,7 @@ footer a{color:var(--sea)}
   color:#d22f27;font-size:.95rem}
 .lscore .pulse{width:8px;height:8px;border-radius:50%;background:#d22f27;animation:pulse 1.1s infinite}
 .lscore.done{color:#13293d}
+.lscore.paus{color:var(--ink-soft)}
 /* på hero:ns färgade botten (orange live / mörkblå) → vitt för läsbarhet */
 .hero .lscore, .hero .lscore.done{color:#fff}
 .hero .lscore .pulse{background:#fff}
@@ -919,14 +920,21 @@ document.addEventListener("click", async e=>{
 function applyLive(id){
   const s = liveState[id];
   for(const el of document.querySelectorAll(`[data-mid="${id}"] .lscore`)){
-    // robotens slutresultat (.score) syns redan? låt då den styra – dubbla inte.
+    // robotens statiska slutresultat (.score) syns redan? låt då den styra – dubbla inte.
     const hasRes = el.parentElement && el.parentElement.querySelector(".score");
-    if(s && s.live && !s.finished){
-      el.className = "lscore"; el.innerHTML = `<span class="pulse"></span>LIVE ${s.hg}–${s.ag}`; el.hidden = false;
-    } else if(s && s.finished && !isNaN(s.hg) && !hasRes){
-      // slutsiffra från MatchResult innan roboten hunnit skriva om data.json (~10 min)
-      el.className = "lscore done"; el.innerHTML = `Slut ${s.hg}–${s.ag}`; el.hidden = false;
-    } else { el.hidden = true; el.innerHTML = ""; }
+    const goals = s && !isNaN(s.hg) && !isNaN(s.ag);
+    // Behåll alltid senaste ställning; bara etiketten ändras. Göm bara när mål
+    // saknas helt (förmatch) eller när statiska slutscoren redan visas.
+    if(!goals || hasRes){ el.hidden = true; el.innerHTML = ""; continue; }
+    if(s.finished){
+      el.className = "lscore done"; el.innerHTML = `Slut ${s.hg}–${s.ag}`;
+    } else if(s.live){
+      el.className = "lscore"; el.innerHTML = `<span class="pulse"></span>LIVE ${s.hg}–${s.ag}`;
+    } else {
+      // paus / kort uppehåll mitt i matchen: håll kvar ställningen, utan puls
+      el.className = "lscore paus"; el.innerHTML = `Paus ${s.hg}–${s.ag}`;
+    }
+    el.hidden = false;
   }
 }
 function reapplyLive(){ for(const id in liveState) applyLive(id); }

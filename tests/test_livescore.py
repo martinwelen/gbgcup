@@ -17,6 +17,17 @@ def test_render_reapplies_livescore_after_rerender():
     assert "reapplyLive()" in template.TEMPLATE
 
 
+def test_live_score_persists_through_pause_and_end():
+    t = template.TEMPLATE
+    # senaste ställning behålls; bara etiketten ändras (LIVE/Paus/Slut)
+    assert "Paus ${s.hg}–${s.ag}" in t
+    assert "LIVE ${s.hg}–${s.ag}" in t
+    assert "Slut ${s.hg}–${s.ag}" in t
+    # göm bara när mål saknas helt ELLER statisk slutscore redan visas
+    assert "if(!goals || hasRes){ el.hidden = true" in t
+    assert ".lscore.paus{color:" in t
+
+
 def test_past_days_fold_into_summary():
     t = template.TEMPLATE
     assert "function matchCard(" in t          # kort extraherat, återanvänds
