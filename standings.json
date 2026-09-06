@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T07:01:51+00:00",
-  "seq": 1788678111,
-  "data_hash": "ee41cb7791a1013fc768ab9a54a26c24ccae32c5ccd53e7cc244050e02cb00b6"
+  "generated": "2026-09-06T07:11:37+00:00",
+  "seq": 1788678697,
+  "data_hash": "d20f050f51f4cd16a9097b084233e492a3f90276217de3ecb6b69252e0eba1b7"
  },
  "by_age": {
   "F16": {
@@ -2704,15 +2704,15 @@
             "label": "BK Heid svart",
             "team_id": 77076108,
             "is_alingsas": false,
-            "goals": null
+            "goals": 10
            },
            "away": {
             "label": "Kungälvs HK Grön",
             "team_id": 78950407,
             "is_alingsas": false,
-            "goals": null
+            "goals": 6
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85896023,
@@ -2922,8 +2922,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06095500",
-            "team_id": null,
+            "label": "BK Heid svart",
+            "team_id": 77076108,
             "is_alingsas": false,
             "goals": null
            },
