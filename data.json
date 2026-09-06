@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-06T12:21:30+00:00",
-  "seq": 1788697290,
-  "data_hash": "c5aaa7e7721836f3b9a2771a96a2a785f01becfec04f7f3f51d576e91bfe8513"
+  "generated": "2026-09-06T13:01:23+00:00",
+  "seq": 1788699683,
+  "data_hash": "b25247e8b7d21dd6f5b3bb6c68cbc6da84261811b2a0f56a900e17f69a9e8265"
  },
  "groups": {
   "F11": {
@@ -1174,7 +1174,10 @@
      "grupp": "Slutspel A",
      "mots": "Skuru IK 2",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 10,
+      "ag": 9
+     },
      "start_ms": 1788697200000,
      "start_iso": "2026-09-06T14:20+02:00",
      "day_label": "Söndag 6 september"
@@ -1204,9 +1207,42 @@
      "grupp": "Slutspel A",
      "mots": "IK Sävehof 3",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 14,
+      "ag": 19
+     },
      "start_ms": 1788697200000,
      "start_iso": "2026-09-06T14:20+02:00",
+     "day_label": "Söndag 6 september"
+    },
+    {
+     "age_slug": "F16",
+     "slug": "t-77339140",
+     "id": 85516426,
+     "gender": "F",
+     "klass": "F16",
+     "rule": "Classic",
+     "dur": 40,
+     "color": "#e8730c",
+     "datum": "2026-09-06",
+     "dag": "Söndag",
+     "tid": "15:40",
+     "bana": "Prioritet Serneke Arena A",
+     "maps": "https://www.google.com/maps/search/?api=1&query=57.7384041,12.0352267",
+     "lat": 57.7384041,
+     "lng": 12.0352267,
+     "venue": "Prioritet Serneke Arena",
+     "street": "Krutvägen 2-4",
+     "video": "https://solidsport.com/gbgcup/watch/vinn-06090108-vinn-06090908",
+     "runda": "Semifinal",
+     "hemma": "Alingsås HK 2",
+     "borta": "IK Sävehof 3",
+     "grupp": "Slutspel A",
+     "mots": "IK Sävehof 3",
+     "hb": "Hemma",
+     "result": null,
+     "start_ms": 1788702000000,
+     "start_iso": "2026-09-06T15:40+02:00",
      "day_label": "Söndag 6 september"
     }
    ]

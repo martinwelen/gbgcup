@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T12:52:17+00:00",
-  "seq": 1788699137,
-  "data_hash": "89ce28b96157ab7b02c08b0113eb21524ebba312d0d1e2107ba59f9d4880e18f"
+  "generated": "2026-09-06T13:02:09+00:00",
+  "seq": 1788699729,
+  "data_hash": "f4156c36480b3b9c904f40ed9c92dcc82b876f752e389a3d279032730f3d0d8b"
  },
  "by_age": {
   "F16": {
@@ -511,15 +511,15 @@
             "label": "Alingsås HK 2",
             "team_id": 77339140,
             "is_alingsas": true,
-            "goals": null
+            "goals": 10
            },
            "away": {
             "label": "Skuru IK 2",
             "team_id": 81350812,
             "is_alingsas": false,
-            "goals": null
+            "goals": 9
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85516431,
@@ -576,9 +576,9 @@
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "Semifinal",
            "home": {
-            "label": "Vinn. 06090108",
-            "team_id": null,
-            "is_alingsas": false,
+            "label": "Alingsås HK 2",
+            "team_id": 77339140,
+            "is_alingsas": true,
             "goals": null
            },
            "away": {
@@ -1883,15 +1883,15 @@
             "label": "GT Söder Handbollsklubb",
             "team_id": 76703981,
             "is_alingsas": false,
-            "goals": null
+            "goals": 19
            },
            "away": {
             "label": "Hammarby IF HF",
             "team_id": 78296686,
             "is_alingsas": false,
-            "goals": null
+            "goals": 21
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85520321,
@@ -1969,8 +1969,8 @@
            "bana": "Frölunda Kulturhus",
            "round": "Semifinal",
            "home": {
-            "label": "Vinn. 06091509",
-            "team_id": null,
+            "label": "Hammarby IF HF",
+            "team_id": 78296686,
             "is_alingsas": false,
             "goals": null
            },
@@ -2286,15 +2286,15 @@
             "label": "Lugi HF 1",
             "team_id": 81412593,
             "is_alingsas": false,
-            "goals": null
+            "goals": 19
            },
            "away": {
             "label": "Lugi HF 3",
             "team_id": 81412602,
             "is_alingsas": false,
-            "goals": null
+            "goals": 25
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -2315,8 +2315,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06090809",
-            "team_id": null,
+            "label": "Lugi HF 3",
+            "team_id": 81412602,
             "is_alingsas": false,
             "goals": null
            },
@@ -3092,15 +3092,15 @@
             "label": "Hammarby IF HF 1",
             "team_id": 79414786,
             "is_alingsas": false,
-            "goals": null
+            "goals": 17
            },
            "away": {
             "label": "KFUM Trollhättans IA 1",
             "team_id": 81350724,
             "is_alingsas": false,
-            "goals": null
+            "goals": 9
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85896025,
@@ -3113,15 +3113,15 @@
             "label": "Ystads IF HF 1",
             "team_id": 78780171,
             "is_alingsas": false,
-            "goals": null
+            "goals": 12
            },
            "away": {
             "label": "HK Aranäs Blå",
             "team_id": 82034201,
             "is_alingsas": false,
-            "goals": null
+            "goals": 18
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -3157,14 +3157,14 @@
            "bana": "Kviberg Park Sporthall B",
            "round": "Semifinal",
            "home": {
-            "label": "Vinn. 06094709",
-            "team_id": null,
+            "label": "Hammarby IF HF 1",
+            "team_id": 79414786,
             "is_alingsas": false,
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06094809",
-            "team_id": null,
+            "label": "HK Aranäs Blå",
+            "team_id": 82034201,
             "is_alingsas": false,
             "goals": null
            },
@@ -3564,15 +3564,15 @@
             "label": "IK Sävehof 5",
             "team_id": 82263067,
             "is_alingsas": false,
-            "goals": null
+            "goals": 9
            },
            "away": {
             "label": "Ljunghusens HK Mörkblå",
             "team_id": 77076097,
             "is_alingsas": false,
-            "goals": null
+            "goals": 13
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85896042,
@@ -3650,8 +3650,8 @@
            "bana": "Torpahallen",
            "round": "Semifinal",
            "home": {
-            "label": "Vinn. 06092309",
-            "team_id": null,
+            "label": "Ljunghusens HK Mörkblå",
+            "team_id": 77076097,
             "is_alingsas": false,
             "goals": null
            },
