@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-06T09:01:13+00:00",
-  "seq": 1788685273,
-  "data_hash": "515ec7df3b84a066a1f4c9eedcaaeb43d4841ea0777434d305338efaa55da183"
+  "generated": "2026-09-06T09:41:22+00:00",
+  "seq": 1788687682,
+  "data_hash": "6267862733c2c16dd636b7449febb7a1dc2d639a7cd5db7fb2fa2ad2c7abf9a8"
  },
  "groups": {
   "F11": {
@@ -1167,9 +1167,9 @@
      "video": "https://solidsport.com/gbgcup/watch/vinn-06090103-vinn-06090104",
      "runda": "Kvartsfinal",
      "hemma": "Alingsås HK 2",
-     "borta": "Vinn. 06090104",
+     "borta": "Skuru IK 2",
      "grupp": "Slutspel A",
-     "mots": "Vinn. 06090104",
+     "mots": "Skuru IK 2",
      "hb": "Hemma",
      "result": null,
      "start_ms": 1788697200000,
@@ -1498,10 +1498,10 @@
      "street": "Redegatan 18",
      "video": "https://solidsport.com/gbgcup/watch/vinn-06090704-vinn-06092000",
      "runda": "Kvartsfinal",
-     "hemma": "Vinn. 06090704",
+     "hemma": "IFK Tumba HK",
      "borta": "Alingsås HK 1",
      "grupp": "Slutspel A",
-     "mots": "Vinn. 06090704",
+     "mots": "IFK Tumba HK",
      "hb": "Borta",
      "result": null,
      "start_ms": 1788692400000,
