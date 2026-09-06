@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T12:22:25+00:00",
-  "seq": 1788697345,
-  "data_hash": "0db0aff8acde6fa873fb1f8d127c6f580f597417cb8928137354f210c2264df8"
+  "generated": "2026-09-06T12:52:17+00:00",
+  "seq": 1788699137,
+  "data_hash": "89ce28b96157ab7b02c08b0113eb21524ebba312d0d1e2107ba59f9d4880e18f"
  },
  "by_age": {
   "F16": {
@@ -532,15 +532,15 @@
             "label": "Alingsås HK 1",
             "team_id": 77339136,
             "is_alingsas": true,
-            "goals": null
+            "goals": 14
            },
            "away": {
             "label": "IK Sävehof 3",
             "team_id": 85892361,
             "is_alingsas": false,
-            "goals": null
+            "goals": 19
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -582,8 +582,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06090908",
-            "team_id": null,
+            "label": "IK Sävehof 3",
+            "team_id": 85892361,
             "is_alingsas": false,
             "goals": null
            },
@@ -962,15 +962,15 @@
             "label": "Torslanda HK VIT",
             "team_id": 77954882,
             "is_alingsas": false,
-            "goals": null
+            "goals": 13
            },
            "away": {
             "label": "HK Aranäs Vit",
             "team_id": 77479084,
             "is_alingsas": false,
-            "goals": null
+            "goals": 23
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85516450,
@@ -1033,8 +1033,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06093309",
-            "team_id": null,
+            "label": "HK Aranäs Vit",
+            "team_id": 77479084,
             "is_alingsas": false,
             "goals": null
            },
@@ -2265,15 +2265,15 @@
             "label": "IFK Skövde HK av 1991 1",
             "team_id": 85853455,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
            "away": {
             "label": "RP IF Linköping",
             "team_id": 80528943,
             "is_alingsas": false,
-            "goals": null
+            "goals": 18
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85747181,
@@ -2309,8 +2309,8 @@
            "bana": "ÖHK-Hallen A",
            "round": "Final",
            "home": {
-            "label": "Vinn. 06090709",
-            "team_id": null,
+            "label": "RP IF Linköping",
+            "team_id": 80528943,
             "is_alingsas": false,
             "goals": null
            },
