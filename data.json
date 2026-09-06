@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-06T07:41:12+00:00",
-  "seq": 1788680472,
-  "data_hash": "635b09f83c170ba40c7d4a0e41597dc30766586f7c1aff3c45df1a2b0fdba79b"
+  "generated": "2026-09-06T08:21:19+00:00",
+  "seq": 1788682879,
+  "data_hash": "bd7ac209a3275d262d2806399fb4a5c067259681f50da07ed78e927f2e137c6f"
  },
  "groups": {
   "F11": {
@@ -800,7 +800,10 @@
      "grupp": "Slutspel A",
      "mots": "Lugi HF 1",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 19,
+      "ag": 10
+     },
      "start_ms": 1788680400000,
      "start_iso": "2026-09-06T09:40+02:00",
      "day_label": "Söndag 6 september"
