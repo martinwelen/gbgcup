@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-06T11:41:27+00:00",
-  "seq": 1788694887,
-  "data_hash": "a34b79d7e45df984e0d79f22e3f5bde309a901dc8868b9676fdaf7e13b49f767"
+  "generated": "2026-09-06T12:21:30+00:00",
+  "seq": 1788697290,
+  "data_hash": "c5aaa7e7721836f3b9a2771a96a2a785f01becfec04f7f3f51d576e91bfe8513"
  },
  "groups": {
   "F11": {
@@ -1572,7 +1572,10 @@
      "grupp": "Slutspel A",
      "mots": "Önnereds HK 1",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 17,
+      "ag": 16
+     },
      "start_ms": 1788694800000,
      "start_iso": "2026-09-06T13:40+02:00",
      "day_label": "Söndag 6 september"
