@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T11:42:15+00:00",
-  "seq": 1788694935,
-  "data_hash": "a4f7ae0aa25b030b66b00021d0ed8aabfc76825c7de1319d1df0f8ac600cd4b9"
+  "generated": "2026-09-06T12:11:50+00:00",
+  "seq": 1788696710,
+  "data_hash": "d18077e42572f558d9093243a9cda7b253799caec8669b487259fe89adcef79c"
  },
  "by_age": {
   "F16": {
@@ -3050,15 +3050,15 @@
             "label": "AIK Handbollsförening",
             "team_id": 76703951,
             "is_alingsas": false,
-            "goals": null
+            "goals": 12
            },
            "away": {
             "label": "HK Aranäs Vit",
             "team_id": 82034193,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85896015,
@@ -3136,8 +3136,8 @@
            "bana": "Kviberg Park Sporthall A",
            "round": "Semifinal",
            "home": {
-            "label": "Vinn. 06094708",
-            "team_id": null,
+            "label": "HK Aranäs Vit",
+            "team_id": 82034193,
             "is_alingsas": false,
             "goals": null
            },
