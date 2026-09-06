@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T16:32:30+00:00",
-  "seq": 1788712350,
-  "data_hash": "0398e7eeaf80e8439c2af631615739768fee943b4f37c9b14bc19bb078db4b5b"
+  "generated": "2026-09-06T16:51:41+00:00",
+  "seq": 1788713501,
+  "data_hash": "2c723bbb6794e8b596b3a6cddf7b4644f51d328ffb64a7cff9d36ee6a30c6dfd"
  },
  "by_age": {
   "F16": {
@@ -1610,15 +1610,15 @@
             "label": "Önnereds HK 2",
             "team_id": 76509249,
             "is_alingsas": false,
-            "goals": null
+            "goals": 23
            },
            "away": {
             "label": "Önnereds HK 1",
             "team_id": 76509240,
             "is_alingsas": false,
-            "goals": null
+            "goals": 19
            },
-           "winner": null
+           "winner": "home"
           }
          ]
         }
