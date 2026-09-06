@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-06T08:21:19+00:00",
-  "seq": 1788682879,
-  "data_hash": "bd7ac209a3275d262d2806399fb4a5c067259681f50da07ed78e927f2e137c6f"
+  "generated": "2026-09-06T09:01:13+00:00",
+  "seq": 1788685273,
+  "data_hash": "515ec7df3b84a066a1f4c9eedcaaeb43d4841ea0777434d305338efaa55da183"
  },
  "groups": {
   "F11": {
@@ -643,7 +643,10 @@
      "grupp": "Slutspel A",
      "mots": "RP IF Linköping",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 15,
+      "ag": 16
+     },
      "start_ms": 1788682800000,
      "start_iso": "2026-09-06T10:20+02:00",
      "day_label": "Söndag 6 september"
@@ -1105,7 +1108,10 @@
      "grupp": "Slutspel A",
      "mots": "Lödde Vikings HK 1",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 10,
+      "ag": 20
+     },
      "start_ms": 1788682800000,
      "start_iso": "2026-09-06T10:20+02:00",
      "day_label": "Söndag 6 september"
@@ -1138,6 +1144,36 @@
      "result": null,
      "start_ms": 1788687600000,
      "start_iso": "2026-09-06T11:40+02:00",
+     "day_label": "Söndag 6 september"
+    },
+    {
+     "age_slug": "F16",
+     "slug": "t-77339140",
+     "id": 85516427,
+     "gender": "F",
+     "klass": "F16",
+     "rule": "Classic",
+     "dur": 40,
+     "color": "#e8730c",
+     "datum": "2026-09-06",
+     "dag": "Söndag",
+     "tid": "14:20",
+     "bana": "Prioritet Serneke Arena A",
+     "maps": "https://www.google.com/maps/search/?api=1&query=57.7384041,12.0352267",
+     "lat": 57.7384041,
+     "lng": 12.0352267,
+     "venue": "Prioritet Serneke Arena",
+     "street": "Krutvägen 2-4",
+     "video": "https://solidsport.com/gbgcup/watch/vinn-06090103-vinn-06090104",
+     "runda": "Kvartsfinal",
+     "hemma": "Alingsås HK 2",
+     "borta": "Vinn. 06090104",
+     "grupp": "Slutspel A",
+     "mots": "Vinn. 06090104",
+     "hb": "Hemma",
+     "result": null,
+     "start_ms": 1788697200000,
+     "start_iso": "2026-09-06T14:20+02:00",
      "day_label": "Söndag 6 september"
     }
    ]

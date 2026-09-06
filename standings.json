@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T08:51:50+00:00",
-  "seq": 1788684710,
-  "data_hash": "d10a8cc7455e7a7a96bf8baa551b50ac85dc1a736dafb84ec68e0926fd476854"
+  "generated": "2026-09-06T09:01:47+00:00",
+  "seq": 1788685307,
+  "data_hash": "d021624407fded8af313d891955c6a880a64b4a789ad9cfb0dde1a52029a111e"
  },
  "by_age": {
   "F16": {
@@ -296,15 +296,15 @@
             "label": "Torslanda HK SVART",
             "team_id": 77954886,
             "is_alingsas": false,
-            "goals": null
+            "goals": 17
            },
            "away": {
             "label": "Torslanda HK RÖD",
             "team_id": 77954878,
             "is_alingsas": false,
-            "goals": null
+            "goals": 11
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85516428,
@@ -317,15 +317,15 @@
             "label": "Lödde Vikings HK 1",
             "team_id": 80258221,
             "is_alingsas": false,
-            "goals": null
+            "goals": 10
            },
            "away": {
             "label": "Alingsås HK 2",
             "team_id": 77339140,
             "is_alingsas": true,
-            "goals": null
+            "goals": 20
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85516422,
@@ -466,8 +466,8 @@
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "1/4 Final",
            "home": {
-            "label": "Vinn. 06090903",
-            "team_id": null,
+            "label": "Torslanda HK SVART",
+            "team_id": 77954886,
             "is_alingsas": false,
             "goals": null
            },
@@ -508,9 +508,9 @@
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "1/4 Final",
            "home": {
-            "label": "Vinn. 06090103",
-            "team_id": null,
-            "is_alingsas": false,
+            "label": "Alingsås HK 2",
+            "team_id": 77339140,
+            "is_alingsas": true,
             "goals": null
            },
            "away": {
@@ -810,15 +810,15 @@
             "label": "Torslanda HK BLÅ",
             "team_id": 77954874,
             "is_alingsas": false,
-            "goals": null
+            "goals": 10
            },
            "away": {
             "label": "Torslanda HK VIT",
             "team_id": 77954882,
             "is_alingsas": false,
-            "goals": null
+            "goals": 11
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85516453,
@@ -831,15 +831,15 @@
             "label": "Lödde Vikings HK 2",
             "team_id": 80258226,
             "is_alingsas": false,
-            "goals": null
+            "goals": 11
            },
            "away": {
             "label": "Kärra HF Gul",
             "team_id": 81913843,
             "is_alingsas": false,
-            "goals": null
+            "goals": 13
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85516455,
@@ -959,8 +959,8 @@
            "bana": "Lundenhallen",
            "round": "1/4 Final",
            "home": {
-            "label": "Vinn. 06091303",
-            "team_id": null,
+            "label": "Torslanda HK VIT",
+            "team_id": 77954882,
             "is_alingsas": false,
             "goals": null
            },
@@ -986,8 +986,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06093303",
-            "team_id": null,
+            "label": "Kärra HF Gul",
+            "team_id": 81913843,
             "is_alingsas": false,
             "goals": null
            },
@@ -1296,15 +1296,15 @@
             "label": "Önnereds HK 2",
             "team_id": 76509249,
             "is_alingsas": false,
-            "goals": null
+            "goals": 22
            },
            "away": {
             "label": "IFK Kristianstad Blå",
             "team_id": 86149655,
             "is_alingsas": false,
-            "goals": null
+            "goals": 18
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85520305,
@@ -1317,15 +1317,15 @@
             "label": "IK Bolton 2",
             "team_id": 85853690,
             "is_alingsas": false,
-            "goals": null
+            "goals": 21
            },
            "away": {
             "label": "HK Aranäs Vit",
             "team_id": 76821994,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85520307,
@@ -1498,8 +1498,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06090703",
-            "team_id": null,
+            "label": "Önnereds HK 2",
+            "team_id": 76509249,
             "is_alingsas": false,
             "goals": null
            },
@@ -1519,8 +1519,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06090803",
-            "team_id": null,
+            "label": "IK Bolton 2",
+            "team_id": 85853690,
             "is_alingsas": false,
             "goals": null
            },
@@ -1752,15 +1752,15 @@
             "label": "Täby HBK 2",
             "team_id": 85853609,
             "is_alingsas": false,
-            "goals": null
+            "goals": 17
            },
            "away": {
             "label": "Lödde Vikings HK 1",
             "team_id": 79796209,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85520329,
@@ -1907,8 +1907,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06091503",
-            "team_id": null,
+            "label": "Täby HBK 2",
+            "team_id": 85853609,
             "is_alingsas": false,
             "goals": null
            },
@@ -2197,15 +2197,15 @@
             "label": "Lugi HF 3",
             "team_id": 81412602,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
            "away": {
             "label": "Önnereds HK 1",
             "team_id": 81115040,
             "is_alingsas": false,
-            "goals": null
+            "goals": 11
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85747178,
@@ -2289,8 +2289,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06092003",
-            "team_id": null,
+            "label": "Lugi HF 3",
+            "team_id": 81412602,
             "is_alingsas": false,
             "goals": null
            },
@@ -2851,15 +2851,15 @@
             "label": "Alingsås HK Vit",
             "team_id": 86024965,
             "is_alingsas": true,
-            "goals": null
+            "goals": 15
            },
            "away": {
             "label": "RP IF Linköping",
             "team_id": 81507000,
             "is_alingsas": false,
-            "goals": null
+            "goals": 16
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -2898,15 +2898,15 @@
             "label": "KFUM Trollhättans IA 1",
             "team_id": 81350724,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
            "away": {
             "label": "Mölndals HF",
             "team_id": 76509600,
             "is_alingsas": false,
-            "goals": null
+            "goals": 8
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85896012,
@@ -3027,8 +3027,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06095503",
-            "team_id": null,
+            "label": "RP IF Linköping",
+            "team_id": 81507000,
             "is_alingsas": false,
             "goals": null
            },
@@ -3095,8 +3095,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06094803",
-            "team_id": null,
+            "label": "KFUM Trollhättans IA 1",
+            "team_id": 81350724,
             "is_alingsas": false,
             "goals": null
            },
@@ -3344,15 +3344,15 @@
             "label": "HP Warta Svart",
             "team_id": 86381849,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
            "away": {
             "label": "IK Sävehof 6",
             "team_id": 85874462,
             "is_alingsas": false,
-            "goals": null
+            "goals": 12
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85896056,
@@ -3365,15 +3365,15 @@
             "label": "Önnereds HK Vit",
             "team_id": 76509222,
             "is_alingsas": false,
-            "goals": null
+            "goals": 15
            },
            "away": {
             "label": "IK Sävehof 4",
             "team_id": 80700613,
             "is_alingsas": false,
-            "goals": null
+            "goals": 17
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -3520,8 +3520,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06092303",
-            "team_id": null,
+            "label": "IK Sävehof 4",
+            "team_id": 80700613,
             "is_alingsas": false,
             "goals": null
            },
@@ -3541,8 +3541,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06095403",
-            "team_id": null,
+            "label": "HP Warta Svart",
+            "team_id": 86381849,
             "is_alingsas": false,
             "goals": null
            },
