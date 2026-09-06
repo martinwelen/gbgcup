@@ -78,6 +78,7 @@ def test_bracket_tidy_tree_with_times_and_matchnr():
     assert "function place(" in t and "kidsOf" in t
     assert 'class="bconn"' in t and "<polyline" in t
     assert "leafY" in t                                    # löv-slots i placeringen
+    assert "const VABBR" in t and "vAbbr" in t and 'class="bv"' in t  # spelplats-förkortning
 
 
 def test_card_shows_playoff_round():

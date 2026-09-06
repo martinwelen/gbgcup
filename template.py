@@ -121,7 +121,8 @@ table.gt{width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums
 .bm{background:var(--sand); border:1px solid var(--line); border-radius:9px; padding:6px 8px; font-size:.7rem; line-height:1.5}
 .bm .row{display:flex; justify-content:space-between; gap:8px}
 .bm .row span:first-child{white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
-.btree .bm{position:absolute; z-index:1; height:66px; overflow:hidden; box-shadow:0 1px 4px rgba(20,40,60,.06)}
+.btree .bm{position:absolute; z-index:1; height:80px; overflow:hidden; box-shadow:0 1px 4px rgba(20,40,60,.06)}
+.bm .bv{margin-top:2px; font-size:.58rem; font-weight:700; color:#5a6b75; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
 .bm.ali{border-color:var(--sun); box-shadow:0 0 0 1.5px var(--sun)}
 .bm-win{font-weight:800; color:var(--ink)}
 .bm-lose{text-decoration:line-through; color:var(--ink-soft); opacity:.75}
@@ -387,6 +388,7 @@ const liveState = {};   // livescore per match-id; deklareras före första rend
 let STANDINGS = __STANDINGS__;
 const ROSTERS = __ROSTERS__;
 const VENUES = __VENUES__;
+const VABBR = __VENUE_ABBR__;
 let view = "schema";
 let filter = "all";
 
@@ -794,7 +796,8 @@ function renderBracket(){
   // rondordning: 1/16 → 1/8 → 1/4 → semi → final (efter rondnamn, ej starttid)
   const rrank=(nm)=>{ nm=(nm||"").toLowerCase(); if(nm.includes("semi"))return -2; const mm=nm.match(/1\/(\d+)/); if(mm)return -(+mm[1]); if(nm.includes("final"))return 0; return -100; };
   const rounds = po.tiers[btier].rounds.slice().sort((a,b)=>rrank(a.name)-rrank(b.name));
-  const CARD_W=182, CARD_H=66, SLOT=82, GAP=56, LBL=24;
+  const CARD_W=182, CARD_H=80, SLOT=96, GAP=56, LBL=24;
+  const vAbbr=b=>{ if(!b) return ""; if(VABBR[b]) return VABBR[b]; return b.split(" ").slice(0,2).join(" "); };
   const colOf=new Map(); rounds.forEach((r,ci)=>r.matches.forEach(m=>colOf.set(m,ci)));
   const byNr={}; rounds.forEach(r=>r.matches.forEach(m=>{ if(m.nr) byNr[m.nr]=m; }));
   const refOf=s=>{ const mm=(s.label||"").match(/[Vv]inn\.?\s+(\S+)/); return mm?mm[1]:null; };
@@ -839,8 +842,10 @@ function renderBracket(){
       const hR=refOf(m.home), aR=refOf(m.away);
       const hS=hR?Object.assign({},m.home,{label:"Vinnare #"+hR}):m.home;
       const aS=aR?Object.assign({},m.away,{label:"Vinnare #"+aR}):m.away;
+      const va=vAbbr(m.bana);
+      const venue=va?`<div class="bv">📍 ${esc(va)}</div>`:"";
       inner+=`<div class="bm${ali}" data-mid="${m.id||''}" style="left:${ci*(CARD_W+GAP)}px;top:${pos.get(m)+LBL}px;width:${CARD_W}px;--c:#${c}">`
-        +head+bmRow(hS,hw,aw)+bmRow(aS,aw,hw)+`</div>`;
+        +head+bmRow(hS,hw,aw)+bmRow(aS,aw,hw)+venue+`</div>`;
     }
   });
   html+=`<div class="bracket-scroll" id="bscroll"><div class="btree" style="width:${treeW}px;height:${treeH+8}px">${inner}</div></div>`;

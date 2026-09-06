@@ -134,6 +134,7 @@ def render_app(group, standings, base, updated):
             .replace("__API_HOST__", config.API_HOST)
             .replace("__TOURNAMENT_ID__", config.TOURNAMENT_ID)
             .replace("__RESULT_URL__", config.RESULT_URL)
+            .replace("__VENUE_ABBR__", json.dumps(config.VENUE_ABBR, ensure_ascii=False))
             .replace("__BANA_XY__", "{}")          # ingen ritad karta (inomhus, 24 hallar)
             .replace("__KLUBBTALT__", "[0,0]")
             .replace("__STANDINGS__", json.dumps(st, ensure_ascii=False))

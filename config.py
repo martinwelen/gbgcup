@@ -34,3 +34,38 @@ COLOR_MAP = {
 
 # Distinkta färger för fallback (siffer-/blandade suffix).
 PALETTE = ["#1f5fbf", "#e8730c", "#2f9e44", "#d22f27", "#9c36b5", "#f2bd0c"]
+
+# Spelplats-förkortningar för slutspelsträdet (arena completeName → kort namn).
+# Godkänd av Martin. Okänd hall → faller tillbaka på klartext (trunkeras i kortet).
+VENUE_ABBR = {
+    "Aktiviteten A": "Akt A",
+    "Aktiviteten B": "Akt B",
+    "Frölunda Kulturhus": "Frölunda",
+    "Heidhallen": "Heid",
+    "Härlandatjärnskolan": "Härlanda",
+    "Kviberg Park Sporthall A": "Kviberg A",
+    "Kviberg Park Sporthall B": "Kviberg B",
+    "Kärra Sporthall": "Kärra",
+    "Lillekärrshallen": "Lillekärr",
+    "Lundbystrand 1": "Lundby 1",
+    "Lundbystrand 3": "Lundby 3",
+    "Lundbystrand 5": "Lundby 5",
+    "Lundenhallen": "Lunden",
+    "Prioritet Serneke Arena Serneke Arena A": "Serneke A",
+    "Prioritet Serneke Arena Serneke Arena B": "Serneke B",
+    "Prioritet Serneke Arena Serneke Gräs 1": "Serneke G1",
+    "Prioritet Serneke Arena Serneke Gräs 2": "Serneke G2",
+    "Prioritet Serneke Arena Serneke Gräs 3": "Serneke G3",
+    "Prioritet Serneke Arena Serneke Gräs 4": "Serneke G4",
+    "Prioritet Serneke Arena Serneke Gräs 5": "Serneke G5",
+    "Prioritet Serneke Arena Serneke Gräs 6": "Serneke G6",
+    "Sandklevsskolan": "Sandklev",
+    "Torpahallen": "Torpa",
+    "Valhalla Sport A": "Valhalla A",
+    "Valhalla Sport B": "Valhalla B",
+    "Valhalla Sport C": "Valhalla C",
+    "Västerbergsskolan": "Västerberg",
+    "ÖHK-Hallen A": "ÖHK A",
+    "ÖHK-Hallen ÖHK WH hallen": "ÖHK WH",
+    "ÖHK-Hallen ÖHK Gbg Brandservicehallen": "ÖHK Brand",
+}
