@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T10:22:02+00:00",
-  "seq": 1788690122,
-  "data_hash": "d84bac2e06f94effb1ddb1de716bf0eee76223aa0296914a5faf5d82e9468607"
+  "generated": "2026-09-06T10:51:53+00:00",
+  "seq": 1788691913,
+  "data_hash": "4f2a63b6d56af874f9fbd11e5b87d09fa39fea8985122151c05dcc0718588f1e"
  },
  "by_age": {
   "F16": {
@@ -894,15 +894,15 @@
             "label": "HK Aranäs Gul",
             "team_id": 77479096,
             "is_alingsas": false,
-            "goals": null
+            "goals": 8
            },
            "away": {
             "label": "HK Ankaret 2",
             "team_id": 78780190,
             "is_alingsas": false,
-            "goals": null
+            "goals": 16
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85516456,
@@ -980,8 +980,8 @@
            "bana": "Lundenhallen",
            "round": "1/4 Final",
            "home": {
-            "label": "Vinn. 06093306",
-            "team_id": null,
+            "label": "HK Ankaret 2",
+            "team_id": 78780190,
             "is_alingsas": false,
             "goals": null
            },
