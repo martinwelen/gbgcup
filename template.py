@@ -755,10 +755,11 @@ let btier = 0;
 function playoffForFilter(){
   const ps = STANDINGS.playoffs || [];
   if(!ps.length) return null;
-  if(CLASSES.some(c=>c.cls===filter)) return ps.find(p=>p.klass===filter) || ps[0];
+  // Specifik klass/lag utan slutspel (t.ex. Mini-klasser F11) → inget (visa inte fel klass).
+  if(CLASSES.some(c=>c.cls===filter)) return ps.find(p=>p.klass===filter) || null;
   const team = TEAMS.find(t=>t.slug===filter);
-  if(team) return ps.find(p=>p.klass===team.klass) || ps[0];
-  return ps[0];
+  if(team) return ps.find(p=>p.klass===team.klass) || null;
+  return null;    // "Alla" → tvinga klassval (flera klasser har slutspel; inget default)
 }
 function bmRow(side, isWin, isLose){
   const cls = isWin ? "bm-win" : (isLose ? "bm-lose" : "");
@@ -781,7 +782,12 @@ function wirePan(el){
 function renderBracket(){
   if(!STANDINGS || !STANDINGS.playoffs){ elBracket.innerHTML=""; return; }
   const po = playoffForFilter();
-  if(!po || !po.tiers.length){ elBracket.innerHTML='<div class="empty-tab">Inget slutspel att visa.</div>'; return; }
+  if(!po || !po.tiers.length){
+    const msg = filter==="all"
+      ? "👆 Välj en klass ovan för att se slutspelsträdet."
+      : "Inget slutspel för det här filtret.";
+    elBracket.innerHTML=`<div class="empty-tab">${msg}</div>`; return;
+  }
   if(btier>=po.tiers.length) btier=0;
   // om ett enskilt lag är filtrerat: öppna den nivå laget projiceras till
   const team = TEAMS.find(t=>t.slug===filter);
@@ -801,14 +807,32 @@ function renderBracket(){
   const colOf=new Map(); rounds.forEach((r,ci)=>r.matches.forEach(m=>colOf.set(m,ci)));
   const byNr={}; rounds.forEach(r=>r.matches.forEach(m=>{ if(m.nr) byNr[m.nr]=m; }));
   const refOf=s=>{ const mm=(s.label||"").match(/[Vv]inn\.?\s+(\S+)/); return mm?mm[1]:null; };
-  const kidsOf=m=>{ const out=[]; for(const s of [m.home,m.away]){ const ref=refOf(s), f=ref&&byNr[ref]; if(f&&f!==m) out.push([s,f]); } return out; };
+  const winTeam=m=> m.winner==="home"?m.home.team_id : (m.winner==="away"?m.away.team_id : null);
+  // Feeder-karta som ÖVERLEVER spelade matcher: lös via 'Vinn. <nr>' (ospelad plats) ELLER
+  // via vinnande lag (spelad → laget står redan i platsen; hitta matchen det vann i tidigare
+  // rond). Anspråk uppifrån (senare ronder först) så varje feeder claimas av en enda plats.
+  const used=new Set();
+  const feederFor=(m,s)=>{
+    const ref=refOf(s); if(ref && byNr[ref]) return byNr[ref];
+    const tid=s.team_id; if(!tid) return null;
+    const myCol=colOf.get(m); let best=null, bestCol=-1;
+    rounds.forEach(r=>r.matches.forEach(f=>{ const fc=colOf.get(f);
+      if(fc<myCol && !used.has(f) && winTeam(f)===tid && fc>bestCol){ best=f; bestCol=fc; } }));
+    return best;
+  };
+  const feeders=new Map();
+  rounds.slice().sort((a,b)=>rrank(b.name)-rrank(a.name)).forEach(r=>r.matches.forEach(m=>{
+    const list=[];
+    for(const s of [m.home,m.away]){ const f=feederFor(m,s); if(f && f!==m && !used.has(f)){ used.add(f); list.push([s,f]); } }
+    feeders.set(m,list);
+  }));
   // tidy-tree: placera varje match centrerat på sina feeders, från finalen och bakåt
   const pos=new Map(); let leafY=0; const busy=new Set();
   function place(m){
     if(pos.has(m)) return pos.get(m);
     if(busy.has(m)) return leafY;                 // cykelskydd
     busy.add(m);
-    const ks=kidsOf(m); let y;
+    const ks=feeders.get(m)||[]; let y;
     if(!ks.length){ y=leafY; leafY+=SLOT; }
     else { const ys=ks.map(kf=>place(kf[1])); y=ys.reduce((a,b)=>a+b,0)/ys.length; }
     pos.set(m,y); return y;
@@ -822,7 +846,7 @@ function renderBracket(){
   rounds.forEach((r,ci)=>{
     for(const m of r.matches){
       const mAli=m.home.is_alingsas||m.away.is_alingsas;
-      for(const [s,f] of kidsOf(m)){
+      for(const [s,f] of (feeders.get(m)||[])){
         const x1=colOf.get(f)*(CARD_W+GAP)+CARD_W, y1=pos.get(f)+LBL+CARD_H/2;
         const x2=ci*(CARD_W+GAP), y2=pos.get(m)+LBL+CARD_H/2+(s===m.home?-9:9);
         const midx=(x1+x2)/2;

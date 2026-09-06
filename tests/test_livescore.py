@@ -75,7 +75,7 @@ def test_bracket_tidy_tree_with_times_and_matchnr():
     assert "#${esc(m.nr)}" in t
     assert "1\\/(\\d+)" in t or "1/(\\d+)" in t             # rond-ordning efter namn
     # tidy-tree: feeder-upplösning + rekursiv placering + kopplingslinjer
-    assert "function place(" in t and "kidsOf" in t
+    assert "function place(" in t and "feederFor" in t and "winTeam" in t  # feeder via ref ELLER vinnarlag
     assert 'class="bconn"' in t and "<polyline" in t
     assert "leafY" in t                                    # löv-slots i placeringen
     assert "const VABBR" in t and "vAbbr" in t and 'class="bv"' in t  # spelplats-förkortning
