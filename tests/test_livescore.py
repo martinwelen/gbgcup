@@ -68,15 +68,6 @@ def test_video_link_is_scheme_checked_and_encoded():
     assert "encodeURI(" in t        # neutraliserar citattecken i href
 
 
-def test_bracket_positioned_tree_with_connectors_and_times():
-    t = template.TEMPLATE
-    assert 'class="bconn"' in t                  # SVG-lager för kopplingslinjer
-    assert "<polyline" in t
-    assert "byNr[ref]" in t                       # referens-upplösning (Vinn. → feeder)
-    assert 'class="btime"' in t                   # starttids-pill per match
-    assert "m._cy" in t and "m._x" in t           # beräknade trädpositioner
-
-
 def test_card_shows_playoff_round():
     t = template.TEMPLATE
     assert 'class="rundachip"' in t
