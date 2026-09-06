@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T15:32:43+00:00",
-  "seq": 1788708763,
-  "data_hash": "e7902a18646978c104585157a650134230356e6f708c149d1d08b7edb7f20aa8"
+  "generated": "2026-09-06T15:41:49+00:00",
+  "seq": 1788709309,
+  "data_hash": "ca047de347c2c5ac2ea83a5a554141835483d498e3e91e9efccdd0ad872d68e5"
  },
  "by_age": {
   "F16": {
@@ -605,15 +605,15 @@
             "label": "Täby HBK 1",
             "team_id": 76528947,
             "is_alingsas": false,
-            "goals": null
+            "goals": 23
            },
            "away": {
             "label": "IK Sävehof 3",
             "team_id": 85892361,
             "is_alingsas": false,
-            "goals": null
+            "goals": 17
            },
-           "winner": null
+           "winner": "home"
           }
          ]
         }
@@ -1972,15 +1972,15 @@
             "label": "Hammarby IF HF",
             "team_id": 78296686,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
            "away": {
             "label": "Täby HBK 2",
             "team_id": 85853609,
             "is_alingsas": false,
-            "goals": null
+            "goals": 13
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85520325,
@@ -2016,8 +2016,8 @@
            "bana": "Frölunda Kulturhus",
            "round": "Final",
            "home": {
-            "label": "Vinn. 06091513",
-            "team_id": null,
+            "label": "Hammarby IF HF",
+            "team_id": 78296686,
             "is_alingsas": false,
             "goals": null
            },
@@ -3653,15 +3653,15 @@
             "label": "Ljunghusens HK Mörkblå",
             "team_id": 77076097,
             "is_alingsas": false,
-            "goals": null
+            "goals": 15
            },
            "away": {
             "label": "IK Sävehof 2",
             "team_id": 80700602,
             "is_alingsas": false,
-            "goals": null
+            "goals": 16
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85896047,
@@ -3697,8 +3697,8 @@
            "bana": "Torpahallen",
            "round": "Final",
            "home": {
-            "label": "Vinn. 06092313",
-            "team_id": null,
+            "label": "IK Sävehof 2",
+            "team_id": 80700602,
             "is_alingsas": false,
             "goals": null
            },
