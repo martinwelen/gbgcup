@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T16:12:29+00:00",
-  "seq": 1788711149,
-  "data_hash": "36f4601e601b89c8c1e5d07252dc8b08583f5012a2d0c18f5b5054033b74d286"
+  "generated": "2026-09-06T16:22:13+00:00",
+  "seq": 1788711733,
+  "data_hash": "08490e02b2e860d7b13b67a4d92f286b2d77c3ed642c9efcc4548229c5871245"
  },
  "by_age": {
   "F16": {
@@ -1993,15 +1993,15 @@
             "label": "IK Sävehof 1",
             "team_id": 85892424,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
            "away": {
             "label": "Redbergslids IK",
             "team_id": 82263514,
             "is_alingsas": false,
-            "goals": null
+            "goals": 15
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -2022,8 +2022,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06091514",
-            "team_id": null,
+            "label": "Redbergslids IK",
+            "team_id": 82263514,
             "is_alingsas": false,
             "goals": null
            },
@@ -3674,15 +3674,15 @@
             "label": "Konnerud IL 1",
             "team_id": 78631594,
             "is_alingsas": false,
-            "goals": null
+            "goals": 15
            },
            "away": {
             "label": "IK Sävehof 4",
             "team_id": 80700613,
             "is_alingsas": false,
-            "goals": null
+            "goals": 16
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -3703,8 +3703,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06092314",
-            "team_id": null,
+            "label": "IK Sävehof 4",
+            "team_id": 80700613,
             "is_alingsas": false,
             "goals": null
            },
