@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T09:01:47+00:00",
-  "seq": 1788685307,
-  "data_hash": "d021624407fded8af313d891955c6a880a64b4a789ad9cfb0dde1a52029a111e"
+  "generated": "2026-09-06T09:32:16+00:00",
+  "seq": 1788687136,
+  "data_hash": "1c26009a516df32e58cb0d935dba1305930fa092efbabe7bbf435aa4396c98f7"
  },
  "by_age": {
   "F16": {
@@ -338,15 +338,15 @@
             "label": "Önnereds HK 2",
             "team_id": 81958785,
             "is_alingsas": false,
-            "goals": null
+            "goals": 22
            },
            "away": {
             "label": "BK Heid 1",
             "team_id": 78427238,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85516430,
@@ -472,8 +472,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06090904",
-            "team_id": null,
+            "label": "Önnereds HK 2",
+            "team_id": 81958785,
             "is_alingsas": false,
             "goals": null
            },
@@ -1359,15 +1359,15 @@
             "label": "IFK Tumba HK",
             "team_id": 80550131,
             "is_alingsas": false,
-            "goals": null
+            "goals": 21
            },
            "away": {
             "label": "HK Aranäs Svart",
             "team_id": 76822001,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85520308,
@@ -1471,8 +1471,8 @@
            "bana": "ÖHK-Hallen A",
            "round": "1/4 Final",
            "home": {
-            "label": "Vinn. 06090704",
-            "team_id": null,
+            "label": "IFK Tumba HK",
+            "team_id": 80550131,
             "is_alingsas": false,
             "goals": null
            },
