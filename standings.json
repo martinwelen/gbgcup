@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T15:51:49+00:00",
-  "seq": 1788709909,
-  "data_hash": "4197658ce47be438b0f06547341ad4c28af5285de99e1fa8ef13aaa3a79ff364"
+  "generated": "2026-09-06T16:12:29+00:00",
+  "seq": 1788711149,
+  "data_hash": "36f4601e601b89c8c1e5d07252dc8b08583f5012a2d0c18f5b5054033b74d286"
  },
  "by_age": {
   "F16": {
@@ -2527,15 +2527,15 @@
             "label": "IFK Kristianstad 1",
             "team_id": 82037747,
             "is_alingsas": false,
-            "goals": null
+            "goals": 13
            },
            "away": {
             "label": "IK Sävehof",
             "team_id": 85892282,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         }
