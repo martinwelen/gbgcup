@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T15:02:34+00:00",
-  "seq": 1788706954,
-  "data_hash": "116d39586c7c6e06115c5e7453d91406bec5aed05726fe3f2ac1e928a3531108"
+  "generated": "2026-09-06T15:22:24+00:00",
+  "seq": 1788708144,
+  "data_hash": "74033a577742772564dd24ad2ccfc57518b793a2ebbb00a847708a104c9fc201"
  },
  "by_age": {
   "F16": {
@@ -2312,15 +2312,15 @@
             "label": "RP IF Linköping",
             "team_id": 80528943,
             "is_alingsas": false,
-            "goals": null
+            "goals": 20
            },
            "away": {
             "label": "Lugi HF 3",
             "team_id": 81412602,
             "is_alingsas": false,
-            "goals": null
+            "goals": 21
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         }
