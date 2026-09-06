@@ -111,18 +111,21 @@ table.gt{width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums
 .btabs{display:flex; gap:6px; margin:14px 2px 8px}
 .btab{font-size:.72rem; font-weight:800; padding:6px 13px; border-radius:999px; border:1.5px solid var(--line); color:var(--ink-soft); background:transparent; cursor:pointer; font-family:inherit}
 .btab[aria-pressed=true]{background:var(--ink); border-color:var(--ink); color:#fff}
-.bracket-scroll{overflow:hidden; cursor:grab; touch-action:pan-y; border:1px solid var(--line); border-radius:14px; background:var(--paper); box-shadow:var(--shadow); padding:12px}
+.bracket-scroll{overflow:auto; max-height:72vh; -webkit-overflow-scrolling:touch; cursor:grab; touch-action:pan-x pan-y; border:1px solid var(--line); border-radius:14px; background:var(--paper); box-shadow:var(--shadow); padding:12px}
 .bracket-scroll.drag{cursor:grabbing}
-.btree{display:flex; gap:16px; min-width:max-content; user-select:none}
-.bcol{display:flex; flex-direction:column; justify-content:space-around; gap:10px; min-width:130px}
-.bcol .clabel{font-size:.56rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:2px}
-.bm{background:var(--sand); border:1px solid var(--line); border-radius:9px; padding:6px 8px; font-size:.7rem; line-height:1.5}
+.btree{position:relative; user-select:none}
+.btree .clabel{position:absolute; top:0; text-align:center; font-family:"Anton",sans-serif; font-size:.66rem; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-soft)}
+.bconn{position:absolute; left:0; top:0; pointer-events:none; z-index:0}
+.bconn polyline{fill:none; stroke:#cdbfa6; stroke-width:2}
+.bconn polyline.aliln{stroke:var(--sun); stroke-width:2.5}
+.btree .bm{position:absolute; z-index:1; background:var(--sand); border:1px solid var(--line); border-radius:9px; padding:5px 8px; font-size:.7rem; line-height:1.5; box-shadow:0 1px 4px rgba(20,40,60,.06)}
 .bm .row{display:flex; justify-content:space-between; gap:8px}
 .bm .row span:first-child{white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
-.bm.ali{border-color:var(--ink); box-shadow:0 0 0 1.5px var(--c,#999)}
+.bm.ali{border-color:var(--sun); box-shadow:0 0 0 1.5px var(--sun)}
 .bm-win{font-weight:800; color:var(--ink)}
 .bm-lose{text-decoration:line-through; color:var(--ink-soft); opacity:.75}
 .bm .g{font-variant-numeric:tabular-nums; font-weight:800; margin-left:6px}
+.btime{position:absolute; top:-9px; left:8px; background:var(--ink); color:#fff; font-size:.56rem; font-weight:800; padding:1px 7px; border-radius:999px; z-index:2; letter-spacing:.02em}
 
 /* filter */
 .filters{position:sticky; top:0; z-index:5; margin:0 -16px; padding:12px 16px;
@@ -784,19 +787,72 @@ function renderBracket(){
   }
   let html = `<div class="btabs">`;
   po.tiers.forEach((t,i)=>{ html += `<button class="btab" data-i="${i}" aria-pressed="${i===btier}">${esc(t.tier.replace("-Slutspel",""))}</button>`; });
-  html += `</div><div class="bracket-scroll" id="bscroll"><div class="btree">`;
-  for(const rnd of po.tiers[btier].rounds){
-    html += `<div class="bcol"><div class="clabel">${esc(rnd.name)}</div>`;
-    for(const m of rnd.matches){
-      const hw = m.winner==="home", aw = m.winner==="away";
-      const ali = (m.home.is_alingsas||m.away.is_alingsas) ? " ali" : "";
-      const c = aliColor(m);
-      html += `<div class="bm${ali}" style="--c:#${c}">`+
-        bmRow(m.home, hw, aw) + bmRow(m.away, aw, hw) + `</div>`;
+  html += `</div>`;
+
+  const rounds = po.tiers[btier].rounds;
+  const cardW=176, GAP=48, cardH=50, SLOT=68, LBL=24;
+  const maxN = Math.max(1, ...rounds.map(r=>r.matches.length));
+  const H = maxN*SLOT;
+  const byNr = {};
+  rounds.forEach(r=>r.matches.forEach(m=>{ if(m.nr) byNr[m.nr]=m; }));
+  // Positioner: varje match centreras på sina feeders (via 'Vinn.'-referenser) → raka
+  // linjer även i sneda träd. Round 0 (och matcher utan feeder) sprids jämnt.
+  // Kollisionsfritt: sortera på mål-y och tvinga min-avstånd, behåll ordning.
+  rounds.forEach((r,ri)=>{
+    const arr=r.matches, n=arr.length;
+    arr.forEach((m,i)=>{
+      m._x = ri*(cardW+GAP);
+      let ty = (i+0.5)/n*H;
+      if(ri>0){
+        const fs=[];
+        for(const s of ["home","away"]){ const ref=m[s].ref, f=ref&&byNr[ref]; if(f&&f._cy!=null) fs.push(f._cy); }
+        if(fs.length) ty = fs.reduce((a,b)=>a+b,0)/fs.length;
+      }
+      m._ty=ty; m._i=i;
+    });
+    const order=arr.slice().sort((a,b)=>(a._ty-b._ty)||(a._i-b._i));
+    for(let k=0;k<order.length;k++){
+      order[k]._cy = k ? Math.max(order[k]._ty, order[k-1]._cy+SLOT) : order[k]._ty;
     }
-    html += `</div>`;
-  }
-  html += `</div></div>`;
+  });
+  const treeW = rounds.length*(cardW+GAP) - GAP;
+  let maxCy=0; rounds.forEach(r=>r.matches.forEach(m=>{ if(m._cy>maxCy) maxCy=m._cy; }));
+  const totH = maxCy + cardH/2 + LBL + 8;
+
+  // Kopplingslinjer: lös upp 'Vinn. <matchNr>' → elbow-linje från feeder in i rätt lagrad.
+  let conns="";
+  rounds.forEach((r,ri)=>{
+    if(ri===0) return;
+    r.matches.forEach(m=>{
+      const mAli = m.home.is_alingsas || m.away.is_alingsas;
+      ["home","away"].forEach(side=>{
+        const ref=m[side].ref, f=ref&&byNr[ref];
+        if(!f) return;
+        const x1=f._x+cardW, y1=f._cy+LBL;
+        const x2=m._x, y2=m._cy+LBL+(side==="home"?-9:9);
+        const midx=(x1+x2)/2;
+        const cl = (mAli || f.home.is_alingsas || f.away.is_alingsas) ? ' class="aliln"' : "";
+        conns += `<polyline${cl} points="${x1},${y1} ${midx},${y1} ${midx},${y2} ${x2},${y2}" />`;
+      });
+    });
+  });
+
+  let inner = `<svg class="bconn" viewBox="0 0 ${treeW} ${totH}" width="${treeW}" height="${totH}">${conns}</svg>`;
+  rounds.forEach((r,ri)=>{
+    inner += `<div class="clabel" style="left:${ri*(cardW+GAP)}px;width:${cardW}px">${esc(r.name)}</div>`;
+    for(const m of r.matches){
+      const hw=m.winner==="home", aw=m.winner==="away";
+      const ali=(m.home.is_alingsas||m.away.is_alingsas)?" ali":"";
+      const c=aliColor(m);
+      const tt=m.t?`<span class="btime">${esc(m.t)}</span>`:"";
+      // refererad plats ("Vinn. 06090100") → visa "Vinnare"; linjen pekar på källan.
+      const hS=m.home.ref?{...m.home,label:"Vinnare"}:m.home;
+      const aS=m.away.ref?{...m.away,label:"Vinnare"}:m.away;
+      inner += `<div class="bm${ali}" data-mid="${m.id||''}" style="left:${m._x}px;top:${m._cy+LBL-cardH/2}px;width:${cardW}px;--c:#${c}">`
+        + tt + bmRow(hS,hw,aw) + bmRow(aS,aw,hw) + `</div>`;
+    }
+  });
+  html += `<div class="bracket-scroll" id="bscroll"><div class="btree" style="width:${treeW}px;height:${totH}px">${inner}</div></div>`;
   elBracket.innerHTML = html;
   wirePan(document.getElementById("bscroll"));
   elBracket.querySelector(".btabs").addEventListener("click", e=>{
