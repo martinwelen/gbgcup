@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T10:12:56+00:00",
-  "seq": 1788689576,
-  "data_hash": "869946f44ea9b77296edfaf88e6f293025ebefd272874c2e76bca277caf1040a"
+  "generated": "2026-09-06T10:22:02+00:00",
+  "seq": 1788690122,
+  "data_hash": "d84bac2e06f94effb1ddb1de716bf0eee76223aa0296914a5faf5d82e9468607"
  },
  "by_age": {
   "F16": {
@@ -401,15 +401,15 @@
             "label": "Alingsås HK 1",
             "team_id": 77339136,
             "is_alingsas": true,
-            "goals": null
+            "goals": 11
            },
            "away": {
             "label": "Kärra HF Röd",
             "team_id": 81913847,
             "is_alingsas": false,
-            "goals": null
+            "goals": 7
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85516425,
@@ -529,9 +529,9 @@
            "bana": "Prioritet Serneke Arena Serneke Arena B",
            "round": "1/4 Final",
            "home": {
-            "label": "Vinn. 06090105",
-            "team_id": null,
-            "is_alingsas": false,
+            "label": "Alingsås HK 1",
+            "team_id": 77339136,
+            "is_alingsas": true,
             "goals": null
            },
            "away": {
@@ -873,15 +873,15 @@
             "label": "HK Aranäs Vit",
             "team_id": 77479084,
             "is_alingsas": false,
-            "goals": null
+            "goals": 18
            },
            "away": {
             "label": "Kungälvs HK Grön",
             "team_id": 79710046,
             "is_alingsas": false,
-            "goals": null
+            "goals": 9
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85516451,
@@ -965,8 +965,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06093305",
-            "team_id": null,
+            "label": "HK Aranäs Vit",
+            "team_id": 77479084,
             "is_alingsas": false,
             "goals": null
            },
@@ -1380,15 +1380,15 @@
             "label": "Alingsås HK 2",
             "team_id": 77339121,
             "is_alingsas": true,
-            "goals": null
+            "goals": 13
            },
            "away": {
             "label": "HK Aranäs Blå",
             "team_id": 76822005,
             "is_alingsas": false,
-            "goals": null
+            "goals": 12
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85520361,
@@ -1401,15 +1401,15 @@
             "label": "Torslanda HK",
             "team_id": 76821977,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
            "away": {
             "label": "IK Sund 1",
             "team_id": 86183986,
             "is_alingsas": false,
-            "goals": null
+            "goals": 15
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -1513,8 +1513,8 @@
            "bana": "ÖHK-Hallen A",
            "round": "1/4 Final",
            "home": {
-            "label": "Vinn. 06090705",
-            "team_id": null,
+            "label": "IK Sund 1",
+            "team_id": 86183986,
             "is_alingsas": false,
             "goals": null
            },
@@ -1540,9 +1540,9 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06090805",
-            "team_id": null,
-            "is_alingsas": false,
+            "label": "Alingsås HK 2",
+            "team_id": 77339121,
+            "is_alingsas": true,
             "goals": null
            },
            "winner": null
@@ -3003,15 +3003,15 @@
             "label": "GF Kroppskultur 2",
             "team_id": 85939262,
             "is_alingsas": false,
-            "goals": null
+            "goals": 18
            },
            "away": {
             "label": "Ystads IF HF 2",
             "team_id": 78780176,
             "is_alingsas": false,
-            "goals": null
+            "goals": 15
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85896018,
@@ -3024,15 +3024,15 @@
             "label": "Redbergslids IK Vit",
             "team_id": 77568010,
             "is_alingsas": false,
-            "goals": null
+            "goals": 18
            },
            "away": {
             "label": "RP IF Linköping",
             "team_id": 81507000,
             "is_alingsas": false,
-            "goals": null
+            "goals": 17
            },
-           "winner": null
+           "winner": "home"
           }
          ]
         },
@@ -3068,14 +3068,14 @@
            "bana": "Kviberg Park Sporthall B",
            "round": "1/4 Final",
            "home": {
-            "label": "Vinn. 06094705",
-            "team_id": null,
+            "label": "GF Kroppskultur 2",
+            "team_id": 85939262,
             "is_alingsas": false,
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06094805",
-            "team_id": null,
+            "label": "Redbergslids IK Vit",
+            "team_id": 77568010,
             "is_alingsas": false,
             "goals": null
            },

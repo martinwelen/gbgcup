@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-06T09:41:22+00:00",
-  "seq": 1788687682,
-  "data_hash": "6267862733c2c16dd636b7449febb7a1dc2d639a7cd5db7fb2fa2ad2c7abf9a8"
+  "generated": "2026-09-06T10:21:23+00:00",
+  "seq": 1788690083,
+  "data_hash": "a2f0c9e67d46d1cf7633ea8be6567a87adbf1457c22ebf64f585f04d5b70cd23"
  },
  "groups": {
   "F11": {
@@ -1141,7 +1141,10 @@
      "grupp": "Slutspel A",
      "mots": "Kärra HF Röd",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 11,
+      "ag": 7
+     },
      "start_ms": 1788687600000,
      "start_iso": "2026-09-06T11:40+02:00",
      "day_label": "Söndag 6 september"
@@ -1170,6 +1173,36 @@
      "borta": "Skuru IK 2",
      "grupp": "Slutspel A",
      "mots": "Skuru IK 2",
+     "hb": "Hemma",
+     "result": null,
+     "start_ms": 1788697200000,
+     "start_iso": "2026-09-06T14:20+02:00",
+     "day_label": "Söndag 6 september"
+    },
+    {
+     "age_slug": "F16",
+     "slug": "t-77339136",
+     "id": 85516431,
+     "gender": "F",
+     "klass": "F16",
+     "rule": "Classic",
+     "dur": 40,
+     "color": "#1f5fbf",
+     "datum": "2026-09-06",
+     "dag": "Söndag",
+     "tid": "14:20",
+     "bana": "Prioritet Serneke Arena B",
+     "maps": "https://www.google.com/maps/search/?api=1&query=57.7384041,12.0352267",
+     "lat": 57.7384041,
+     "lng": 12.0352267,
+     "venue": "Prioritet Serneke Arena",
+     "street": "Krutvägen 2-4",
+     "video": "https://solidsport.com/gbgcup/watch/vinn-06090105-vinn-06090106",
+     "runda": "Kvartsfinal",
+     "hemma": "Alingsås HK 1",
+     "borta": "Vinn. 06090106",
+     "grupp": "Slutspel A",
+     "mots": "Vinn. 06090106",
      "hb": "Hemma",
      "result": null,
      "start_ms": 1788697200000,
@@ -1473,7 +1506,10 @@
      "grupp": "Slutspel A",
      "mots": "HK Aranäs Blå",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 13,
+      "ag": 12
+     },
      "start_ms": 1788687600000,
      "start_iso": "2026-09-06T11:40+02:00",
      "day_label": "Söndag 6 september"
@@ -1506,6 +1542,36 @@
      "result": null,
      "start_ms": 1788692400000,
      "start_iso": "2026-09-06T13:00+02:00",
+     "day_label": "Söndag 6 september"
+    },
+    {
+     "age_slug": "P16",
+     "slug": "t-77339121",
+     "id": 85520306,
+     "gender": "P",
+     "klass": "P16",
+     "rule": "Classic",
+     "dur": 40,
+     "color": "#1f5fbf",
+     "datum": "2026-09-06",
+     "dag": "Söndag",
+     "tid": "13:40",
+     "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
+     "maps": "https://www.google.com/maps/search/?api=1&query=57.66828599999999,11.8827533",
+     "lat": 57.66828599999999,
+     "lng": 11.8827533,
+     "venue": "ÖHK-Hallen",
+     "street": "Redegatan 18",
+     "video": "https://solidsport.com/gbgcup/watch/vinn-06090804-vinn-06090805",
+     "runda": "Kvartsfinal",
+     "hemma": "Önnereds HK 1",
+     "borta": "Alingsås HK 2",
+     "grupp": "Slutspel A",
+     "mots": "Önnereds HK 1",
+     "hb": "Borta",
+     "result": null,
+     "start_ms": 1788694800000,
+     "start_iso": "2026-09-06T13:40+02:00",
      "day_label": "Söndag 6 september"
     }
    ]
