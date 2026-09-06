@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T02:42:12+00:00",
-  "seq": 1788662532,
-  "data_hash": "7f56ce04b4319f3e951f03337bd095f86d13468e175dddb6f3c86d99468b7b00"
+  "generated": "2026-09-06T06:52:09+00:00",
+  "seq": 1788677529,
+  "data_hash": "e8defd89389e5f1a3587ff18efa900b340def18fa97ef3dccf924593f1db0ff6"
  },
  "by_age": {
   "F16": {
@@ -637,15 +637,15 @@
             "label": "HK Aranäs Blå",
             "team_id": 77479088,
             "is_alingsas": false,
-            "goals": null
+            "goals": 12
            },
            "away": {
             "label": "Hammarby IF HF",
             "team_id": 81574416,
             "is_alingsas": false,
-            "goals": null
+            "goals": 15
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85516521,
@@ -658,15 +658,15 @@
             "label": "Torslanda HK VIT",
             "team_id": 77954882,
             "is_alingsas": false,
-            "goals": null
+            "goals": 9
            },
            "away": {
             "label": "IFK Kristianstad 2",
             "team_id": 79402384,
             "is_alingsas": false,
-            "goals": null
+            "goals": 4
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85516574,
@@ -771,8 +771,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06092100",
-            "team_id": null,
+            "label": "Hammarby IF HF",
+            "team_id": 81574416,
             "is_alingsas": false,
             "goals": null
            },
@@ -813,8 +813,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06091300",
-            "team_id": null,
+            "label": "Torslanda HK VIT",
+            "team_id": 77954882,
             "is_alingsas": false,
             "goals": null
            },
