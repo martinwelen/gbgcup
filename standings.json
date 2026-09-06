@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T14:19:46+00:00",
-  "seq": 1788704386,
-  "data_hash": "145d3bc8ab1034b945225dec58204340d77ec694fc4faa7e78c72d92776ef493"
+  "generated": "2026-09-06T14:52:06+00:00",
+  "seq": 1788706326,
+  "data_hash": "c66bd6738a7859c863aba21342cc18776b63fcd1e6c7bab5b4824ef75531434f"
  },
  "by_age": {
   "F16": {
@@ -1030,15 +1030,15 @@
             "label": "IK Sävehof 1",
             "team_id": 85892331,
             "is_alingsas": false,
-            "goals": null
+            "goals": 12
            },
            "away": {
             "label": "HK Aranäs Vit",
             "team_id": 77479084,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85516449,
@@ -1074,8 +1074,8 @@
            "bana": "Lundenhallen",
            "round": "Final",
            "home": {
-            "label": "Vinn. 06093312",
-            "team_id": null,
+            "label": "HK Aranäs Vit",
+            "team_id": 77479084,
             "is_alingsas": false,
             "goals": null
            },
