@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T08:22:06+00:00",
-  "seq": 1788682926,
-  "data_hash": "cb73968bc708f86b436f2a2a7f3abf8264ebb2cc09a466f411d5b0c8c2948cda"
+  "generated": "2026-09-06T08:51:50+00:00",
+  "seq": 1788684710,
+  "data_hash": "d10a8cc7455e7a7a96bf8baa551b50ac85dc1a736dafb84ec68e0926fd476854"
  },
  "by_age": {
   "F16": {
@@ -2877,15 +2877,15 @@
             "label": "Hammarby IF HF 1",
             "team_id": 79414786,
             "is_alingsas": false,
-            "goals": null
+            "goals": 16
            },
            "away": {
             "label": "BK Heid röd",
             "team_id": 77076104,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85896024,
@@ -3089,8 +3089,8 @@
            "bana": "Kviberg Park Sporthall A",
            "round": "1/4 Final",
            "home": {
-            "label": "Vinn. 06094703",
-            "team_id": null,
+            "label": "Hammarby IF HF 1",
+            "team_id": 79414786,
             "is_alingsas": false,
             "goals": null
            },
