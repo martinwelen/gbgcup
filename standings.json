@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T13:32:20+00:00",
-  "seq": 1788701540,
-  "data_hash": "e72a709e7d6c14c839dda6128393ac026d9b4558ecd7c743bd6260a1db396a71"
+  "generated": "2026-09-06T13:41:46+00:00",
+  "seq": 1788702106,
+  "data_hash": "e7f093ee10d58e95053d77626e834c910c39feb1937e2644a28f22a04ffa07d2"
  },
  "by_age": {
   "F16": {
@@ -983,15 +983,15 @@
             "label": "HK Ankaret 2",
             "team_id": 78780190,
             "is_alingsas": false,
-            "goals": null
+            "goals": 16
            },
            "away": {
             "label": "Kärra HF Gul",
             "team_id": 81913843,
             "is_alingsas": false,
-            "goals": null
+            "goals": 5
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85516454,
@@ -1048,8 +1048,8 @@
            "bana": "Lundenhallen",
            "round": "Semifinal",
            "home": {
-            "label": "Vinn. 06093310",
-            "team_id": null,
+            "label": "HK Ankaret 2",
+            "team_id": 78780190,
             "is_alingsas": false,
             "goals": null
            },
@@ -1904,15 +1904,15 @@
             "label": "IFK Bankeryd Vit",
             "team_id": 80504983,
             "is_alingsas": false,
-            "goals": null
+            "goals": 9
            },
            "away": {
             "label": "Täby HBK 2",
             "team_id": 85853609,
             "is_alingsas": false,
-            "goals": null
+            "goals": 16
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85520326,
@@ -1975,8 +1975,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06091510",
-            "team_id": null,
+            "label": "Täby HBK 2",
+            "team_id": 85853609,
             "is_alingsas": false,
             "goals": null
            },
@@ -2480,15 +2480,15 @@
             "label": "IFK Kristianstad 1",
             "team_id": 82037747,
             "is_alingsas": false,
-            "goals": null
+            "goals": 15
            },
            "away": {
             "label": "Redbergslids IK",
             "team_id": 82263509,
             "is_alingsas": false,
-            "goals": null
+            "goals": 12
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85747195,
@@ -2524,8 +2524,8 @@
            "bana": "ÖHK-Hallen A",
            "round": "Final",
            "home": {
-            "label": "Vinn. 06090710",
-            "team_id": null,
+            "label": "IFK Kristianstad 1",
+            "team_id": 82037747,
             "is_alingsas": false,
             "goals": null
            },
@@ -3585,15 +3585,15 @@
             "label": "IK Sävehof 2",
             "team_id": 80700602,
             "is_alingsas": false,
-            "goals": null
+            "goals": 15
            },
            "away": {
             "label": "HP Warta Svart",
             "team_id": 86381849,
             "is_alingsas": false,
-            "goals": null
+            "goals": 9
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85896048,
@@ -3656,8 +3656,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06092310",
-            "team_id": null,
+            "label": "IK Sävehof 2",
+            "team_id": 80700602,
             "is_alingsas": false,
             "goals": null
            },
