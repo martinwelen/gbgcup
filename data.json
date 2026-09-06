@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-06T10:21:23+00:00",
-  "seq": 1788690083,
-  "data_hash": "a2f0c9e67d46d1cf7633ea8be6567a87adbf1457c22ebf64f585f04d5b70cd23"
+  "generated": "2026-09-06T11:01:27+00:00",
+  "seq": 1788692487,
+  "data_hash": "61dd01738390aa6b532604a5f1479d78a619114db8c1c641bfa061bdceb9033b"
  },
  "groups": {
   "F11": {
@@ -1200,9 +1200,9 @@
      "video": "https://solidsport.com/gbgcup/watch/vinn-06090105-vinn-06090106",
      "runda": "Kvartsfinal",
      "hemma": "Alingsås HK 1",
-     "borta": "Vinn. 06090106",
+     "borta": "IK Sävehof 3",
      "grupp": "Slutspel A",
-     "mots": "Vinn. 06090106",
+     "mots": "IK Sävehof 3",
      "hb": "Hemma",
      "result": null,
      "start_ms": 1788697200000,
