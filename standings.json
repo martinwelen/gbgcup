@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T15:22:24+00:00",
-  "seq": 1788708144,
-  "data_hash": "74033a577742772564dd24ad2ccfc57518b793a2ebbb00a847708a104c9fc201"
+  "generated": "2026-09-06T15:32:43+00:00",
+  "seq": 1788708763,
+  "data_hash": "e7902a18646978c104585157a650134230356e6f708c149d1d08b7edb7f20aa8"
  },
  "by_age": {
   "F16": {
@@ -1051,15 +1051,15 @@
             "label": "HK Ankaret 2",
             "team_id": 78780190,
             "is_alingsas": false,
-            "goals": null
+            "goals": 9
            },
            "away": {
             "label": "Redbergslids IK",
             "team_id": 86004672,
             "is_alingsas": false,
-            "goals": null
+            "goals": 6
            },
-           "winner": null
+           "winner": "home"
           }
          ]
         },
@@ -1080,8 +1080,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06093313",
-            "team_id": null,
+            "label": "HK Ankaret 2",
+            "team_id": 78780190,
             "is_alingsas": false,
             "goals": null
            },
