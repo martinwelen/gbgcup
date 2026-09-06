@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T14:52:06+00:00",
-  "seq": 1788706326,
-  "data_hash": "c66bd6738a7859c863aba21342cc18776b63fcd1e6c7bab5b4824ef75531434f"
+  "generated": "2026-09-06T15:02:34+00:00",
+  "seq": 1788706954,
+  "data_hash": "116d39586c7c6e06115c5e7453d91406bec5aed05726fe3f2ac1e928a3531108"
  },
  "by_age": {
   "F16": {
@@ -1946,15 +1946,15 @@
             "label": "IFK Skövde HK av 1991 Blå",
             "team_id": 82318306,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
            "away": {
             "label": "Redbergslids IK",
             "team_id": 82263514,
             "is_alingsas": false,
-            "goals": null
+            "goals": 22
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -1996,8 +1996,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06091512",
-            "team_id": null,
+            "label": "Redbergslids IK",
+            "team_id": 82263514,
             "is_alingsas": false,
             "goals": null
            },
@@ -3627,15 +3627,15 @@
             "label": "Lugi HF 1",
             "team_id": 76596042,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
            "away": {
             "label": "IK Sävehof 4",
             "team_id": 80700613,
             "is_alingsas": false,
-            "goals": null
+            "goals": 16
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -3677,8 +3677,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06092312",
-            "team_id": null,
+            "label": "IK Sävehof 4",
+            "team_id": 80700613,
             "is_alingsas": false,
             "goals": null
            },
