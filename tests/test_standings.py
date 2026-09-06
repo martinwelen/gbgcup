@@ -36,6 +36,7 @@ def test_bucket_groups_by_age_slug_skips_mini():
 def _bm_store(mid, home_name, away_name, hid, aid, rnd, hall, result):
     return {
         f"M({mid})": {"__typename": "Match", "id": mid, "start": 1000 + mid,
+                      "matchNr": f"NR{mid}",
                       "home": {"href": f"HO({mid})"}, "away": {"href": f"AW({mid})"},
                       "arena": {"href": f"AR({mid})"}, "round": {"href": f"RN({mid})"},
                       "result": {"href": f"RE({mid})"}},
@@ -55,6 +56,7 @@ def test_bracket_match_normalizes_and_flags_winner():
     assert m["home"]["label"] == "Alingsås HK Blå" and m["home"]["is_alingsas"] is True
     assert m["home"]["goals"] == 12 and m["away"]["goals"] == 9
     assert m["winner"] == "home"
+    assert m["nr"] == "NR1" and m["t"]        # matchnr + formaterad tid (för spårning)
 
 
 def test_group_rounds_orders_by_first_start():

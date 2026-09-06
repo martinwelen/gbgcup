@@ -68,6 +68,14 @@ def test_video_link_is_scheme_checked_and_encoded():
     assert "encodeURI(" in t        # neutraliserar citattecken i href
 
 
+def test_bracket_shows_time_and_matchnr():
+    t = template.TEMPLATE
+    assert 'class="bmhead"' in t
+    assert 'class="btime"' in t and 'class="bmnr"' in t   # tid + #matchnr per kort
+    assert "#${esc(m.nr)}" in t
+    assert "1\\/(\\d+)" in t or "1/(\\d+)" in t             # rond-ordning efter namn
+
+
 def test_card_shows_playoff_round():
     t = template.TEMPLATE
     assert 'class="rundachip"' in t

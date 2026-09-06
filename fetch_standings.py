@@ -61,6 +61,14 @@ def bucket_groups(groups):
     return out
 
 
+def _fmt_time(ms):
+    """start_ms → 'HH:MM' i turneringens tidszon (tom om ej tidssatt)."""
+    if not ms:
+        return ""
+    dt = datetime.fromtimestamp(ms / 1000, fetch_data._CEST)
+    return f"{dt.hour:02d}:{dt.minute:02d}"
+
+
 def bracket_match(m, store, club_ids):
     """Slutspelsmatch (Match-entitet + store) → vår bracket-modell."""
     home = api.store_get(store, m.get("home")) or {}
@@ -78,7 +86,8 @@ def bracket_match(m, store, club_ids):
         return {"label": api.name_of(a), "team_id": tid,
                 "is_alingsas": tid in club_ids if tid else False, "goals": goals}
 
-    return {"id": m.get("id"), "start": m.get("start"),
+    return {"id": m.get("id"), "start": m.get("start"), "nr": m.get("matchNr"),
+            "t": _fmt_time(m.get("start")),
             "bana": arena.get("completeName", "") or arena.get("fieldName", ""),
             "round": api.name_of(rnd), "home": actor(home), "away": actor(away),
             "winner": side}
@@ -208,7 +217,7 @@ def build():
         tiers = []
         for (_sid, pid, name) in plist:
             q = (f"Division({{id:{pid}}}){{matches:[{{... on Match:"
-                 f"{{start:{{}},home:{{}},away:{{}},arena:{{}},round:{{}},result:{{}}}}}}]}}")
+                 f"{{start:{{}},matchNr:{{}},home:{{}},away:{{}},arena:{{}},round:{{}},result:{{}}}}}}]}}")
             st = _store(q)
             ms = [bracket_match(e, st, club_ids)
                   for e in st.values() if e.get("__typename") == "Match"]

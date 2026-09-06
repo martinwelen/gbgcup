@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-05T19:02:04+00:00",
-  "seq": 1788634924,
-  "data_hash": "7ca2aba6d6fd137f0f332bb412f6c4a5a91800266eb36aa81768661269fe84e3"
+  "generated": "2026-09-06T02:42:12+00:00",
+  "seq": 1788662532,
+  "data_hash": "7f56ce04b4319f3e951f03337bd095f86d13468e175dddb6f3c86d99468b7b00"
  },
  "by_age": {
   "F16": {
@@ -157,6 +157,8 @@
           {
            "id": 85516421,
            "start": 1788675600000,
+           "nr": "06090100",
+           "t": "08:20",
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "1/16 Final",
            "home": {
@@ -176,6 +178,8 @@
           {
            "id": 85516429,
            "start": 1788675600000,
+           "nr": "06090900",
+           "t": "08:20",
            "bana": "Prioritet Serneke Arena Serneke Arena B",
            "round": "1/16 Final",
            "home": {
@@ -195,6 +199,8 @@
           {
            "id": 85516518,
            "start": 1788678000000,
+           "nr": "06090101",
+           "t": "09:00",
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "1/16 Final",
            "home": {
@@ -214,6 +220,8 @@
           {
            "id": 85516519,
            "start": 1788678000000,
+           "nr": "06090901",
+           "t": "09:00",
            "bana": "Prioritet Serneke Arena Serneke Arena B",
            "round": "1/16 Final",
            "home": {
@@ -233,6 +241,8 @@
           {
            "id": 85516572,
            "start": 1788680400000,
+           "nr": "06090102",
+           "t": "09:40",
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "1/16 Final",
            "home": {
@@ -252,6 +262,8 @@
           {
            "id": 85516573,
            "start": 1788680400000,
+           "nr": "06090902",
+           "t": "09:40",
            "bana": "Prioritet Serneke Arena Serneke Arena B",
            "round": "1/16 Final",
            "home": {
@@ -276,6 +288,8 @@
           {
            "id": 85516420,
            "start": 1788682800000,
+           "nr": "06090903",
+           "t": "10:20",
            "bana": "Prioritet Serneke Arena Serneke Arena B",
            "round": "1/8 Final",
            "home": {
@@ -295,6 +309,8 @@
           {
            "id": 85516428,
            "start": 1788682800000,
+           "nr": "06090103",
+           "t": "10:20",
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "1/8 Final",
            "home": {
@@ -314,6 +330,8 @@
           {
            "id": 85516422,
            "start": 1788685200000,
+           "nr": "06090904",
+           "t": "11:00",
            "bana": "Prioritet Serneke Arena Serneke Arena B",
            "round": "1/8 Final",
            "home": {
@@ -333,6 +351,8 @@
           {
            "id": 85516430,
            "start": 1788685200000,
+           "nr": "06090104",
+           "t": "11:00",
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "1/8 Final",
            "home": {
@@ -352,6 +372,8 @@
           {
            "id": 85516424,
            "start": 1788687600000,
+           "nr": "06090905",
+           "t": "11:40",
            "bana": "Prioritet Serneke Arena Serneke Arena B",
            "round": "1/8 Final",
            "home": {
@@ -371,6 +393,8 @@
           {
            "id": 85516432,
            "start": 1788687600000,
+           "nr": "06090105",
+           "t": "11:40",
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "1/8 Final",
            "home": {
@@ -390,6 +414,8 @@
           {
            "id": 85516425,
            "start": 1788690000000,
+           "nr": "06090906",
+           "t": "12:20",
            "bana": "Prioritet Serneke Arena Serneke Arena B",
            "round": "1/8 Final",
            "home": {
@@ -409,6 +435,8 @@
           {
            "id": 85516433,
            "start": 1788690000000,
+           "nr": "06090106",
+           "t": "12:20",
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "1/8 Final",
            "home": {
@@ -433,6 +461,8 @@
           {
            "id": 85516419,
            "start": 1788694800000,
+           "nr": "06090107",
+           "t": "13:40",
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "1/4 Final",
            "home": {
@@ -452,6 +482,8 @@
           {
            "id": 85516423,
            "start": 1788694800000,
+           "nr": "06090907",
+           "t": "13:40",
            "bana": "Prioritet Serneke Arena Serneke Arena B",
            "round": "1/4 Final",
            "home": {
@@ -471,6 +503,8 @@
           {
            "id": 85516427,
            "start": 1788697200000,
+           "nr": "06090108",
+           "t": "14:20",
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "1/4 Final",
            "home": {
@@ -490,6 +524,8 @@
           {
            "id": 85516431,
            "start": 1788697200000,
+           "nr": "06090908",
+           "t": "14:20",
            "bana": "Prioritet Serneke Arena Serneke Arena B",
            "round": "1/4 Final",
            "home": {
@@ -514,6 +550,8 @@
           {
            "id": 85516418,
            "start": 1788699600000,
+           "nr": "06090109",
+           "t": "15:00",
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "Semifinal",
            "home": {
@@ -533,6 +571,8 @@
           {
            "id": 85516426,
            "start": 1788702000000,
+           "nr": "06090110",
+           "t": "15:40",
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "Semifinal",
            "home": {
@@ -557,6 +597,8 @@
           {
            "id": 85516417,
            "start": 1788706800000,
+           "nr": "06090111",
+           "t": "17:00",
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "Final",
            "home": {
@@ -587,6 +629,8 @@
           {
            "id": 85516444,
            "start": 1788675600000,
+           "nr": "06092100",
+           "t": "08:20",
            "bana": "Lundbystrand 1",
            "round": "1/16 Final",
            "home": {
@@ -606,6 +650,8 @@
           {
            "id": 85516521,
            "start": 1788675600000,
+           "nr": "06091300",
+           "t": "08:20",
            "bana": "Lundbystrand 5",
            "round": "1/16 Final",
            "home": {
@@ -625,6 +671,8 @@
           {
            "id": 85516574,
            "start": 1788675600000,
+           "nr": "06093300",
+           "t": "08:20",
            "bana": "Lundenhallen",
            "round": "1/16 Final",
            "home": {
@@ -644,6 +692,8 @@
           {
            "id": 85516452,
            "start": 1788678000000,
+           "nr": "06092101",
+           "t": "09:00",
            "bana": "Lundbystrand 1",
            "round": "1/16 Final",
            "home": {
@@ -663,6 +713,8 @@
           {
            "id": 85516522,
            "start": 1788678000000,
+           "nr": "06091301",
+           "t": "09:00",
            "bana": "Lundbystrand 5",
            "round": "1/16 Final",
            "home": {
@@ -682,6 +734,8 @@
           {
            "id": 85516575,
            "start": 1788678000000,
+           "nr": "06093301",
+           "t": "09:00",
            "bana": "Lundenhallen",
            "round": "1/16 Final",
            "home": {
@@ -706,6 +760,8 @@
           {
            "id": 85516443,
            "start": 1788680400000,
+           "nr": "06091302",
+           "t": "09:40",
            "bana": "Lundbystrand 5",
            "round": "1/8 Final",
            "home": {
@@ -725,6 +781,8 @@
           {
            "id": 85516445,
            "start": 1788680400000,
+           "nr": "06093302",
+           "t": "09:40",
            "bana": "Lundenhallen",
            "round": "1/8 Final",
            "home": {
@@ -744,6 +802,8 @@
           {
            "id": 85516447,
            "start": 1788682800000,
+           "nr": "06091303",
+           "t": "10:20",
            "bana": "Lundbystrand 5",
            "round": "1/8 Final",
            "home": {
@@ -763,6 +823,8 @@
           {
            "id": 85516453,
            "start": 1788682800000,
+           "nr": "06093303",
+           "t": "10:20",
            "bana": "Lundenhallen",
            "round": "1/8 Final",
            "home": {
@@ -782,6 +844,8 @@
           {
            "id": 85516455,
            "start": 1788685200000,
+           "nr": "06093304",
+           "t": "11:00",
            "bana": "Lundenhallen",
            "round": "1/8 Final",
            "home": {
@@ -801,6 +865,8 @@
           {
            "id": 85516448,
            "start": 1788687600000,
+           "nr": "06093305",
+           "t": "11:40",
            "bana": "Lundenhallen",
            "round": "1/8 Final",
            "home": {
@@ -820,6 +886,8 @@
           {
            "id": 85516451,
            "start": 1788690000000,
+           "nr": "06093306",
+           "t": "12:20",
            "bana": "Lundenhallen",
            "round": "1/8 Final",
            "home": {
@@ -839,6 +907,8 @@
           {
            "id": 85516456,
            "start": 1788692400000,
+           "nr": "06093307",
+           "t": "13:00",
            "bana": "Lundenhallen",
            "round": "1/8 Final",
            "home": {
@@ -863,6 +933,8 @@
           {
            "id": 85516442,
            "start": 1788694800000,
+           "nr": "06093308",
+           "t": "13:40",
            "bana": "Lundenhallen",
            "round": "1/4 Final",
            "home": {
@@ -882,6 +954,8 @@
           {
            "id": 85516446,
            "start": 1788697200000,
+           "nr": "06093309",
+           "t": "14:20",
            "bana": "Lundenhallen",
            "round": "1/4 Final",
            "home": {
@@ -901,6 +975,8 @@
           {
            "id": 85516450,
            "start": 1788699600000,
+           "nr": "06093310",
+           "t": "15:00",
            "bana": "Lundenhallen",
            "round": "1/4 Final",
            "home": {
@@ -920,6 +996,8 @@
           {
            "id": 85516454,
            "start": 1788702000000,
+           "nr": "06093311",
+           "t": "15:40",
            "bana": "Lundenhallen",
            "round": "1/4 Final",
            "home": {
@@ -944,6 +1022,8 @@
           {
            "id": 85516441,
            "start": 1788704400000,
+           "nr": "06093312",
+           "t": "16:20",
            "bana": "Lundenhallen",
            "round": "Semifinal",
            "home": {
@@ -963,6 +1043,8 @@
           {
            "id": 85516449,
            "start": 1788706800000,
+           "nr": "06093313",
+           "t": "17:00",
            "bana": "Lundenhallen",
            "round": "Semifinal",
            "home": {
@@ -987,6 +1069,8 @@
           {
            "id": 85516440,
            "start": 1788710400000,
+           "nr": "06093314",
+           "t": "18:00",
            "bana": "Lundenhallen",
            "round": "Final",
            "home": {
@@ -1162,6 +1246,8 @@
           {
            "id": 85520299,
            "start": 1788675600000,
+           "nr": "06090700",
+           "t": "08:20",
            "bana": "ÖHK-Hallen A",
            "round": "1/8 Final",
            "home": {
@@ -1181,6 +1267,8 @@
           {
            "id": 85520301,
            "start": 1788678000000,
+           "nr": "06092001",
+           "t": "09:00",
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/8 Final",
            "home": {
@@ -1200,6 +1288,8 @@
           {
            "id": 85520302,
            "start": 1788682800000,
+           "nr": "06090703",
+           "t": "10:20",
            "bana": "ÖHK-Hallen A",
            "round": "1/8 Final",
            "home": {
@@ -1219,6 +1309,8 @@
           {
            "id": 85520305,
            "start": 1788682800000,
+           "nr": "06090803",
+           "t": "10:20",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/8 Final",
            "home": {
@@ -1238,6 +1330,8 @@
           {
            "id": 85520307,
            "start": 1788685200000,
+           "nr": "06090804",
+           "t": "11:00",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/8 Final",
            "home": {
@@ -1257,6 +1351,8 @@
           {
            "id": 85520360,
            "start": 1788685200000,
+           "nr": "06090704",
+           "t": "11:00",
            "bana": "ÖHK-Hallen A",
            "round": "1/8 Final",
            "home": {
@@ -1276,6 +1372,8 @@
           {
            "id": 85520308,
            "start": 1788687600000,
+           "nr": "06090805",
+           "t": "11:40",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/8 Final",
            "home": {
@@ -1295,6 +1393,8 @@
           {
            "id": 85520361,
            "start": 1788687600000,
+           "nr": "06090705",
+           "t": "11:40",
            "bana": "ÖHK-Hallen A",
            "round": "1/8 Final",
            "home": {
@@ -1319,6 +1419,8 @@
           {
            "id": 85520384,
            "start": 1788675600000,
+           "nr": "06090800",
+           "t": "08:20",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/16 Final",
            "home": {
@@ -1338,6 +1440,8 @@
           {
            "id": 85520383,
            "start": 1788678000000,
+           "nr": "06090801",
+           "t": "09:00",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/16 Final",
            "home": {
@@ -1362,6 +1466,8 @@
           {
            "id": 85520298,
            "start": 1788692400000,
+           "nr": "06090707",
+           "t": "13:00",
            "bana": "ÖHK-Hallen A",
            "round": "1/4 Final",
            "home": {
@@ -1381,6 +1487,8 @@
           {
            "id": 85520300,
            "start": 1788692400000,
+           "nr": "06090807",
+           "t": "13:00",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/4 Final",
            "home": {
@@ -1400,6 +1508,8 @@
           {
            "id": 85520304,
            "start": 1788694800000,
+           "nr": "06090708",
+           "t": "13:40",
            "bana": "ÖHK-Hallen A",
            "round": "1/4 Final",
            "home": {
@@ -1419,6 +1529,8 @@
           {
            "id": 85520306,
            "start": 1788694800000,
+           "nr": "06090808",
+           "t": "13:40",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/4 Final",
            "home": {
@@ -1443,6 +1555,8 @@
           {
            "id": 85520297,
            "start": 1788702000000,
+           "nr": "06090811",
+           "t": "15:40",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "Semifinal",
            "home": {
@@ -1462,6 +1576,8 @@
           {
            "id": 85520303,
            "start": 1788702000000,
+           "nr": "06090711",
+           "t": "15:40",
            "bana": "ÖHK-Hallen A",
            "round": "Semifinal",
            "home": {
@@ -1486,6 +1602,8 @@
           {
            "id": 85520296,
            "start": 1788711600000,
+           "nr": "06090714",
+           "t": "18:20",
            "bana": "ÖHK-Hallen A",
            "round": "Final",
            "home": {
@@ -1516,6 +1634,8 @@
           {
            "id": 85520386,
            "start": 1788675600000,
+           "nr": "06091400",
+           "t": "08:20",
            "bana": "Heidhallen",
            "round": "1/16 Final",
            "home": {
@@ -1535,6 +1655,8 @@
           {
            "id": 85520408,
            "start": 1788675600000,
+           "nr": "06091500",
+           "t": "08:20",
            "bana": "Frölunda Kulturhus",
            "round": "1/16 Final",
            "home": {
@@ -1554,6 +1676,8 @@
           {
            "id": 85520387,
            "start": 1788678000000,
+           "nr": "06091401",
+           "t": "09:00",
            "bana": "Heidhallen",
            "round": "1/16 Final",
            "home": {
@@ -1578,6 +1702,8 @@
           {
            "id": 85520318,
            "start": 1788678000000,
+           "nr": "06091501",
+           "t": "09:00",
            "bana": "Frölunda Kulturhus",
            "round": "1/8 Final",
            "home": {
@@ -1597,6 +1723,8 @@
           {
            "id": 85520322,
            "start": 1788680400000,
+           "nr": "06091502",
+           "t": "09:40",
            "bana": "Frölunda Kulturhus",
            "round": "1/8 Final",
            "home": {
@@ -1616,6 +1744,8 @@
           {
            "id": 85520324,
            "start": 1788682800000,
+           "nr": "06091503",
+           "t": "10:20",
            "bana": "Frölunda Kulturhus",
            "round": "1/8 Final",
            "home": {
@@ -1635,6 +1765,8 @@
           {
            "id": 85520329,
            "start": 1788685200000,
+           "nr": "06091504",
+           "t": "11:00",
            "bana": "Frölunda Kulturhus",
            "round": "1/8 Final",
            "home": {
@@ -1654,6 +1786,8 @@
           {
            "id": 85520364,
            "start": 1788687600000,
+           "nr": "06091505",
+           "t": "11:40",
            "bana": "Frölunda Kulturhus",
            "round": "1/8 Final",
            "home": {
@@ -1673,6 +1807,8 @@
           {
            "id": 85520363,
            "start": 1788690000000,
+           "nr": "06091506",
+           "t": "12:20",
            "bana": "Frölunda Kulturhus",
            "round": "1/8 Final",
            "home": {
@@ -1692,6 +1828,8 @@
           {
            "id": 85520327,
            "start": 1788692400000,
+           "nr": "06091507",
+           "t": "13:00",
            "bana": "Frölunda Kulturhus",
            "round": "1/8 Final",
            "home": {
@@ -1711,6 +1849,8 @@
           {
            "id": 85520330,
            "start": 1788694800000,
+           "nr": "06091508",
+           "t": "13:40",
            "bana": "Frölunda Kulturhus",
            "round": "1/8 Final",
            "home": {
@@ -1735,6 +1875,8 @@
           {
            "id": 85520316,
            "start": 1788697200000,
+           "nr": "06091509",
+           "t": "14:20",
            "bana": "Frölunda Kulturhus",
            "round": "1/4 Final",
            "home": {
@@ -1754,6 +1896,8 @@
           {
            "id": 85520321,
            "start": 1788699600000,
+           "nr": "06091510",
+           "t": "15:00",
            "bana": "Frölunda Kulturhus",
            "round": "1/4 Final",
            "home": {
@@ -1773,6 +1917,8 @@
           {
            "id": 85520326,
            "start": 1788702000000,
+           "nr": "06091511",
+           "t": "15:40",
            "bana": "Frölunda Kulturhus",
            "round": "1/4 Final",
            "home": {
@@ -1792,6 +1938,8 @@
           {
            "id": 85520328,
            "start": 1788704400000,
+           "nr": "06091512",
+           "t": "16:20",
            "bana": "Frölunda Kulturhus",
            "round": "1/4 Final",
            "home": {
@@ -1816,6 +1964,8 @@
           {
            "id": 85520315,
            "start": 1788706800000,
+           "nr": "06091513",
+           "t": "17:00",
            "bana": "Frölunda Kulturhus",
            "round": "Semifinal",
            "home": {
@@ -1835,6 +1985,8 @@
           {
            "id": 85520325,
            "start": 1788709200000,
+           "nr": "06091514",
+           "t": "17:40",
            "bana": "Frölunda Kulturhus",
            "round": "Semifinal",
            "home": {
@@ -1859,6 +2011,8 @@
           {
            "id": 85520314,
            "start": 1788713400000,
+           "nr": "06091515",
+           "t": "18:50",
            "bana": "Frölunda Kulturhus",
            "round": "Final",
            "home": {
@@ -1967,6 +2121,8 @@
           {
            "id": 85747179,
            "start": 1788678000000,
+           "nr": "06090701",
+           "t": "09:00",
            "bana": "ÖHK-Hallen A",
            "round": "1/8 Final",
            "home": {
@@ -1986,6 +2142,8 @@
           {
            "id": 85747183,
            "start": 1788680400000,
+           "nr": "06090702",
+           "t": "09:40",
            "bana": "ÖHK-Hallen A",
            "round": "1/8 Final",
            "home": {
@@ -2010,6 +2168,8 @@
           {
            "id": 85747180,
            "start": 1788680400000,
+           "nr": "06092002",
+           "t": "09:40",
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/4 Final",
            "home": {
@@ -2029,6 +2189,8 @@
           {
            "id": 85747184,
            "start": 1788682800000,
+           "nr": "06092003",
+           "t": "10:20",
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/4 Final",
            "home": {
@@ -2048,6 +2210,8 @@
           {
            "id": 85747178,
            "start": 1788685200000,
+           "nr": "06092004",
+           "t": "11:00",
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/4 Final",
            "home": {
@@ -2067,6 +2231,8 @@
           {
            "id": 85747182,
            "start": 1788687600000,
+           "nr": "06092005",
+           "t": "11:40",
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/4 Final",
            "home": {
@@ -2091,6 +2257,8 @@
           {
            "id": 85747177,
            "start": 1788697200000,
+           "nr": "06090709",
+           "t": "14:20",
            "bana": "ÖHK-Hallen A",
            "round": "Semifinal",
            "home": {
@@ -2110,6 +2278,8 @@
           {
            "id": 85747181,
            "start": 1788697200000,
+           "nr": "06090809",
+           "t": "14:20",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "Semifinal",
            "home": {
@@ -2134,6 +2304,8 @@
           {
            "id": 85747176,
            "start": 1788705600000,
+           "nr": "06090712",
+           "t": "16:40",
            "bana": "ÖHK-Hallen A",
            "round": "Final",
            "home": {
@@ -2164,6 +2336,8 @@
           {
            "id": 85747193,
            "start": 1788675600000,
+           "nr": "06092000",
+           "t": "08:20",
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/8 Final",
            "home": {
@@ -2183,6 +2357,8 @@
           {
            "id": 85747197,
            "start": 1788680400000,
+           "nr": "06090802",
+           "t": "09:40",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/8 Final",
            "home": {
@@ -2207,6 +2383,8 @@
           {
            "id": 85747192,
            "start": 1788690000000,
+           "nr": "06090706",
+           "t": "12:20",
            "bana": "ÖHK-Hallen A",
            "round": "1/4 Final",
            "home": {
@@ -2226,6 +2404,8 @@
           {
            "id": 85747194,
            "start": 1788690000000,
+           "nr": "06090806",
+           "t": "12:20",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/4 Final",
            "home": {
@@ -2245,6 +2425,8 @@
           {
            "id": 85747196,
            "start": 1788690000000,
+           "nr": "06092006",
+           "t": "12:20",
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/4 Final",
            "home": {
@@ -2264,6 +2446,8 @@
           {
            "id": 85747198,
            "start": 1788692400000,
+           "nr": "06092007",
+           "t": "13:00",
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/4 Final",
            "home": {
@@ -2288,6 +2472,8 @@
           {
            "id": 85747191,
            "start": 1788699600000,
+           "nr": "06090710",
+           "t": "15:00",
            "bana": "ÖHK-Hallen A",
            "round": "Semifinal",
            "home": {
@@ -2307,6 +2493,8 @@
           {
            "id": 85747195,
            "start": 1788699600000,
+           "nr": "06090810",
+           "t": "15:00",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "Semifinal",
            "home": {
@@ -2331,6 +2519,8 @@
           {
            "id": 85747190,
            "start": 1788708600000,
+           "nr": "06090713",
+           "t": "17:30",
            "bana": "ÖHK-Hallen A",
            "round": "Final",
            "home": {
@@ -2506,6 +2696,8 @@
           {
            "id": 85896013,
            "start": 1788675600000,
+           "nr": "06095500",
+           "t": "08:20",
            "bana": "Sandklevsskolan",
            "round": "1/16 Final",
            "home": {
@@ -2525,6 +2717,8 @@
           {
            "id": 85896023,
            "start": 1788675600000,
+           "nr": "06094700",
+           "t": "08:20",
            "bana": "Kviberg Park Sporthall A",
            "round": "1/16 Final",
            "home": {
@@ -2544,6 +2738,8 @@
           {
            "id": 85896078,
            "start": 1788675600000,
+           "nr": "06094800",
+           "t": "08:20",
            "bana": "Kviberg Park Sporthall B",
            "round": "1/16 Final",
            "home": {
@@ -2563,6 +2759,8 @@
           {
            "id": 85896027,
            "start": 1788678000000,
+           "nr": "06094701",
+           "t": "09:00",
            "bana": "Kviberg Park Sporthall A",
            "round": "1/16 Final",
            "home": {
@@ -2582,6 +2780,8 @@
           {
            "id": 85896029,
            "start": 1788678000000,
+           "nr": "06094801",
+           "t": "09:00",
            "bana": "Kviberg Park Sporthall B",
            "round": "1/16 Final",
            "home": {
@@ -2601,6 +2801,8 @@
           {
            "id": 85896077,
            "start": 1788678000000,
+           "nr": "06095501",
+           "t": "09:00",
            "bana": "Sandklevsskolan",
            "round": "1/16 Final",
            "home": {
@@ -2620,6 +2822,8 @@
           {
            "id": 85896017,
            "start": 1788680400000,
+           "nr": "06095502",
+           "t": "09:40",
            "bana": "Sandklevsskolan",
            "round": "1/16 Final",
            "home": {
@@ -2639,6 +2843,8 @@
           {
            "id": 85896019,
            "start": 1788682800000,
+           "nr": "06095503",
+           "t": "10:20",
            "bana": "Sandklevsskolan",
            "round": "1/16 Final",
            "home": {
@@ -2663,6 +2869,8 @@
           {
            "id": 85896022,
            "start": 1788682800000,
+           "nr": "06094703",
+           "t": "10:20",
            "bana": "Kviberg Park Sporthall A",
            "round": "1/8 Final",
            "home": {
@@ -2682,6 +2890,8 @@
           {
            "id": 85896024,
            "start": 1788682800000,
+           "nr": "06094803",
+           "t": "10:20",
            "bana": "Kviberg Park Sporthall B",
            "round": "1/8 Final",
            "home": {
@@ -2701,6 +2911,8 @@
           {
            "id": 85896012,
            "start": 1788685200000,
+           "nr": "06095504",
+           "t": "11:00",
            "bana": "Sandklevsskolan",
            "round": "1/8 Final",
            "home": {
@@ -2720,6 +2932,8 @@
           {
            "id": 85896026,
            "start": 1788685200000,
+           "nr": "06094704",
+           "t": "11:00",
            "bana": "Kviberg Park Sporthall A",
            "round": "1/8 Final",
            "home": {
@@ -2739,6 +2953,8 @@
           {
            "id": 85896028,
            "start": 1788685200000,
+           "nr": "06094804",
+           "t": "11:00",
            "bana": "Kviberg Park Sporthall B",
            "round": "1/8 Final",
            "home": {
@@ -2758,6 +2974,8 @@
           {
            "id": 85896014,
            "start": 1788687600000,
+           "nr": "06095505",
+           "t": "11:40",
            "bana": "Sandklevsskolan",
            "round": "1/8 Final",
            "home": {
@@ -2777,6 +2995,8 @@
           {
            "id": 85896016,
            "start": 1788687600000,
+           "nr": "06094705",
+           "t": "11:40",
            "bana": "Kviberg Park Sporthall A",
            "round": "1/8 Final",
            "home": {
@@ -2796,6 +3016,8 @@
           {
            "id": 85896018,
            "start": 1788687600000,
+           "nr": "06094805",
+           "t": "11:40",
            "bana": "Kviberg Park Sporthall B",
            "round": "1/8 Final",
            "home": {
@@ -2820,6 +3042,8 @@
           {
            "id": 85896011,
            "start": 1788694800000,
+           "nr": "06094708",
+           "t": "13:40",
            "bana": "Kviberg Park Sporthall A",
            "round": "1/4 Final",
            "home": {
@@ -2839,6 +3063,8 @@
           {
            "id": 85896015,
            "start": 1788694800000,
+           "nr": "06094808",
+           "t": "13:40",
            "bana": "Kviberg Park Sporthall B",
            "round": "1/4 Final",
            "home": {
@@ -2858,6 +3084,8 @@
           {
            "id": 85896021,
            "start": 1788697200000,
+           "nr": "06094709",
+           "t": "14:20",
            "bana": "Kviberg Park Sporthall A",
            "round": "1/4 Final",
            "home": {
@@ -2877,6 +3105,8 @@
           {
            "id": 85896025,
            "start": 1788697200000,
+           "nr": "06094809",
+           "t": "14:20",
            "bana": "Kviberg Park Sporthall B",
            "round": "1/4 Final",
            "home": {
@@ -2901,6 +3131,8 @@
           {
            "id": 85896010,
            "start": 1788702000000,
+           "nr": "06094711",
+           "t": "15:40",
            "bana": "Kviberg Park Sporthall A",
            "round": "Semifinal",
            "home": {
@@ -2920,6 +3152,8 @@
           {
            "id": 85896020,
            "start": 1788702000000,
+           "nr": "06094811",
+           "t": "15:40",
            "bana": "Kviberg Park Sporthall B",
            "round": "Semifinal",
            "home": {
@@ -2944,6 +3178,8 @@
           {
            "id": 85896009,
            "start": 1788708000000,
+           "nr": "06094713",
+           "t": "17:20",
            "bana": "Kviberg Park Sporthall A",
            "round": "Final",
            "home": {
@@ -2974,6 +3210,8 @@
           {
            "id": 85896040,
            "start": 1788675600000,
+           "nr": "06095400",
+           "t": "08:20",
            "bana": "Härlandatjärnskolan",
            "round": "1/16 Final",
            "home": {
@@ -2993,6 +3231,8 @@
           {
            "id": 85896050,
            "start": 1788675600000,
+           "nr": "06092300",
+           "t": "08:20",
            "bana": "Torpahallen",
            "round": "1/16 Final",
            "home": {
@@ -3012,6 +3252,8 @@
           {
            "id": 85896079,
            "start": 1788678000000,
+           "nr": "06095401",
+           "t": "09:00",
            "bana": "Härlandatjärnskolan",
            "round": "1/16 Final",
            "home": {
@@ -3031,6 +3273,8 @@
           {
            "id": 85896080,
            "start": 1788678000000,
+           "nr": "06092301",
+           "t": "09:00",
            "bana": "Torpahallen",
            "round": "1/16 Final",
            "home": {
@@ -3050,6 +3294,8 @@
           {
            "id": 85896044,
            "start": 1788680400000,
+           "nr": "06095402",
+           "t": "09:40",
            "bana": "Härlandatjärnskolan",
            "round": "1/16 Final",
            "home": {
@@ -3069,6 +3315,8 @@
           {
            "id": 85896054,
            "start": 1788680400000,
+           "nr": "06092302",
+           "t": "09:40",
            "bana": "Torpahallen",
            "round": "1/16 Final",
            "home": {
@@ -3088,6 +3336,8 @@
           {
            "id": 85896046,
            "start": 1788682800000,
+           "nr": "06095403",
+           "t": "10:20",
            "bana": "Härlandatjärnskolan",
            "round": "1/16 Final",
            "home": {
@@ -3107,6 +3357,8 @@
           {
            "id": 85896056,
            "start": 1788682800000,
+           "nr": "06092303",
+           "t": "10:20",
            "bana": "Torpahallen",
            "round": "1/16 Final",
            "home": {
@@ -3131,6 +3383,8 @@
           {
            "id": 85896039,
            "start": 1788685200000,
+           "nr": "06095404",
+           "t": "11:00",
            "bana": "Härlandatjärnskolan",
            "round": "1/8 Final",
            "home": {
@@ -3150,6 +3404,8 @@
           {
            "id": 85896049,
            "start": 1788685200000,
+           "nr": "06092304",
+           "t": "11:00",
            "bana": "Torpahallen",
            "round": "1/8 Final",
            "home": {
@@ -3169,6 +3425,8 @@
           {
            "id": 85896041,
            "start": 1788687600000,
+           "nr": "06095405",
+           "t": "11:40",
            "bana": "Härlandatjärnskolan",
            "round": "1/8 Final",
            "home": {
@@ -3188,6 +3446,8 @@
           {
            "id": 85896051,
            "start": 1788687600000,
+           "nr": "06092305",
+           "t": "11:40",
            "bana": "Torpahallen",
            "round": "1/8 Final",
            "home": {
@@ -3207,6 +3467,8 @@
           {
            "id": 85896043,
            "start": 1788690000000,
+           "nr": "06095406",
+           "t": "12:20",
            "bana": "Härlandatjärnskolan",
            "round": "1/8 Final",
            "home": {
@@ -3226,6 +3488,8 @@
           {
            "id": 85896053,
            "start": 1788690000000,
+           "nr": "06092306",
+           "t": "12:20",
            "bana": "Torpahallen",
            "round": "1/8 Final",
            "home": {
@@ -3245,6 +3509,8 @@
           {
            "id": 85896055,
            "start": 1788692400000,
+           "nr": "06092307",
+           "t": "13:00",
            "bana": "Torpahallen",
            "round": "1/8 Final",
            "home": {
@@ -3264,6 +3530,8 @@
           {
            "id": 85896045,
            "start": 1788694800000,
+           "nr": "06092308",
+           "t": "13:40",
            "bana": "Torpahallen",
            "round": "1/8 Final",
            "home": {
@@ -3288,6 +3556,8 @@
           {
            "id": 85896038,
            "start": 1788697200000,
+           "nr": "06092309",
+           "t": "14:20",
            "bana": "Torpahallen",
            "round": "1/4 Final",
            "home": {
@@ -3307,6 +3577,8 @@
           {
            "id": 85896042,
            "start": 1788699600000,
+           "nr": "06092310",
+           "t": "15:00",
            "bana": "Torpahallen",
            "round": "1/4 Final",
            "home": {
@@ -3326,6 +3598,8 @@
           {
            "id": 85896048,
            "start": 1788702000000,
+           "nr": "06092311",
+           "t": "15:40",
            "bana": "Torpahallen",
            "round": "1/4 Final",
            "home": {
@@ -3345,6 +3619,8 @@
           {
            "id": 85896052,
            "start": 1788704400000,
+           "nr": "06092312",
+           "t": "16:20",
            "bana": "Torpahallen",
            "round": "1/4 Final",
            "home": {
@@ -3369,6 +3645,8 @@
           {
            "id": 85896037,
            "start": 1788706800000,
+           "nr": "06092313",
+           "t": "17:00",
            "bana": "Torpahallen",
            "round": "Semifinal",
            "home": {
@@ -3388,6 +3666,8 @@
           {
            "id": 85896047,
            "start": 1788709200000,
+           "nr": "06092314",
+           "t": "17:40",
            "bana": "Torpahallen",
            "round": "Semifinal",
            "home": {
@@ -3412,6 +3692,8 @@
           {
            "id": 85896036,
            "start": 1788713400000,
+           "nr": "06092315",
+           "t": "18:50",
            "bana": "Torpahallen",
            "round": "Final",
            "home": {
@@ -3617,6 +3899,8 @@
           {
            "id": 86060471,
            "start": 1789286400000,
+           "nr": "13090702",
+           "t": "10:00",
            "bana": "ÖHK-Hallen A",
            "round": "1/8 Final",
            "home": {
@@ -3636,6 +3920,8 @@
           {
            "id": 86060474,
            "start": 1789286400000,
+           "nr": "13090801",
+           "t": "10:00",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/8 Final",
            "home": {
@@ -3655,6 +3941,8 @@
           {
            "id": 86295114,
            "start": 1789286400000,
+           "nr": "13092001",
+           "t": "10:00",
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/8 Final",
            "home": {
@@ -3674,6 +3962,8 @@
           {
            "id": 86060480,
            "start": 1789289400000,
+           "nr": "13092002",
+           "t": "10:50",
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/8 Final",
            "home": {
@@ -3698,6 +3988,8 @@
           {
            "id": 86060470,
            "start": 1789295400000,
+           "nr": "13090804",
+           "t": "12:30",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/4 Final",
            "home": {
@@ -3717,6 +4009,8 @@
           {
            "id": 86060472,
            "start": 1789295400000,
+           "nr": "13090705",
+           "t": "12:30",
            "bana": "ÖHK-Hallen A",
            "round": "1/4 Final",
            "home": {
@@ -3736,6 +4030,8 @@
           {
            "id": 86060476,
            "start": 1789298400000,
+           "nr": "13090805",
+           "t": "13:20",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/4 Final",
            "home": {
@@ -3755,6 +4051,8 @@
           {
            "id": 86060478,
            "start": 1789298400000,
+           "nr": "13090706",
+           "t": "13:20",
            "bana": "ÖHK-Hallen A",
            "round": "1/4 Final",
            "home": {
@@ -3779,6 +4077,8 @@
           {
            "id": 86060469,
            "start": 1789307400000,
+           "nr": "13090708",
+           "t": "15:50",
            "bana": "ÖHK-Hallen A",
            "round": "Semifinal",
            "home": {
@@ -3798,6 +4098,8 @@
           {
            "id": 86060475,
            "start": 1789307400000,
+           "nr": "13090807",
+           "t": "15:50",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "Semifinal",
            "home": {
@@ -3822,6 +4124,8 @@
           {
            "id": 86060468,
            "start": 1789314600000,
+           "nr": "13090710",
+           "t": "17:50",
            "bana": "ÖHK-Hallen A",
            "round": "Final",
            "home": {
@@ -3852,6 +4156,8 @@
           {
            "id": 86060498,
            "start": 1789280400000,
+           "nr": "13090600",
+           "t": "08:20",
            "bana": "Valhalla Sport C",
            "round": "1/8 Final",
            "home": {
@@ -3871,6 +4177,8 @@
           {
            "id": 86060489,
            "start": 1789283400000,
+           "nr": "13090601",
+           "t": "09:10",
            "bana": "Valhalla Sport C",
            "round": "1/8 Final",
            "home": {
@@ -3890,6 +4198,8 @@
           {
            "id": 86060492,
            "start": 1789286400000,
+           "nr": "13090502",
+           "t": "10:00",
            "bana": "Valhalla Sport B",
            "round": "1/8 Final",
            "home": {
@@ -3909,6 +4219,8 @@
           {
            "id": 86295123,
            "start": 1789286400000,
+           "nr": "13091102",
+           "t": "10:00",
            "bana": "Valhalla Sport A",
            "round": "1/8 Final",
            "home": {
@@ -3928,6 +4240,8 @@
           {
            "id": 86295139,
            "start": 1789286400000,
+           "nr": "13090602",
+           "t": "10:00",
            "bana": "Valhalla Sport C",
            "round": "1/8 Final",
            "home": {
@@ -3947,6 +4261,8 @@
           {
            "id": 86295115,
            "start": 1789289400000,
+           "nr": "13091103",
+           "t": "10:50",
            "bana": "Valhalla Sport A",
            "round": "1/8 Final",
            "home": {
@@ -3966,6 +4282,8 @@
           {
            "id": 86295131,
            "start": 1789289400000,
+           "nr": "13090503",
+           "t": "10:50",
            "bana": "Valhalla Sport B",
            "round": "1/8 Final",
            "home": {
@@ -3990,6 +4308,8 @@
           {
            "id": 86060488,
            "start": 1789295400000,
+           "nr": "13091105",
+           "t": "12:30",
            "bana": "Valhalla Sport A",
            "round": "1/4 Final",
            "home": {
@@ -4009,6 +4329,8 @@
           {
            "id": 86060490,
            "start": 1789295400000,
+           "nr": "13090505",
+           "t": "12:30",
            "bana": "Valhalla Sport B",
            "round": "1/4 Final",
            "home": {
@@ -4028,6 +4350,8 @@
           {
            "id": 86060494,
            "start": 1789298400000,
+           "nr": "13091106",
+           "t": "13:20",
            "bana": "Valhalla Sport A",
            "round": "1/4 Final",
            "home": {
@@ -4047,6 +4371,8 @@
           {
            "id": 86060496,
            "start": 1789298400000,
+           "nr": "13090506",
+           "t": "13:20",
            "bana": "Valhalla Sport B",
            "round": "1/4 Final",
            "home": {
@@ -4071,6 +4397,8 @@
           {
            "id": 86060487,
            "start": 1789307400000,
+           "nr": "13090508",
+           "t": "15:50",
            "bana": "Valhalla Sport B",
            "round": "Semifinal",
            "home": {
@@ -4090,6 +4418,8 @@
           {
            "id": 86060493,
            "start": 1789307400000,
+           "nr": "13091108",
+           "t": "15:50",
            "bana": "Valhalla Sport A",
            "round": "Semifinal",
            "home": {
@@ -4114,6 +4444,8 @@
           {
            "id": 86060486,
            "start": 1789314600000,
+           "nr": "13091110",
+           "t": "17:50",
            "bana": "Valhalla Sport A",
            "round": "Final",
            "home": {
@@ -4222,6 +4554,8 @@
           {
            "id": 86060754,
            "start": 1789280400000,
+           "nr": "13090700",
+           "t": "08:20",
            "bana": "ÖHK-Hallen A",
            "round": "1/8 Final",
            "home": {
@@ -4241,6 +4575,8 @@
           {
            "id": 86060749,
            "start": 1789283400000,
+           "nr": "13090701",
+           "t": "09:10",
            "bana": "ÖHK-Hallen A",
            "round": "1/8 Final",
            "home": {
@@ -4260,6 +4596,8 @@
           {
            "id": 86060751,
            "start": 1789283400000,
+           "nr": "13090800",
+           "t": "09:10",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/8 Final",
            "home": {
@@ -4279,6 +4617,8 @@
           {
            "id": 86060756,
            "start": 1789283400000,
+           "nr": "13092000",
+           "t": "09:10",
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/8 Final",
            "home": {
@@ -4303,6 +4643,8 @@
           {
            "id": 86060748,
            "start": 1789289400000,
+           "nr": "13090703",
+           "t": "10:50",
            "bana": "ÖHK-Hallen A",
            "round": "1/4 Final",
            "home": {
@@ -4322,6 +4664,8 @@
           {
            "id": 86060750,
            "start": 1789289400000,
+           "nr": "13090802",
+           "t": "10:50",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/4 Final",
            "home": {
@@ -4341,6 +4685,8 @@
           {
            "id": 86060753,
            "start": 1789292400000,
+           "nr": "13090704",
+           "t": "11:40",
            "bana": "ÖHK-Hallen A",
            "round": "1/4 Final",
            "home": {
@@ -4360,6 +4706,8 @@
           {
            "id": 86060755,
            "start": 1789292400000,
+           "nr": "13090803",
+           "t": "11:40",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/4 Final",
            "home": {
@@ -4384,6 +4732,8 @@
           {
            "id": 86060747,
            "start": 1789304400000,
+           "nr": "13090707",
+           "t": "15:00",
            "bana": "ÖHK-Hallen A",
            "round": "Semifinal",
            "home": {
@@ -4403,6 +4753,8 @@
           {
            "id": 86060752,
            "start": 1789304400000,
+           "nr": "13090806",
+           "t": "15:00",
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "Semifinal",
            "home": {
@@ -4427,6 +4779,8 @@
           {
            "id": 86060746,
            "start": 1789311000000,
+           "nr": "13090709",
+           "t": "16:50",
            "bana": "ÖHK-Hallen A",
            "round": "Final",
            "home": {
@@ -4457,6 +4811,8 @@
           {
            "id": 86060765,
            "start": 1789280400000,
+           "nr": "13091100",
+           "t": "08:20",
            "bana": "Valhalla Sport A",
            "round": "1/8 Final",
            "home": {
@@ -4476,6 +4832,8 @@
           {
            "id": 86060772,
            "start": 1789280400000,
+           "nr": "13090500",
+           "t": "08:20",
            "bana": "Valhalla Sport B",
            "round": "1/8 Final",
            "home": {
@@ -4495,6 +4853,8 @@
           {
            "id": 86060767,
            "start": 1789283400000,
+           "nr": "13091101",
+           "t": "09:10",
            "bana": "Valhalla Sport A",
            "round": "1/8 Final",
            "home": {
@@ -4514,6 +4874,8 @@
           {
            "id": 86060770,
            "start": 1789283400000,
+           "nr": "13090501",
+           "t": "09:10",
            "bana": "Valhalla Sport B",
            "round": "1/8 Final",
            "home": {
@@ -4538,6 +4900,8 @@
           {
            "id": 86060769,
            "start": 1789289400000,
+           "nr": "13090603",
+           "t": "10:50",
            "bana": "Valhalla Sport C",
            "round": "1/4 Final",
            "home": {
@@ -4557,6 +4921,8 @@
           {
            "id": 86060764,
            "start": 1789292400000,
+           "nr": "13090604",
+           "t": "11:40",
            "bana": "Valhalla Sport C",
            "round": "1/4 Final",
            "home": {
@@ -4576,6 +4942,8 @@
           {
            "id": 86060766,
            "start": 1789292400000,
+           "nr": "13090504",
+           "t": "11:40",
            "bana": "Valhalla Sport B",
            "round": "1/4 Final",
            "home": {
@@ -4595,6 +4963,8 @@
           {
            "id": 86060771,
            "start": 1789292400000,
+           "nr": "13091104",
+           "t": "11:40",
            "bana": "Valhalla Sport A",
            "round": "1/4 Final",
            "home": {
@@ -4619,6 +4989,8 @@
           {
            "id": 86060763,
            "start": 1789304400000,
+           "nr": "13091107",
+           "t": "15:00",
            "bana": "Valhalla Sport A",
            "round": "Semifinal",
            "home": {
@@ -4638,6 +5010,8 @@
           {
            "id": 86060768,
            "start": 1789304400000,
+           "nr": "13090507",
+           "t": "15:00",
            "bana": "Valhalla Sport B",
            "round": "Semifinal",
            "home": {
@@ -4662,6 +5036,8 @@
           {
            "id": 86060762,
            "start": 1789311000000,
+           "nr": "13091109",
+           "t": "16:50",
            "bana": "Valhalla Sport A",
            "round": "Final",
            "home": {

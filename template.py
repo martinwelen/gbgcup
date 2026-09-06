@@ -114,7 +114,7 @@ table.gt{width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums
 .bracket-scroll{overflow:hidden; cursor:grab; touch-action:pan-y; border:1px solid var(--line); border-radius:14px; background:var(--paper); box-shadow:var(--shadow); padding:12px}
 .bracket-scroll.drag{cursor:grabbing}
 .btree{display:flex; gap:16px; min-width:max-content; user-select:none}
-.bcol{display:flex; flex-direction:column; justify-content:space-around; gap:10px; min-width:130px}
+.bcol{display:flex; flex-direction:column; justify-content:flex-start; gap:10px; min-width:150px}
 .bcol .clabel{font-size:.56rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:2px}
 .bm{background:var(--sand); border:1px solid var(--line); border-radius:9px; padding:6px 8px; font-size:.7rem; line-height:1.5}
 .bm .row{display:flex; justify-content:space-between; gap:8px}
@@ -123,6 +123,9 @@ table.gt{width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums
 .bm-win{font-weight:800; color:var(--ink)}
 .bm-lose{text-decoration:line-through; color:var(--ink-soft); opacity:.75}
 .bm .g{font-variant-numeric:tabular-nums; font-weight:800; margin-left:6px}
+.bm .bmhead{display:flex; align-items:center; gap:6px; margin-bottom:3px}
+.bm .btime{background:var(--ink); color:#fff; font-size:.56rem; font-weight:800; padding:1px 6px; border-radius:999px; letter-spacing:.02em}
+.bm .bmnr{font-size:.56rem; font-weight:700; color:var(--ink-soft); font-variant-numeric:tabular-nums}
 
 /* filter */
 .filters{position:sticky; top:0; z-index:5; margin:0 -16px; padding:12px 16px;
@@ -785,14 +788,18 @@ function renderBracket(){
   let html = `<div class="btabs">`;
   po.tiers.forEach((t,i)=>{ html += `<button class="btab" data-i="${i}" aria-pressed="${i===btier}">${esc(t.tier.replace("-Slutspel",""))}</button>`; });
   html += `</div><div class="bracket-scroll" id="bscroll"><div class="btree">`;
-  for(const rnd of po.tiers[btier].rounds){
+  // kolumnordning: 1/16 → 1/8 → 1/4 → semi → final (efter rondnamn, ej starttid)
+  const rrank=(nm)=>{ nm=(nm||"").toLowerCase(); if(nm.includes("semi"))return -2; const mm=nm.match(/1\/(\d+)/); if(mm)return -(+mm[1]); if(nm.includes("final"))return 0; return -100; };
+  const _rounds = po.tiers[btier].rounds.slice().sort((a,b)=>rrank(a.name)-rrank(b.name));
+  for(const rnd of _rounds){
     html += `<div class="bcol"><div class="clabel">${esc(rnd.name)}</div>`;
     for(const m of rnd.matches){
       const hw = m.winner==="home", aw = m.winner==="away";
       const ali = (m.home.is_alingsas||m.away.is_alingsas) ? " ali" : "";
       const c = aliColor(m);
+      const head = (m.t||m.nr) ? `<div class="bmhead">${m.t?`<span class="btime">${esc(m.t)}</span>`:""}${m.nr?`<span class="bmnr">#${esc(m.nr)}</span>`:""}</div>` : "";
       html += `<div class="bm${ali}" style="--c:#${c}">`+
-        bmRow(m.home, hw, aw) + bmRow(m.away, aw, hw) + `</div>`;
+        head + bmRow(m.home, hw, aw) + bmRow(m.away, aw, hw) + `</div>`;
     }
     html += `</div>`;
   }
