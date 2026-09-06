@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T06:52:09+00:00",
-  "seq": 1788677529,
-  "data_hash": "e8defd89389e5f1a3587ff18efa900b340def18fa97ef3dccf924593f1db0ff6"
+  "generated": "2026-09-06T07:01:51+00:00",
+  "seq": 1788678111,
+  "data_hash": "ee41cb7791a1013fc768ab9a54a26c24ccae32c5ccd53e7cc244050e02cb00b6"
  },
  "by_age": {
   "F16": {
@@ -165,15 +165,15 @@
             "label": "Täby HBK 3",
             "team_id": 77808029,
             "is_alingsas": false,
-            "goals": null
+            "goals": 12
            },
            "away": {
             "label": "Torslanda HK RÖD",
             "team_id": 77954878,
             "is_alingsas": false,
-            "goals": null
+            "goals": 22
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85516429,
@@ -186,15 +186,15 @@
             "label": "IK Sävehof 2",
             "team_id": 85892353,
             "is_alingsas": false,
-            "goals": null
+            "goals": 10
            },
            "away": {
             "label": "Alingsås HK 2",
             "team_id": 77339140,
             "is_alingsas": true,
-            "goals": null
+            "goals": 12
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85516518,
@@ -299,8 +299,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06090100",
-            "team_id": null,
+            "label": "Torslanda HK RÖD",
+            "team_id": 77954878,
             "is_alingsas": false,
             "goals": null
            },
@@ -320,9 +320,9 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06090900",
-            "team_id": null,
-            "is_alingsas": false,
+            "label": "Alingsås HK 2",
+            "team_id": 77339140,
+            "is_alingsas": true,
             "goals": null
            },
            "winner": null
@@ -1254,15 +1254,15 @@
             "label": "Täby HBK 1",
             "team_id": 85853602,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
            "away": {
             "label": "Alingsås HK 1",
             "team_id": 77339117,
             "is_alingsas": true,
-            "goals": null
+            "goals": 17
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85520301,
@@ -1404,8 +1404,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06090800",
-            "team_id": null,
+            "label": "IK Sund 1",
+            "team_id": 86183986,
             "is_alingsas": false,
             "goals": null
            },
@@ -1427,15 +1427,15 @@
             "label": "Ystads IF HF",
             "team_id": 82318262,
             "is_alingsas": false,
-            "goals": null
+            "goals": 15
            },
            "away": {
             "label": "IK Sund 1",
             "team_id": 86183986,
             "is_alingsas": false,
-            "goals": null
+            "goals": 18
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85520383,
@@ -1477,9 +1477,9 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06090700",
-            "team_id": null,
-            "is_alingsas": false,
+            "label": "Alingsås HK 1",
+            "team_id": 77339117,
+            "is_alingsas": true,
             "goals": null
            },
            "winner": null
@@ -1642,15 +1642,15 @@
             "label": "IFK Bankeryd Blå",
             "team_id": 80504977,
             "is_alingsas": false,
-            "goals": null
+            "goals": 13
            },
            "away": {
             "label": "GT Söder Handbollsklubb",
             "team_id": 76703981,
             "is_alingsas": false,
-            "goals": null
+            "goals": 21
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85520408,
@@ -1663,15 +1663,15 @@
             "label": "Kärra HF Gul",
             "team_id": 80027808,
             "is_alingsas": false,
-            "goals": null
+            "goals": 20
            },
            "away": {
             "label": "Stenungsunds HK",
             "team_id": 81794297,
             "is_alingsas": false,
-            "goals": null
+            "goals": 11
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85520387,
@@ -1776,8 +1776,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06091500",
-            "team_id": null,
+            "label": "Kärra HF Gul",
+            "team_id": 80027808,
             "is_alingsas": false,
             "goals": null
            },
@@ -1818,8 +1818,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06091400",
-            "team_id": null,
+            "label": "GT Söder Handbollsklubb",
+            "team_id": 76703981,
             "is_alingsas": false,
             "goals": null
            },
@@ -2725,15 +2725,15 @@
             "label": "BK Heid röd",
             "team_id": 77076104,
             "is_alingsas": false,
-            "goals": null
+            "goals": 13
            },
            "away": {
             "label": "Kungälvs HK Svart",
             "team_id": 78950411,
             "is_alingsas": false,
-            "goals": null
+            "goals": 7
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85896078,
@@ -2746,15 +2746,15 @@
             "label": "Mölndals HF",
             "team_id": 76509600,
             "is_alingsas": false,
-            "goals": null
+            "goals": 10
            },
            "away": {
             "label": "Greve Håndbold 1",
             "team_id": 76618226,
             "is_alingsas": false,
-            "goals": null
+            "goals": 6
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85896027,
@@ -2880,8 +2880,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06094700",
-            "team_id": null,
+            "label": "BK Heid röd",
+            "team_id": 77076104,
             "is_alingsas": false,
             "goals": null
            },
@@ -2901,8 +2901,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06094800",
-            "team_id": null,
+            "label": "Mölndals HF",
+            "team_id": 76509600,
             "is_alingsas": false,
             "goals": null
            },
@@ -3239,15 +3239,15 @@
             "label": "Önnereds HK Grön",
             "team_id": 76509214,
             "is_alingsas": false,
-            "goals": null
+            "goals": 11
            },
            "away": {
             "label": "HK Cliff 1",
             "team_id": 79747380,
             "is_alingsas": false,
-            "goals": null
+            "goals": 9
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85896079,
@@ -3415,8 +3415,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06092300",
-            "team_id": null,
+            "label": "Önnereds HK Grön",
+            "team_id": 76509214,
             "is_alingsas": false,
             "goals": null
            },
