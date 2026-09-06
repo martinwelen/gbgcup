@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-06T07:01:19+00:00",
-  "seq": 1788678079,
-  "data_hash": "5d54cc16f85d479576f3121eb889dafea90edd087abf9c903322eae06c786298"
+  "generated": "2026-09-06T07:41:12+00:00",
+  "seq": 1788680472,
+  "data_hash": "635b09f83c170ba40c7d4a0e41597dc30766586f7c1aff3c45df1a2b0fdba79b"
  },
  "groups": {
   "F11": {
@@ -610,7 +610,10 @@
      "grupp": "Slutspel A",
      "mots": "Konnerud IL 2",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 14,
+      "ag": 17
+     },
      "start_ms": 1788678000000,
      "start_iso": "2026-09-06T09:00+02:00",
      "day_label": "Söndag 6 september"
@@ -1125,9 +1128,9 @@
      "video": "https://solidsport.com/gbgcup/watch/1-an-i-grupp-c-vinn-06090901",
      "runda": "1/8-final",
      "hemma": "Alingsås HK 1",
-     "borta": "Vinn. 06090901",
+     "borta": "Kärra HF Röd",
      "grupp": "Slutspel A",
-     "mots": "Vinn. 06090901",
+     "mots": "Kärra HF Röd",
      "hb": "Hemma",
      "result": null,
      "start_ms": 1788687600000,
