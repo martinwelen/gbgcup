@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T16:51:41+00:00",
-  "seq": 1788713501,
-  "data_hash": "2c723bbb6794e8b596b3a6cddf7b4644f51d328ffb64a7cff9d36ee6a30c6dfd"
+  "generated": "2026-09-06T17:22:07+00:00",
+  "seq": 1788715327,
+  "data_hash": "1228a5cd2e846afaa1030a18a0ec3b13866b3c20ab28a6af493786242838198d"
  },
  "by_age": {
   "F16": {
@@ -3700,15 +3700,15 @@
             "label": "IK Sävehof 2",
             "team_id": 80700602,
             "is_alingsas": false,
-            "goals": null
+            "goals": 15
            },
            "away": {
             "label": "IK Sävehof 4",
             "team_id": 80700613,
             "is_alingsas": false,
-            "goals": null
+            "goals": 18
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         }
