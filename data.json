@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-06T11:01:27+00:00",
-  "seq": 1788692487,
-  "data_hash": "61dd01738390aa6b532604a5f1479d78a619114db8c1c641bfa061bdceb9033b"
+  "generated": "2026-09-06T11:41:27+00:00",
+  "seq": 1788694887,
+  "data_hash": "a34b79d7e45df984e0d79f22e3f5bde309a901dc8868b9676fdaf7e13b49f767"
  },
  "groups": {
   "F11": {
@@ -1539,7 +1539,10 @@
      "grupp": "Slutspel A",
      "mots": "IFK Tumba HK",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 13,
+      "ag": 12
+     },
      "start_ms": 1788692400000,
      "start_iso": "2026-09-06T13:00+02:00",
      "day_label": "Söndag 6 september"
