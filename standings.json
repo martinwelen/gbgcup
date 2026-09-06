@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T14:12:12+00:00",
-  "seq": 1788703932,
-  "data_hash": "9849ef43a80ae44aba1a99fda86f7373d8121286282c6046ddc2b99a5d03a49e"
+  "generated": "2026-09-06T14:19:46+00:00",
+  "seq": 1788704386,
+  "data_hash": "145d3bc8ab1034b945225dec58204340d77ec694fc4faa7e78c72d92776ef493"
  },
  "by_age": {
   "F16": {
@@ -1004,15 +1004,15 @@
             "label": "Årsta AIK HF 2",
             "team_id": 76632014,
             "is_alingsas": false,
-            "goals": null
+            "goals": 10
            },
            "away": {
             "label": "Redbergslids IK",
             "team_id": 86004672,
             "is_alingsas": false,
-            "goals": null
+            "goals": 23
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -1054,8 +1054,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06093311",
-            "team_id": null,
+            "label": "Redbergslids IK",
+            "team_id": 86004672,
             "is_alingsas": false,
             "goals": null
            },
@@ -1563,15 +1563,15 @@
             "label": "IFK Tumba HK",
             "team_id": 80550131,
             "is_alingsas": false,
-            "goals": null
+            "goals": 10
            },
            "away": {
             "label": "Önnereds HK 2",
             "team_id": 76509249,
             "is_alingsas": false,
-            "goals": null
+            "goals": 11
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85520303,
@@ -1584,15 +1584,15 @@
             "label": "IK Bolton 2",
             "team_id": 85853690,
             "is_alingsas": false,
-            "goals": null
+            "goals": 15
            },
            "away": {
             "label": "Önnereds HK 1",
             "team_id": 76509240,
             "is_alingsas": false,
-            "goals": null
+            "goals": 18
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -1607,14 +1607,14 @@
            "bana": "ÖHK-Hallen A",
            "round": "Final",
            "home": {
-            "label": "Vinn. 06090811",
-            "team_id": null,
+            "label": "Önnereds HK 2",
+            "team_id": 76509249,
             "is_alingsas": false,
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06090711",
-            "team_id": null,
+            "label": "Önnereds HK 1",
+            "team_id": 76509240,
             "is_alingsas": false,
             "goals": null
            },
@@ -1925,15 +1925,15 @@
             "label": "IK Bolton 1",
             "team_id": 81468564,
             "is_alingsas": false,
-            "goals": null
+            "goals": 11
            },
            "away": {
             "label": "IK Sävehof 1",
             "team_id": 85892424,
             "is_alingsas": false,
-            "goals": null
+            "goals": 16
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85520328,
@@ -1990,8 +1990,8 @@
            "bana": "Frölunda Kulturhus",
            "round": "Semifinal",
            "home": {
-            "label": "Vinn. 06091511",
-            "team_id": null,
+            "label": "IK Sävehof 1",
+            "team_id": 85892424,
             "is_alingsas": false,
             "goals": null
            },
@@ -3139,15 +3139,15 @@
             "label": "HK Aranäs Vit",
             "team_id": 82034193,
             "is_alingsas": false,
-            "goals": null
+            "goals": 24
            },
            "away": {
             "label": "GF Kroppskultur 2",
             "team_id": 85939262,
             "is_alingsas": false,
-            "goals": null
+            "goals": 23
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 85896020,
@@ -3160,15 +3160,15 @@
             "label": "Hammarby IF HF 1",
             "team_id": 79414786,
             "is_alingsas": false,
-            "goals": null
+            "goals": 12
            },
            "away": {
             "label": "HK Aranäs Blå",
             "team_id": 82034201,
             "is_alingsas": false,
-            "goals": null
+            "goals": 18
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -3183,14 +3183,14 @@
            "bana": "Kviberg Park Sporthall A",
            "round": "Final",
            "home": {
-            "label": "Vinn. 06094711",
-            "team_id": null,
+            "label": "HK Aranäs Vit",
+            "team_id": 82034193,
             "is_alingsas": false,
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06094811",
-            "team_id": null,
+            "label": "HK Aranäs Blå",
+            "team_id": 82034201,
             "is_alingsas": false,
             "goals": null
            },
@@ -3606,15 +3606,15 @@
             "label": "Önnereds HK Grön",
             "team_id": 76509214,
             "is_alingsas": false,
-            "goals": null
+            "goals": 10
            },
            "away": {
             "label": "Konnerud IL 1",
             "team_id": 78631594,
             "is_alingsas": false,
-            "goals": null
+            "goals": 15
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85896052,
@@ -3671,8 +3671,8 @@
            "bana": "Torpahallen",
            "round": "Semifinal",
            "home": {
-            "label": "Vinn. 06092311",
-            "team_id": null,
+            "label": "Konnerud IL 1",
+            "team_id": 78631594,
             "is_alingsas": false,
             "goals": null
            },

@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-06T13:01:23+00:00",
-  "seq": 1788699683,
-  "data_hash": "b25247e8b7d21dd6f5b3bb6c68cbc6da84261811b2a0f56a900e17f69a9e8265"
+  "generated": "2026-09-06T14:19:04+00:00",
+  "seq": 1788704344,
+  "data_hash": "7f45c6f986c5345484572a24410a3d605ef4fdb3b7947a5c3ef13d49db13c373"
  },
  "groups": {
   "F11": {
@@ -1240,7 +1240,10 @@
      "grupp": "Slutspel A",
      "mots": "IK Sävehof 3",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 11,
+      "ag": 16
+     },
      "start_ms": 1788702000000,
      "start_iso": "2026-09-06T15:40+02:00",
      "day_label": "Söndag 6 september"
