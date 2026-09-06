@@ -68,12 +68,16 @@ def test_video_link_is_scheme_checked_and_encoded():
     assert "encodeURI(" in t        # neutraliserar citattecken i href
 
 
-def test_bracket_shows_time_and_matchnr():
+def test_bracket_tidy_tree_with_times_and_matchnr():
     t = template.TEMPLATE
     assert 'class="bmhead"' in t
     assert 'class="btime"' in t and 'class="bmnr"' in t   # tid + #matchnr per kort
     assert "#${esc(m.nr)}" in t
     assert "1\\/(\\d+)" in t or "1/(\\d+)" in t             # rond-ordning efter namn
+    # tidy-tree: feeder-upplösning + rekursiv placering + kopplingslinjer
+    assert "function place(" in t and "kidsOf" in t
+    assert 'class="bconn"' in t and "<polyline" in t
+    assert "leafY" in t                                    # löv-slots i placeringen
 
 
 def test_card_shows_playoff_round():

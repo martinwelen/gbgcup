@@ -101,15 +101,18 @@ table.gt{width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums
 .btabs{display:flex; gap:6px; margin:14px 2px 8px}
 .btab{font-size:.72rem; font-weight:800; padding:6px 13px; border-radius:999px; border:1.5px solid var(--line); color:var(--ink-soft); background:transparent; cursor:pointer; font-family:inherit}
 .btab[aria-pressed=true]{background:var(--ink); border-color:var(--ink); color:#fff}
-.bracket-scroll{overflow:hidden; cursor:grab; touch-action:pan-y; border:1px solid var(--line); border-radius:14px; background:var(--paper); box-shadow:var(--shadow); padding:12px}
+.bracket-scroll{overflow:auto; max-height:72vh; -webkit-overflow-scrolling:touch; cursor:grab; touch-action:pan-x pan-y; border:1px solid var(--line); border-radius:14px; background:var(--paper); box-shadow:var(--shadow); padding:12px}
 .bracket-scroll.drag{cursor:grabbing}
-.btree{display:flex; gap:16px; min-width:max-content; user-select:none}
-.bcol{display:flex; flex-direction:column; justify-content:flex-start; gap:10px; min-width:150px}
-.bcol .clabel{font-size:.56rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:2px}
+.btree{position:relative; user-select:none}
+.btree .clabel{position:absolute; top:0; text-align:center; font-family:"Anton",sans-serif; font-size:.62rem; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-soft)}
+.bconn{position:absolute; left:0; top:0; pointer-events:none; z-index:0}
+.bconn polyline{fill:none; stroke:#cdbfa6; stroke-width:2}
+.bconn polyline.aliln{stroke:var(--sun); stroke-width:2.5}
 .bm{background:var(--sand); border:1px solid var(--line); border-radius:9px; padding:6px 8px; font-size:.7rem; line-height:1.5}
 .bm .row{display:flex; justify-content:space-between; gap:8px}
 .bm .row span:first-child{white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
-.bm.ali{border-color:var(--ink); box-shadow:0 0 0 1.5px var(--c,#999)}
+.btree .bm{position:absolute; z-index:1; height:66px; overflow:hidden; box-shadow:0 1px 4px rgba(20,40,60,.06)}
+.bm.ali{border-color:var(--sun); box-shadow:0 0 0 1.5px var(--sun)}
 .bm-win{font-weight:800; color:var(--ink)}
 .bm-lose{text-decoration:line-through; color:var(--ink-soft); opacity:.75}
 .bm .g{font-variant-numeric:tabular-nums; font-weight:800; margin-left:6px}
@@ -777,24 +780,61 @@ function renderBracket(){
   }
   let html = `<div class="btabs">`;
   po.tiers.forEach((t,i)=>{ html += `<button class="btab" data-i="${i}" aria-pressed="${i===btier}">${esc(t.tier.replace("-Slutspel",""))}</button>`; });
-  html += `</div><div class="bracket-scroll" id="bscroll"><div class="btree">`;
-  // kolumnordning: 1/16 → 1/8 → 1/4 → semi → final (efter rondnamn, ej starttid)
+  html += `</div>`;
+  // rondordning: 1/16 → 1/8 → 1/4 → semi → final (efter rondnamn, ej starttid)
   const rrank=(nm)=>{ nm=(nm||"").toLowerCase(); if(nm.includes("semi"))return -2; const mm=nm.match(/1\/(\d+)/); if(mm)return -(+mm[1]); if(nm.includes("final"))return 0; return -100; };
-  const _rounds = po.tiers[btier].rounds.slice().sort((a,b)=>rrank(a.name)-rrank(b.name));
-  for(const rnd of _rounds){
-    html += `<div class="bcol"><div class="clabel">${esc(rnd.name)}</div>`;
-    for(const m of rnd.matches){
-      const hw = m.winner==="home", aw = m.winner==="away";
-      const ali = (m.home.is_alingsas||m.away.is_alingsas) ? " ali" : "";
-      const c = aliColor(m);
-      const head = (m.t||m.nr) ? `<div class="bmhead">${m.t?`<span class="btime">${esc(m.t)}</span>`:""}${m.nr?`<span class="bmnr">#${esc(m.nr)}</span>`:""}</div>` : "";
-      html += `<div class="bm${ali}" style="--c:#${c}">`+
-        head + bmRow(m.home, hw, aw) + bmRow(m.away, aw, hw) + `</div>`;
-    }
-    html += `</div>`;
+  const rounds = po.tiers[btier].rounds.slice().sort((a,b)=>rrank(a.name)-rrank(b.name));
+  const CARD_W=182, CARD_H=66, SLOT=82, GAP=56, LBL=24;
+  const colOf=new Map(); rounds.forEach((r,ci)=>r.matches.forEach(m=>colOf.set(m,ci)));
+  const byNr={}; rounds.forEach(r=>r.matches.forEach(m=>{ if(m.nr) byNr[m.nr]=m; }));
+  const refOf=s=>{ const mm=(s.label||"").match(/[Vv]inn\.?\s+(\S+)/); return mm?mm[1]:null; };
+  const kidsOf=m=>{ const out=[]; for(const s of [m.home,m.away]){ const ref=refOf(s), f=ref&&byNr[ref]; if(f&&f!==m) out.push([s,f]); } return out; };
+  // tidy-tree: placera varje match centrerat på sina feeders, från finalen och bakåt
+  const pos=new Map(); let leafY=0; const busy=new Set();
+  function place(m){
+    if(pos.has(m)) return pos.get(m);
+    if(busy.has(m)) return leafY;                 // cykelskydd
+    busy.add(m);
+    const ks=kidsOf(m); let y;
+    if(!ks.length){ y=leafY; leafY+=SLOT; }
+    else { const ys=ks.map(kf=>place(kf[1])); y=ys.reduce((a,b)=>a+b,0)/ys.length; }
+    pos.set(m,y); return y;
   }
-  html += `</div></div>`;
-  elBracket.innerHTML = html;
+  rounds[rounds.length-1].matches.forEach(place);
+  rounds.forEach(r=>r.matches.forEach(m=>{ if(!pos.has(m)) place(m); }));
+  let maxCy=0; pos.forEach(y=>{ if(y>maxCy) maxCy=y; });
+  const treeW=rounds.length*(CARD_W+GAP)-GAP, treeH=maxCy+CARD_H+LBL+12;
+  // kopplingslinjer: elbow från varje feeder in i rätt lagrad
+  let conns="";
+  rounds.forEach((r,ci)=>{
+    for(const m of r.matches){
+      const mAli=m.home.is_alingsas||m.away.is_alingsas;
+      for(const [s,f] of kidsOf(m)){
+        const x1=colOf.get(f)*(CARD_W+GAP)+CARD_W, y1=pos.get(f)+LBL+CARD_H/2;
+        const x2=ci*(CARD_W+GAP), y2=pos.get(m)+LBL+CARD_H/2+(s===m.home?-9:9);
+        const midx=(x1+x2)/2;
+        const cl=(mAli||f.home.is_alingsas||f.away.is_alingsas)?' class="aliln"':'';
+        conns+=`<polyline${cl} points="${x1},${y1} ${midx},${y1} ${midx},${y2} ${x2},${y2}" />`;
+      }
+    }
+  });
+  let inner=`<svg class="bconn" viewBox="0 0 ${treeW} ${treeH}" width="${treeW}" height="${treeH}">${conns}</svg>`;
+  rounds.forEach((r,ci)=>{
+    inner+=`<div class="clabel" style="left:${ci*(CARD_W+GAP)}px;width:${CARD_W}px">${esc(r.name)}</div>`;
+    for(const m of r.matches){
+      const hw=m.winner==="home", aw=m.winner==="away";
+      const ali=(m.home.is_alingsas||m.away.is_alingsas)?" ali":"";
+      const c=aliColor(m);
+      const head=(m.t||m.nr)?`<div class="bmhead">${m.t?`<span class="btime">${esc(m.t)}</span>`:""}${m.nr?`<span class="bmnr">#${esc(m.nr)}</span>`:""}</div>`:"";
+      const hR=refOf(m.home), aR=refOf(m.away);
+      const hS=hR?Object.assign({},m.home,{label:"Vinnare #"+hR}):m.home;
+      const aS=aR?Object.assign({},m.away,{label:"Vinnare #"+aR}):m.away;
+      inner+=`<div class="bm${ali}" data-mid="${m.id||''}" style="left:${ci*(CARD_W+GAP)}px;top:${pos.get(m)+LBL}px;width:${CARD_W}px;--c:#${c}">`
+        +head+bmRow(hS,hw,aw)+bmRow(aS,aw,hw)+`</div>`;
+    }
+  });
+  html+=`<div class="bracket-scroll" id="bscroll"><div class="btree" style="width:${treeW}px;height:${treeH+8}px">${inner}</div></div>`;
+  elBracket.innerHTML=html;
   wirePan(document.getElementById("bscroll"));
   elBracket.querySelector(".btabs").addEventListener("click", e=>{
     const b=e.target.closest(".btab"); if(b){ renderBracket._userPicked=true; btier=+b.dataset.i; renderBracket(); }});
