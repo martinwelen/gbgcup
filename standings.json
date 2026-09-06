@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T17:22:07+00:00",
-  "seq": 1788715327,
-  "data_hash": "1228a5cd2e846afaa1030a18a0ec3b13866b3c20ab28a6af493786242838198d"
+  "generated": "2026-09-06T17:31:51+00:00",
+  "seq": 1788715911,
+  "data_hash": "40e8539699e55414e4ca8ef090b7043c312494f96ac88da9db5c4cfc7ee64472"
  },
  "by_age": {
   "F16": {
@@ -2019,15 +2019,15 @@
             "label": "Hammarby IF HF",
             "team_id": 78296686,
             "is_alingsas": false,
-            "goals": null
+            "goals": 16
            },
            "away": {
             "label": "Redbergslids IK",
             "team_id": 82263514,
             "is_alingsas": false,
-            "goals": null
+            "goals": 22
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         }
