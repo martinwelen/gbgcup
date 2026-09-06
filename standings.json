@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T13:02:09+00:00",
-  "seq": 1788699729,
-  "data_hash": "f4156c36480b3b9c904f40ed9c92dcc82b876f752e389a3d279032730f3d0d8b"
+  "generated": "2026-09-06T13:32:20+00:00",
+  "seq": 1788701540,
+  "data_hash": "e72a709e7d6c14c839dda6128393ac026d9b4558ecd7c743bd6260a1db396a71"
  },
  "by_age": {
   "F16": {
@@ -558,15 +558,15 @@
             "label": "Önnereds HK 2",
             "team_id": 81958785,
             "is_alingsas": false,
-            "goals": null
+            "goals": 8
            },
            "away": {
             "label": "Täby HBK 1",
             "team_id": 76528947,
             "is_alingsas": false,
-            "goals": null
+            "goals": 18
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 85516426,
@@ -602,8 +602,8 @@
            "bana": "Prioritet Serneke Arena Serneke Arena A",
            "round": "Final",
            "home": {
-            "label": "Vinn. 06090109",
-            "team_id": null,
+            "label": "Täby HBK 1",
+            "team_id": 76528947,
             "is_alingsas": false,
             "goals": null
            },
@@ -2501,15 +2501,15 @@
             "label": "IFK Kristianstad 2",
             "team_id": 82037753,
             "is_alingsas": false,
-            "goals": null
+            "goals": 10
            },
            "away": {
             "label": "IK Sävehof",
             "team_id": 85892282,
             "is_alingsas": false,
-            "goals": null
+            "goals": 18
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -2530,8 +2530,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06090810",
-            "team_id": null,
+            "label": "IK Sävehof",
+            "team_id": 85892282,
             "is_alingsas": false,
             "goals": null
            },
