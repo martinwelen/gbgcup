@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T13:41:46+00:00",
-  "seq": 1788702106,
-  "data_hash": "e7f093ee10d58e95053d77626e834c910c39feb1937e2644a28f22a04ffa07d2"
+  "generated": "2026-09-06T14:12:12+00:00",
+  "seq": 1788703932,
+  "data_hash": "9849ef43a80ae44aba1a99fda86f7373d8121286282c6046ddc2b99a5d03a49e"
  },
  "by_age": {
   "F16": {
@@ -579,15 +579,15 @@
             "label": "Alingsås HK 2",
             "team_id": 77339140,
             "is_alingsas": true,
-            "goals": null
+            "goals": 11
            },
            "away": {
             "label": "IK Sävehof 3",
             "team_id": 85892361,
             "is_alingsas": false,
-            "goals": null
+            "goals": 16
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -608,8 +608,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 06090110",
-            "team_id": null,
+            "label": "IK Sävehof 3",
+            "team_id": 85892361,
             "is_alingsas": false,
             "goals": null
            },
