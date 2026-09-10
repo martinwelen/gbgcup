@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-06T17:31:51+00:00",
-  "seq": 1788715911,
-  "data_hash": "40e8539699e55414e4ca8ef090b7043c312494f96ac88da9db5c4cfc7ee64472"
+  "generated": "2026-09-10T09:32:01+00:00",
+  "seq": 1789032721,
+  "data_hash": "eb3cc5a847edbc26b77b3e1a481d9c56afd03c14fd9b97c355554465956f0ae3"
  },
  "by_age": {
   "F16": {
@@ -4811,9 +4811,9 @@
           {
            "id": 86060765,
            "start": 1789280400000,
-           "nr": "13091100",
+           "nr": "13090500",
            "t": "08:20",
-           "bana": "Valhalla Sport A",
+           "bana": "Valhalla Sport B",
            "round": "1/8 Final",
            "home": {
             "label": "4:an i Grupp B",
@@ -4832,9 +4832,9 @@
           {
            "id": 86060772,
            "start": 1789280400000,
-           "nr": "13090500",
+           "nr": "13091100",
            "t": "08:20",
-           "bana": "Valhalla Sport B",
+           "bana": "Valhalla Sport A",
            "round": "1/8 Final",
            "home": {
             "label": "3:an i Grupp F",
@@ -4932,7 +4932,7 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 13091100",
+            "label": "Vinn. 13090500",
             "team_id": null,
             "is_alingsas": false,
             "goals": null
@@ -4974,7 +4974,7 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 13090500",
+            "label": "Vinn. 13091100",
             "team_id": null,
             "is_alingsas": false,
             "goals": null
