@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-11T15:45:52+00:00",
-  "seq": 1789141552,
-  "data_hash": "f6dd503443b4fcbb7aa42845a946885159fe90e2a6cc1d0af7f83d64ce407e6f"
+  "generated": "2026-09-11T15:51:41+00:00",
+  "seq": 1789141901,
+  "data_hash": "93607451047d7bac5d7ae874e887bf2f5350ec1182eb56936e19e77ac56a935b"
  },
  "groups": {
   "F11": {
@@ -1836,7 +1836,10 @@
      "grupp": "Grupp A",
      "mots": "Önnereds HK 2",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 20,
+      "ag": 16
+     },
      "start_ms": 1789138800000,
      "start_iso": "2026-09-11T17:00+02:00",
      "day_label": "Fredag 11 september"
