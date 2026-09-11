@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-10T09:32:01+00:00",
-  "seq": 1789032721,
-  "data_hash": "eb3cc5a847edbc26b77b3e1a481d9c56afd03c14fd9b97c355554465956f0ae3"
+  "generated": "2026-09-11T15:42:37+00:00",
+  "seq": 1789141357,
+  "data_hash": "304f9430acc872365d3b16469092c60485a74997266f1003b1844e34a04a3023"
  },
  "by_age": {
   "F16": {
@@ -3811,31 +3811,16 @@
        "name": "Alingsås HK 2",
        "team_id": 77339131,
        "is_alingsas": true,
-       "played": 0,
-       "won": 0,
+       "played": 1,
+       "won": 1,
        "tied": 0,
        "lost": 0,
-       "goals_for": 0,
-       "goals_against": 0,
-       "diff": 0,
-       "points": 0,
+       "goals_for": 25,
+       "goals_against": 13,
+       "diff": 12,
+       "points": 2,
        "tier": "Slutspel A",
        "pos": 1
-      },
-      {
-       "name": "Kungälvs HK 2",
-       "team_id": 80662399,
-       "is_alingsas": false,
-       "played": 0,
-       "won": 0,
-       "tied": 0,
-       "lost": 0,
-       "goals_for": 0,
-       "goals_against": 0,
-       "diff": 0,
-       "points": 0,
-       "tier": "Slutspel A",
-       "pos": 2
       },
       {
        "name": "Torslanda HK",
@@ -3849,8 +3834,8 @@
        "goals_against": 0,
        "diff": 0,
        "points": 0,
-       "tier": "Slutspel B",
-       "pos": 3
+       "tier": "Slutspel A",
+       "pos": 2
       },
       {
        "name": "IFK Skövde HK av 1991 1",
@@ -3865,7 +3850,7 @@
        "diff": 0,
        "points": 0,
        "tier": "Slutspel B",
-       "pos": 4
+       "pos": 3
       },
       {
        "name": "Huddinge HK",
@@ -3878,6 +3863,21 @@
        "goals_for": 0,
        "goals_against": 0,
        "diff": 0,
+       "points": 0,
+       "tier": "Slutspel B",
+       "pos": 4
+      },
+      {
+       "name": "Kungälvs HK 2",
+       "team_id": 80662399,
+       "is_alingsas": false,
+       "played": 1,
+       "won": 0,
+       "tied": 0,
+       "lost": 1,
+       "goals_for": 13,
+       "goals_against": 25,
+       "diff": -12,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 5
