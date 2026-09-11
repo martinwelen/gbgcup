@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-11T15:42:37+00:00",
-  "seq": 1789141357,
-  "data_hash": "304f9430acc872365d3b16469092c60485a74997266f1003b1844e34a04a3023"
+  "generated": "2026-09-11T15:46:28+00:00",
+  "seq": 1789141588,
+  "data_hash": "ff41bd0388b1fe97af258a3e525c263a725e1505e974ef1789641c5496948fcc"
  },
  "by_age": {
   "F16": {
@@ -3726,17 +3726,17 @@
      "division_id": 86060360,
      "rows": [
       {
-       "name": "Önnereds HK 2",
-       "team_id": 76509236,
-       "is_alingsas": false,
-       "played": 0,
-       "won": 0,
+       "name": "Alingsås HK 1",
+       "team_id": 77339125,
+       "is_alingsas": true,
+       "played": 1,
+       "won": 1,
        "tied": 0,
        "lost": 0,
-       "goals_for": 0,
-       "goals_against": 0,
-       "diff": 0,
-       "points": 0,
+       "goals_for": 20,
+       "goals_against": 16,
+       "diff": 4,
+       "points": 2,
        "tier": "Slutspel A",
        "pos": 1
       },
@@ -3756,9 +3756,9 @@
        "pos": 2
       },
       {
-       "name": "Alingsås HK 1",
-       "team_id": 77339125,
-       "is_alingsas": true,
+       "name": "Kungälvs HK 1",
+       "team_id": 80662395,
+       "is_alingsas": false,
        "played": 0,
        "won": 0,
        "tied": 0,
@@ -3771,8 +3771,8 @@
        "pos": 3
       },
       {
-       "name": "Kungälvs HK 1",
-       "team_id": 80662395,
+       "name": "IFK Skövde HK av 1991 2",
+       "team_id": 81913734,
        "is_alingsas": false,
        "played": 0,
        "won": 0,
@@ -3786,16 +3786,16 @@
        "pos": 4
       },
       {
-       "name": "IFK Skövde HK av 1991 2",
-       "team_id": 81913734,
+       "name": "Önnereds HK 2",
+       "team_id": 76509236,
        "is_alingsas": false,
-       "played": 0,
+       "played": 1,
        "won": 0,
        "tied": 0,
-       "lost": 0,
-       "goals_for": 0,
-       "goals_against": 0,
-       "diff": 0,
+       "lost": 1,
+       "goals_for": 16,
+       "goals_against": 20,
+       "diff": -4,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 5
