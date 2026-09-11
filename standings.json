@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-11T19:09:14+00:00",
-  "seq": 1789153754,
-  "data_hash": "e097359e0a4ebf403d6073c277863348a807eefa5fa7203661af89065f804f53"
+  "generated": "2026-09-11T20:02:38+00:00",
+  "seq": 1789156958,
+  "data_hash": "d0896a2f970e731f9e209b71769e145d7c4f35c141d3d6766e0d45fb503037af"
  },
  "by_age": {
   "F16": {
@@ -3726,6 +3726,21 @@
      "division_id": 86060360,
      "rows": [
       {
+       "name": "Alingsås HK 1",
+       "team_id": 77339125,
+       "is_alingsas": true,
+       "played": 1,
+       "won": 1,
+       "tied": 0,
+       "lost": 0,
+       "goals_for": 20,
+       "goals_against": 16,
+       "diff": 4,
+       "points": 2,
+       "tier": "Slutspel A",
+       "pos": 1
+      },
+      {
        "name": "GT Söder Handbollsklubb",
        "team_id": 76661153,
        "is_alingsas": false,
@@ -3738,7 +3753,7 @@
        "diff": 2,
        "points": 2,
        "tier": "Slutspel A",
-       "pos": 1
+       "pos": 2
       },
       {
        "name": "IFK Skövde HK av 1991 2",
@@ -3752,50 +3767,35 @@
        "goals_against": 37,
        "diff": -1,
        "points": 2,
-       "tier": "Slutspel A",
-       "pos": 2
-      },
-      {
-       "name": "Alingsås HK 1",
-       "team_id": 77339125,
-       "is_alingsas": true,
-       "played": 1,
-       "won": 1,
-       "tied": 0,
-       "lost": 0,
-       "goals_for": 20,
-       "goals_against": 16,
-       "diff": 4,
-       "points": 2,
        "tier": "Slutspel B",
        "pos": 3
-      },
-      {
-       "name": "Kungälvs HK 1",
-       "team_id": 80662395,
-       "is_alingsas": false,
-       "played": 1,
-       "won": 0,
-       "tied": 0,
-       "lost": 1,
-       "goals_for": 14,
-       "goals_against": 15,
-       "diff": -1,
-       "points": 0,
-       "tier": "Slutspel B",
-       "pos": 4
       },
       {
        "name": "Önnereds HK 2",
        "team_id": 76509236,
        "is_alingsas": false,
-       "played": 1,
-       "won": 0,
+       "played": 2,
+       "won": 1,
        "tied": 0,
        "lost": 1,
-       "goals_for": 16,
-       "goals_against": 20,
-       "diff": -4,
+       "goals_for": 37,
+       "goals_against": 40,
+       "diff": -3,
+       "points": 2,
+       "tier": "Slutspel B",
+       "pos": 4
+      },
+      {
+       "name": "Kungälvs HK 1",
+       "team_id": 80662395,
+       "is_alingsas": false,
+       "played": 2,
+       "won": 0,
+       "tied": 0,
+       "lost": 2,
+       "goals_for": 34,
+       "goals_against": 36,
+       "diff": -2,
        "points": 0,
        "tier": "Slutspel B",
        "pos": 5
@@ -3808,31 +3808,31 @@
      "division_id": 86060388,
      "rows": [
       {
-       "name": "Alingsås HK 2",
-       "team_id": 77339131,
-       "is_alingsas": true,
-       "played": 1,
-       "won": 1,
+       "name": "Torslanda HK",
+       "team_id": 80926901,
+       "is_alingsas": false,
+       "played": 2,
+       "won": 2,
        "tied": 0,
        "lost": 0,
-       "goals_for": 25,
-       "goals_against": 13,
-       "diff": 12,
-       "points": 2,
+       "goals_for": 48,
+       "goals_against": 40,
+       "diff": 8,
+       "points": 4,
        "tier": "Slutspel A",
        "pos": 1
       },
       {
-       "name": "Torslanda HK",
-       "team_id": 80926901,
-       "is_alingsas": false,
-       "played": 1,
+       "name": "Alingsås HK 2",
+       "team_id": 77339131,
+       "is_alingsas": true,
+       "played": 2,
        "won": 1,
        "tied": 0,
-       "lost": 0,
-       "goals_for": 26,
-       "goals_against": 20,
-       "diff": 6,
+       "lost": 1,
+       "goals_for": 45,
+       "goals_against": 35,
+       "diff": 10,
        "points": 2,
        "tier": "Slutspel A",
        "pos": 2

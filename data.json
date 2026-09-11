@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-11T19:08:42+00:00",
-  "seq": 1789153722,
-  "data_hash": "6ff6ad8cab9309ad066f43b07f5ee51136c3d771a03511deba83085849d9b2f1"
+  "generated": "2026-09-11T20:02:06+00:00",
+  "seq": 1789156926,
+  "data_hash": "84e991db4711387e94ee91c8615cece6388f5469b1d875a9dbf29c5a7f8fd28c"
  },
  "groups": {
   "F11": {
@@ -1872,7 +1872,10 @@
      "grupp": "Grupp C",
      "mots": "Torslanda HK",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 20,
+      "ag": 22
+     },
      "start_ms": 1789153800000,
      "start_iso": "2026-09-11T21:10+02:00",
      "day_label": "Fredag 11 september"
