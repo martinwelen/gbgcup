@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-11T15:51:41+00:00",
-  "seq": 1789141901,
-  "data_hash": "93607451047d7bac5d7ae874e887bf2f5350ec1182eb56936e19e77ac56a935b"
+  "generated": "2026-09-11T19:08:42+00:00",
+  "seq": 1789153722,
+  "data_hash": "6ff6ad8cab9309ad066f43b07f5ee51136c3d771a03511deba83085849d9b2f1"
  },
  "groups": {
   "F11": {
@@ -1672,7 +1672,10 @@
      "grupp": "Grupp D",
      "mots": "Lindeskolans IF",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 19,
+      "ag": 24
+     },
      "start_ms": 1789150800000,
      "start_iso": "2026-09-11T20:20+02:00",
      "day_label": "Fredag 11 september"
