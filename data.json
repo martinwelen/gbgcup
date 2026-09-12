@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-12T07:52:00+00:00",
-  "seq": 1789199520,
-  "data_hash": "3244abfa8d9660910a86763a9af103ff7614e976307073e55a175f6bb115f340"
+  "generated": "2026-09-12T08:22:02+00:00",
+  "seq": 1789201322,
+  "data_hash": "3e36c6214a94973177f5f584860ce3493ab8a6a66047dc24fd6431d9e4ef2163"
  },
  "groups": {
   "F11": {
@@ -104,7 +104,10 @@
      "grupp": "Grupp E",
      "mots": "IK Sävehof PF Gul",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 0,
+      "ag": 0
+     },
      "start_ms": 1789198800000,
      "start_iso": "2026-09-12T09:40+02:00",
      "day_label": "Lördag 12 september"
