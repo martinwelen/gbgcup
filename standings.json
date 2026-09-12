@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-12T15:52:56+00:00",
-  "seq": 1789228376,
-  "data_hash": "d867673bc8596c1a7a5cfb046c12f0de13a1a13a44eb1154c1eb194220f867b9"
+  "generated": "2026-09-12T16:12:59+00:00",
+  "seq": 1789229579,
+  "data_hash": "6530b8e6d935d9e3cd0c323f961a5e7cc56c25ee843164ec966feb96f83334d1"
  },
  "by_age": {
   "F16": {
@@ -3931,8 +3931,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp F",
-            "team_id": null,
+            "label": "Redbergslids IK",
+            "team_id": 79036297,
             "is_alingsas": false,
             "goals": null
            },
@@ -3967,8 +3967,8 @@
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp F",
-            "team_id": null,
+            "label": "Lindeskolans IF",
+            "team_id": 85875268,
             "is_alingsas": false,
             "goals": null
            },
@@ -4161,8 +4161,8 @@
            "bana": "Valhalla Sport C",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp F",
-            "team_id": null,
+            "label": "Önnereds HK 1",
+            "team_id": 76509232,
             "is_alingsas": false,
             "goals": null
            },
@@ -4209,8 +4209,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp F",
-            "team_id": null,
+            "label": "Gamle Fredrikstad Håndballklubb",
+            "team_id": 85940085,
             "is_alingsas": false,
             "goals": null
            },
