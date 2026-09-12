@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-12T07:38:47+00:00",
-  "seq": 1789198727,
-  "data_hash": "079f1533c671306b971206038741a1517ee7da75f55cdfd7d1d56a7dbbef40ae"
+  "generated": "2026-09-12T07:52:00+00:00",
+  "seq": 1789199520,
+  "data_hash": "3244abfa8d9660910a86763a9af103ff7614e976307073e55a175f6bb115f340"
  },
  "groups": {
   "F11": {
@@ -1708,7 +1708,10 @@
      "grupp": "Grupp D",
      "mots": "Skövde HF 1",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 18,
+      "ag": 17
+     },
      "start_ms": 1789196400000,
      "start_iso": "2026-09-12T09:00+02:00",
      "day_label": "Lördag 12 september"
@@ -1908,7 +1911,10 @@
      "grupp": "Grupp A",
      "mots": "IFK Skövde HK av 1991 2",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 15,
+      "ag": 14
+     },
      "start_ms": 1789196400000,
      "start_iso": "2026-09-12T09:00+02:00",
      "day_label": "Lördag 12 september"
