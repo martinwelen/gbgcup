@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-12T14:16:59+00:00",
-  "seq": 1789222619,
-  "data_hash": "827ace15b5dffc4b4efe0327a7cc95c350461f1454ea470708fe42099272f12a"
+  "generated": "2026-09-12T14:32:05+00:00",
+  "seq": 1789223525,
+  "data_hash": "6bd92f32686372fa267bef58e024b5017f859474440a469694788faa694cf602"
  },
  "groups": {
   "F11": {
@@ -2058,7 +2058,10 @@
      "grupp": "Grupp A",
      "mots": "Kungälvs HK 1",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 14,
+      "ag": 20
+     },
      "start_ms": 1789220400000,
      "start_iso": "2026-09-12T15:40+02:00",
      "day_label": "Lördag 12 september"
@@ -2092,6 +2095,36 @@
      "start_ms": 1789223400000,
      "start_iso": "2026-09-12T16:30+02:00",
      "day_label": "Lördag 12 september"
+    },
+    {
+     "age_slug": "HJ",
+     "slug": "t-77339125",
+     "id": 86295114,
+     "gender": "M",
+     "klass": "HJ",
+     "rule": "Classic",
+     "dur": 50,
+     "color": "#1f5fbf",
+     "datum": "2026-09-13",
+     "dag": "Söndag",
+     "tid": "10:00",
+     "bana": "ÖHK-Hallen ÖHK WH hallen",
+     "maps": "https://www.google.com/maps/search/?api=1&query=57.66828599999999,11.8827533",
+     "lat": 57.66828599999999,
+     "lng": 11.8827533,
+     "venue": "ÖHK-Hallen",
+     "street": "Redegatan 18",
+     "video": "https://solidsport.com/gbgcup/watch/2-an-i-grupp-a-2-an-i-grupp-d-1f7a4a64-1695-4242-9477-ab266f82310a",
+     "runda": "1/8-final",
+     "hemma": "Alingsås HK 1",
+     "borta": "IFK Tumba HK",
+     "grupp": "Slutspel A",
+     "mots": "IFK Tumba HK",
+     "hb": "Hemma",
+     "result": null,
+     "start_ms": 1789286400000,
+     "start_iso": "2026-09-13T10:00+02:00",
+     "day_label": "Söndag 13 september"
     }
    ]
   }

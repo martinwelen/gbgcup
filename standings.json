@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-12T14:12:26+00:00",
-  "seq": 1789222346,
-  "data_hash": "67f212998fdd0a866b63de0b7ab4ddfc8a82ef42972f925fc3cfeaca0176b340"
+  "generated": "2026-09-12T14:32:53+00:00",
+  "seq": 1789223573,
+  "data_hash": "bc4c89f2480ec4bd6a99bdc91760ef7fe8caef470d863a0aed2c082878f34ad3"
  },
  "by_age": {
   "F16": {
@@ -3744,43 +3744,43 @@
        "name": "Alingsås HK 1",
        "team_id": 77339125,
        "is_alingsas": true,
-       "played": 3,
-       "won": 2,
+       "played": 4,
+       "won": 3,
        "tied": 0,
        "lost": 1,
-       "goals_for": 54,
-       "goals_against": 49,
-       "diff": 5,
-       "points": 4,
+       "goals_for": 74,
+       "goals_against": 63,
+       "diff": 11,
+       "points": 6,
        "tier": "Slutspel A",
        "pos": 2
-      },
-      {
-       "name": "Kungälvs HK 1",
-       "team_id": 80662395,
-       "is_alingsas": false,
-       "played": 3,
-       "won": 1,
-       "tied": 0,
-       "lost": 2,
-       "goals_for": 51,
-       "goals_against": 51,
-       "diff": 0,
-       "points": 2,
-       "tier": "Slutspel B",
-       "pos": 3
       },
       {
        "name": "Önnereds HK 2",
        "team_id": 76509236,
        "is_alingsas": false,
-       "played": 3,
-       "won": 1,
+       "played": 4,
+       "won": 2,
        "tied": 0,
        "lost": 2,
-       "goals_for": 50,
-       "goals_against": 60,
-       "diff": -10,
+       "goals_for": 74,
+       "goals_against": 83,
+       "diff": -9,
+       "points": 4,
+       "tier": "Slutspel B",
+       "pos": 3
+      },
+      {
+       "name": "Kungälvs HK 1",
+       "team_id": 80662395,
+       "is_alingsas": false,
+       "played": 4,
+       "won": 1,
+       "tied": 0,
+       "lost": 3,
+       "goals_for": 65,
+       "goals_against": 71,
+       "diff": -6,
        "points": 2,
        "tier": "Slutspel B",
        "pos": 4
@@ -3789,13 +3789,13 @@
        "name": "GT Söder Handbollsklubb",
        "team_id": 76661153,
        "is_alingsas": false,
-       "played": 3,
+       "played": 4,
        "won": 1,
        "tied": 0,
-       "lost": 2,
-       "goals_for": 56,
-       "goals_against": 58,
-       "diff": -2,
+       "lost": 3,
+       "goals_for": 79,
+       "goals_against": 82,
+       "diff": -3,
        "points": 2,
        "tier": "Slutspel B",
        "pos": 5
@@ -3946,9 +3946,9 @@
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/8 Final",
            "home": {
-            "label": "2:an i Grupp A",
-            "team_id": null,
-            "is_alingsas": false,
+            "label": "Alingsås HK 1",
+            "team_id": 77339125,
+            "is_alingsas": true,
             "goals": null
            },
            "away": {
@@ -3993,8 +3993,8 @@
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/4 Final",
            "home": {
-            "label": "1:an i Grupp A",
-            "team_id": null,
+            "label": "IFK Skövde HK av 1991 2",
+            "team_id": 81913734,
             "is_alingsas": false,
             "goals": null
            },
@@ -4230,8 +4230,8 @@
             "goals": null
            },
            "away": {
-            "label": "5:an i Grupp A",
-            "team_id": null,
+            "label": "GT Söder Handbollsklubb",
+            "team_id": 76661153,
             "is_alingsas": false,
             "goals": null
            },
@@ -4266,8 +4266,8 @@
            "bana": "Valhalla Sport A",
            "round": "1/8 Final",
            "home": {
-            "label": "4:an i Grupp A",
-            "team_id": null,
+            "label": "Kungälvs HK 1",
+            "team_id": 80662395,
             "is_alingsas": false,
             "goals": null
            },
@@ -4313,8 +4313,8 @@
            "bana": "Valhalla Sport A",
            "round": "1/4 Final",
            "home": {
-            "label": "3:an i Grupp A",
-            "team_id": null,
+            "label": "Önnereds HK 2",
+            "team_id": 76509236,
             "is_alingsas": false,
             "goals": null
            },
@@ -4607,8 +4607,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp F",
-            "team_id": null,
+            "label": "Kungälvs HK Vit",
+            "team_id": 79710055,
             "is_alingsas": false,
             "goals": null
            },
@@ -4622,8 +4622,8 @@
            "bana": "ÖHK-Hallen ÖHK WH hallen",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp F",
-            "team_id": null,
+            "label": "Skövde HF 2",
+            "team_id": 78780215,
             "is_alingsas": false,
             "goals": null
            },
@@ -4837,8 +4837,8 @@
            "bana": "Valhalla Sport A",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp F",
-            "team_id": null,
+            "label": "IF Hallby HK",
+            "team_id": 77783362,
             "is_alingsas": false,
             "goals": null
            },
@@ -4864,8 +4864,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp F",
-            "team_id": null,
+            "label": "IK Bolton",
+            "team_id": 82263385,
             "is_alingsas": false,
             "goals": null
            },
