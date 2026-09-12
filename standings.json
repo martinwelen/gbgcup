@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-12T15:22:20+00:00",
-  "seq": 1789226540,
-  "data_hash": "3d705bdbe7065da217a88d070562600367262ff8f6a05518cd9bec8b114d1256"
+  "generated": "2026-09-12T15:52:56+00:00",
+  "seq": 1789228376,
+  "data_hash": "d867673bc8596c1a7a5cfb046c12f0de13a1a13a44eb1154c1eb194220f867b9"
  },
  "by_age": {
   "F16": {
@@ -3904,8 +3904,8 @@
            "bana": "ÖHK-Hallen A",
            "round": "1/8 Final",
            "home": {
-            "label": "2:an i Grupp B",
-            "team_id": null,
+            "label": "HK Aranäs SVART",
+            "team_id": 81566212,
             "is_alingsas": false,
             "goals": null
            },
@@ -4035,8 +4035,8 @@
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/4 Final",
            "home": {
-            "label": "1:an i Grupp B",
-            "team_id": null,
+            "label": "Hammarby IF HF Grön",
+            "team_id": 81913814,
             "is_alingsas": false,
             "goals": null
            },
@@ -4182,8 +4182,8 @@
            "bana": "Valhalla Sport C",
            "round": "1/8 Final",
            "home": {
-            "label": "4:an i Grupp B",
-            "team_id": null,
+            "label": "IF Hallby HK",
+            "team_id": 77225536,
             "is_alingsas": false,
             "goals": null
            },
@@ -4245,8 +4245,8 @@
            "bana": "Valhalla Sport C",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp B",
-            "team_id": null,
+            "label": "Kärra HF 1",
+            "team_id": 85874389,
             "is_alingsas": false,
             "goals": null
            },
@@ -4293,8 +4293,8 @@
             "goals": null
            },
            "away": {
-            "label": "5:an i Grupp B",
-            "team_id": null,
+            "label": "GF Kroppskultur",
+            "team_id": 80258680,
             "is_alingsas": false,
             "goals": null
            },

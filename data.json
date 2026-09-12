@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-12T15:21:45+00:00",
-  "seq": 1789226505,
-  "data_hash": "3b3e56fedbd4549b53063ca3fe025b05493ad964cca08662076d7f349e476a1e"
+  "generated": "2026-09-12T15:52:09+00:00",
+  "seq": 1789228329,
+  "data_hash": "42486db876f06636e81ade485e544988a64c0350492ab07f20db8a0cbc3a2c88"
  },
  "groups": {
   "F11": {
@@ -2150,9 +2150,9 @@
      "video": "https://solidsport.com/gbgcup/watch/3-an-i-grupp-c-5-an-i-grupp-b",
      "runda": "1/8-final",
      "hemma": "Alingsås HK 2",
-     "borta": "5:an i Grupp B",
+     "borta": "GF Kroppskultur",
      "grupp": "Slutspel B",
-     "mots": "5:an i Grupp B",
+     "mots": "GF Kroppskultur",
      "hb": "Hemma",
      "result": null,
      "start_ms": 1789289400000,
