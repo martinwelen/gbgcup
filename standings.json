@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-12T13:42:18+00:00",
-  "seq": 1789220538,
-  "data_hash": "66d39c63a29793d5efdd7addbbb4e2ede3042a89ddb10e24d95012ad9b703753"
+  "generated": "2026-09-12T14:12:26+00:00",
+  "seq": 1789222346,
+  "data_hash": "67f212998fdd0a866b63de0b7ab4ddfc8a82ef42972f925fc3cfeaca0176b340"
  },
  "by_age": {
   "F16": {
@@ -4819,15 +4819,15 @@
             "label": "Kungälvs HK Grön utom tävlan",
             "team_id": 79710050,
             "is_alingsas": false,
-            "goals": null
+            "goals": 0
            },
            "away": {
             "label": "IK Baltichov 1",
             "team_id": 78950392,
             "is_alingsas": false,
-            "goals": null
+            "goals": 10
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 86060772,
@@ -4932,8 +4932,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 13090500",
-            "team_id": null,
+            "label": "IK Baltichov 1",
+            "team_id": 78950392,
             "is_alingsas": false,
             "goals": null
            },
