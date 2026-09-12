@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-12T11:12:47+00:00",
-  "seq": 1789211567,
-  "data_hash": "ca62c1a941d216bde75db3a25481ce33d34d56273169df48f90ad8c75e7c00fc"
+  "generated": "2026-09-12T11:22:54+00:00",
+  "seq": 1789212174,
+  "data_hash": "c82d3d93337f51ed079948e1da78a3903f4a7ad828c4a3381bb5d6ed055b297e"
  },
  "by_age": {
   "F16": {
@@ -4508,32 +4508,32 @@
        "pos": 2
       },
       {
-       "name": "Redbergslids IK 2",
-       "team_id": 77308076,
-       "is_alingsas": false,
-       "played": 2,
+       "name": "Alingsås HK",
+       "team_id": 77339144,
+       "is_alingsas": true,
+       "played": 3,
        "won": 1,
        "tied": 0,
-       "lost": 1,
-       "goals_for": 26,
-       "goals_against": 32,
-       "diff": -6,
+       "lost": 2,
+       "goals_for": 58,
+       "goals_against": 63,
+       "diff": -5,
        "points": 2,
        "tier": "Slutspel B",
        "pos": 3
       },
       {
-       "name": "Alingsås HK",
-       "team_id": 77339144,
-       "is_alingsas": true,
-       "played": 2,
-       "won": 0,
+       "name": "Redbergslids IK 2",
+       "team_id": 77308076,
+       "is_alingsas": false,
+       "played": 3,
+       "won": 1,
        "tied": 0,
        "lost": 2,
-       "goals_for": 36,
-       "goals_against": 42,
-       "diff": -6,
-       "points": 0,
+       "goals_for": 47,
+       "goals_against": 54,
+       "diff": -7,
+       "points": 2,
        "tier": "Slutspel B",
        "pos": 4
       }
@@ -4565,8 +4565,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp D",
-            "team_id": null,
+            "label": "Skövde HF 1",
+            "team_id": 78780210,
             "is_alingsas": false,
             "goals": null
            },
@@ -4669,8 +4669,8 @@
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/4 Final",
            "home": {
-            "label": "1:an i Grupp D",
-            "team_id": null,
+            "label": "Lindeskolans IF",
+            "team_id": 81075668,
             "is_alingsas": false,
             "goals": null
            },
@@ -4885,8 +4885,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp D",
-            "team_id": null,
+            "label": "Redbergslids IK 2",
+            "team_id": 77308076,
             "is_alingsas": false,
             "goals": null
            },
@@ -4947,9 +4947,9 @@
            "bana": "Valhalla Sport B",
            "round": "1/4 Final",
            "home": {
-            "label": "3:an i Grupp D",
-            "team_id": null,
-            "is_alingsas": false,
+            "label": "Alingsås HK",
+            "team_id": 77339144,
+            "is_alingsas": true,
             "goals": null
            },
            "away": {

@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-12T11:12:00+00:00",
-  "seq": 1789211520,
-  "data_hash": "5c1ca70d25db328984fa46096ae0200362eced334e165fae1adb81deb2ebc383"
+  "generated": "2026-09-12T11:22:09+00:00",
+  "seq": 1789212129,
+  "data_hash": "ee1f6b75bc89e454e0e1c730861ae793c25022d4ba95a794469d205c4ca06e14"
  },
  "groups": {
   "F11": {
@@ -1747,10 +1747,43 @@
      "grupp": "Grupp D",
      "mots": "Redbergslids IK 2",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 22,
+      "ag": 21
+     },
      "start_ms": 1789208400000,
      "start_iso": "2026-09-12T12:20+02:00",
      "day_label": "Lördag 12 september"
+    },
+    {
+     "age_slug": "DJ",
+     "slug": "t-77339144",
+     "id": 86060766,
+     "gender": "F",
+     "klass": "DJ",
+     "rule": "Classic",
+     "dur": 40,
+     "color": "#1f5fbf",
+     "datum": "2026-09-13",
+     "dag": "Söndag",
+     "tid": "11:40",
+     "bana": "Valhalla Sport B",
+     "maps": "https://www.google.com/maps/search/?api=1&query=57.6999149,11.9906319",
+     "lat": 57.6999149,
+     "lng": 11.9906319,
+     "venue": "",
+     "street": "Valhallagatan 3",
+     "video": "https://solidsport.com/gbgcup/watch/3-an-i-grupp-d-vinn-13091101",
+     "runda": "Kvartsfinal",
+     "hemma": "Alingsås HK",
+     "borta": "Vinn. 13091101",
+     "grupp": "Slutspel B",
+     "mots": "Vinn. 13091101",
+     "hb": "Hemma",
+     "result": null,
+     "start_ms": 1789292400000,
+     "start_iso": "2026-09-13T11:40+02:00",
+     "day_label": "Söndag 13 september"
     }
    ]
   },
