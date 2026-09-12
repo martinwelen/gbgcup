@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-12T08:22:02+00:00",
-  "seq": 1789201322,
-  "data_hash": "3e36c6214a94973177f5f584860ce3493ab8a6a66047dc24fd6431d9e4ef2163"
+  "generated": "2026-09-12T08:41:56+00:00",
+  "seq": 1789202516,
+  "data_hash": "d34325b2db5f2e7d4982f7b38d8a011afd3db9e386a90c6cfce22561a3f6b385"
  },
  "groups": {
   "F11": {
@@ -1947,7 +1947,10 @@
      "grupp": "Grupp C",
      "mots": "IFK Skövde HK av 1991 1",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 25,
+      "ag": 24
+     },
      "start_ms": 1789199400000,
      "start_iso": "2026-09-12T09:50+02:00",
      "day_label": "Lördag 12 september"
