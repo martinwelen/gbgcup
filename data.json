@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-12T13:41:42+00:00",
-  "seq": 1789220502,
-  "data_hash": "5462c8e56257a772f1e6a96beadb3908f05371c33676dcce33bb8d8423fc7e08"
+  "generated": "2026-09-12T14:16:59+00:00",
+  "seq": 1789222619,
+  "data_hash": "827ace15b5dffc4b4efe0327a7cc95c350461f1454ea470708fe42099272f12a"
  },
  "groups": {
   "F11": {
@@ -236,7 +236,10 @@
      "grupp": "Grupp E",
      "mots": "Kungälvs HK Svart",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 0,
+      "ag": 0
+     },
      "start_ms": 1789220400000,
      "start_iso": "2026-09-12T15:40+02:00",
      "day_label": "Lördag 12 september"
