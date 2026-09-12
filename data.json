@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-11T20:02:06+00:00",
-  "seq": 1789156926,
-  "data_hash": "84e991db4711387e94ee91c8615cece6388f5469b1d875a9dbf29c5a7f8fd28c"
+  "generated": "2026-09-12T07:38:47+00:00",
+  "seq": 1789198727,
+  "data_hash": "079f1533c671306b971206038741a1517ee7da75f55cdfd7d1d56a7dbbef40ae"
  },
  "groups": {
   "F11": {
@@ -71,7 +71,10 @@
      "grupp": "Grupp C",
      "mots": "Torslanda HK 3",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 0,
+      "ag": 0
+     },
      "start_ms": 1789196400000,
      "start_iso": "2026-09-12T09:00+02:00",
      "day_label": "Lördag 12 september"
