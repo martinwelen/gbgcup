@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-12T12:03:12+00:00",
-  "seq": 1789214592,
-  "data_hash": "4bb329edcd53b9916f9000fa9a642b5ca6ca30996abce7a994c2d4cd49e573e0"
+  "generated": "2026-09-12T13:42:18+00:00",
+  "seq": 1789220538,
+  "data_hash": "66d39c63a29793d5efdd7addbbb4e2ede3042a89ddb10e24d95012ad9b703753"
  },
  "by_age": {
   "F16": {
@@ -3952,8 +3952,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp D",
-            "team_id": null,
+            "label": "IFK Tumba HK",
+            "team_id": 80550136,
             "is_alingsas": false,
             "goals": null
            },
@@ -4014,8 +4014,8 @@
            "bana": "ÖHK-Hallen A",
            "round": "1/4 Final",
            "home": {
-            "label": "1:an i Grupp D",
-            "team_id": null,
+            "label": "HK Aranäs VIT",
+            "team_id": 81566217,
             "is_alingsas": false,
             "goals": null
            },
@@ -4224,8 +4224,8 @@
            "bana": "Valhalla Sport A",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp D",
-            "team_id": null,
+            "label": "IK Bolton",
+            "team_id": 82709688,
             "is_alingsas": false,
             "goals": null
            },
@@ -4272,8 +4272,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp D",
-            "team_id": null,
+            "label": "RP IF Linköping",
+            "team_id": 81758139,
             "is_alingsas": false,
             "goals": null
            },
@@ -4580,14 +4580,14 @@
            "bana": "ÖHK-Hallen A",
            "round": "1/8 Final",
            "home": {
-            "label": "2:an i Grupp B",
-            "team_id": null,
+            "label": "H43 Lund HF Blå",
+            "team_id": 81175693,
             "is_alingsas": false,
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp C",
-            "team_id": null,
+            "label": "HK Aranäs Blå",
+            "team_id": 80258524,
             "is_alingsas": false,
             "goals": null
            },
@@ -4601,8 +4601,8 @@
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp E",
-            "team_id": null,
+            "label": "Skuru IK 1",
+            "team_id": 79078661,
             "is_alingsas": false,
             "goals": null
            },
@@ -4628,8 +4628,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp E",
-            "team_id": null,
+            "label": "BK Heid",
+            "team_id": 79266490,
             "is_alingsas": false,
             "goals": null
            },
@@ -4690,8 +4690,8 @@
            "bana": "ÖHK-Hallen A",
            "round": "1/4 Final",
            "home": {
-            "label": "1:an i Grupp B",
-            "team_id": null,
+            "label": "AIK Handbollsförening",
+            "team_id": 77225519,
             "is_alingsas": false,
             "goals": null
            },
@@ -4711,8 +4711,8 @@
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/4 Final",
            "home": {
-            "label": "1:an i Grupp C",
-            "team_id": null,
+            "label": "Skuru IK 2",
+            "team_id": 79078667,
             "is_alingsas": false,
             "goals": null
            },
@@ -4816,14 +4816,14 @@
            "bana": "Valhalla Sport B",
            "round": "1/8 Final",
            "home": {
-            "label": "4:an i Grupp B",
-            "team_id": null,
+            "label": "Kungälvs HK Grön utom tävlan",
+            "team_id": 79710050,
             "is_alingsas": false,
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp C",
-            "team_id": null,
+            "label": "IK Baltichov 1",
+            "team_id": 78950392,
             "is_alingsas": false,
             "goals": null
            },
@@ -4843,8 +4843,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp E",
-            "team_id": null,
+            "label": "Torslanda HK",
+            "team_id": 77518285,
             "is_alingsas": false,
             "goals": null
            },
@@ -4858,8 +4858,8 @@
            "bana": "Valhalla Sport A",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp E",
-            "team_id": null,
+            "label": "Kärra HF",
+            "team_id": 81175597,
             "is_alingsas": false,
             "goals": null
            },
@@ -4905,8 +4905,8 @@
            "bana": "Valhalla Sport C",
            "round": "1/4 Final",
            "home": {
-            "label": "3:an i Grupp B",
-            "team_id": null,
+            "label": "Redbergslids IK 1",
+            "team_id": 77308072,
             "is_alingsas": false,
             "goals": null
            },
@@ -4968,8 +4968,8 @@
            "bana": "Valhalla Sport A",
            "round": "1/4 Final",
            "home": {
-            "label": "3:an i Grupp C",
-            "team_id": null,
+            "label": "Önnereds HK 1",
+            "team_id": 76509254,
             "is_alingsas": false,
             "goals": null
            },

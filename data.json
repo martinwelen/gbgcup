@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-12T11:56:20+00:00",
-  "seq": 1789214180,
-  "data_hash": "b58cf076646cd3be64ddf783870092ac5775f0da7b7685aaf5788f724cc99ac0"
+  "generated": "2026-09-12T13:41:42+00:00",
+  "seq": 1789220502,
+  "data_hash": "5462c8e56257a772f1e6a96beadb3908f05371c33676dcce33bb8d8423fc7e08"
  },
  "groups": {
   "F11": {
@@ -203,7 +203,10 @@
      "grupp": "Grupp C",
      "mots": "HP Warta 2",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 0,
+      "ag": 0
+     },
      "start_ms": 1789218000000,
      "start_iso": "2026-09-12T15:00+02:00",
      "day_label": "Lördag 12 september"
