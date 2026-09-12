@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-12T11:22:09+00:00",
-  "seq": 1789212129,
-  "data_hash": "ee1f6b75bc89e454e0e1c730861ae793c25022d4ba95a794469d205c4ca06e14"
+  "generated": "2026-09-12T11:41:47+00:00",
+  "seq": 1789213307,
+  "data_hash": "b77459bf4469d34188ba5a9ba59696355a906d678e30da8903026cfdb6d72991"
  },
  "groups": {
   "F11": {
@@ -170,7 +170,10 @@
      "grupp": "Grupp E",
      "mots": "IK Sävehof VU Gul",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 0,
+      "ag": 0
+     },
      "start_ms": 1789210800000,
      "start_iso": "2026-09-12T13:00+02:00",
      "day_label": "Lördag 12 september"
