@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-12T11:41:47+00:00",
-  "seq": 1789213307,
-  "data_hash": "b77459bf4469d34188ba5a9ba59696355a906d678e30da8903026cfdb6d72991"
+  "generated": "2026-09-12T11:56:20+00:00",
+  "seq": 1789214180,
+  "data_hash": "b58cf076646cd3be64ddf783870092ac5775f0da7b7685aaf5788f724cc99ac0"
  },
  "groups": {
   "F11": {
@@ -2019,7 +2019,10 @@
      "grupp": "Grupp A",
      "mots": "GT Söder Handbollsklubb",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 20,
+      "ag": 18
+     },
      "start_ms": 1789211400000,
      "start_iso": "2026-09-12T13:10+02:00",
      "day_label": "Lördag 12 september"

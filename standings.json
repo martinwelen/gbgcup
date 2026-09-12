@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-12T11:22:54+00:00",
-  "seq": 1789212174,
-  "data_hash": "c82d3d93337f51ed079948e1da78a3903f4a7ad828c4a3381bb5d6ed055b297e"
+  "generated": "2026-09-12T11:56:52+00:00",
+  "seq": 1789214212,
+  "data_hash": "abcae99cb54420449e9cd7fb17294707f7b59bff3fb16cbfbee8412bd10b32e2"
  },
  "by_age": {
   "F16": {
@@ -3744,14 +3744,14 @@
        "name": "Alingsås HK 1",
        "team_id": 77339125,
        "is_alingsas": true,
-       "played": 2,
-       "won": 1,
+       "played": 3,
+       "won": 2,
        "tied": 0,
        "lost": 1,
-       "goals_for": 34,
-       "goals_against": 31,
-       "diff": 3,
-       "points": 2,
+       "goals_for": 54,
+       "goals_against": 49,
+       "diff": 5,
+       "points": 4,
        "tier": "Slutspel A",
        "pos": 2
       },
@@ -3789,13 +3789,13 @@
        "name": "GT Söder Handbollsklubb",
        "team_id": 76661153,
        "is_alingsas": false,
-       "played": 2,
+       "played": 3,
        "won": 1,
        "tied": 0,
-       "lost": 1,
-       "goals_for": 38,
-       "goals_against": 38,
-       "diff": 0,
+       "lost": 2,
+       "goals_for": 56,
+       "goals_against": 58,
+       "diff": -2,
        "points": 2,
        "tier": "Slutspel B",
        "pos": 5
@@ -3823,19 +3823,34 @@
        "pos": 1
       },
       {
+       "name": "Huddinge HK",
+       "team_id": 85931858,
+       "is_alingsas": false,
+       "played": 3,
+       "won": 1,
+       "tied": 1,
+       "lost": 1,
+       "goals_for": 47,
+       "goals_against": 48,
+       "diff": -1,
+       "points": 3,
+       "tier": "Slutspel A",
+       "pos": 2
+      },
+      {
        "name": "IFK Skövde HK av 1991 1",
        "team_id": 81913729,
        "is_alingsas": false,
-       "played": 2,
+       "played": 3,
        "won": 1,
-       "tied": 0,
+       "tied": 1,
        "lost": 1,
-       "goals_for": 45,
-       "goals_against": 50,
+       "goals_for": 60,
+       "goals_against": 65,
        "diff": -5,
-       "points": 2,
-       "tier": "Slutspel A",
-       "pos": 2
+       "points": 3,
+       "tier": "Slutspel B",
+       "pos": 3
       },
       {
        "name": "Alingsås HK 2",
@@ -3848,21 +3863,6 @@
        "goals_for": 69,
        "goals_against": 60,
        "diff": 9,
-       "points": 2,
-       "tier": "Slutspel B",
-       "pos": 3
-      },
-      {
-       "name": "Huddinge HK",
-       "team_id": 85931858,
-       "is_alingsas": false,
-       "played": 2,
-       "won": 1,
-       "tied": 0,
-       "lost": 1,
-       "goals_for": 32,
-       "goals_against": 33,
-       "diff": -1,
        "points": 2,
        "tier": "Slutspel B",
        "pos": 4
@@ -4559,8 +4559,8 @@
            "bana": "ÖHK-Hallen A",
            "round": "1/8 Final",
            "home": {
-            "label": "2:an i Grupp A",
-            "team_id": null,
+            "label": "Önnereds HK 2",
+            "team_id": 76509259,
             "is_alingsas": false,
             "goals": null
            },
@@ -4648,8 +4648,8 @@
            "bana": "ÖHK-Hallen A",
            "round": "1/4 Final",
            "home": {
-            "label": "1:an i Grupp A",
-            "team_id": null,
+            "label": "HK Aranäs Vit",
+            "team_id": 80258518,
             "is_alingsas": false,
             "goals": null
            },
@@ -4879,8 +4879,8 @@
            "bana": "Valhalla Sport B",
            "round": "1/8 Final",
            "home": {
-            "label": "4:an i Grupp A",
-            "team_id": null,
+            "label": "IK Baltichov 2",
+            "team_id": 78950396,
             "is_alingsas": false,
             "goals": null
            },
@@ -4926,8 +4926,8 @@
            "bana": "Valhalla Sport C",
            "round": "1/4 Final",
            "home": {
-            "label": "3:an i Grupp A",
-            "team_id": null,
+            "label": "Täby HBK",
+            "team_id": 78780156,
             "is_alingsas": false,
             "goals": null
            },
