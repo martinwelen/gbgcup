@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-12T11:56:52+00:00",
-  "seq": 1789214212,
-  "data_hash": "abcae99cb54420449e9cd7fb17294707f7b59bff3fb16cbfbee8412bd10b32e2"
+  "generated": "2026-09-12T12:03:12+00:00",
+  "seq": 1789214592,
+  "data_hash": "4bb329edcd53b9916f9000fa9a642b5ca6ca30996abce7a994c2d4cd49e573e0"
  },
  "by_age": {
   "F16": {
@@ -3925,8 +3925,8 @@
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "1/8 Final",
            "home": {
-            "label": "1:an i Grupp E",
-            "team_id": null,
+            "label": "Hammarby IF HF Vit",
+            "team_id": 81913820,
             "is_alingsas": false,
             "goals": null
            },
@@ -3973,8 +3973,8 @@
             "goals": null
            },
            "away": {
-            "label": "2:an i Grupp E",
-            "team_id": null,
+            "label": "Kärra HF 2",
+            "team_id": 85874393,
             "is_alingsas": false,
             "goals": null
            },
@@ -4167,8 +4167,8 @@
             "goals": null
            },
            "away": {
-            "label": "4:an i Grupp E",
-            "team_id": null,
+            "label": "Stenungsunds HK",
+            "team_id": 81468589,
             "is_alingsas": false,
             "goals": null
            },
@@ -4203,8 +4203,8 @@
            "bana": "Valhalla Sport B",
            "round": "1/8 Final",
            "home": {
-            "label": "3:an i Grupp E",
-            "team_id": null,
+            "label": "Täby HBK",
+            "team_id": 82635433,
             "is_alingsas": false,
             "goals": null
            },
