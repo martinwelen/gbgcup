@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-13T09:42:34+00:00",
-  "seq": 1789292554,
-  "data_hash": "c6ae68cbf7f7fdb02c9b97b73daeb2d4888e61a02769439824278d9ad042f219"
+  "generated": "2026-09-13T10:28:18+00:00",
+  "seq": 1789295298,
+  "data_hash": "d2907098e5ce8fc999d4b17112ddca2dd1f9fbb9215e4dab41c5a6e84c3fa161"
  },
  "by_age": {
   "F16": {
@@ -4693,15 +4693,15 @@
             "label": "AIK Handbollsförening",
             "team_id": 77225519,
             "is_alingsas": false,
-            "goals": null
+            "goals": 16
            },
            "away": {
             "label": "Önnereds HK 2",
             "team_id": 76509259,
             "is_alingsas": false,
-            "goals": null
+            "goals": 24
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 86060755,
@@ -4758,8 +4758,8 @@
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "Semifinal",
            "home": {
-            "label": "Vinn. 13090704",
-            "team_id": null,
+            "label": "Önnereds HK 2",
+            "team_id": 76509259,
             "is_alingsas": false,
             "goals": null
            },
@@ -4929,15 +4929,15 @@
             "label": "Täby HBK",
             "team_id": 78780156,
             "is_alingsas": false,
-            "goals": null
+            "goals": 15
            },
            "away": {
             "label": "IK Baltichov 1",
             "team_id": 78950392,
             "is_alingsas": false,
-            "goals": null
+            "goals": 10
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 86060766,
@@ -4950,15 +4950,15 @@
             "label": "Alingsås HK",
             "team_id": 77339144,
             "is_alingsas": true,
-            "goals": null
+            "goals": 16
            },
            "away": {
             "label": "Kärra HF",
             "team_id": 81175597,
             "is_alingsas": false,
-            "goals": null
+            "goals": 20
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 86060771,
@@ -4971,15 +4971,15 @@
             "label": "Önnereds HK 1",
             "team_id": 76509254,
             "is_alingsas": false,
-            "goals": null
+            "goals": 11
            },
            "away": {
             "label": "IF Hallby HK",
             "team_id": 77783362,
             "is_alingsas": false,
-            "goals": null
+            "goals": 13
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -4994,14 +4994,14 @@
            "bana": "Valhalla Sport A",
            "round": "Semifinal",
            "home": {
-            "label": "Vinn. 13090604",
-            "team_id": null,
+            "label": "Täby HBK",
+            "team_id": 78780156,
             "is_alingsas": false,
             "goals": null
            },
            "away": {
-            "label": "Vinn. 13090504",
-            "team_id": null,
+            "label": "Kärra HF",
+            "team_id": 81175597,
             "is_alingsas": false,
             "goals": null
            },
@@ -5021,8 +5021,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 13091104",
-            "team_id": null,
+            "label": "IF Hallby HK",
+            "team_id": 77783362,
             "is_alingsas": false,
             "goals": null
            },

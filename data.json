@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-13T09:41:56+00:00",
-  "seq": 1789292516,
-  "data_hash": "765279b0e7961b699576b648cd4ad829e57d46e22d9d55a8e2659d5c44294dd1"
+  "generated": "2026-09-13T10:27:40+00:00",
+  "seq": 1789295260,
+  "data_hash": "caec9cc23af39dc2e31663518d9ed0d723744a358f4d21b323dc68dfccc3e32a"
  },
  "groups": {
   "F11": {
@@ -1792,7 +1792,10 @@
      "grupp": "Slutspel B",
      "mots": "Kärra HF",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 16,
+      "ag": 20
+     },
      "start_ms": 1789292400000,
      "start_iso": "2026-09-13T11:40+02:00",
      "day_label": "Söndag 13 september"
