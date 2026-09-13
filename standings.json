@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-13T14:34:36+00:00",
-  "seq": 1789310076,
-  "data_hash": "131a50e759685dce283d642ed3f6122ed58873c46e734a975b6efca53fd6239b"
+  "generated": "2026-09-13T14:43:00+00:00",
+  "seq": 1789310580,
+  "data_hash": "46e002cb88da069e2a652cfd50713ddf035c3ba0e2a9b4a60b0ba174a2e4971e"
  },
  "by_age": {
   "F16": {
@@ -4085,15 +4085,15 @@
             "label": "IFK Skövde HK av 1991 1",
             "team_id": 81913729,
             "is_alingsas": false,
-            "goals": null
+            "goals": 13
            },
            "away": {
             "label": "HK Aranäs VIT",
             "team_id": 81566217,
             "is_alingsas": false,
-            "goals": null
+            "goals": 27
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 86060475,
@@ -4106,15 +4106,15 @@
             "label": "Hammarby IF HF Grön",
             "team_id": 81913814,
             "is_alingsas": false,
-            "goals": null
+            "goals": 19
            },
            "away": {
             "label": "Torslanda HK",
             "team_id": 80926901,
             "is_alingsas": false,
-            "goals": null
+            "goals": 20
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -4129,14 +4129,14 @@
            "bana": "ÖHK-Hallen A",
            "round": "Final",
            "home": {
-            "label": "Vinn. 13090708",
-            "team_id": null,
+            "label": "HK Aranäs VIT",
+            "team_id": 81566217,
             "is_alingsas": false,
             "goals": null
            },
            "away": {
-            "label": "Vinn. 13090807",
-            "team_id": null,
+            "label": "Torslanda HK",
+            "team_id": 80926901,
             "is_alingsas": false,
             "goals": null
            },
