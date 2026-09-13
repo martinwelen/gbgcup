@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-13T11:22:38+00:00",
-  "seq": 1789298558,
-  "data_hash": "60b84237796a8f71ba666dcb0f5fa159cd8d272200654fef2eb1365784969d3e"
+  "generated": "2026-09-13T11:43:02+00:00",
+  "seq": 1789299782,
+  "data_hash": "0a46e9797f7355fd8e903d0a10f8480d1c0ecdde1fb2790cdf3250270d6b9af5"
  },
  "by_age": {
   "F16": {
@@ -4761,15 +4761,15 @@
             "label": "Önnereds HK 2",
             "team_id": 76509259,
             "is_alingsas": false,
-            "goals": null
+            "goals": 10
            },
            "away": {
             "label": "Skuru IK 2",
             "team_id": 79078667,
             "is_alingsas": false,
-            "goals": null
+            "goals": 0
            },
-           "winner": null
+           "winner": "home"
           }
          ]
         },
@@ -4790,8 +4790,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 13090806",
-            "team_id": null,
+            "label": "Önnereds HK 2",
+            "team_id": 76509259,
             "is_alingsas": false,
             "goals": null
            },
