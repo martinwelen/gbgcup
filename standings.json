@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-13T11:43:02+00:00",
-  "seq": 1789299782,
-  "data_hash": "0a46e9797f7355fd8e903d0a10f8480d1c0ecdde1fb2790cdf3250270d6b9af5"
+  "generated": "2026-09-13T12:12:39+00:00",
+  "seq": 1789301559,
+  "data_hash": "2c164f8988bea6893984d68a1091ad142d8d685a8fb41e8890484e6748c58f5c"
  },
  "by_age": {
   "F16": {
@@ -4038,15 +4038,15 @@
             "label": "Hammarby IF HF Grön",
             "team_id": 81913814,
             "is_alingsas": false,
-            "goals": null
+            "goals": 17
            },
            "away": {
             "label": "Alingsås HK 1",
             "team_id": 77339125,
             "is_alingsas": true,
-            "goals": null
+            "goals": 16
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 86060478,
@@ -4059,15 +4059,15 @@
             "label": "Torslanda HK",
             "team_id": 80926901,
             "is_alingsas": false,
-            "goals": null
+            "goals": 24
            },
            "away": {
             "label": "Lindeskolans IF",
             "team_id": 85875268,
             "is_alingsas": false,
-            "goals": null
+            "goals": 15
            },
-           "winner": null
+           "winner": "home"
           }
          ]
         },
@@ -4103,14 +4103,14 @@
            "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
            "round": "Semifinal",
            "home": {
-            "label": "Vinn. 13090805",
-            "team_id": null,
+            "label": "Hammarby IF HF Grön",
+            "team_id": 81913814,
             "is_alingsas": false,
             "goals": null
            },
            "away": {
-            "label": "Vinn. 13090706",
-            "team_id": null,
+            "label": "Torslanda HK",
+            "team_id": 80926901,
             "is_alingsas": false,
             "goals": null
            },
@@ -4358,15 +4358,15 @@
             "label": "Kärra HF 1",
             "team_id": 85874389,
             "is_alingsas": false,
-            "goals": null
+            "goals": 17
            },
            "away": {
             "label": "Kungälvs HK 1",
             "team_id": 80662395,
             "is_alingsas": false,
-            "goals": null
+            "goals": 16
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 86060496,
@@ -4379,15 +4379,15 @@
             "label": "Alingsås HK 2",
             "team_id": 77339131,
             "is_alingsas": true,
-            "goals": null
+            "goals": 20
            },
            "away": {
             "label": "Önnereds HK 1",
             "team_id": 76509232,
             "is_alingsas": false,
-            "goals": null
+            "goals": 21
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -4423,14 +4423,14 @@
            "bana": "Valhalla Sport A",
            "round": "Semifinal",
            "home": {
-            "label": "Vinn. 13091106",
-            "team_id": null,
+            "label": "Kärra HF 1",
+            "team_id": 85874389,
             "is_alingsas": false,
             "goals": null
            },
            "away": {
-            "label": "Vinn. 13090506",
-            "team_id": null,
+            "label": "Önnereds HK 1",
+            "team_id": 76509232,
             "is_alingsas": false,
             "goals": null
            },

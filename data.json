@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-13T10:51:46+00:00",
-  "seq": 1789296706,
-  "data_hash": "9778dce7f27b018769849d753a508b97e1619d8a6433c06f047eea116b2e6c72"
+  "generated": "2026-09-13T12:12:02+00:00",
+  "seq": 1789301522,
+  "data_hash": "ae402da12ace2f8c40960b754c4b92e9f0ad63212f247f81bc6f56aa19bc7734"
  },
  "groups": {
   "F11": {
@@ -335,7 +335,10 @@
      "grupp": "Grupp E",
      "mots": "Önnereds HK 3",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 0,
+      "ag": 0
+     },
      "start_ms": 1789299600000,
      "start_iso": "2026-09-13T13:40+02:00",
      "day_label": "Söndag 13 september"
@@ -2199,7 +2202,10 @@
      "grupp": "Slutspel B",
      "mots": "Önnereds HK 1",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 20,
+      "ag": 21
+     },
      "start_ms": 1789298400000,
      "start_iso": "2026-09-13T13:20+02:00",
      "day_label": "Söndag 13 september"
@@ -2229,7 +2235,10 @@
      "grupp": "Slutspel A",
      "mots": "Hammarby IF HF Grön",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 17,
+      "ag": 16
+     },
      "start_ms": 1789298400000,
      "start_iso": "2026-09-13T13:20+02:00",
      "day_label": "Söndag 13 september"
