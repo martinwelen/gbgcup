@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-13T10:32:27+00:00",
-  "seq": 1789295547,
-  "data_hash": "d5f4588d2c21fa3aa0c9613b2f0b886e4fbc345f2fdaabe4df5b8d03a1a13a44"
+  "generated": "2026-09-13T11:22:38+00:00",
+  "seq": 1789298558,
+  "data_hash": "60b84237796a8f71ba666dcb0f5fa159cd8d272200654fef2eb1365784969d3e"
  },
  "by_age": {
   "F16": {
@@ -3996,15 +3996,15 @@
             "label": "IFK Skövde HK av 1991 2",
             "team_id": 81913734,
             "is_alingsas": false,
-            "goals": null
+            "goals": 17
            },
            "away": {
             "label": "IFK Skövde HK av 1991 1",
             "team_id": 81913729,
             "is_alingsas": false,
-            "goals": null
+            "goals": 20
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 86060472,
@@ -4017,15 +4017,15 @@
             "label": "HK Aranäs VIT",
             "team_id": 81566217,
             "is_alingsas": false,
-            "goals": null
+            "goals": 26
            },
            "away": {
             "label": "Hammarby IF HF Vit",
             "team_id": 81913820,
             "is_alingsas": false,
-            "goals": null
+            "goals": 25
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 86060476,
@@ -4082,14 +4082,14 @@
            "bana": "ÖHK-Hallen A",
            "round": "Semifinal",
            "home": {
-            "label": "Vinn. 13090804",
-            "team_id": null,
+            "label": "IFK Skövde HK av 1991 1",
+            "team_id": 81913729,
             "is_alingsas": false,
             "goals": null
            },
            "away": {
-            "label": "Vinn. 13090705",
-            "team_id": null,
+            "label": "HK Aranäs VIT",
+            "team_id": 81566217,
             "is_alingsas": false,
             "goals": null
            },
@@ -4316,15 +4316,15 @@
             "label": "Önnereds HK 2",
             "team_id": 76509236,
             "is_alingsas": false,
-            "goals": null
+            "goals": 21
            },
            "away": {
             "label": "IF Hallby HK",
             "team_id": 77225536,
             "is_alingsas": false,
-            "goals": null
+            "goals": 25
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 86060490,
@@ -4337,15 +4337,15 @@
             "label": "GT Söder Handbollsklubb",
             "team_id": 76661153,
             "is_alingsas": false,
-            "goals": null
+            "goals": 28
            },
            "away": {
             "label": "Täby HBK",
             "team_id": 82635433,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 86060494,
@@ -4402,14 +4402,14 @@
            "bana": "Valhalla Sport B",
            "round": "Semifinal",
            "home": {
-            "label": "Vinn. 13091105",
-            "team_id": null,
+            "label": "IF Hallby HK",
+            "team_id": 77225536,
             "is_alingsas": false,
             "goals": null
            },
            "away": {
-            "label": "Vinn. 13090505",
-            "team_id": null,
+            "label": "GT Söder Handbollsklubb",
+            "team_id": 76661153,
             "is_alingsas": false,
             "goals": null
            },
