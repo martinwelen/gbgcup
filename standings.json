@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-13T14:43:00+00:00",
-  "seq": 1789310580,
-  "data_hash": "46e002cb88da069e2a652cfd50713ddf035c3ba0e2a9b4a60b0ba174a2e4971e"
+  "generated": "2026-09-13T15:42:35+00:00",
+  "seq": 1789314155,
+  "data_hash": "d7a7fee31888907b60642ee52433793f108feb13d62d2bc2d0510ff97506b3d0"
  },
  "by_age": {
   "F16": {
@@ -4787,15 +4787,15 @@
             "label": "HK Aranäs Vit",
             "team_id": 80258518,
             "is_alingsas": false,
-            "goals": null
+            "goals": 19
            },
            "away": {
             "label": "Önnereds HK 2",
             "team_id": 76509259,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
-           "winner": null
+           "winner": "home"
           }
          ]
         }
@@ -5044,15 +5044,15 @@
             "label": "Kärra HF",
             "team_id": 81175597,
             "is_alingsas": false,
-            "goals": null
+            "goals": 21
            },
            "away": {
             "label": "IF Hallby HK",
             "team_id": 77783362,
             "is_alingsas": false,
-            "goals": null
+            "goals": 20
            },
-           "winner": null
+           "winner": "home"
           }
          ]
         }
