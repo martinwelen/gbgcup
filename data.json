@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-13T12:12:02+00:00",
-  "seq": 1789301522,
-  "data_hash": "ae402da12ace2f8c40960b754c4b92e9f0ad63212f247f81bc6f56aa19bc7734"
+  "generated": "2026-09-13T14:02:16+00:00",
+  "seq": 1789308136,
+  "data_hash": "2b3693f6186e59ec1916cbc6db0aa4937d45d0ed99dc4c61274cb5292a8e9c7c"
  },
  "groups": {
   "F11": {
@@ -368,7 +368,10 @@
      "grupp": "Grupp C",
      "mots": "IK Sävehof VU Svart",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 0,
+      "ag": 0
+     },
      "start_ms": 1789306800000,
      "start_iso": "2026-09-13T15:40+02:00",
      "day_label": "Söndag 13 september"
