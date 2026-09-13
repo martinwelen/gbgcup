@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-13T13:52:43+00:00",
-  "seq": 1789307563,
-  "data_hash": "1e0031173e4d045add6363653998d511592064d5f8ff86f93859b67fdf5f6e33"
+  "generated": "2026-09-13T14:34:36+00:00",
+  "seq": 1789310076,
+  "data_hash": "131a50e759685dce283d642ed3f6122ed58873c46e734a975b6efca53fd6239b"
  },
  "by_age": {
   "F16": {
@@ -4405,15 +4405,15 @@
             "label": "IF Hallby HK",
             "team_id": 77225536,
             "is_alingsas": false,
-            "goals": null
+            "goals": 18
            },
            "away": {
             "label": "GT Söder Handbollsklubb",
             "team_id": 76661153,
             "is_alingsas": false,
-            "goals": null
+            "goals": 16
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 86060493,
@@ -4426,15 +4426,15 @@
             "label": "Kärra HF 1",
             "team_id": 85874389,
             "is_alingsas": false,
-            "goals": null
+            "goals": 22
            },
            "away": {
             "label": "Önnereds HK 1",
             "team_id": 76509232,
             "is_alingsas": false,
-            "goals": null
+            "goals": 23
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -4449,14 +4449,14 @@
            "bana": "Valhalla Sport A",
            "round": "Final",
            "home": {
-            "label": "Vinn. 13090508",
-            "team_id": null,
+            "label": "IF Hallby HK",
+            "team_id": 77225536,
             "is_alingsas": false,
             "goals": null
            },
            "away": {
-            "label": "Vinn. 13091108",
-            "team_id": null,
+            "label": "Önnereds HK 1",
+            "team_id": 76509232,
             "is_alingsas": false,
             "goals": null
            },
