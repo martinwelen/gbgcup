@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-13T10:28:18+00:00",
-  "seq": 1789295298,
-  "data_hash": "d2907098e5ce8fc999d4b17112ddca2dd1f9fbb9215e4dab41c5a6e84c3fa161"
+  "generated": "2026-09-13T10:32:27+00:00",
+  "seq": 1789295547,
+  "data_hash": "d5f4588d2c21fa3aa0c9613b2f0b886e4fbc345f2fdaabe4df5b8d03a1a13a44"
  },
  "by_age": {
   "F16": {
@@ -4714,15 +4714,15 @@
             "label": "Skuru IK 2",
             "team_id": 79078667,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
            "away": {
             "label": "BK Heid",
             "team_id": 79266490,
             "is_alingsas": false,
-            "goals": null
+            "goals": 13
            },
-           "winner": null
+           "winner": "home"
           }
          ]
         },
@@ -4764,8 +4764,8 @@
             "goals": null
            },
            "away": {
-            "label": "Vinn. 13090803",
-            "team_id": null,
+            "label": "Skuru IK 2",
+            "team_id": 79078667,
             "is_alingsas": false,
             "goals": null
            },
