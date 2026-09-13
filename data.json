@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-12T15:52:09+00:00",
-  "seq": 1789228329,
-  "data_hash": "42486db876f06636e81ade485e544988a64c0350492ab07f20db8a0cbc3a2c88"
+  "generated": "2026-09-13T09:21:14+00:00",
+  "seq": 1789291274,
+  "data_hash": "df9f6a7c0b7f5ccb5233593d2fe9a9964c8d5d3fbced5d33daa97cde3b6e03dd"
  },
  "groups": {
   "F11": {
@@ -269,7 +269,10 @@
      "grupp": "Grupp E",
      "mots": "Torslanda HK 2",
      "hb": "Borta",
-     "result": null,
+     "result": {
+      "hg": 0,
+      "ag": 0
+     },
      "start_ms": 1789285200000,
      "start_iso": "2026-09-13T09:40+02:00",
      "day_label": "Söndag 13 september"
@@ -1785,9 +1788,9 @@
      "video": "https://solidsport.com/gbgcup/watch/3-an-i-grupp-d-vinn-13091101",
      "runda": "Kvartsfinal",
      "hemma": "Alingsås HK",
-     "borta": "Vinn. 13091101",
+     "borta": "Kärra HF",
      "grupp": "Slutspel B",
-     "mots": "Vinn. 13091101",
+     "mots": "Kärra HF",
      "hb": "Hemma",
      "result": null,
      "start_ms": 1789292400000,
@@ -2124,7 +2127,10 @@
      "grupp": "Slutspel A",
      "mots": "IFK Tumba HK",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 23,
+      "ag": 17
+     },
      "start_ms": 1789286400000,
      "start_iso": "2026-09-13T10:00+02:00",
      "day_label": "Söndag 13 september"
@@ -2157,6 +2163,36 @@
      "result": null,
      "start_ms": 1789289400000,
      "start_iso": "2026-09-13T10:50+02:00",
+     "day_label": "Söndag 13 september"
+    },
+    {
+     "age_slug": "HJ",
+     "slug": "t-77339125",
+     "id": 86060476,
+     "gender": "M",
+     "klass": "HJ",
+     "rule": "Classic",
+     "dur": 50,
+     "color": "#1f5fbf",
+     "datum": "2026-09-13",
+     "dag": "Söndag",
+     "tid": "13:20",
+     "bana": "ÖHK-Hallen ÖHK Gbg Brandservicehallen",
+     "maps": "https://www.google.com/maps/search/?api=1&query=57.66828599999999,11.8827533",
+     "lat": 57.66828599999999,
+     "lng": 11.8827533,
+     "venue": "ÖHK-Hallen",
+     "street": "Redegatan 18",
+     "video": "https://solidsport.com/gbgcup/watch/1-an-i-grupp-b-vinn-13092001",
+     "runda": "Kvartsfinal",
+     "hemma": "Hammarby IF HF Grön",
+     "borta": "Alingsås HK 1",
+     "grupp": "Slutspel A",
+     "mots": "Hammarby IF HF Grön",
+     "hb": "Borta",
+     "result": null,
+     "start_ms": 1789298400000,
+     "start_iso": "2026-09-13T13:20+02:00",
      "day_label": "Söndag 13 september"
     }
    ]
