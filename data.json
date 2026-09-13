@@ -2,9 +2,9 @@
  "meta": {
   "source": "cupmanager API (klubbkod 76496464, tournamentId 72459189)",
   "club_id": 76496464,
-  "generated": "2026-09-13T09:21:14+00:00",
-  "seq": 1789291274,
-  "data_hash": "df9f6a7c0b7f5ccb5233593d2fe9a9964c8d5d3fbced5d33daa97cde3b6e03dd"
+  "generated": "2026-09-13T09:41:56+00:00",
+  "seq": 1789292516,
+  "data_hash": "765279b0e7961b699576b648cd4ad829e57d46e22d9d55a8e2659d5c44294dd1"
  },
  "groups": {
   "F11": {
@@ -2160,9 +2160,42 @@
      "grupp": "Slutspel B",
      "mots": "GF Kroppskultur",
      "hb": "Hemma",
-     "result": null,
+     "result": {
+      "hg": 24,
+      "ag": 12
+     },
      "start_ms": 1789289400000,
      "start_iso": "2026-09-13T10:50+02:00",
+     "day_label": "Söndag 13 september"
+    },
+    {
+     "age_slug": "HJ",
+     "slug": "t-77339131",
+     "id": 86060496,
+     "gender": "M",
+     "klass": "HJ",
+     "rule": "Classic",
+     "dur": 50,
+     "color": "#e8730c",
+     "datum": "2026-09-13",
+     "dag": "Söndag",
+     "tid": "13:20",
+     "bana": "Valhalla Sport B",
+     "maps": "https://www.google.com/maps/search/?api=1&query=57.6999149,11.9906319",
+     "lat": 57.6999149,
+     "lng": 11.9906319,
+     "venue": "",
+     "street": "Valhallagatan 3",
+     "video": "https://solidsport.com/gbgcup/watch/vinn-13090503-vinn-13090600",
+     "runda": "Kvartsfinal",
+     "hemma": "Alingsås HK 2",
+     "borta": "Önnereds HK 1",
+     "grupp": "Slutspel B",
+     "mots": "Önnereds HK 1",
+     "hb": "Hemma",
+     "result": null,
+     "start_ms": 1789298400000,
+     "start_iso": "2026-09-13T13:20+02:00",
      "day_label": "Söndag 13 september"
     },
     {
