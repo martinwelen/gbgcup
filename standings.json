@@ -1,9 +1,9 @@
 {
  "meta": {
   "source": "cupmanager API (Division$table + Playoff)",
-  "generated": "2026-09-13T12:12:39+00:00",
-  "seq": 1789301559,
-  "data_hash": "2c164f8988bea6893984d68a1091ad142d8d685a8fb41e8890484e6748c58f5c"
+  "generated": "2026-09-13T13:52:43+00:00",
+  "seq": 1789307563,
+  "data_hash": "1e0031173e4d045add6363653998d511592064d5f8ff86f93859b67fdf5f6e33"
  },
  "by_age": {
   "F16": {
@@ -4740,15 +4740,15 @@
             "label": "HK Aranäs Vit",
             "team_id": 80258518,
             "is_alingsas": false,
-            "goals": null
+            "goals": 30
            },
            "away": {
             "label": "Skuru IK 1",
             "team_id": 79078661,
             "is_alingsas": false,
-            "goals": null
+            "goals": 20
            },
-           "winner": null
+           "winner": "home"
           },
           {
            "id": 86060752,
@@ -4784,8 +4784,8 @@
            "bana": "ÖHK-Hallen A",
            "round": "Final",
            "home": {
-            "label": "Vinn. 13090707",
-            "team_id": null,
+            "label": "HK Aranäs Vit",
+            "team_id": 80258518,
             "is_alingsas": false,
             "goals": null
            },
@@ -4997,15 +4997,15 @@
             "label": "Täby HBK",
             "team_id": 78780156,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
            "away": {
             "label": "Kärra HF",
             "team_id": 81175597,
             "is_alingsas": false,
-            "goals": null
+            "goals": 20
            },
-           "winner": null
+           "winner": "away"
           },
           {
            "id": 86060768,
@@ -5018,15 +5018,15 @@
             "label": "Redbergslids IK 2",
             "team_id": 77308076,
             "is_alingsas": false,
-            "goals": null
+            "goals": 14
            },
            "away": {
             "label": "IF Hallby HK",
             "team_id": 77783362,
             "is_alingsas": false,
-            "goals": null
+            "goals": 21
            },
-           "winner": null
+           "winner": "away"
           }
          ]
         },
@@ -5041,14 +5041,14 @@
            "bana": "Valhalla Sport A",
            "round": "Final",
            "home": {
-            "label": "Vinn. 13091107",
-            "team_id": null,
+            "label": "Kärra HF",
+            "team_id": 81175597,
             "is_alingsas": false,
             "goals": null
            },
            "away": {
-            "label": "Vinn. 13090507",
-            "team_id": null,
+            "label": "IF Hallby HK",
+            "team_id": 77783362,
             "is_alingsas": false,
             "goals": null
            },
